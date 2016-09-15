@@ -1,6 +1,7 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
+import React from 'react';
+import { render } from 'react-dom';
+import Dashboard from './components/Dashboard.js';
 
-// ReactDOM.render(
-//   <
-//   )
+render(
+  <Dashboard/>, document.getElementById('dashboard')
+)
