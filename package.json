@@ -2,9 +2,10 @@
   "name": "here-we-go",
   "version": "1.0.0",
   "description": "## Project Summaries",
-  "main": "index.js",
+  "main": "./server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -27,12 +28,14 @@
     "load-grunt-tasks": "^3.5.2"
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "env": {
       "browser": true,
       "node": true
     }
   },
   "dependencies": {
+    "express": "^4.14.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
