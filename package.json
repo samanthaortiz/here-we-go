@@ -1,0 +1,35 @@
+{
+  "name": "here-we-go",
+  "version": "1.0.0",
+  "description": "## Project Summaries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diamond-Supernovas/here-we-go.git"
+  },
+  "author": "Ellie Roussopoulos, Samantha Ortiz, Keith Wallace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diamond-Supernovas/here-we-go/issues"
+  },
+  "homepage": "https://github.com/Diamond-Supernovas/here-we-go#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "eslint": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-eslint": "^19.0.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  }
+}
