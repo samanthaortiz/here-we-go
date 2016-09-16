@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
+import { createStore } from 'redux'
 
-let divStyle = {
-  backgroundImage: 'url(' + 'https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb' + ')',
-  height: '100%',
-  width: '100%'
-  // WebkitTransition: 'all', // note the capital 'W' here
-  // msTransition: 'all' // 'ms' is the only lowercase vendor prefix
+function travel(state = [], action) {
+  switch (action.type) {
+    case 'ADD_LOC':
+      return state.concat([ action.text ])
+    default:
+      return state
+  }
 }
+
+let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
+
+store.dispatch({
+  type: 'ADD_LOC',
+  text: 'Read the docs'
+})
 
 const Splash = React.createClass({
 
@@ -16,9 +25,12 @@ const Splash = React.createClass({
   handleChange(event) {
     this.setState({value: event.target.value});
   },
+  componentDidMount() {
+    document.body.classList.toggle('splashClass', this.props.isSplash)
+  },
   render() {
     return (
-      <div style={divStyle}>
+      <div>
         <input
           type="text"
           value={this.state.value}
