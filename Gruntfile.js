@@ -13,10 +13,6 @@ module.exports = function(grunt) {
         presets: ['babel-preset-es2015']
       },
       dist: {
-        files: {
-          'testing-grunt/build/js/file-1.js': 'testing-grunt/js/file-1.js',
-          'testing-grunt/build/js/file-2.js': 'testing-grunt/js/file-2.js'
-        }
       }
     },
 
