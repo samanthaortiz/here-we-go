@@ -18,6 +18,9 @@ coverage
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
+ # Compiled Dirs (http://nodejs.org/api/addons.html)
+ dist/bundle.js
+
 # Dependency directorys
 node_modules/
 bower_components/
