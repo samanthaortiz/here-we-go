@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Dashboard from './components/Dashboard.js';
+import Splash from './components/Splash.js';
 
 render(
-  <Dashboard/>, document.getElementById('dashboard')
+  <Splash/>, document.getElementById('splash')
 )
