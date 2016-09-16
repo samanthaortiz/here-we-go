@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "## Project Summaries",
   "main": "./server/server.js",
+  "engines": {
+   "node": "4.4.7",
+   "npm": "2.1.x"
+ },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon"
