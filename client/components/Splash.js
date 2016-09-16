@@ -1,11 +1,45 @@
 import React, { Component } from 'react';
+import { createStore } from 'redux'
 
-class Splash extends Component {
-
-  render() {
-       return <div><img src='https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb' alt="beach" className="img-responsive"/></div>;
-   }
-
+function travel(state = [], action) {
+  switch (action.type) {
+    case 'ADD_LOC':
+      return state.concat([ action.text ])
+    default:
+      return state
+  }
 }
+
+let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
+
+store.dispatch({
+  type: 'ADD_LOC',
+  text: 'Read the docs'
+})
+
+const Splash = React.createClass({
+
+  getInitialState() {
+    return {value: 'City and State'};
+  },
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  },
+  componentDidMount() {
+    document.body.classList.toggle('splashClass', this.props.isSplash)
+  },
+  render() {
+    return (
+      <div>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <button type="submit">Let's Go!</button> 
+      </div>
+    );
+  }
+});
 
 export default Splash

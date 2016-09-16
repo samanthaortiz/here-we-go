@@ -1,0 +1,7 @@
+body {
+  background-color: blue;
+}
+.splashClass { 
+  background: url('https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb');
+  background-size: cover;
+ }
