@@ -1460,6 +1460,7 @@
 /* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< d4ace36499012ee20362ae895679acdad31290bf
 <<<<<<< ebfcff60620cc00e776a44b5bffe647cb0a76f0d
 <<<<<<< 3beecba39c87ca08cd19004217bbe9f3540b8730
 	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _App = __webpack_require__(237);\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _Splash = __webpack_require__(238);\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(397);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(398);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\n// REACTJS ROUTER CONFIGURATION ===============================================\nexports.default = _react2.default.createElement(\n  _reactRouter.Route,\n  { path: '/', component: _App2.default },\n  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n  _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n  _react2.default.createElement(_reactRouter.Route, { path: '*', component: _App2.default })\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/routes/routes.js\n ** module id = 236\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/routes/routes.js?");
@@ -1469,6 +1470,9 @@
 =======
 	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _App = __webpack_require__(237);\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _Splash = __webpack_require__(238);\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(254);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// SPLASH PAGE\nexports.default = _react2.default.createElement(\n  _reactRouter.Route,\n  { path: '/', component: _App2.default },\n  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n  _react2.default.createElement(\n    _reactRouter.Route,\n    { path: 'dashboard', component: _Dashboard2.default },\n    _react2.default.createElement(NavigationBar, null)\n  )\n);\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\n// REACTJS ROUTER CONFIGURATION ===============================================\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/routes/routes.js\n ** module id = 236\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/routes/routes.js?");
 >>>>>>> chore( ): Npm install --save bookshelf and knex
+=======
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _App = __webpack_require__(237);\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _Splash = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./../components/Splash.js\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(254);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(255);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\n// REACTJS ROUTER CONFIGURATION ===============================================\nexports.default = _react2.default.createElement(\n  _reactRouter.Route,\n  { path: '/', component: _App2.default },\n  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n  _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n  _react2.default.createElement(_reactRouter.Route, { path: '*', component: _App2.default })\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/routes/routes.js\n ** module id = 236\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/routes/routes.js?");
+>>>>>>> Merge conflicts resolved
 
 /***/ },
 /* 237 */
@@ -1477,6 +1481,7 @@
 	eval("\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }\n\nvar App = function (_Component) {\n  _inherits(App, _Component);\n\n  function App(props) {\n    _classCallCheck(this, App);\n\n    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));\n  }\n\n  _createClass(App, [{\n    key: \"render\",\n    value: function render() {\n      return _react2.default.createElement(\n        \"div\",\n        { className: \"container\" },\n        this.props.children\n      );\n    }\n  }]);\n\n  return App;\n}(_react.Component);\n\nexports.default = App;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/App.js\n ** module id = 237\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/App.js?");
 
 /***/ },
+<<<<<<< d4ace36499012ee20362ae895679acdad31290bf
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1625,6 +1630,24 @@
 	eval("\"use strict\";\n\nexports.__esModule = true;\nexports[\"default\"] = compose;\n/**\n * Composes single-argument functions from right to left. The rightmost\n * function can take multiple arguments as it provides the signature for\n * the resulting composite function.\n *\n * @param {...Function} funcs The functions to compose.\n * @returns {Function} A function obtained by composing the argument functions\n * from right to left. For example, compose(f, g, h) is identical to doing\n * (...args) => f(g(h(...args))).\n */\n\nfunction compose() {\n  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {\n    funcs[_key] = arguments[_key];\n  }\n\n  if (funcs.length === 0) {\n    return function (arg) {\n      return arg;\n    };\n  }\n\n  if (funcs.length === 1) {\n    return funcs[0];\n  }\n\n  var last = funcs[funcs.length - 1];\n  var rest = funcs.slice(0, -1);\n  return function () {\n    return rest.reduceRight(function (composed, f) {\n      return f(composed);\n    }, last.apply(undefined, arguments));\n  };\n}\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/redux/lib/compose.js\n ** module id = 253\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/redux/lib/compose.js?");
 
 /***/ },
+=======
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+>>>>>>> Merge conflicts resolved
 /* 254 */
 /***/ function(module, exports, __webpack_require__) {
 

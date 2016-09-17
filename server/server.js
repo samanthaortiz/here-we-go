@@ -5,9 +5,6 @@ var request = require('request');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-// require("babel-core").transform("code", {
-//   plugins: ["transform-react-jsx-source"]
-// });
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
