@@ -10,7 +10,7 @@ function travel(state = [], action) {
   }
 }
 
-let store = createStore(travel, [ 'Use Redux' ];
+let store = createStore(travel, [ 'Use Redux' ]);
   // window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
 
 store.dispatch({
