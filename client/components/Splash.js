@@ -11,8 +11,8 @@ function travel(state = [], action) {
   }
 }
 
-// let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
-let store = createStore(travel, [ 'Use Redux' ]);
+let store = createStore(travel, [ 'Use Redux' ];
+  // window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
 
 
 store.dispatch({
@@ -73,6 +73,7 @@ const Splash = React.createClass({
           <span className="input-group-btn">
           <button className="btn btn-secondary" type="button">Let's Go!</button>
           </span>
+          <button type="submit">Let's Go!</button>
         </div>
       </div>
     );
