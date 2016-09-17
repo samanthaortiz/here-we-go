@@ -11,9 +11,6 @@ import Splash from './../components/Splash.js';
 // DASHBOARD PAGE
 import Dashboard from './../components/Dashboard.js';
 
-// NAVIGATION BAR
-//import NavigationBar from './../components/NavigationBar.js';
-
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Splash} />
