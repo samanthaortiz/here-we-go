@@ -10,8 +10,8 @@ function travel(state = [], action) {
   }
 }
 
-// let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
-let store = createStore(travel, [ 'Use Redux' ]);
+let store = createStore(travel, [ 'Use Redux' ];
+  // window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
 
 store.dispatch({
   type: 'ADD_LOC',
@@ -39,7 +39,7 @@ const Splash = React.createClass({
             value={this.state.value}
             onChange={this.handleChange}
           />
-          <button type="submit">Let's Go!</button> 
+          <button type="submit">Let's Go!</button>
         </div>
       </div>
     );
