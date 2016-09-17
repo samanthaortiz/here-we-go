@@ -4,9 +4,9 @@
   "description": "## Project Summaries",
   "main": "./server/server.js",
   "engines": {
-   "node": "4.4.7",
-   "npm": "2.1.x"
- },
+    "node": "4.4.7",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon"
@@ -45,13 +45,18 @@
     "babel-loader": "^6.2.5",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "input-moment": "^0.3.0",
     "jquery": "^3.1.0",
+    "moment": "^2.15.0",
     "react": "^15.3.1",
+    "react-datepicker": "^0.29.0",
+    "react-datetime": "^2.6.0",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "request": "^2.74.0",
+    "style": "0.0.3",
     "webpack": "^1.13.2"
   },
   "config": {

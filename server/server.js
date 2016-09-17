@@ -6,11 +6,6 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
-// require("babel-core").transform("code", {
-//   plugins: ["transform-react-jsx-source"]
-// });
-
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
 app.use("/api", apiRouter);
@@ -25,5 +20,5 @@ var port = 4000;
 
 app.listen(port, function(error){
   if(error) throw error;
-  console.log('Express server listening on port', port);
-})
+  console.log('Express server listening on port', port); 
+});
