@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux'
+import { createStore } from 'redux';
+import DatePicker from 'react-bootstrap-date-picker';
 
 function travel(state = [], action) {
   switch (action.type) {
@@ -21,11 +22,34 @@ store.dispatch({
 const Splash = React.createClass({
 
   getInitialState() {
-    return {value: 'City and State'};
+    let date = new Date().toISOString().substring(0, 10);
+    return {
+            city: '',
+            startDate: date,
+            endDate: date
+          };
+
   },
-  handleChange(event) {
-    this.setState({value: event.target.value});
+  handleChangeValue(event) {
+    this.setState({
+      city: event.target.value
+    });
   },
+
+  handleChangeStart(startDate) { 
+    this.setState({
+      startDate: startDate.substring(0, 10),
+      startValue: startDate
+    })
+  },
+
+  handleChangeEnd(endDate) {
+    this.setState({
+      endDate: endDate.substring(0, 10),
+      endValue: endDate
+    })
+  },
+
   componentDidMount() {
     document.body.classList.toggle('splashClass', this.props.isSplash)
   },
@@ -34,12 +58,20 @@ const Splash = React.createClass({
       <div>
         <h1 id='logo'>Here We Go!</h1> 
         <div className="splashForm">
-          <input
+          <div><input
             type="text"
+            placeholder='City and State'
             value={this.state.value}
-            onChange={this.handleChange}
+            onChange={this.handleChangeValue}
           />
-          <button type="submit">Let's Go!</button> 
+          </div>
+          <div className="input-group"> 
+            <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
+            <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>
+          </div>
+          <span className="input-group-btn">
+          <button className="btn btn-secondary" type="button">Let's Go!</button>
+          </span>
         </div>
       </div>
     );
