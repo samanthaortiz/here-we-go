@@ -12,11 +12,13 @@ import Splash from './../components/Splash.js';
 import Dashboard from './../components/Dashboard.js';
 
 // NAVIGATION BAR
-//import NavigationBar from './../components/NavigationBar.js';
+import NavigationBar from './../components/NavigationBar.js';
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Splash} />
-    <Route path="dashboard" component={Dashboard} />
+    <Route path="dashboard" component={Dashboard}>
+      <NavigationBar />
+    </Route>
   </Route>
 );
