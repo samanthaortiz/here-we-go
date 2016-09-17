@@ -1,5 +1,8 @@
 var express = require('express');
 var path = require('path');
+require("babel-core").transform("code", {
+  plugins: ["transform-react-jsx-source"]
+});
 
 var app = express();
 
