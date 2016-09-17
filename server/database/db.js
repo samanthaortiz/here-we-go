@@ -51,17 +51,4 @@ db.knex.schema.hasTable('itineraries').then(exists => {
   }
 });
 
-
-db.knex.schema.hasTable('statuses').then(exists => {
-  if (!exists) {
-    db.knex.schema.createTable('statuses', status => {
-      status.increments('id').primary();
-      status.string('type');
-      status.timestamps();
-    }).then(table => {
-      console.log('Created Table', table);
-    });
-  }
-});
-
 export default db;
