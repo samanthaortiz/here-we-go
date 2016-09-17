@@ -5,12 +5,6 @@ var request = require('request');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-<<<<<<< a534ae4dfef707b72a0284187db861eb986af4ac
-require("babel-core").transform("code", {
-  plugins: ["transform-react-jsx-source"]
-});
-=======
->>>>>>> Nodemodules error fixed
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");

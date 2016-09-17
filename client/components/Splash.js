@@ -10,13 +10,9 @@ function travel(state = [], action) {
   }
 }
 
-<<<<<<< a534ae4dfef707b72a0284187db861eb986af4ac
-// let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
-let store = createStore(travel, [ 'Use Redux' ]);
-=======
 let store = createStore(travel, [ 'Use Redux' ]);
   //window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
->>>>>>> Nodemodules error fixed
+
 
 store.dispatch({
   type: 'ADD_LOC',
@@ -44,7 +40,7 @@ const Splash = React.createClass({
             value={this.state.value}
             onChange={this.handleChange}
           />
-          <button type="submit">Let's Go!</button> 
+          <button type="submit">Let's Go!</button>
         </div>
       </div>
     );
