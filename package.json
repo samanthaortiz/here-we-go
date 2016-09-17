@@ -46,10 +46,15 @@
     "babel-loader": "^6.2.5",
     "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
+    "bookshelf": "^0.10.1",
     "express": "^4.14.0",
     "input-moment": "^0.3.0",
     "jquery": "^3.1.0",
+<<<<<<< HEAD
     "moment": "^2.15.0",
+=======
+>>>>>>> feature
+    "knex": "^0.12.1",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",
     "react-bootstrap-date-picker": "^3.4.0",
@@ -60,8 +65,13 @@
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
     "request": "^2.74.0",
+<<<<<<< 19e96e94edd3c0db5601c33f7f56bce4f3397cef
     "style": "0.0.3",
+=======
+>>>>>>> Updated package.json
     "webpack": "^1.13.2"
+
+
   },
   "config": {
     "commitizen": {
