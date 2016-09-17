@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { createStore } from 'redux';
-import DatePicker from 'react-datepicker';
-import moment from'moment';
-
-// require('react-datepicker/dist/react-datepicker.css');
+import DatePicker from 'react-bootstrap-date-picker';
 
 function travel(state = [], action) {
   switch (action.type) {
@@ -25,28 +22,34 @@ store.dispatch({
 const Splash = React.createClass({
 
   getInitialState() {
+    let date = new Date().toISOString().substring(0, 10);
     return {
-            value: '', 
-            startDate: moment(),
-            endDate: moment()
+            city: '',
+            startDate: date,
+            endDate: date
           };
 
   },
   handleChangeValue(event) {
     this.setState({
-      value: event.target.value
+      city: event.target.value
     });
   },
-  handleChangeStart(event) {
+
+  handleChangeStart(startDate) { 
     this.setState({
-      startDate: event
-    });
+      startDate: startDate.substring(0, 10),
+      startValue: startDate
+    })
   },
-  handleChangeEnd(event) {
+
+  handleChangeEnd(endDate) {
     this.setState({
-      endDate: event
-    });
+      endDate: endDate.substring(0, 10),
+      endValue: endDate
+    })
   },
+
   componentDidMount() {
     document.body.classList.toggle('splashClass', this.props.isSplash)
   },
@@ -62,19 +65,13 @@ const Splash = React.createClass({
             onChange={this.handleChangeValue}
           />
           </div>
-          <div>
-          <DatePicker
-              selected={this.state.startDate}
-              startDate={this.state.startDate}
-              endDate={this.state.endDate}
-              onChange={this.handleChangeStart} />
-          <DatePicker
-              selected={this.state.endDate}
-              startDate={this.state.startDate}
-              endDate={this.state.endDate}
-              onChange={this.handleChangeEnd} />
-            </div>
-          <button type="submit">Let's Go!</button> 
+          <div className="input-group"> 
+            <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
+            <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>
+          </div>
+          <span className="input-group-btn">
+          <button className="btn btn-secondary" type="button">Let's Go!</button>
+          </span>
         </div>
       </div>
     );
