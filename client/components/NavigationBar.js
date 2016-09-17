@@ -1,6 +1,5 @@
 // NAVIGATION BAR COMPONENT ===================================================
 import React, { Component } from 'react';
-
 class NavigationBar extends Component {
   render() {
     return (
