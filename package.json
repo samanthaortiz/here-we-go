@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon"
+    "serve": "nodemon",
+    "webpack": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
