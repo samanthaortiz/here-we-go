@@ -23,3 +23,7 @@ body {
   top: 35%;
   left: 39%;
 }
+
+.input-group-addon {
+  display: none;
+}
