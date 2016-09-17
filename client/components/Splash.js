@@ -10,8 +10,8 @@ function travel(state = [], action) {
   }
 }
 
-let store = createStore(travel, [ 'Use Redux' ])
-// , window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
+// let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument());
+let store = createStore(travel, [ 'Use Redux' ]);
 
 store.dispatch({
   type: 'ADD_LOC',
