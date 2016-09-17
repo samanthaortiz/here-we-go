@@ -1,10 +1,13 @@
-// NAVIGATION BAR COMPONENT ===================================================
+// DASHBOARD COMPONENT ===================================================
 import React, { Component } from 'react';
+// NAVIGATION BAR
+import NavigationBar from './NavigationBar.js';
 
 class Dashboard extends Component {
   render() {
     return (
-        <h2>My Dashboard</h2>
+        <NavigationBar />,
+        <h2>My Dashboard!</h2>
     );
   }
 }

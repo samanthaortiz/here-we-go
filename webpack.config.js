@@ -22,10 +22,6 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      },
-      {
-        test: /\.(less|css)$/,
-        loader: 'style!css!less'
       }
     ]
   }
