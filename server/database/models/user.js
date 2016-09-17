@@ -1,8 +1,8 @@
-let db = require('../config');
+import db from './db';
 
 let User = db.Model.extend({
 	tableName: 'users',
 	hasTimestamps: true
 })
 
-module.exports = User;
+export default User;
