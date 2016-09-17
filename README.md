@@ -5,7 +5,6 @@
 Fill out a project summary for your group
 
 ## Team Diamond Supernovas
-
 Product Owner - Samantha Ortiz
 
 Scrum Master - Keith Wallace
