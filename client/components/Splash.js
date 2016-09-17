@@ -12,17 +12,6 @@ function travel(state = [], action) {
 }
 
 let store = createStore(travel, [ 'Use Redux' ]);
-<<<<<<< HEAD
-<<<<<<< afcce9298246566e15e4ef69f7fcc6f8ffa39316
-  // window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
-=======
-  //window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
-
->>>>>>> fix(): DevTools extension error fixed
-=======
-  //window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
-
->>>>>>> feature
 
 store.dispatch({
   type: 'ADD_LOC',
@@ -74,8 +63,6 @@ const Splash = React.createClass({
             value={this.state.value}
             onChange={this.handleChangeValue}
           />
-<<<<<<< HEAD
-<<<<<<< afcce9298246566e15e4ef69f7fcc6f8ffa39316
           </div>
           <div className="input-group"> 
             <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
@@ -84,10 +71,6 @@ const Splash = React.createClass({
           <span className="input-group-btn">
           <button className="btn btn-secondary" type="button">Let's Go!</button>
           </span>
-=======
->>>>>>> fix(): DevTools extension error fixed
-=======
->>>>>>> feature
           <button type="submit">Let's Go!</button>
         </div>
       </div>
