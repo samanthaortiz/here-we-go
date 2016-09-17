@@ -10,7 +10,8 @@ function travel(state = [], action) {
   }
 }
 
-let store = createStore(travel, [ 'Use Redux' ], window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
+let store = createStore(travel, [ 'Use Redux' ])
+// , window.devToolsExtension ? window.devToolsExtension() : DevTools.instrument())
 
 store.dispatch({
   type: 'ADD_LOC',
@@ -31,12 +32,15 @@ const Splash = React.createClass({
   render() {
     return (
       <div>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-        <button type="submit">Let's Go!</button> 
+        <h1 id='logo'>Here We Go!</h1> 
+        <div className="splashForm">
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+          <button type="submit">Let's Go!</button> 
+        </div>
       </div>
     );
   }

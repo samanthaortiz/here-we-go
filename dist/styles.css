@@ -4,4 +4,22 @@ body {
 .splashClass { 
   background: url('https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb');
   background-size: cover;
+  background-repeat: no-repeat;
  }
+
+#logo {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Pacifico', sans-serif;
+  position: absolute;
+  top: 35%;
+  left: 39%;
+}
+
+.splashForm {
+  position: absolute;
+  top: 35%;
+  left: 39%;
+}
