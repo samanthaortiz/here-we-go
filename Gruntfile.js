@@ -42,6 +42,7 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
+
   // CREATE GRUNT TASKS =================================================================
   grunt.registerTask('default', ['babel', 'eslint', 'uglify']);
 };

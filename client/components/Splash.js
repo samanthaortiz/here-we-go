@@ -42,4 +42,4 @@ const Splash = React.createClass({
   }
 });
 
-export default Splash
+export default Splash;
