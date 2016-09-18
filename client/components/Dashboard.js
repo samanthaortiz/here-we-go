@@ -7,9 +7,12 @@ class Dashboard extends Component {
     return (
       <div>
         <NavigationBar/>
-        <h2>My Dashboard =======></h2>
+        <article>
+          <div className="dashboard-container">
+            DASHBOARD
+          </div>
+        </article>
       </div>
-        
     );
   }
 };
