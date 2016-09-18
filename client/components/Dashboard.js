@@ -13,7 +13,6 @@ class Dashboard extends Component {
           </div>
         </article>
       </div>
-        
     );
   }
 };
