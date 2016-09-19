@@ -2,9 +2,13 @@ import React from 'React';
 
 const Hotel = React.createClass({
   render(){
+
     return (
       <figure className="hotel-figure">
-        I am a hotel!
+        <div className="hotel-wrap">
+          { this.props.expediaInfo[0].hotelList[0].name }
+        </div>
+
       </figure>
       )
   }
