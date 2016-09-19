@@ -1,6 +1,25 @@
 var router = require("express").Router();
 var request = require('request');
 
+var db = require('./db.js');
+var mysql = require('mysql');
+var Users = require ('./collections/Users.js')
+
+// DB ====================================================================== */
+router.get('/user-account', function(req, res) {
+  console.log('>>>>>>>>>> ENTER GET USER ACCOUNT FROM DB <<<<<<<<<<');
+
+  db.knex.select().table('users')
+    .then(function(rows) {
+      console.log('>>>>>>>>>> ROWS: ', rows);
+    });
+});
+
+
+
+
+
+// HOTEL SEARCH ============================================================ */
 router.post("/HotelSearch", function(req, res) {
 
   console.log('>> ENTER /HotelSearch');
