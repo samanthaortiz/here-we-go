@@ -13,6 +13,7 @@ const Dashboard = React.createClass({
         <NavigationBar/>
         <article>
           <div className="dashboard-container">
+<<<<<<< 51e04b6ca11e4be137ec2f436d359e52f30392bd
             {
               //{this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
               this.props.expediaInfo[0].hotelList.map((hotel) =>
@@ -22,6 +23,11 @@ const Dashboard = React.createClass({
                 />
               )
             }
+=======
+           {this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
+
+            DASHBOARD
+>>>>>>> fix(): Expedia info rendering hotel name from hotel list
           </div>
         </article>
       </div> 
