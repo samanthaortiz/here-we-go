@@ -1,7 +1,8 @@
 // DASHBOARD COMPONENT ===================================================
 import React, { Component } from 'react';
-import NavigationBar from './NavigationBar.js'
-import { Link } from 'react-router'
+import NavigationBar from './NavigationBar.js';
+import { Link } from 'react-router';
+import Hotels from './Hotels'
 // 
 const Dashboard = React.createClass({
   render() {
@@ -9,11 +10,16 @@ const Dashboard = React.createClass({
       <div>
         <NavigationBar/>
         <article>
+
+
           <div className="dashboard-container">
             DASHBOARD
+            
+            {this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
+
           </div>
         </article>
-      </div>
+      </div> 
     );
   }
 }) 

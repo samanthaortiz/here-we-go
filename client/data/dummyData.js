@@ -1,4 +1,5 @@
-const dummyData = {
+const dummyData = [
+  {
   "legs": [
     {
       "legId": "37a3f34cb909ca3be8ea638cb4422b93",
@@ -200,5 +201,6 @@ const dummyData = {
   "activityId": "41203404-c334-43d8-a204-b6f3ec537068",
   "deepLinkUrl": "https://api.ch.expeso.com/Cheap-Flights-To-MIA-Miami-Intl.d6000414.Travel-Guide-Flights"
 }
+]
 
 export default dummyData;
