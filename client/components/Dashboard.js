@@ -1,8 +1,9 @@
 // DASHBOARD COMPONENT ===================================================
 import React, { Component } from 'react';
 import NavigationBar from './NavigationBar.js'
-
-class Dashboard extends Component {
+import { Link } from 'react-router'
+// 
+const Dashboard = React.createClass({
   render() {
     return (
       <div>
@@ -15,6 +16,6 @@ class Dashboard extends Component {
       </div>
     );
   }
-};
+}) 
 
 export default Dashboard;

@@ -1,10 +1,29 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import routes from './routes/routes.js';
 
-render (
-  <Router history={ browserHistory } routes={ routes } />,
-  document.getElementById('splash')
+
+// APP PAGE <== ENTRY POINT TO APPLICATION
+import App from './components/App.js';
+
+// SPLASH PAGE
+import Splash from './components/Splash.js';
+
+// DASHBOARD PAGE
+import Dashboard from './components/Dashboard.js';
+
+// DASHBOARD PAGE
+import NavBar from './components/NavigationBar.js';
+
+const router = (
+  <Router history={browserHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Splash} />
+      <Route path="dashboard/" component={Dashboard} />
+      <Route path="*" component={App} />
+    </Route>
+  </Router>
 )
+
+render(router, document.getElementById('root'));
