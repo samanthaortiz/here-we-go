@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import { createStore } from 'redux';
 import DatePicker from 'react-bootstrap-date-picker';
 
-function travel(state = [], action) {
-  switch (action.type) {
-    case 'ADD_LOC':
-      return state.concat([ action.text ])
-    default:
-      return state
-  }
-}
+// function travel(state = [], action) {
+//   switch (action.type) {
+//     case 'ADD_LOC':
+//       return state.concat([ action.text ])
+//     default:
+//       return state
+//   }
+// }
 
-let store = createStore(travel, [ 'Use Redux' ]);
+// let store = createStore(travel, [ 'Use Redux' ]);
 
-store.dispatch({
-  type: 'ADD_LOC',
-  text: 'Read the docs'
-})
+// store.dispatch({
+//   type: 'ADD_LOC',
+//   text: 'Read the docs'
+// })
 
 const Splash = React.createClass({
 
@@ -55,9 +56,12 @@ const Splash = React.createClass({
   render() {
     return (
       <div>
-        <h1 id='logo'>Here We Go!</h1> 
+        <h1 id='logo'>
+          Here We Go!
+        </h1>    
         <div className="splashForm">
-          <div><input
+          <div>
+            <input
             type="text"
             placeholder='City and State'
             value={this.state.value}
@@ -71,11 +75,13 @@ const Splash = React.createClass({
           <span className="input-group-btn">
           <button className="btn btn-secondary" type="button">Let's Go!</button>
           </span>
-          <button type="submit">Let's Go!</button>
         </div>
       </div>
     );
   }
 });
+
+
+
 
 export default Splash;

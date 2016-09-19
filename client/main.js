@@ -1,10 +1,33 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import store, { history } from './store';
 
-import routes from './routes/routes.js';
 
-render (
-  <Router history={ browserHistory } routes={ routes } />,
-  document.getElementById('splash')
+
+// APP PAGE <== ENTRY POINT TO APPLICATION
+import Master from './components/Master.js';
+
+// SPLASH PAGE
+import Splash from './components/Splash.js';
+
+// DASHBOARD PAGE
+import Dashboard from './components/Dashboard.js';
+
+// DASHBOARD PAGE
+import NavBar from './components/NavigationBar.js';
+
+const router = (
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={Master}>
+        <IndexRoute component={Splash} />
+        <Route path="dashboard" component={Dashboard} />
+        <Route path="*" component={Master} />
+      </Route>
+    </Router>
+  </Provider>
 )
+
+render(router, document.getElementById('root'));
