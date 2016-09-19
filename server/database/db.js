@@ -1,10 +1,12 @@
+let config = require('db.config.js')
+
 let knex = require('knex')({
   client: 'mysql',
   connection: {
-    host     : '127.0.0.1',
-    user     : 'ellie',
-    password : 'ellie',
-    database : 'herewego',
+    host     : config.ip,
+    user     : process.env.username || config.username,
+    password : process.env.password || config.password,
+    database : process.env.database || config.name,
     charset  : 'utf8'
   }
 });
