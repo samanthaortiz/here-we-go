@@ -55,8 +55,10 @@ const Splash = React.createClass({
   render() {
     return (
       <div>
-        <h1 id='logo'>Here We Go!</h1> 
         <div className="splashForm">
+        <div>
+        <h1 id='logo'>Here We Go!</h1> 
+        </div>  
           <div><input
             type="text"
             placeholder='City and State'
@@ -71,7 +73,6 @@ const Splash = React.createClass({
           <span className="input-group-btn">
           <button className="btn btn-secondary" type="button">Let's Go!</button>
           </span>
-          <button type="submit">Let's Go!</button>
         </div>
       </div>
     );

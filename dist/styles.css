@@ -25,16 +25,21 @@ body {
   text-align: center;
   font-weight: 400;
   font-family: 'Pacifico', sans-serif;
-  position: absolute;
+  position: relative;
+  top: 35%;
+  /*left: 39%;*/
+}
+
+.splashForm {
+  position: relative;
   top: 35%;
   left: 39%;
 }
 
-.splashForm {
-  position: absolute;
-  top: 35%;
-  left: 39%;
+.input-group-addon {
+  display: none;
 }
+
 
 /* NAVIGATION BAR ================================================ */
 nav {
