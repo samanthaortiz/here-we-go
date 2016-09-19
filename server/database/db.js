@@ -1,12 +1,16 @@
-let config = require('db.config.js')
+let config = require('./db.config.js')
 
 let knex = require('knex')({
   client: 'mysql',
   connection: {
-    host     : config.ip,
-    user     : process.env.username || config.username,
-    password : process.env.password || config.password,
-    database : process.env.database || config.name,
+    // host     : config.ip,
+    // user     : process.env.username || config.username,
+    // password : process.env.password || config.password,
+    // database : process.env.database || config.name,
+    host: 'mysqlcluster10.registeredsite.com',
+    user: 'diamondadmin',
+    password: '!Qaz2wsx3edc',
+    database: 'supernovamks',
     charset  : 'utf8'
   }
 });
@@ -44,8 +48,10 @@ db.knex.schema.hasTable('itineraries').then(exists => {
   if (!exists) {
     db.knex.schema.createTable('itineraries', itinerary => {
       itinerary.increments('id').primary();
-      itinerary.integer('user_id').references(user.id);
-      itinerary.integer('booking_id').references(booking.id);
+      itinerary.integer('user_id').unsigned();
+      itinerary.foreign('user_id').references('id').inTable('users');
+      itinerary.integer('booking_id').unsigned();
+      itinerary.foreign('booking_id').references('id').inTable('bookings');
       itinerary.timestamps();
     }).then(table => {
       console.log('Created Table', table);
@@ -66,4 +72,5 @@ db.knex.schema.hasTable('statuses').then(exists => {
   }
 });
 
-export default db;
+module.exports = db;
+// export default db;
