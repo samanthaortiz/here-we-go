@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+const App = React.createClass({
   render() {
     return (
       <div className="container">
-        { this.props.children }
+        { React.cloneElement(this.props.children, this.props) }
+
       </div>
     );
-  }
-}
+  } 
+})
 
 export default App;
