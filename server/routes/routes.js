@@ -1,23 +1,29 @@
 var router = require("express").Router();
 var request = require('request');
-
-var db = require('./db.js');
+var db = require('../database/db.js');
 var mysql = require('mysql');
-var Users = require ('./collections/Users.js')
 
 // DB ====================================================================== */
-router.get('/user-account', function(req, res) {
-  console.log('>>>>>>>>>> ENTER GET USER ACCOUNT FROM DB <<<<<<<<<<');
-
-  db.knex.select().table('users')
-    .then(function(rows) {
-      console.log('>>>>>>>>>> ROWS: ', rows);
-    });
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  db.knex.select('*')
+  .from('users')
+  .where({'username': req.query.username})
+  .then(function(user) {
+    res.send(user);
+  })
+  .catch(function(error) {
+    console.error(error)
+  });
 });
 
-
-
-
+// router.get('/user-account', function (req, res) {
+//   Users.fetch()
+//     .then(function(user) {
+//       console.log("SUCCESS: ", user);
+//       res.send(user);
+//     });
+// });
 
 // HOTEL SEARCH ============================================================ */
 router.post("/HotelSearch", function(req, res) {
@@ -32,14 +38,6 @@ router.post("/HotelSearch", function(req, res) {
       res.send(body);
     }
   });
-
-  // var urlAPI = 'https://api.meetup.com/2/categories?key=4e47134a736d2f51696c4b8653b684c&sign=true';
- 
-  // request({url: urlAPI}, function (error, response, body) {
-  //   if (!error && response.statusCode == 200) {
-  //     res.send(body);
-  //   }
-  // });
 
 });
 
