@@ -2,11 +2,13 @@ import React from 'React';
 
 const Hotel = React.createClass({
   render(){
-
+    const {hotel} = this.props.expediaInfo[0].hotelList;
     return (
       <figure className="hotel-figure">
         <div className="hotel-wrap">
-          { this.props.expediaInfo[0].hotelList[0].name }
+          {console.log('hotel', hotel.name)}
+          {hotel.name}
+          
         </div>
 
       </figure>

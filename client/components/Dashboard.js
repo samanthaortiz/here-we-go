@@ -13,7 +13,7 @@ const Dashboard = React.createClass({
 
 
           <div className="dashboard-container">
-           {this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
+           {this.props.expediaInfo[0].hotelList.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
 
             DASHBOARD
           </div>
