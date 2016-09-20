@@ -88,6 +88,7 @@ nav {
   list-style-position: inside;
 }
 
+/* DASHBOARD VIEW ========================================================== */
 article {
   margin: 0 auto;
   width: 95%;
@@ -95,11 +96,29 @@ article {
 
 .dashboard-container {
   border: 1px solid #999;
+  border-radius: 5px;
   padding: 20px;
 }
 
+.tile-hotel {
+  width: 45%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 2%;
+}
+
+div.tile-hotel:nth-child(even) {
+  float: right;
+}
+
+div.tile-hotel:nth-child(odd) {
+  float: left;
+  margin-right: 5%;
+}
+
 /* MEDIA QUERIES ============================================================ */
-@media (min-width: 1200px) {
+@media (max-width: 2000px) {
   .container {
     width: 100%;
   }

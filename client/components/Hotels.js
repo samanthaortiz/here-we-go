@@ -4,9 +4,11 @@ const Hotel = React.createClass({
   render(){
     var hotel = this.props;
     return (
-      <p>
+
+      <div className="tile-hotel">
         { this.props.hotelInfo.localizedName } 
-      </p>
+      </div>
+
     )
   }
 })
