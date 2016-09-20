@@ -61,19 +61,21 @@ const Splash = React.createClass({
         <h1 id='logo'>
           Here We Go!
         </h1>
-        </div>    
-        <div className="splashForm">
-          <div className="input-group" type='text'>
-            <input
-            type="text"
-            placeholder='City and State'
-            value={this.state.value}
-            onChange={this.handleChangeValue}
-            />
-            <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
-            <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>    
-            <a href="/dashboard"><button className="btn btn-secondary" type="button">Let's Go!</button></a>
-          </div>
+        </div>
+        <div>    
+          <form method="POST" action="/dashboard" className="splashForm">
+            <div className="input-group">
+              <input
+              type="text"
+              placeholder='City and State'
+              value={this.state.value}
+              onChange={this.handleChangeValue}
+              />
+              <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
+              <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>          
+              <button type="submit" className="btn btn-secondary">Let's Go!</button>
+            </div>
+          </form>
         </div>
       </div>
     );
