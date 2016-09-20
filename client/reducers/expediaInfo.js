@@ -4,12 +4,14 @@ const expediaInfo = (state = [], action) => {
   switch (action.type){
     case 'POST_EXPEDIA':
       return {
+        expediaInfo: action.expediaInfo,
         location: action.location,
         startDate: action.startDate,
         endDate: action.endDate
       }
+    default:
+      return state;
   }
-  return state;
 }
 
 export default expediaInfo

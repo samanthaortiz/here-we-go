@@ -37,7 +37,11 @@ const Splash = React.createClass({
   },
 
   componentDidMount() {
-    document.body.classList.toggle('splashClass', this.props.isSplash)
+    document.body.classList.toggle('splashClass')
+  },
+
+  componentWillUnmount(){
+    document.body.classList.toggle('splashClass')
   },
 
   onSubmit(e) {

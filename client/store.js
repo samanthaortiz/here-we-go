@@ -7,12 +7,12 @@ import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 
 //data = api call
-import expediaInfo from './data/dummyData'
+// import expediaInfo from './data/dummyData'
 
 //create an obj for default data
 
 const defaultState = {
-  expediaInfo
+  expediaInfo: []
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));

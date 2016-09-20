@@ -29,7 +29,7 @@ router.post('/user-account/', function(req, res) {
 router.post("/HotelSearch", function(req, res) {
   console.log('>> ENTER /HotelSearch');
 
-  var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.city+'&checkInDate='+req.body.checkInDate+'&checkOutDate='+req.body.checkOutDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+  var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { browserHistory } from 'react-router';
 //fire off actions 
 
 //find info?
@@ -12,17 +13,24 @@ export const postExpedia = (location, startDate, endDate) => {
   console.log(location, startDate, endDate);
   return function(dispatch){
     return axiosCall(location, startDate, endDate)
-    .then(data => {
-      console.log("HERE HERE HERE", data);
-      //dispatch(hydrateStore(data.location, data.startDate, data.endDate)))
+    .then(res => {
+      // dispatch({
+      //   type: 
+      //   data: response.data.hotelList
+      // })
+      console.log("HERE HERE HERE", res.data);
+      dispatch(hydrateStore(res.data, location, startDate, endDate))
+      browserHistory.push('/dashboard')
+
     })
     .catch(error => console.log(error));
   };
 };
 
-export function hydrateStore(location, startDate, endDate){
+export function hydrateStore(expediaInfo, location, startDate, endDate){
   return {
     type: 'POST_EXPEDIA',
+    expediaInfo,
     location,
     startDate,
     endDate
@@ -37,6 +45,13 @@ export function axiosCall(location, startDate, endDate){
       endDate: endDate
     });
 }
+
+// export function sendHotelData(list){
+//   return {
+//     type: 'SEND_HOTEL_DATA',
+//     expediaInfo: list
+//   }
+// }
 
 
 // function receiveData(json) {
