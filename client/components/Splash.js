@@ -53,6 +53,7 @@ const Splash = React.createClass({
   componentDidMount() {
     document.body.classList.toggle('splashClass', this.props.isSplash)
   },
+
   render() {
     return (
       <div>
@@ -71,7 +72,7 @@ const Splash = React.createClass({
             />
             <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
             <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>    
-            <button className="btn btn-secondary" type="button">Let's Go!</button>
+            <a href="/dashboard"><button className="btn btn-secondary" type="button">Let's Go!</button></a>
           </div>
         </div>
       </div>
