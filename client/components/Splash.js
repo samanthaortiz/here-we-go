@@ -59,7 +59,7 @@ const Splash = React.createClass({
           Here We Go!
         </h1>
         </div>
-        <div>    
+        <div>
           <form className="splashForm" onSubmit={this.onSubmit}>
 
             <div className="input-group">
