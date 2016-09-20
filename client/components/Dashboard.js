@@ -12,9 +12,8 @@ const Dashboard = React.createClass({
       <div>
         <NavigationBar/>
         <article>
-          <div className="dashboard-container">
-          {
-              //{this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
+          <div className="dashboard-container clearfix">
+            {
               this.props.expediaInfo[0].hotelList.map((hotel) =>
                 <Hotels
                   key={hotel.hotelId}

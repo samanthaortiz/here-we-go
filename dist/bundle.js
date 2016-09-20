@@ -2516,7 +2516,11 @@
 /* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	eval("'use strict';\nvar getWindow = __webpack_require__(400);\n\nmodule.exports = function scrollTop(node, val) {\n  var win = getWindow(node);\n\n  if (val === undefined) return win ? 'pageXOffset' in win ? win.pageXOffset : win.document.documentElement.scrollLeft : node.scrollLeft;\n\n  if (win) win.scrollTo(val, 'pageYOffset' in win ? win.pageYOffset : win.document.documentElement.scrollTop);else node.scrollLeft = val;\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/dom-helpers/query/scrollLeft.js\n ** module id = 412\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/dom-helpers/query/scrollLeft.js?");
+=======
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _NavigationBar = __webpack_require__(413);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _Hotels = __webpack_require__(414);\n\nvar _Hotels2 = _interopRequireDefault(_Hotels);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// \n// DASHBOARD COMPONENT ===================================================\nvar Dashboard = _react2.default.createClass({\n  displayName: 'Dashboard',\n  render: function render() {\n    var hotelsList = this.props.expediaInfo[0].hotelList;\n    return _react2.default.createElement(\n      'div',\n      null,\n      _react2.default.createElement(_NavigationBar2.default, null),\n      _react2.default.createElement(\n        'article',\n        null,\n        _react2.default.createElement(\n          'div',\n          { className: 'dashboard-container clearfix' },\n\n          //{this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}\n          this.props.expediaInfo[0].hotelList.map(function (hotel) {\n            return _react2.default.createElement(_Hotels2.default, {\n              key: hotel.hotelId,\n              hotelInfo: hotel\n            });\n          })\n        )\n      )\n    );\n  }\n});\n\nexports.default = Dashboard;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Dashboard.js\n ** module id = 412\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Dashboard.js?");
+>>>>>>> localBranch
 
 /***/ },
 /* 413 */
@@ -2528,7 +2532,11 @@
 /* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nexports.default = function (node, event, handler) {\n  (0, _on2.default)(node, event, handler);\n  return {\n    remove: function remove() {\n      (0, _off2.default)(node, event, handler);\n    }\n  };\n};\n\nvar _on = __webpack_require__(415);\n\nvar _on2 = _interopRequireDefault(_on);\n\nvar _off = __webpack_require__(416);\n\nvar _off2 = _interopRequireDefault(_off);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nmodule.exports = exports['default'];\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/react-overlays/lib/utils/addEventListener.js\n ** module id = 414\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/react-overlays/lib/utils/addEventListener.js?");
+=======
+	eval("\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _React = __webpack_require__(415);\n\nvar _React2 = _interopRequireDefault(_React);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Hotel = _React2.default.createClass({\n  displayName: \"Hotel\",\n  render: function render() {\n    var hotel = this.props;\n    return _React2.default.createElement(\n      \"div\",\n      { className: \"tile-hotel\" },\n      this.props.hotelInfo.localizedName\n    );\n  }\n});\n\nexports.default = Hotel;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Hotels.js\n ** module id = 414\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Hotels.js?");
+>>>>>>> localBranch
 
 /***/ },
 /* 415 */
