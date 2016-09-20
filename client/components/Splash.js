@@ -60,8 +60,12 @@ const Splash = React.createClass({
         </h1>
         </div>
         <div>    
+<<<<<<< e2994589554bc0df1915c5d931640e732a1cd211
           <form className="splashForm" onSubmit={this.onSubmit}>
 
+=======
+          <form method="post" action="/dashboard" className="splashForm">
+>>>>>>> refactor(): Clean up code for server routes
             <div className="input-group">
               <input
               type="text"

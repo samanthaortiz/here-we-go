@@ -34,6 +34,7 @@ router.post("/HotelSearch", function(req, res) {
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body);
+      // res.render('dashboard.html', body);
     }
   });
 });

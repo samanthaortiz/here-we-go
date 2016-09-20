@@ -11,7 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon",
     "start": "nodemon server/server.js --exec babel-node --presets es2015,stage-2",
-    "webpack": "webpack --progress --colors --watch"
+    "webpack": "webpack --progress --colors --watch",
+    "super": "nodemon server/server.js --exec babel-node --presets es2015,stage-2 | webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
