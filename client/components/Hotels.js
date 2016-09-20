@@ -4,7 +4,7 @@ const Hotel = React.createClass({
   render(){
     var hotel = this.props;
     return (
-      <div>
+      <div className="tile-hotel">
         <p>
           <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin=09%2F30%2F2016&chkout=10%2F02%2F2016"} target="_blank">
           { this.props.hotelInfo.localizedName }
