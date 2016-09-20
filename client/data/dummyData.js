@@ -1,10 +1,5 @@
 const dummyData = [
-<<<<<<< HEAD
   {
-=======
-
-{
->>>>>>> feature
   "numberOfRoomsRequested": 1,
   "filterUnavailableHotelsRequested": false,
   "totalHotelCount": 854,
@@ -13,7 +8,6 @@ const dummyData = [
   "searchRegionCity": "New York (and vicinity)",
   "deepLinkUrl": "https://www.expedia.com/New-York-Hotels.d178293.Travel-Guide-Hotels",
   "hotelList": [
-<<<<<<< HEAD
     {
       "sortIndex": "0",
       "hotelId": "41864",
@@ -111,105 +105,6 @@ const dummyData = [
       "isMobileExclusive": false
     },
     {
-=======
-    {
-      "sortIndex": "0",
-      "hotelId": "41864",
-      "name": "The Roosevelt Hotel, New York City",
-      "localizedName": "The Roosevelt Hotel, New York City",
-      "nonLocalizedName": "The Roosevelt Hotel, New York City",
-      "address": "45 E 45th Street",
-      "city": "New York",
-      "stateProvinceCode": "NY",
-      "countryCode": "USA",
-      "postalCode": "10017",
-      "airportCode": "LGA",
-      "supplierType": "MERCHANT",
-      "hotelStarRating": "4.0",
-      "hotelStarRatingCssClassName": "4-0",
-      "hotelGuestRating": "3.8",
-      "totalRecommendations": "13653",
-      "percentRecommended": "78",
-      "totalReviews": "17423",
-      "shortDescription": "Located at the corner of East 45th Street and Madison Avenue, the Roosevelt Hotel, New York City, provides ready access to shopping, as well as Broadway theaters, 3 blocks away.",
-      "locationDescription": "Midtown East - Grand Central",
-      "locationId": "6141525",
-      "lowRate": "449.13",
-      "lowRateInfo": {
-        "maxNightlyRate": "431.24",
-        "averageRate": "404.23",
-        "taxStatusType": "NONE",
-        "averageBaseRate": "449.13",
-        "nightlyRateTotal": "808.46",
-        "discountPercent": -10,
-        "total": "808.46",
-        "currencyCode": "USD",
-        "currencySymbol": "$",
-        "nightlyRatesPerRoom": [
-          {
-            "promo": "true",
-            "baseRate": "479.14",
-            "rate": "431.24"
-          },
-          {
-            "promo": "true",
-            "baseRate": "419.12",
-            "rate": "377.22"
-          }
-        ],
-        "priceToShowUsers": "404",
-        "strikethroughPriceToShowUsers": "449",
-        "strikethroughPriceWithTaxesAndFeesToShowUsers": "898",
-        "totalMandatoryFees": "30.00",
-        "mandatoryFees": [
-          {
-            "feeName": "Resort fee",
-            "amount": "30.00"
-          }
-        ],
-        "totalPriceWithMandatoryFees": "808.46",
-        "formattedTotalPriceWithMandatoryFees": "$ 808.46",
-        "userPriceType": "PerNightRateNoTaxes",
-        "priceAdjustments": [],
-        "checkoutPriceType": "total",
-        "airAttached": false,
-        "roomTypeCode": "200164920",
-        "ratePlanCode": "207648125",
-        "showResortFeeMessage": true,
-        "resortFeeInclusion": false
-      },
-      "rateCurrencyCode": "USD",
-      "rateCurrencySymbol": "$",
-      "roomsLeftAtThisRate": "83",
-      "latitude": "40.754581",
-      "longitude": "-73.977493",
-      "proximityDistanceInMiles": "0.4917956834890138",
-      "proximityDistanceInKiloMeters": "0.7912992547338232",
-      "largeThumbnailUrl": "/hotels/1000000/50000/41900/41864/41864_172_d.jpg",
-      "thumbnailUrl": "/hotels/1000000/50000/41900/41864/41864_172_n.jpg",
-      "discountMessage": "Book early and save 10%",
-      "isDiscountRestrictedToCurrentSourceType": false,
-      "isSameDayDRR": false,
-      "isHotelAvailable": true,
-      "notAvailableMessage": "",
-      "isSponsoredListing": false,
-      "hasFreeCancellation": false,
-      "distanceUnit": "Miles",
-      "didGetBackHighestPriceFromSurvey": false,
-      "isDudley": false,
-      "isVipAccess": true,
-      "isPaymentChoiceAvailable": false,
-      "isShowEtpChoice": false,
-      "jsonHotelBrand": {
-        "brandId": "0",
-        "brandName": "Independent"
-      },
-      "isMemberDeal": false,
-      "shortDiscountMessage": "Save 10%",
-      "isMobileExclusive": false
-    },
-    {
->>>>>>> feature
       "sortIndex": "1",
       "hotelId": "104193",
       "name": "The Belvedere Hotel",
@@ -1824,7 +1719,6 @@ const dummyData = [
             "promo": "true",
             "baseRate": "439.00",
             "rate": "351.20"
-<<<<<<< HEAD
           }
         ],
         "priceToShowUsers": "339",
@@ -1917,100 +1811,6 @@ const dummyData = [
             "rate": "260.10"
           }
         ],
-=======
-          }
-        ],
-        "priceToShowUsers": "339",
-        "strikethroughPriceToShowUsers": "424",
-        "strikethroughPriceWithTaxesAndFeesToShowUsers": "848",
-        "totalMandatoryFees": "0.00",
-        "totalPriceWithMandatoryFees": "678.40",
-        "formattedTotalPriceWithMandatoryFees": "$ 678.40",
-        "userPriceType": "PerNightRateNoTaxes",
-        "priceAdjustments": [],
-        "checkoutPriceType": "total",
-        "airAttached": false,
-        "roomTypeCode": "200172193",
-        "ratePlanCode": "200972416",
-        "showResortFeeMessage": false,
-        "resortFeeInclusion": false
-      },
-      "rateCurrencyCode": "USD",
-      "rateCurrencySymbol": "$",
-      "roomsLeftAtThisRate": "3",
-      "latitude": "40.782949",
-      "longitude": "-73.973846",
-      "proximityDistanceInMiles": "1.9318045484576891",
-      "proximityDistanceInKiloMeters": "3.1082735184684216",
-      "largeThumbnailUrl": "/hotels/1000000/50000/41100/41074/41074_15_d.jpg",
-      "thumbnailUrl": "/hotels/1000000/50000/41100/41074/41074_15_n.jpg",
-      "discountMessage": "Book early and save 20%",
-      "isDiscountRestrictedToCurrentSourceType": false,
-      "isSameDayDRR": false,
-      "isHotelAvailable": true,
-      "notAvailableMessage": "",
-      "isSponsoredListing": false,
-      "hasFreeCancellation": true,
-      "distanceUnit": "Miles",
-      "didGetBackHighestPriceFromSurvey": false,
-      "isDudley": false,
-      "isVipAccess": false,
-      "isPaymentChoiceAvailable": false,
-      "isShowEtpChoice": false,
-      "jsonHotelBrand": {
-        "brandId": "0",
-        "brandName": "Independent"
-      },
-      "isMemberDeal": false,
-      "shortDiscountMessage": "Save 20%",
-      "isMobileExclusive": false
-    },
-    {
-      "sortIndex": "19",
-      "hotelId": "42271",
-      "name": "Club Quarters Hotel, Wall Street",
-      "localizedName": "Club Quarters Hotel, Wall Street",
-      "nonLocalizedName": "Club Quarters Hotel, Wall Street",
-      "address": "52 William St",
-      "city": "New York",
-      "stateProvinceCode": "NY",
-      "countryCode": "USA",
-      "postalCode": "10005",
-      "airportCode": "JFK",
-      "supplierType": "MERCHANT",
-      "hotelStarRating": "4.0",
-      "hotelStarRatingCssClassName": "4-0",
-      "hotelGuestRating": "4.3",
-      "totalRecommendations": "3263",
-      "percentRecommended": "93",
-      "totalReviews": "3522",
-      "shortDescription": "Club-like hotel in a prime location a block from Wall Street and NYSE. Walking distance to Bowling Green Park, South Street Seaport, World Trade Center, and World Financial Center.",
-      "locationDescription": "Wall Street - Financial District",
-      "locationId": "800081",
-      "lowRate": "278.10",
-      "lowRateInfo": {
-        "maxNightlyRate": "296.10",
-        "averageRate": "278.10",
-        "taxStatusType": "NONE",
-        "averageBaseRate": "278.10",
-        "nightlyRateTotal": "556.20",
-        "discountPercent": 0,
-        "total": "556.20",
-        "currencyCode": "USD",
-        "currencySymbol": "$",
-        "nightlyRatesPerRoom": [
-          {
-            "promo": "false",
-            "baseRate": "296.10",
-            "rate": "296.10"
-          },
-          {
-            "promo": "false",
-            "baseRate": "260.10",
-            "rate": "260.10"
-          }
-        ],
->>>>>>> feature
         "priceToShowUsers": "278",
         "strikethroughPriceToShowUsers": "278",
         "strikethroughPriceWithTaxesAndFeesToShowUsers": "556",
@@ -2820,6 +2620,6 @@ const dummyData = [
   ],
   "hotelIdsMissingOrBadRegionIds": []
 }
-]
+];
 
-export default dummyData;
+export default dummyData

@@ -13,8 +13,6 @@ const Dashboard = React.createClass({
         <NavigationBar/>
         <article>
           <div className="dashboard-container">
-<<<<<<< HEAD
-            {
               //{this.props.expediaInfo.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
               this.props.expediaInfo[0].hotelList.map((hotel) =>
                 <Hotels
@@ -23,11 +21,6 @@ const Dashboard = React.createClass({
                 />
               )
             }
-=======
-           {this.props.expediaInfo[0].hotelList.map((info, i) => <Hotels {...this.props} key={i} info={info} />)}
-
-            DASHBOARD
->>>>>>> feature
           </div>
         </article>
       </div> 
