@@ -2,11 +2,12 @@ import React from 'React';
 
 const Hotel = React.createClass({
   render(){
+    var hotel = this.props;
     return (
-      <figure className="hotel-figure">
-        I am a hotel!
-      </figure>
-      )
+      <p>
+        { this.props.hotelInfo.localizedName } 
+      </p>
+    )
   }
 })
 
