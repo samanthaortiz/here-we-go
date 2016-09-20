@@ -63,7 +63,7 @@ const Splash = React.createClass({
         </h1>
         </div>
         <div>    
-          <form method="POST" action="/dashboard" className="splashForm">
+          <form method="post" action="/dashboard" className="splashForm">
             <div className="input-group">
               <input
               type="text"
