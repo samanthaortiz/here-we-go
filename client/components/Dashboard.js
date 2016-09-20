@@ -15,6 +15,7 @@ const Dashboard = React.createClass({
       <div className='outer-dashboard-container'>
         <NavigationBar/>
         <article>
+<<<<<<< 83af176425404f331ff532614ce189b34cef079b
           <div className="dashboard-container clearfix">
             {
               this.props.expediaInfo.expediaInfo.hotelList.map((hotel) =>
@@ -26,6 +27,14 @@ const Dashboard = React.createClass({
                 />
               )
             }
+=======
+
+
+          <div className="dashboard-container">
+            DASHBOARD
+            {this.props.expediaInfo[0].hotelList.map((hotel) => <Hotels key={hotel.hotelId} hotelInfo={hotel}/>
+              )}
+>>>>>>> DB Config added to gitignore
           </div>
         </article>
       </div> 
