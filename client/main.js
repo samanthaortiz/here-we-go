@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import store, { history } from './store';
 
 
-
 // APP PAGE <== ENTRY POINT TO APPLICATION
 import Master from './components/Master.js';
 

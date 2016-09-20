@@ -2,22 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { createStore } from 'redux';
 import DatePicker from 'react-bootstrap-date-picker';
+// import { expediaInfo } from '../actions/actionCreators';
 
-// function travel(state = [], action) {
-//   switch (action.type) {
-//     case 'ADD_LOC':
-//       return state.concat([ action.text ])
-//     default:
-//       return state
-//   }
-// }
-
-// let store = createStore(travel, [ 'Use Redux' ]);
-
-// store.dispatch({
-//   type: 'ADD_LOC',
-//   text: 'Read the docs'
-// })
 
 const Splash = React.createClass({
 
@@ -54,7 +40,14 @@ const Splash = React.createClass({
     document.body.classList.toggle('splashClass', this.props.isSplash)
   },
 
+  onSubmit(e) {
+    e.preventDefault();
+    this.props.postExpedia(this.state.city, this.state.startDate, this.state.endDate)
+  },
+
   render() {
+              // <form method="POST" action={this.post} className="splashForm">
+
     return (
       <div>
         <div>
@@ -63,7 +56,8 @@ const Splash = React.createClass({
         </h1>
         </div>
         <div>    
-          <form method="POST" action="/dashboard" className="splashForm">
+          <form className="splashForm" onSubmit={this.onSubmit}>
+
             <div className="input-group">
               <input
               type="text"
@@ -81,8 +75,4 @@ const Splash = React.createClass({
     );
   }
 });
-
-
-
-
 export default Splash;
