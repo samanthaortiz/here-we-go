@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 class NavigationBar extends Component {
   render() {
+    console.log('>>>>>>>>>>> ', this.props)
     return (
       <nav className="clearfix">
         <div className="logo">

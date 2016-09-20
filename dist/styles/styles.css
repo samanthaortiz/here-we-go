@@ -12,6 +12,12 @@ body {
   clear: both;
 }
 
+/* BOOTSTRAP STYLE FIXES */
+.container {
+  padding: 0 !important;
+}
+/* BOOTSTRAP STYLE FIXES */
+
 /* SPLASH PAGE =================================================== */
 .splashClass { 
   background: url('https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb');
@@ -48,7 +54,7 @@ body {
 /* NAVIGATION BAR ================================================ */
 
 nav {
-  background: #999;
+  background: #08BDBD;
   padding: 0 20px;
   margin-bottom: 20px;
 }
@@ -62,6 +68,7 @@ nav {
   font-weight: 400;
   font-family: 'Pacifico', sans-serif;
   margin: 10px 0;
+  line-height: 60px;
 }
 
 .logo a {
@@ -71,7 +78,7 @@ nav {
 
 .acct-menu {
   float: right;
-  line-height: 84px;
+  line-height: 80px;
 }
 
 .acct-menu ul {
@@ -87,5 +94,13 @@ article {
 }
 
 .dashboard-container {
-  border: 1px solid red;
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+/* MEDIA QUERIES ============================================================ */
+@media (min-width: 1200px) {
+  .container {
+    width: 100%;
+  }
 }
