@@ -59,8 +59,12 @@ const Splash = React.createClass({
           Here We Go!
         </h1>
         </div>
+<<<<<<< HEAD
         <div>    
 <<<<<<< e2994589554bc0df1915c5d931640e732a1cd211
+=======
+        <div>
+>>>>>>> localBranch
           <form className="splashForm" onSubmit={this.onSubmit}>
 
 =======

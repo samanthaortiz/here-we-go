@@ -25,7 +25,7 @@ router.post('/user-account/', function(req, res) {
 //     });
 // });
 
-// HOTEL SEARCH ============================================================ */
+// HOTEL SEARCH API ============================================================ */
 router.post("/HotelSearch", function(req, res) {
   console.log('>> ENTER /HotelSearch');
 
