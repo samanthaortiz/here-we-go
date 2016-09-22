@@ -50,19 +50,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
-<<<<<<< 58964e9c0b75cfe13c134378cc072e103e7324f9
 	eval("'use strict';\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(35);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _reactRedux = __webpack_require__(236);\n\nvar _store = __webpack_require__(265);\n\nvar _store2 = _interopRequireDefault(_store);\n\nvar _Master = __webpack_require__(274);\n\nvar _Master2 = _interopRequireDefault(_Master);\n\nvar _Splash = __webpack_require__(299);\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(443);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\nvar router = _react2.default.createElement(\n  _reactRedux.Provider,\n  { store: _store2.default },\n  _react2.default.createElement(\n    _reactRouter.Router,\n    { history: _store.history },\n    _react2.default.createElement(\n      _reactRouter.Route,\n      { path: '/', component: _Master2.default },\n      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Master2.default })\n    )\n  )\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n\n(0, _reactDom.render)(router, document.getElementById('root'));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/main.js\n ** module id = 1\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/main.js?");
-=======
-	eval("'use strict';\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(35);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _reactRedux = __webpack_require__(236);\n\nvar _store = __webpack_require__(265);\n\nvar _store2 = _interopRequireDefault(_store);\n\nvar _Master = __webpack_require__(274);\n\nvar _Master2 = _interopRequireDefault(_Master);\n\nvar _Splash = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components/Splash.js\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(443);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\nvar router = _react2.default.createElement(\n  _reactRedux.Provider,\n  { store: _store2.default },\n  _react2.default.createElement(\n    _reactRouter.Router,\n    { history: _store.history },\n    _react2.default.createElement(\n      _reactRouter.Route,\n      { path: '/', component: _Master2.default },\n      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Master2.default })\n    )\n  )\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n\n(0, _reactDom.render)(router, document.getElementById('root'));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/main.js\n ** module id = 1\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/main.js?");
->>>>>>> fix(): Testing out the issues
-=======
-	eval("'use strict';\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(35);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _reactRedux = __webpack_require__(236);\n\nvar _store = __webpack_require__(265);\n\nvar _store2 = _interopRequireDefault(_store);\n\nvar _Master = __webpack_require__(274);\n\nvar _Master2 = _interopRequireDefault(_Master);\n\nvar _Splash = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components/Splash.js\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(443);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\nvar router = _react2.default.createElement(\n  _reactRedux.Provider,\n  { store: _store2.default },\n  _react2.default.createElement(\n    _reactRouter.Router,\n    { history: _store.history },\n    _react2.default.createElement(\n      _reactRouter.Route,\n      { path: '/', component: _Master2.default },\n      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Master2.default })\n    )\n  )\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n\n(0, _reactDom.render)(router, document.getElementById('root'));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/main.js\n ** module id = 1\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/main.js?");
->>>>>>> chore(): Preparing to deploy
-=======
-	eval("'use strict';\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(35);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _reactRedux = __webpack_require__(236);\n\nvar _store = __webpack_require__(265);\n\nvar _store2 = _interopRequireDefault(_store);\n\nvar _Master = __webpack_require__(274);\n\nvar _Master2 = _interopRequireDefault(_Master);\n\nvar _Splash = __webpack_require__(!(function webpackMissingModule() { var e = new Error(\"Cannot find module \\\"./components/Splash.js\\\"\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\nvar _Splash2 = _interopRequireDefault(_Splash);\n\nvar _Dashboard = __webpack_require__(443);\n\nvar _Dashboard2 = _interopRequireDefault(_Dashboard);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// DASHBOARD PAGE\n\n\n// APP PAGE <== ENTRY POINT TO APPLICATION\nvar router = _react2.default.createElement(\n  _reactRedux.Provider,\n  { store: _store2.default },\n  _react2.default.createElement(\n    _reactRouter.Router,\n    { history: _store.history },\n    _react2.default.createElement(\n      _reactRouter.Route,\n      { path: '/', component: _Master2.default },\n      _react2.default.createElement(_reactRouter.IndexRoute, { component: _Splash2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: 'dashboard', component: _Dashboard2.default }),\n      _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Master2.default })\n    )\n  )\n);\n\n// DASHBOARD PAGE\n\n\n// SPLASH PAGE\n\n\n(0, _reactDom.render)(router, document.getElementById('root'));\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/main.js\n ** module id = 1\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/main.js?");
->>>>>>> 0f9d718da6f34aa3acb17874c6872aff847438e0
 
 /***/ },
 /* 2 */
@@ -1831,9 +1819,6 @@
 /***/ },
 /* 296 */
 /***/ function(module, exports) {
-<<<<<<< HEAD
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
-<<<<<<< 58964e9c0b75cfe13c134378cc072e103e7324f9
 
 	eval("'use strict';\n\n/**\n * Creates a new URL by combining the specified URLs\n *\n * @param {string} baseURL The base URL\n * @param {string} relativeURL The relative URL\n * @returns {string} The combined URL\n */\nmodule.exports = function combineURLs(baseURL, relativeURL) {\n  return baseURL.replace(/\\/+$/, '') + '/' + relativeURL.replace(/^\\/+/, '');\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/combineURLs.js\n ** module id = 296\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/combineURLs.js?");
 
@@ -2094,16 +2079,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("// 7.1.13 ToObject(argument)\nvar defined = __webpack_require__(328);\nmodule.exports = function(it){\n  return Object(defined(it));\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_to-object.js\n ** module id = 339\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_to-object.js?");
-=======
-
-	eval("'use strict';\n\n/**\n * Creates a new URL by combining the specified URLs\n *\n * @param {string} baseURL The base URL\n * @param {string} relativeURL The relative URL\n * @returns {string} The combined URL\n */\nmodule.exports = function combineURLs(baseURL, relativeURL) {\n  return baseURL.replace(/\\/+$/, '') + '/' + relativeURL.replace(/^\\/+/, '');\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/combineURLs.js\n ** module id = 296\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/combineURLs.js?");
->>>>>>> chore(): Preparing to deploy
 
 /***/ },
 /* 340 */
 /***/ function(module, exports) {
 
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
 	eval("\"use strict\";\n\nexports.__esModule = true;\n\nexports.default = function (obj, keys) {\n  var target = {};\n\n  for (var i in obj) {\n    if (keys.indexOf(i) >= 0) continue;\n    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;\n    target[i] = obj[i];\n  }\n\n  return target;\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/helpers/objectWithoutProperties.js\n ** module id = 340\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/helpers/objectWithoutProperties.js?");
 
 /***/ },
@@ -2177,37 +2157,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("'use strict';\nvar create         = __webpack_require__(353)\n  , descriptor     = __webpack_require__(320)\n  , setToStringTag = __webpack_require__(356)\n  , IteratorPrototype = {};\n\n// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()\n__webpack_require__(311)(IteratorPrototype, __webpack_require__(357)('iterator'), function(){ return this; });\n\nmodule.exports = function(Constructor, NAME, next){\n  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});\n  setToStringTag(Constructor, NAME + ' Iterator');\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_iter-create.js\n ** module id = 352\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_iter-create.js?");
-=======
-
-	eval("'use strict';\n\n/**\n * Creates a new URL by combining the specified URLs\n *\n * @param {string} baseURL The base URL\n * @param {string} relativeURL The relative URL\n * @returns {string} The combined URL\n */\nmodule.exports = function combineURLs(baseURL, relativeURL) {\n  return baseURL.replace(/\\/+$/, '') + '/' + relativeURL.replace(/^\\/+/, '');\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/combineURLs.js\n ** module id = 296\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/combineURLs.js?");
 
 /***/ },
-/* 297 */
-/***/ function(module, exports) {
-
-	eval("'use strict';\n\n/**\n * Syntactic sugar for invoking a function and expanding an array for arguments.\n *\n * Common use case would be to use `Function.prototype.apply`.\n *\n *  ```js\n *  function f(x, y, z) {}\n *  var args = [1, 2, 3];\n *  f.apply(null, args);\n *  ```\n *\n * With `spread` this example can be re-written.\n *\n *  ```js\n *  spread(function(x, y, z) {})([1, 2, 3]);\n *  ```\n *\n * @param {Function} callback\n * @returns {Function}\n */\nmodule.exports = function spread(callback) {\n  return function wrap(arr) {\n    return callback.apply(null, arr);\n  };\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/spread.js\n ** module id = 297\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/spread.js?");
->>>>>>> fix(): Testing out the issues
-=======
-	eval("'use strict';\n\n/**\n * Syntactic sugar for invoking a function and expanding an array for arguments.\n *\n * Common use case would be to use `Function.prototype.apply`.\n *\n *  ```js\n *  function f(x, y, z) {}\n *  var args = [1, 2, 3];\n *  f.apply(null, args);\n *  ```\n *\n * With `spread` this example can be re-written.\n *\n *  ```js\n *  spread(function(x, y, z) {})([1, 2, 3]);\n *  ```\n *\n * @param {Function} callback\n * @returns {Function}\n */\nmodule.exports = function spread(callback) {\n  return function wrap(arr) {\n    return callback.apply(null, arr);\n  };\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/spread.js\n ** module id = 297\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/spread.js?");
->>>>>>> chore(): Preparing to deploy
-=======
-
-	eval("'use strict';\n\n/**\n * Creates a new URL by combining the specified URLs\n *\n * @param {string} baseURL The base URL\n * @param {string} relativeURL The relative URL\n * @returns {string} The combined URL\n */\nmodule.exports = function combineURLs(baseURL, relativeURL) {\n  return baseURL.replace(/\\/+$/, '') + '/' + relativeURL.replace(/^\\/+/, '');\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/combineURLs.js\n ** module id = 296\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/combineURLs.js?");
-
-/***/ },
-/* 297 */
-/***/ function(module, exports) {
-
-	eval("'use strict';\n\n/**\n * Syntactic sugar for invoking a function and expanding an array for arguments.\n *\n * Common use case would be to use `Function.prototype.apply`.\n *\n *  ```js\n *  function f(x, y, z) {}\n *  var args = [1, 2, 3];\n *  f.apply(null, args);\n *  ```\n *\n * With `spread` this example can be re-written.\n *\n *  ```js\n *  spread(function(x, y, z) {})([1, 2, 3]);\n *  ```\n *\n * @param {Function} callback\n * @returns {Function}\n */\nmodule.exports = function spread(callback) {\n  return function wrap(arr) {\n    return callback.apply(null, arr);\n  };\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/axios/lib/helpers/spread.js\n ** module id = 297\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/axios/lib/helpers/spread.js?");
->>>>>>> 0f9d718da6f34aa3acb17874c6872aff847438e0
-
-/***/ },
-/* 298 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
-<<<<<<< 58964e9c0b75cfe13c134378cc072e103e7324f9
 	eval("// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])\nvar anObject    = __webpack_require__(313)\n  , dPs         = __webpack_require__(354)\n  , enumBugKeys = __webpack_require__(336)\n  , IE_PROTO    = __webpack_require__(333)('IE_PROTO')\n  , Empty       = function(){ /* empty */ }\n  , PROTOTYPE   = 'prototype';\n\n// Create object with fake `null` prototype: use iframe Object with cleared prototype\nvar createDict = function(){\n  // Thrash, waste and sodomy: IE GC bug\n  var iframe = __webpack_require__(318)('iframe')\n    , i      = enumBugKeys.length\n    , lt     = '<'\n    , gt     = '>'\n    , iframeDocument;\n  iframe.style.display = 'none';\n  __webpack_require__(355).appendChild(iframe);\n  iframe.src = 'javascript:'; // eslint-disable-line no-script-url\n  // createDict = iframe.contentWindow.Object;\n  // html.removeChild(iframe);\n  iframeDocument = iframe.contentWindow.document;\n  iframeDocument.open();\n  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);\n  iframeDocument.close();\n  createDict = iframeDocument.F;\n  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];\n  return createDict();\n};\n\nmodule.exports = Object.create || function create(O, Properties){\n  var result;\n  if(O !== null){\n    Empty[PROTOTYPE] = anObject(O);\n    result = new Empty;\n    Empty[PROTOTYPE] = null;\n    // add \"__proto__\" for Object.getPrototypeOf polyfill\n    result[IE_PROTO] = O;\n  } else result = createDict();\n  return Properties === undefined ? result : dPs(result, Properties);\n};\n\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_object-create.js\n ** module id = 353\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_object-create.js?");
 
 /***/ },
@@ -2215,336 +2169,17 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("var dP       = __webpack_require__(312)\n  , anObject = __webpack_require__(313)\n  , getKeys  = __webpack_require__(322);\n\nmodule.exports = __webpack_require__(316) ? Object.defineProperties : function defineProperties(O, Properties){\n  anObject(O);\n  var keys   = getKeys(Properties)\n    , length = keys.length\n    , i = 0\n    , P;\n  while(length > i)dP.f(O, P = keys[i++], Properties[P]);\n  return O;\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_object-dps.js\n ** module id = 354\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_object-dps.js?");
-=======
-=======
->>>>>>> chore(): Preparing to deploy
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(173);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = _react2.default.createClass({\n  displayName: 'App',\n  render: function render() {\n    return _react2.default.createElement(\n      'div',\n      { className: 'container' },\n      _react2.default.cloneElement(this.props.children, this.props)\n    );\n  }\n});\n\nexports.default = App;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/App.js\n ** module id = 298\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/App.js?");
 
 /***/ },
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */
+/* 355 */
 /***/ function(module, exports, __webpack_require__) {
 
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _Hotels = __webpack_require__(445);\n\nvar _Hotels2 = _interopRequireDefault(_Hotels);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// \n// DASHBOARD COMPONENT ===================================================\nvar Dashboard = _react2.default.createClass({\n  displayName: 'Dashboard',\n  render: function render() {\n    console.log(this.props.expediaInfo.startDate, this.props.expediaInfo.endDate);\n    var startDate = this.props.expediaInfo.startDate;\n    var endDate = this.props.expediaInfo.endDate;\n\n    return _react2.default.createElement(\n      'div',\n      { className: 'outer-dashboard-container' },\n      _react2.default.createElement(_NavigationBar2.default, null),\n      _react2.default.createElement(\n        'article',\n        null,\n        _react2.default.createElement(\n          'div',\n          { className: 'dashboard-container clearfix' },\n          this.props.expediaInfo.expediaInfo.hotelList.map(function (hotel) {\n            return _react2.default.createElement(_Hotels2.default, {\n              key: hotel.hotelId,\n              hotelInfo: hotel,\n              startDate: startDate,\n              endDate: endDate\n            });\n          })\n        )\n      )\n    );\n  }\n});\n\nexports.default = Dashboard;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Dashboard.js\n ** module id = 443\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Dashboard.js?");
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
->>>>>>> fix(): Testing out the issues
-=======
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouter = __webpack_require__(173);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar App = _react2.default.createClass({\n  displayName: 'App',\n  render: function render() {\n    return _react2.default.createElement(\n      'div',\n      { className: 'container' },\n      _react2.default.cloneElement(this.props.children, this.props)\n    );\n  }\n});\n\nexports.default = App;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/App.js\n ** module id = 298\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/App.js?");
-
-/***/ },
-/* 299 */,
-/* 300 */,
-/* 301 */,
-/* 302 */,
-/* 303 */,
-/* 304 */,
-/* 305 */,
-/* 306 */,
-/* 307 */,
-/* 308 */,
-/* 309 */,
-/* 310 */,
-/* 311 */,
-/* 312 */,
-/* 313 */,
-/* 314 */,
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */,
-/* 319 */,
-/* 320 */,
-/* 321 */,
-/* 322 */,
-/* 323 */,
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */,
-/* 340 */,
-/* 341 */,
-/* 342 */,
-/* 343 */,
-/* 344 */,
-/* 345 */,
-/* 346 */,
-/* 347 */,
-/* 348 */,
-/* 349 */,
-/* 350 */,
-/* 351 */,
-/* 352 */,
-/* 353 */,
-/* 354 */,
-/* 355 */,
-/* 356 */,
-/* 357 */,
-/* 358 */,
-/* 359 */,
-/* 360 */,
-/* 361 */,
-/* 362 */,
-/* 363 */,
-/* 364 */,
-/* 365 */,
-/* 366 */,
-/* 367 */,
-/* 368 */,
-/* 369 */,
-/* 370 */,
-/* 371 */,
-/* 372 */,
-/* 373 */,
-/* 374 */,
-/* 375 */,
-/* 376 */,
-/* 377 */,
-/* 378 */,
-/* 379 */,
-/* 380 */,
-/* 381 */,
-/* 382 */,
-/* 383 */,
-/* 384 */,
-/* 385 */,
-/* 386 */,
-/* 387 */,
-/* 388 */,
-/* 389 */,
-/* 390 */,
-/* 391 */,
-/* 392 */,
-/* 393 */,
-/* 394 */,
-/* 395 */,
-/* 396 */,
-/* 397 */,
-/* 398 */,
-/* 399 */,
-/* 400 */,
-/* 401 */,
-/* 402 */,
-/* 403 */,
-/* 404 */,
-/* 405 */,
-/* 406 */,
-/* 407 */,
-/* 408 */,
-/* 409 */,
-/* 410 */,
-/* 411 */,
-/* 412 */,
-/* 413 */,
-/* 414 */,
-/* 415 */,
-/* 416 */,
-/* 417 */,
-/* 418 */,
-/* 419 */,
-/* 420 */,
-/* 421 */,
-/* 422 */,
-/* 423 */,
-/* 424 */,
-/* 425 */,
-/* 426 */,
-/* 427 */,
-/* 428 */,
-/* 429 */,
-/* 430 */,
-/* 431 */,
-/* 432 */,
-/* 433 */,
-/* 434 */,
-/* 435 */,
-/* 436 */,
-/* 437 */,
-/* 438 */,
-/* 439 */,
-/* 440 */,
-/* 441 */,
-/* 442 */,
-/* 443 */
-/***/ function(module, exports, __webpack_require__) {
-
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _Hotels = __webpack_require__(445);\n\nvar _Hotels2 = _interopRequireDefault(_Hotels);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// \n// DASHBOARD COMPONENT ===================================================\nvar Dashboard = _react2.default.createClass({\n  displayName: 'Dashboard',\n  render: function render() {\n    console.log(this.props.expediaInfo.startDate, this.props.expediaInfo.endDate);\n    var startDate = this.props.expediaInfo.startDate;\n    var endDate = this.props.expediaInfo.endDate;\n\n    return _react2.default.createElement(\n      'div',\n      { className: 'outer-dashboard-container' },\n      _react2.default.createElement(_NavigationBar2.default, null),\n      _react2.default.createElement(\n        'article',\n        null,\n        _react2.default.createElement(\n          'div',\n          { className: 'dashboard-container clearfix' },\n          this.props.expediaInfo.expediaInfo.hotelList.map(function (hotel) {\n            return _react2.default.createElement(_Hotels2.default, {\n              key: hotel.hotelId,\n              hotelInfo: hotel,\n              startDate: startDate,\n              endDate: endDate\n            });\n          })\n        )\n      )\n    );\n  }\n});\n\nexports.default = Dashboard;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Dashboard.js\n ** module id = 443\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Dashboard.js?");
->>>>>>> 0f9d718da6f34aa3acb17874c6872aff847438e0
-
-/***/ },
-/* 444 */
-/***/ function(module, exports, __webpack_require__) {
-
-<<<<<<< HEAD
-<<<<<<< 58964e9c0b75cfe13c134378cc072e103e7324f9
 	eval("module.exports = __webpack_require__(307).document && document.documentElement;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_html.js\n ** module id = 355\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_html.js?");
-=======
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // NAVIGATION BAR COMPONENT ===================================================\n\n\nvar NavigationBar = function (_Component) {\n  _inherits(NavigationBar, _Component);\n\n  function NavigationBar() {\n    _classCallCheck(this, NavigationBar);\n\n    return _possibleConstructorReturn(this, (NavigationBar.__proto__ || Object.getPrototypeOf(NavigationBar)).apply(this, arguments));\n  }\n\n  _createClass(NavigationBar, [{\n    key: 'render',\n    value: function render() {\n      console.log('>>>>>>>>>>> ', this.props);\n      return _react2.default.createElement(\n        'nav',\n        { className: 'clearfix' },\n        _react2.default.createElement(\n          'div',\n          { className: 'logo' },\n          _react2.default.createElement(\n            'h1',\n            null,\n            _react2.default.createElement(\n              'a',\n              { href: '/' },\n              'Here We Go!'\n            )\n          )\n        ),\n        _react2.default.createElement(\n          'div',\n          { className: 'acct-menu' },\n          _react2.default.createElement(\n            'ul',\n            null,\n            _react2.default.createElement(\n              'li',\n              null,\n              'username'\n            )\n          )\n        )\n      );\n    }\n  }]);\n\n  return NavigationBar;\n}(_react.Component);\n\nexports.default = NavigationBar;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/NavigationBar.js\n ** module id = 444\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/NavigationBar.js?");
->>>>>>> fix(): Testing out the issues
-=======
-	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\"); } return call && (typeof call === \"object\" || typeof call === \"function\") ? call : self; }\n\nfunction _inherits(subClass, superClass) { if (typeof superClass !== \"function\" && superClass !== null) { throw new TypeError(\"Super expression must either be null or a function, not \" + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // NAVIGATION BAR COMPONENT ===================================================\n\n\nvar NavigationBar = function (_Component) {\n  _inherits(NavigationBar, _Component);\n\n  function NavigationBar() {\n    _classCallCheck(this, NavigationBar);\n\n    return _possibleConstructorReturn(this, (NavigationBar.__proto__ || Object.getPrototypeOf(NavigationBar)).apply(this, arguments));\n  }\n\n  _createClass(NavigationBar, [{\n    key: 'render',\n    value: function render() {\n      console.log('>>>>>>>>>>> ', this.props);\n      return _react2.default.createElement(\n        'nav',\n        { className: 'clearfix' },\n        _react2.default.createElement(\n          'div',\n          { className: 'logo' },\n          _react2.default.createElement(\n            'h1',\n            null,\n            _react2.default.createElement(\n              'a',\n              { href: '/' },\n              'Here We Go!'\n            )\n          )\n        ),\n        _react2.default.createElement(\n          'div',\n          { className: 'acct-menu' },\n          _react2.default.createElement(\n            'ul',\n            null,\n            _react2.default.createElement(\n              'li',\n              null,\n              'username'\n            )\n          )\n        )\n      );\n    }\n  }]);\n\n  return NavigationBar;\n}(_react.Component);\n\nexports.default = NavigationBar;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/NavigationBar.js\n ** module id = 444\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/NavigationBar.js?");
->>>>>>> 0f9d718da6f34aa3acb17874c6872aff847438e0
 
 /***/ },
-/* 445 */
+/* 356 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-<<<<<<< 58964e9c0b75cfe13c134378cc072e103e7324f9
 	eval("var def = __webpack_require__(312).f\n  , has = __webpack_require__(324)\n  , TAG = __webpack_require__(357)('toStringTag');\n\nmodule.exports = function(it, tag, stat){\n  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});\n};\n\n/*****************\n ** WEBPACK FOOTER\n ** ./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_set-to-string-tag.js\n ** module id = 356\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./~/react-bootstrap/~/babel-runtime/~/core-js/library/modules/_set-to-string-tag.js?");
 
 /***/ },
@@ -3068,8 +2703,6 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _NavigationBar = __webpack_require__(444);\n\nvar _NavigationBar2 = _interopRequireDefault(_NavigationBar);\n\nvar _reactRouter = __webpack_require__(173);\n\nvar _Hotels = __webpack_require__(445);\n\nvar _Hotels2 = _interopRequireDefault(_Hotels);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// \n// DASHBOARD COMPONENT ===================================================\nvar Dashboard = _react2.default.createClass({\n  displayName: 'Dashboard',\n  render: function render() {\n    console.log(this.props.expediaInfo.startDate, this.props.expediaInfo.endDate);\n    var startDate = this.props.expediaInfo.startDate;\n    var endDate = this.props.expediaInfo.endDate;\n\n    return _react2.default.createElement(\n      'div',\n      { className: 'outer-dashboard-container' },\n      _react2.default.createElement(_NavigationBar2.default, null),\n      _react2.default.createElement(\n        'article',\n        null,\n        _react2.default.createElement(\n          'div',\n          { className: 'dashboard-container clearfix' },\n          this.props.expediaInfo.expediaInfo.hotelList.map(function (hotel) {\n            return _react2.default.createElement(_Hotels2.default, {\n              key: hotel.hotelId,\n              hotelInfo: hotel,\n              startDate: startDate,\n              endDate: endDate\n            });\n          })\n        )\n      )\n    );\n  }\n});\n\nexports.default = Dashboard;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Dashboard.js\n ** module id = 443\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Dashboard.js?");
-=======
->>>>>>> chore(): Preparing to deploy
 
 /***/ },
 /* 444 */
@@ -3081,13 +2714,6 @@
 /* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
-<<<<<<< c5fa20acf2f25e12c80e55c4f623a5ec882cd245
-=======
->>>>>>> fix(): Testing out the issues
-=======
->>>>>>> chore(): Preparing to deploy
-=======
->>>>>>> 0f9d718da6f34aa3acb17874c6872aff847438e0
 	eval("\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Hotel = _react2.default.createClass({\n  displayName: \"Hotel\",\n  changeDate: function changeDate(date) {\n    var newDate = date.split(\"-\").join(\"/\");\n    var year = newDate.slice(0, 4);\n    var monthDay = newDate.slice(5);\n    return monthDay += '/' + year;\n  },\n  render: function render() {\n    var hotel = this.props;\n    // console.log('hotel',hotel);\n\n\n    return _react2.default.createElement(\n      \"div\",\n      { className: \"tile-hotel\" },\n      _react2.default.createElement(\n        \"p\",\n        null,\n        _react2.default.createElement(\n          \"a\",\n          { href: \"https://www.expedia.com/New-York-Hotels.h\" + this.props.hotelInfo.hotelId + \".Hotel-Information?rfrr=TG.LP.TopHotels#chkin=\" + this.changeDate(this.props.startDate) + \"&chkout=\" + this.changeDate(this.props.endDate), target: \"_blank\" },\n          this.props.hotelInfo.localizedName\n        )\n      ),\n      _react2.default.createElement(\n        \"p\",\n        null,\n        _react2.default.createElement(\"img\", { src: 'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl })\n      ),\n      _react2.default.createElement(\n        \"p\",\n        null,\n        \"$\",\n        this.props.hotelInfo.lowRate,\n        \" per night\"\n      ),\n      _react2.default.createElement(\n        \"p\",\n        null,\n        this.props.hotelInfo.shortDescription\n      )\n    );\n  }\n});\n\nexports.default = Hotel;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/Hotels.js\n ** module id = 445\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/Hotels.js?");
 
 /***/ }
