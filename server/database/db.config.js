@@ -6,4 +6,4 @@ let dbConfig = {
     name: "supernovamks"
   }
 
-  module.exports = dbConfig;
+module.exports = dbConfig;
