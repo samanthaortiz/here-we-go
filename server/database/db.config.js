@@ -1,8 +1,11 @@
+<<<<<<< bde52a8086ae8030e35071aa8742dbb8c6e090a4
 <<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 <<<<<<< d7af8130c6248c7501cea2deb90216b9b657a5be
 =======
 <<<<<<< dbaf5414371c9deb4dc2767edd900503bb36fa92
 >>>>>>> Deploying
+=======
+>>>>>>> Merge conflicts resolved
 var dbConfig = {
   ip: "mysqlcluster10.registeredsite.com",
   alias: "mysqlcluster10",
@@ -11,6 +14,7 @@ var dbConfig = {
   name: "supernovamks"
 }
 
+<<<<<<< bde52a8086ae8030e35071aa8742dbb8c6e090a4
 <<<<<<< b75b6d88384ab93feb888f43775e3612e32dfcf1
 <<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 <<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
@@ -92,3 +96,6 @@ module.exports = dbConfig;
 module.exports = dbConfig;
 >>>>>>> adding db config edits
 >>>>>>> adding db config edits
+=======
+module.exports = dbConfig;
+>>>>>>> Merge conflicts resolved

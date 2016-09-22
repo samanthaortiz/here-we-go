@@ -1,3 +1,4 @@
+<<<<<<< bde52a8086ae8030e35071aa8742dbb8c6e090a4
 <<<<<<< c6c5d4f79b3b1d68b1ffe3dea9be9c7ccd45a798
 <<<<<<< a8d650fc3d99759ef4ddff56828387bbe9ca6458
 <<<<<<< d271b30898a20855fef56c260791544999e4f1cc
@@ -66,6 +67,10 @@ let config = require('./db.config.js')
 =======
 <<<<<<< dbaf5414371c9deb4dc2767edd900503bb36fa92
 >>>>>>> Deploying
+=======
+var config = require('./db.config.js')
+
+>>>>>>> Merge conflicts resolved
 var knex = require('knex')({
  client: 'mysql',
  connection: {
@@ -74,6 +79,7 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+<<<<<<< bde52a8086ae8030e35071aa8742dbb8c6e090a4
 <<<<<<< c6c5d4f79b3b1d68b1ffe3dea9be9c7ccd45a798
 <<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 <<<<<<< 71ef351ded24b9e61b09497f2176d37e12e159db
@@ -151,6 +157,9 @@ let knex = require('knex')({
 
 =======
 >>>>>>> Adding changes to db.js
+=======
+});
+>>>>>>> Merge conflicts resolved
 
 var db = require('bookshelf')(knex);
 
