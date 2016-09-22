@@ -8,6 +8,7 @@ var dbConfig = {
 }
 
 module.exports = dbConfig;
+<<<<<<< 7f5bb72c96d86ab8616cec53951edd950beb0e9f
 =======
 let dbConfig = {
     ip: "mysqlcluster10.registeredsite.com",
@@ -23,3 +24,5 @@ let dbConfig = {
 =======
 module.exports = dbConfig;
 >>>>>>> deployment errors
+=======
+>>>>>>> Deploying
