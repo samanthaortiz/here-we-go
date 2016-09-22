@@ -1,5 +1,9 @@
+<<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
 <<<<<<< 1d4e8afaaed045e12a21a2d40da59aa350eec703
 <<<<<<< 5784f7964b50b4ce9c31868f850e9845d72b2629
+=======
+<<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
+>>>>>>> deployment errors
 var config = require('./db.config.js')
 =======
 // let config = require('./db.config.js')
@@ -18,6 +22,7 @@ var knex = require('knex')({
    database : process.env.database || config.name
  }
 =======
+<<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
 let knex = require('knex')({
   client: 'mysql',
   connection: {
@@ -27,6 +32,19 @@ let knex = require('knex')({
     database : process.env.database || config.name
   }
 >>>>>>> Deploying
+=======
+// let config = require('./db.config.js')
+
+let knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host     : process.env.ip //|| config.ip,
+    user     : process.env.username //|| config.username,
+    password : process.env.password //|| config.password,
+    database : process.env.database //|| config.name
+  }
+>>>>>>> deployment errors
+>>>>>>> deployment errors
 });
 
 var db = require('bookshelf')(knex);
