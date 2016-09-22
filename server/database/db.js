@@ -1,28 +1,3 @@
-<<<<<<< HEAD
-let config = require('./db.config.js');
-
-let knex = require('knex')({
-  client: 'mysql',
-  connection: {
-    // HEROKU CONNECTION
-    // host     : process.env.ip,
-    // user     : process.env.username,
-    // password : process.env.password,
-    // database : process.env.database,
-
-    // LOCAL CONNEC
-    host     : process.env.ip || config.ip,
-    user     : process.env.username || config.username,
-    password : process.env.password || config.password,
-    database : process.env.database || config.name,
-
-    // host: 'mysqlcluster10.registeredsite.com',
-    // user: 'diamondadmin',
-    // password: '!Qaz2wsx3edc',
-    // database: 'supernovamks',
-    charset  : 'utf8'
-  }
-=======
 var config = require('./db.config.js')
 
 var knex = require('knex')({
@@ -33,7 +8,6 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
->>>>>>> dev
 });
 
 var db = require('bookshelf')(knex);
