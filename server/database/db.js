@@ -1,3 +1,4 @@
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 <<<<<<< 1349c5366b651fa5bc35065de7a2274e21bc20e9
 <<<<<<< bf8f52ea20882d8f4170d14634f2158b9c2dcf10
 <<<<<<< 71ef351ded24b9e61b09497f2176d37e12e159db
@@ -15,9 +16,17 @@
 >>>>>>> Adding changes to db.js
 =======
 =======
+=======
+<<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
+>>>>>>> deployment errors
 <<<<<<< 1d4e8afaaed045e12a21a2d40da59aa350eec703
 >>>>>>> Deploy fixes
 <<<<<<< 5784f7964b50b4ce9c31868f850e9845d72b2629
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
+=======
+=======
+<<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
+>>>>>>> deployment errors
 >>>>>>> deployment errors
 var config = require('./db.config.js')
 =======
@@ -54,8 +63,12 @@ var knex = require('knex')({
 =======
 <<<<<<< 1c237a58f1bdc8cc323865f173d6ca43135f54c7
 =======
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 =======
 >>>>>>> Deploying
+=======
+<<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
+>>>>>>> deployment errors
 let knex = require('knex')({
   client: 'mysql',
   connection: {
@@ -65,16 +78,22 @@ let knex = require('knex')({
     database : process.env.database || config.name
   }
 >>>>>>> Deploying
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 <<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 =======
 // let config = require('./db.config.js')
 =======
 let config = require('./db.config.js')
 >>>>>>> Deploy fixes
+=======
+=======
+// let config = require('./db.config.js')
+>>>>>>> deployment errors
 
 let knex = require('knex')({
   client: 'mysql',
   connection: {
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
     host     : process.env.ip || config.ip,
     user     : process.env.username || config.username,
     password : process.env.password || config.password,
@@ -84,6 +103,15 @@ let knex = require('knex')({
 >>>>>>> deployment errors
 =======
 >>>>>>> Deploying
+=======
+    host     : process.env.ip //|| config.ip,
+    user     : process.env.username //|| config.username,
+    password : process.env.password //|| config.password,
+    database : process.env.database //|| config.name
+  }
+>>>>>>> deployment errors
+>>>>>>> deployment errors
+>>>>>>> deployment errors
 });
 =======
 >>>>>>> Adding changes to db.js

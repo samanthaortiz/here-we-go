@@ -11,6 +11,7 @@ var dbConfig = {
   name: "supernovamks"
 }
 
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 <<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 <<<<<<< 8b9202047469ffb849dc081a7c9be17f83b16e0a
 <<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
@@ -22,6 +23,11 @@ module.exports = dbConfig;
 module.exports = dbConfig;
 >>>>>>> Deploying
 =======
+=======
+<<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
+module.exports = dbConfig;
+<<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
+>>>>>>> deployment errors
 <<<<<<< efaf08b559c11d274472b3a98de92d131633a180
 >>>>>>> Deploying
 =======
@@ -67,4 +73,12 @@ module.exports = dbConfig;
 =======
 =======
 >>>>>>> Deploying
+<<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 >>>>>>> Deploying
+=======
+=======
+=======
+module.exports = dbConfig;
+>>>>>>> deployment errors
+>>>>>>> deployment errors
+>>>>>>> deployment errors
