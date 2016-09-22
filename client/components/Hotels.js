@@ -25,7 +25,7 @@ const Hotel = React.createClass({
           <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
         </p>
         <p>
-          ${ this.props.hotelInfo.lowRate } per night
+          ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
         </p>
         <p>
           { this.props.hotelInfo.shortDescription }
