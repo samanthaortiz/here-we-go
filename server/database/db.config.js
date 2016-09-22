@@ -1,4 +1,4 @@
-let dbConfig = {
+var dbConfig = {
    ip: "mysqlcluster10.registeredsite.com",
    alias: "mysqlcluster10",
    username: "diamondadmin",
