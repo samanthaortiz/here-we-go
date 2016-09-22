@@ -7,8 +7,12 @@
     "npm": "2.15.8"
   },
   "scripts": {
+<<<<<<< c5ee1f8aee2009edce273f0a642fac7974908374
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node.js ./server/server.js",
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+>>>>>>> Revert "chore(travis): Updated package.json test scripts"
     "serve": "nodemon",
     "start": "nodemon server/server.js --exec babel-node --presets es2015,stage-2",
     "webpack": "webpack --progress --colors --watch",
