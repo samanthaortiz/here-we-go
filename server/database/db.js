@@ -1,3 +1,4 @@
+use strict;
 // let config = require('./db.config.js')
 
 let knex = require('knex')({
