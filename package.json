@@ -7,10 +7,14 @@
     "npm": "2.15.8"
   },
   "scripts": {
+<<<<<<< e32796adbc20753e0dab39f7d207cdb2050b8d3a
 <<<<<<< 55c32cb29298837c8dff4f43c1626bc038b50d66
 <<<<<<< c5ee1f8aee2009edce273f0a642fac7974908374
     "test": "echo \"Error: no test specified\" && exit 0",
     "start": "node.js ./server/server.js",
+=======
+    "test": "echo \"Error: no test specified\" && exit 1",
+>>>>>>> Revert "chore(travis): Updated package.json test scripts"
 =======
     "test": "echo \"Error: no test specified\" && exit 1",
 >>>>>>> Revert "chore(travis): Updated package.json test scripts"
