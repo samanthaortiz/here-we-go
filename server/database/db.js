@@ -21,8 +21,9 @@ db.knex.schema.hasTable('users').then(exists => {
   if (!exists) {
     db.knex.schema.createTable('users', user => {
       user.increments('id').primary();
-      user.string('username');
       user.string('fullName');
+      user.string('email');
+      user.string('password')
       user.timestamps();
     }).then(table => {
       console.log('Created Table', table);
@@ -66,6 +67,25 @@ db.knex.schema.hasTable('statuses').then(exists => {
       status.increments('id').primary();
       status.string('type');
       status.timestamps();
+    }).then(table => {
+      console.log('Created Table', table);
+    });
+  }
+});
+
+
+db.knex.schema.hasTable('hotelResp').then(exists => {
+  if (!exists) {
+    db.knex.schema.createTable('hotelResp', hotel => {
+      hotel.increments('id').primary();
+      hotel.integer('reservationId');
+      hotel.string('name');
+      hotel.string('address');
+      hotel.string('telephone');
+      hotel.integer('days');
+      hotel.string('checkinTime');
+      hotel.string('checkoutTime');
+      hotel.timestamps();
     }).then(table => {
       console.log('Created Table', table);
     });
