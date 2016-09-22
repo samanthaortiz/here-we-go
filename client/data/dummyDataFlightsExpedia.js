@@ -1,4 +1,4 @@
-const dummyDataFlights = [
+const dummyDataFlightsExpedia = [
   {
   "legs": [
     {
@@ -203,4 +203,4 @@ const dummyDataFlights = [
 }
 ]
 
-export default dummyDataFlights;
+export default dummyDataFlightsExpedia;
