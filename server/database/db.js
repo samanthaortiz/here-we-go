@@ -1,3 +1,4 @@
+<<<<<<< 71ef351ded24b9e61b09497f2176d37e12e159db
 <<<<<<< fafc2b356d4cfa212741f1778df464bfa87c447f
 <<<<<<< 1c237a58f1bdc8cc323865f173d6ca43135f54c7
 <<<<<<< 46aa03c71bcf0219eac258ef4bb280bb820c4291
@@ -8,6 +9,8 @@
 >>>>>>> Deploy fixes
 <<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
 >>>>>>> deployment errors
+=======
+>>>>>>> Adding changes to db.js
 var config = require('./db.config.js')
 =======
 // let config = require('./db.config.js')
@@ -25,6 +28,7 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+<<<<<<< 71ef351ded24b9e61b09497f2176d37e12e159db
 =======
 <<<<<<< 1c237a58f1bdc8cc323865f173d6ca43135f54c7
 let knex = require('knex')({
@@ -53,6 +57,8 @@ let knex = require('knex')({
 >>>>>>> deployment errors
 >>>>>>> deployment errors
 });
+=======
+>>>>>>> Adding changes to db.js
 
 
 var db = require('bookshelf')(knex);
