@@ -8,6 +8,7 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+});
 
 var db = require('bookshelf')(knex);
 
