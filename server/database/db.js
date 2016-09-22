@@ -19,7 +19,11 @@ var config = require('./db.config.js')
 let config = require('./db.config.js')
 >>>>>>> Deploy fixes
 
+<<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 <<<<<<< d7af8130c6248c7501cea2deb90216b9b657a5be
+=======
+<<<<<<< dbaf5414371c9deb4dc2767edd900503bb36fa92
+>>>>>>> Deploying
 var knex = require('knex')({
  client: 'mysql',
  connection: {
@@ -28,9 +32,13 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+<<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 <<<<<<< 71ef351ded24b9e61b09497f2176d37e12e159db
 =======
 <<<<<<< 1c237a58f1bdc8cc323865f173d6ca43135f54c7
+=======
+=======
+>>>>>>> Deploying
 let knex = require('knex')({
   client: 'mysql',
   connection: {
@@ -40,6 +48,7 @@ let knex = require('knex')({
     database : process.env.database || config.name
   }
 >>>>>>> Deploying
+<<<<<<< 3e645bc7942392e12b11c12d03b4a34b4f889cc4
 =======
 // let config = require('./db.config.js')
 =======
@@ -56,6 +65,8 @@ let knex = require('knex')({
   }
 >>>>>>> deployment errors
 >>>>>>> deployment errors
+=======
+>>>>>>> Deploying
 });
 =======
 >>>>>>> Adding changes to db.js
