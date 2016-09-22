@@ -7,6 +7,7 @@ var dbConfig = {
    name: "supernovamks"
  }
 
+<<<<<<< 735f632d681956bfd4c42e4968bcf8167f58dc68
 <<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
 module.exports = dbConfig;
 <<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
@@ -33,3 +34,6 @@ module.exports = dbConfig;
 module.exports = dbConfig;
 >>>>>>> deployment errors
 >>>>>>> deployment errors
+=======
+module.exports = dbConfig;
+>>>>>>> adding db config edits
