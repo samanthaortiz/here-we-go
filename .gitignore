@@ -36,4 +36,4 @@ server/database/db.config.js
 .floo
 .floobit
 .floo
-.flooignore
+.flooignorenode_modules
