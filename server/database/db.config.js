@@ -17,5 +17,9 @@ let dbConfig = {
     name: "supernovamks"
   }
 
+<<<<<<< 5784f7964b50b4ce9c31868f850e9845d72b2629
   module.exports = dbConfig;
 >>>>>>> Deploying
+=======
+module.exports = dbConfig;
+>>>>>>> deployment errors

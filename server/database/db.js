@@ -1,4 +1,8 @@
+<<<<<<< 5784f7964b50b4ce9c31868f850e9845d72b2629
 var config = require('./db.config.js')
+=======
+// let config = require('./db.config.js')
+>>>>>>> deployment errors
 
 <<<<<<< dbaf5414371c9deb4dc2767edd900503bb36fa92
 var knex = require('knex')({
@@ -13,10 +17,10 @@ var knex = require('knex')({
 let knex = require('knex')({
   client: 'mysql',
   connection: {
-    host     : process.env.ip || config.ip,
-    user     : process.env.username || config.username,
-    password : process.env.password || config.password,
-    database : process.env.database || config.name
+    host     : process.env.ip //|| config.ip,
+    user     : process.env.username //|| config.username,
+    password : process.env.password //|| config.password,
+    database : process.env.database //|| config.name
   }
 >>>>>>> Deploying
 });
