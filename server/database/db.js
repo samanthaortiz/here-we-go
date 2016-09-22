@@ -1,3 +1,4 @@
+<<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
 var config = require('./db.config.js')
 
 var knex = require('knex')({
@@ -8,6 +9,18 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+=======
+// let config = require('./db.config.js')
+
+let knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host     : process.env.ip //|| config.ip,
+    user     : process.env.username //|| config.username,
+    password : process.env.password //|| config.password,
+    database : process.env.database //|| config.name
+  }
+>>>>>>> deployment errors
 });
 
 var db = require('bookshelf')(knex);
