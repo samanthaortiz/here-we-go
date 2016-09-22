@@ -1,5 +1,6 @@
 var config = require('./db.config.js')
 
+<<<<<<< dbaf5414371c9deb4dc2767edd900503bb36fa92
 var knex = require('knex')({
  client: 'mysql',
  connection: {
@@ -8,6 +9,16 @@ var knex = require('knex')({
    password : process.env.password || config.password,
    database : process.env.database || config.name
  }
+=======
+let knex = require('knex')({
+  client: 'mysql',
+  connection: {
+    host     : process.env.ip || config.ip,
+    user     : process.env.username || config.username,
+    password : process.env.password || config.password,
+    database : process.env.database || config.name
+  }
+>>>>>>> Deploying
 });
 
 var db = require('bookshelf')(knex);
