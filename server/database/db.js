@@ -1,3 +1,4 @@
+<<<<<<< a8d650fc3d99759ef4ddff56828387bbe9ca6458
 <<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 <<<<<<< 1349c5366b651fa5bc35065de7a2274e21bc20e9
 <<<<<<< bf8f52ea20882d8f4170d14634f2158b9c2dcf10
@@ -17,6 +18,9 @@
 =======
 =======
 =======
+=======
+<<<<<<< 718739ec2db101ba7df3dbe687a2d75f9e5e25e7
+>>>>>>> Deploy fixes
 <<<<<<< 5533399cc687aea2909c9263605dcfff1aa289d6
 >>>>>>> deployment errors
 <<<<<<< 1d4e8afaaed045e12a21a2d40da59aa350eec703
@@ -25,6 +29,9 @@
 <<<<<<< d271b30898a20855fef56c260791544999e4f1cc
 =======
 =======
+=======
+<<<<<<< 1eac9b3e273ec7b646c1609e8ae25a3f6efb605f
+>>>>>>> Deploy fixes
 <<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
 >>>>>>> deployment errors
 >>>>>>> deployment errors
@@ -88,16 +95,26 @@ let config = require('./db.config.js')
 =======
 =======
 // let config = require('./db.config.js')
+<<<<<<< a8d650fc3d99759ef4ddff56828387bbe9ca6458
 >>>>>>> deployment errors
+=======
+=======
+let config = require('./db.config.js')
+>>>>>>> Deploy fixes
+>>>>>>> Deploy fixes
 
 let knex = require('knex')({
   client: 'mysql',
   connection: {
+<<<<<<< a8d650fc3d99759ef4ddff56828387bbe9ca6458
 <<<<<<< d271b30898a20855fef56c260791544999e4f1cc
+=======
+>>>>>>> Deploy fixes
     host     : process.env.ip || config.ip,
     user     : process.env.username || config.username,
     password : process.env.password || config.password,
     database : process.env.database || config.name
+<<<<<<< a8d650fc3d99759ef4ddff56828387bbe9ca6458
   }
 >>>>>>> deployment errors
 >>>>>>> deployment errors
@@ -108,6 +125,8 @@ let knex = require('knex')({
     user     : process.env.username //|| config.username,
     password : process.env.password //|| config.password,
     database : process.env.database //|| config.name
+=======
+>>>>>>> Deploy fixes
   }
 >>>>>>> deployment errors
 >>>>>>> deployment errors
