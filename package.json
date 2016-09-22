@@ -4,7 +4,7 @@
   "main": "./server/server.js",
   "engines": {
     "node": "4.4.7",
-    "npm": "2.1.x"
+    "npm": "2.15.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
