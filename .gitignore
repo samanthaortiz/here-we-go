@@ -29,8 +29,11 @@ dist/bundle.js
 node_modules
 bower_components
 
+#Config files
+server/database/db.config.js
+
 # Floobits
 .floo
 .floobit
 .floo
-.flooignore
+.flooignorenode_modules
