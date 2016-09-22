@@ -15,10 +15,14 @@ var dbConfig = {
 <<<<<<< 8b9202047469ffb849dc081a7c9be17f83b16e0a
 <<<<<<< daaaf97ba45558d68a36166d9e03541998b6e730
 module.exports = dbConfig;
+<<<<<<< 440f531175e0c3bd84af0328b28f927b0aab2861
 <<<<<<< 1c237a58f1bdc8cc323865f173d6ca43135f54c7
 <<<<<<< 7f5bb72c96d86ab8616cec53951edd950beb0e9f
 =======
 module.exports = dbConfig;
+>>>>>>> Deploying
+=======
+<<<<<<< efaf08b559c11d274472b3a98de92d131633a180
 >>>>>>> Deploying
 =======
 let dbConfig = {
@@ -58,4 +62,9 @@ module.exports = dbConfig;
 =======
 module.exports = dbConfig;
 >>>>>>> deployment errors
+<<<<<<< 440f531175e0c3bd84af0328b28f927b0aab2861
 >>>>>>> deployment errors
+=======
+=======
+>>>>>>> Deploying
+>>>>>>> Deploying
