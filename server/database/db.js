@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let config = require('./db.config.js');
 
 let knex = require('knex')({
@@ -21,9 +22,21 @@ let knex = require('knex')({
     // database: 'supernovamks',
     charset  : 'utf8'
   }
+=======
+var config = require('./db.config.js')
+
+var knex = require('knex')({
+ client: 'mysql',
+ connection: {
+   host     : process.env.ip || config.ip,
+   user     : process.env.username || config.username,
+   password : process.env.password || config.password,
+   database : process.env.database || config.name
+ }
+>>>>>>> dev
 });
 
-let db = require('bookshelf')(knex);
+var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('users').then(exists => {
   if (!exists) {
