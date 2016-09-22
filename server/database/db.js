@@ -1,7 +1,6 @@
-use strict;
-// let config = require('./db.config.js')
+// var config = require('./db.config.js')
 
-let knex = require('knex')({
+var knex = require('knex')({
  client: 'mysql',
  connection: {
    host     : process.env.ip || config.ip,
@@ -11,7 +10,7 @@ let knex = require('knex')({
  }
 });
 
-let db = require('bookshelf')(knex);
+var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('users').then(exists => {
   if (!exists) {
