@@ -2,8 +2,9 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 // import posts from'./posts';
-import expediaInfo from './expediaInfo'; 
+import expediaHotelInfo from './expediaHotelInfo'; 
+import expediaFlightInfo from './expediaFlightInfo'; 
 
-const rootReducer = combineReducers({expediaInfo, routing: routerReducer });
+const rootReducer = combineReducers({expediaHotelInfo, expediaFlightInfo, routing: routerReducer });
 
 export default rootReducer;
