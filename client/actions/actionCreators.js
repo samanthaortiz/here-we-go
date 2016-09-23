@@ -7,14 +7,13 @@ import { browserHistory } from 'react-router';
 //BUT this does not update our state. 
 //The reducer will do that.
 
-
 //=============== HOTELS ===============
 export const postHotelExpedia = (location, startDate, endDate) => {
-  console.log(location, startDate, endDate);
+  // console.log(location, startDate, endDate);
   return function(dispatch){
     return axiosHotelCall(location, startDate, endDate)
     .then(res => {
-      console.log("HERE HERE HERE -- HOTELS", res.data);
+      // console.log("HERE HERE HERE -- HOTELS", res.data);
       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
       browserHistory.push('/dashboard')
 
@@ -49,7 +48,7 @@ export const postFlightExpedia = (location, startDate, endDate) => {
   return function(dispatch){
     return axiosFlightCall(location, startDate, endDate)
     .then(res => {
-      console.log("HERE HERE HERE -- FLIGHTS", res.data);
+      // console.log("HERE HERE HERE -- FLIGHTS", res.data);
       dispatch(hydrateFlightStore(res.data, location, startDate, endDate))
       browserHistory.push('/dashboard')
 
