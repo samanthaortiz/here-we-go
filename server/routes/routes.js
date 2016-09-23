@@ -39,4 +39,19 @@ router.post("/HotelSearch", function(req, res) {
   });
 });
 
+
+// FLIGHT SEARCH API ============================================================ */
+router.post("/FlightSearch", function(req, res) {
+  console.log('>> ENTER /FlightSearch');
+
+  var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+
+  request({ url: urlAPI }, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+      // res.render('dashboard.html', body);
+    }
+  });
+});
+
 module.exports = router;

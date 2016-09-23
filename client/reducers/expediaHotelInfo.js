@@ -1,10 +1,10 @@
-const expediaInfo = (state = [], action) => {
+const expediaHotelInfo = (state = [], action) => {
   //the first time this runs, state doesnt equal anything
   //you need to set it to an empty array
   switch (action.type){
-    case 'POST_EXPEDIA':
+    case 'POST_HOTEL_EXPEDIA':
       return {
-        expediaInfo: action.expediaInfo,
+        expediaHotelInfo: action.expediaHotelInfo,
         location: action.location,
         startDate: action.startDate,
         endDate: action.endDate
@@ -14,5 +14,5 @@ const expediaInfo = (state = [], action) => {
   }
 }
 
-export default expediaInfo
+export default expediaHotelInfo
 //this is the api call

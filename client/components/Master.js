@@ -5,7 +5,8 @@ import App from './App';
 
 function mapStateToProps(state){
   return {
-    expediaInfo: state.expediaInfo
+    expediaHotelInfo: state.expediaHotelInfo,
+    expediaFlightInfo: state.expediaFlightInfo
   }
 }
 
