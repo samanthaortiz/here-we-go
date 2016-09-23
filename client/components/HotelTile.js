@@ -25,7 +25,11 @@ const Hotel = React.createClass({
           <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
         </p>
         <p>
+<<<<<<< HEAD:client/components/HotelTile.js
           From ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
+=======
+          ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
+>>>>>>> 071d055fd3dcfbbf596c1f5a7bacab224054542a:client/components/Hotels.js
         </p>
         <p>
           { this.props.hotelInfo.shortDescription }
