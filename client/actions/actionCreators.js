@@ -10,7 +10,7 @@ import { browserHistory } from 'react-router';
 //BUT this does not update our state. 
 //The reducer will do that.
 export const postExpedia = (location, startDate, endDate) => {
-  console.log(location, startDate, endDate);
+  // console.log(location, startDate, endDate);
   return function(dispatch){
     return axiosCall(location, startDate, endDate)
     .then(res => {

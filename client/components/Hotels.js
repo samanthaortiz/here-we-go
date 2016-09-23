@@ -1,38 +1,25 @@
 import React from 'react';
+import Hotel from './Hotel';
 
-const Hotel = React.createClass({
-  changeDate(date) {
-      let newDate = date.split("-").join("/");
-      let year = newDate.slice(0,4);
-      let monthDay = newDate.slice(5);
-      return monthDay += '/' + year;
-    },
-
-  render(){
-    let hotel = this.props;
-    // console.log('hotel',hotel);
-    
-
-
+const Hotels = React.createClass({
+  render() {
+    console.log('>>>> HOTELS this.props: ', this.props);
     return (
-      <div className="tile-hotel">
-        <p>
-          <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
-          { this.props.hotelInfo.localizedName }
-          </a>
-        </p>
-        <p>
-          <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
-        </p>
-        <p>
-          ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
-        </p>
-        <p>
-          { this.props.hotelInfo.shortDescription }
-        </p>
+      <div className="dashboard-container clearfix">
+        {
+          // this.props.expediaInfo.expediaInfo.hotelList.map((hotel) =>
+          this.hotelList.map((hotel) =>
+            <Hotel
+              key={hotel.hotelId}
+              hotelInfo={hotel}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          )
+        }
       </div>
-    )
+    );
   }
-})
+});
 
-export default Hotel;
+export default Hotels;
