@@ -46,7 +46,8 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-    this.props.postExpedia(this.state.city, this.state.startDate, this.state.endDate)
+    this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
+    this.props.postFlightExpedia(this.state.city, this.state.startDate, this.state.endDate)
   },
 
   render() {
