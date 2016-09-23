@@ -1,16 +1,20 @@
 // DASHBOARD PANEL ============================================================
 import React from 'react';
-import Hotels from './Hotels';
+import HotelTile from './HotelTile';
+import FlightTile from './FlightTile';
 
 const Panel = React.createClass({
   render() {
-    console.log('>>>> PANEL this.props: ', this.props);
-    // let hotelList = this.props.expediaInfo.expediaInfo.hotelList;
+    
+    console.log('>>>>> PANEL <<<<<');
+    console.log('Hotel: ', this.props.data.expediaHotelInfo);
+    // console.log('Flights: ', this.props.expediaFlightInfo);
+
     return (
       <div className="panel-view">
-        <Hotels hotelList={this.props.hotelList}/>
+        <HotelTile hotelData={this.props.data.expediaHotelInfo} />
+        <FlightTile flightData={this.props} />
         { /*
-          <Flights/>
           <CarRentals/>
           <Activities/>
           */

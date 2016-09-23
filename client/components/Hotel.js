@@ -8,8 +8,9 @@ const Hotel = React.createClass({
     return monthDay += '/' + year;
   },
   render(){
-    let hotel = this.props;
-    // console.log('hotel',hotel);
+    
+    console.log('>>>>> HOTEL <<<<<');
+    console.log('Hotel: ', this.props.hotelInfo);
 
     return (
       <div className="tile-hotel">

@@ -1,52 +1,25 @@
 // DASHBOARD COMPONENT ===================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-<<<<<<< HEAD
-import NavigationBar from './NavigationBar';
+// import HotelTile from './HotelTile';
+// import FlightTile from './FlightTile';
 import Panel from './Panel';
-=======
-import HotelTile from './HotelTile';
-import FlightTile from './FlightTile';
-// 
-const Dashboard = React.createClass({
->>>>>>> dev
+import NavigationBar from './NavigationBar';
 
 const Dashboard = React.createClass({
   render() {
-<<<<<<< HEAD
+    console.log('>>>>> DASHBOARD <<<<<');
+    console.log('Hotel: ', this.props.expediaHotelInfo);
+    // console.log('Flights: ', this.props.expediaFlightInfo);
 
-    // console.log('>>>> DASHBOARD this.props: ', this.props);
-
-    // console.log('Dashboard: ', this.props.expediaInfo.startDate, this.props.expediaInfo.endDate);
-    var startDate = this.props.expediaInfo.startDate
-    var endDate = this.props.expediaInfo.endDate
-=======
-  console.log('EXPEDIA FLIGHT INFO GOING TO DASHBOARD:', this.props.expediaFlightInfo)
-  // console.log(this.props.expediaHotelInfo.startDate, this.props.expediaHotelInfo.endDate);
-  var startDate = this.props.expediaHotelInfo.startDate
-  var endDate = this.props.expediaHotelInfo.endDate
->>>>>>> dev
-
+    var startDate = this.props.expediaHotelInfo.startDate
+    var endDate = this.props.expediaHotelInfo.endDate
+  
     return (
       <div className='outer-dashboard-container'>
         <NavigationBar/>
         <article>
-<<<<<<< HEAD
-          <Panel props={this.props.expediaInfo}/>
-=======
-          <div className="dashboard-container clearfix">
-            {
-              this.props.expediaHotelInfo.expediaHotelInfo.hotelList.map((hotel) =>
-                <HotelTile
-                  key={hotel.hotelId}
-                  hotelInfo={hotel}
-                  startDate={startDate}
-                  endDate={endDate}
-                />
-              )
-            }
-          </div>
->>>>>>> dev
+          <Panel data={this.props}/>
         </article>
       </div> 
     );
