@@ -39,4 +39,18 @@ router.post("/HotelSearch", function(req, res) {
   });
 });
 
+router.post('/hotel-resp/', function(req, res) {
+  console.log("REQBODY", req.body)
+  db.knex.insert({'dummyInfo': JSON.stringify(req.body.result.hotel)})
+  .into('dummyHotel')
+  .then(function(info) {
+    console.log("DUMMYINFO", info)
+    res.send(info);
+  })
+  .catch(function(error) {
+    console.error(error)
+  });
+});
+
+
 module.exports = router;

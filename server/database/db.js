@@ -87,5 +87,16 @@ db.knex.schema.hasTable('hotelResp').then(exists => {
   }
 });
 
+db.knex.schema.hasTable('dummyHotel').then(exists => {
+  if (!exists) {
+    db.knex.schema.createTable('dummyHotel', hotel => {
+            hotel.increments('id').primary();
+            hotel.string('dummyInfo');
+          }).then(table => {
+            console.log('Created Table', table);
+    });
+  }
+});
+
 module.exports = db;
 // export default db;
