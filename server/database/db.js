@@ -10,6 +10,7 @@ var knex = require('knex')({
  }
 });
 
+
 var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('users').then(exists => {
