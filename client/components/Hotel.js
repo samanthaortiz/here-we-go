@@ -9,8 +9,8 @@ const Hotel = React.createClass({
   },
   render(){
     
-    console.log('>>>>> HOTEL <<<<<');
-    console.log('Hotel: ', this.props.hotelInfo);
+    // console.log('>>>>> HOTEL <<<<<');
+    // console.log('Hotel: ', this.props.hotelInfo);
 
     if(this.props.hotelInfo === undefined) {
       return (
