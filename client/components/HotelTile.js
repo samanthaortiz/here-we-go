@@ -8,7 +8,7 @@ const HotelTile = React.createClass({
     console.log('Hotel: ', this.props);
     
     return (
-      <div className="dashboard-container clearfix">
+      <div className="tile-hotel">
         {
           this.props.hotelData.expediaHotelInfo.hotelList.map((hotel) =>
             <Hotel

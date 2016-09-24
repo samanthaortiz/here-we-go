@@ -43,35 +43,35 @@ export function axiosHotelCall(location, startDate, endDate){
 
 
 //=============== FLIGHTS ===============
-export const postFlightExpedia = (location, startDate, endDate) => {
-  console.log(location, startDate, endDate);
-  return function(dispatch){
-    return axiosFlightCall(location, startDate, endDate)
-    .then(res => {
-      // console.log("HERE HERE HERE -- FLIGHTS", res.data);
-      dispatch(hydrateFlightStore(res.data, location, startDate, endDate))
-      browserHistory.push('/dashboard')
+// export const postFlightExpedia = (location, startDate, endDate) => {
+//   console.log(location, startDate, endDate);
+//   return function(dispatch){
+//     return axiosFlightCall(location, startDate, endDate)
+//     .then(res => {
+//       // console.log("HERE HERE HERE -- FLIGHTS", res.data);
+//       dispatch(hydrateFlightStore(res.data, location, startDate, endDate))
+//       browserHistory.push('/dashboard')
 
-    })
-    .catch(error => console.log(error));
-  };
-};
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
 
-export function hydrateFlightStore(expediaFlightInfo, location, startDate, endDate){
-  return {
-    type: 'POST_FLIGHT_EXPEDIA',
-    expediaFlightInfo,
-    location,
-    startDate,
-    endDate
-  };
-}
+// export function hydrateFlightStore(expediaFlightInfo, location, startDate, endDate){
+//   return {
+//     type: 'POST_FLIGHT_EXPEDIA',
+//     expediaFlightInfo,
+//     location,
+//     startDate,
+//     endDate
+//   };
+// }
 
 
-export function axiosFlightCall(location, startDate, endDate){
-  return axios.post('/api/flightSearch', {
-      location: location,
-      startDate: startDate,
-      endDate: endDate
-    });
-}
+// export function axiosFlightCall(location, startDate, endDate){
+//   return axios.post('/api/flightSearch', {
+//       location: location,
+//       startDate: startDate,
+//       endDate: endDate
+//     });
+// }

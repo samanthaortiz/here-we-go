@@ -141,22 +141,41 @@ article {
   background: white !important;
 }
 
-.tile-hotel {
-  width: 45%;
+.tile-hotel,
+.tile-flight {
+  width: 48%;
   border: 1px solid #999;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 2%;
+  height: 300px;
+  overflow: scroll;
+
 }
 
-div.tile-hotel:nth-child(even) {
+.item-hotel,
+.item-flight {
+  border: 1px solid #999;
+  margin-bottom: 10px;
+}
+
+div.tile-hotel {
+  float: left;
+  margin-right: 2%;
+}
+
+div.tile-flight {
+  float: right;
+}
+
+/*div.tile-hotel:nth-child(even) {
   float: right;
 }
 
 div.tile-hotel:nth-child(odd) {
   float: left;
   margin-right: 5%;
-}
+}*/
 
 /* MEDIA QUERIES ============================================================ */
 @media (max-width: 2000px) {
