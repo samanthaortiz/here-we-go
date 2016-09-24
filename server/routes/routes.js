@@ -2,6 +2,7 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+<<<<<<< adf17ae5c0a1c043f6f172c4dd68d836906f1195
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
@@ -10,6 +11,12 @@ var mysql = require('mysql');
 =======
 <<<<<<< 3c62f89262292adf87239385c89c91f045d76765
 >>>>>>> feat(): API request for airport codes receiving data
+=======
+<<<<<<< 535f92954c672a39e7b6a0422981653e3e6a8b26
+<<<<<<< 3c62f89262292adf87239385c89c91f045d76765
+=======
+>>>>>>> fix(fixed dashboard/account view):
+>>>>>>> fix(fixed dashboard/account view):
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
 
@@ -50,7 +57,11 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
+<<<<<<< adf17ae5c0a1c043f6f172c4dd68d836906f1195
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
+=======
+<<<<<<< 535f92954c672a39e7b6a0422981653e3e6a8b26
+>>>>>>> fix(fixed dashboard/account view):
 
 =======
 var api = require('./apiConfig')
