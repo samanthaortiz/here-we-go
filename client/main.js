@@ -17,12 +17,15 @@ import Dashboard from './components/Dashboard.js';
 // DASHBOARD PAGE
 import NavBar from './components/NavigationBar.js';
 
+import Account from './components/Account.js';
+
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Master}>
         <IndexRoute component={Splash} />
         <Route path="dashboard" component={Dashboard} />
+        <Route path="account" component={Splash} />
         <Route path="*" component={Master} />
       </Route>
     </Router>
