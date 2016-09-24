@@ -25,4 +25,6 @@ const Flight = React.createClass({
         </div>
       );
     }
+  }
+});
 export default Flight;

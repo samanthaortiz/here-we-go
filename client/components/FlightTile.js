@@ -27,5 +27,6 @@ const FlightTile = React.createClass({
         </div>
       );
     }
-    
+  }
+});  
 export default FlightTile;

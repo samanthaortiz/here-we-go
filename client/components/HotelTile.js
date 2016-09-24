@@ -30,6 +30,7 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+  }
 });
 
 export default HotelTile;
