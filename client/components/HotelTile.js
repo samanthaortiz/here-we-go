@@ -5,6 +5,7 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
+<<<<<<< 3c62f89262292adf87239385c89c91f045d76765
     console.log('Hotel: ', this.props.hotelData);
 
     if(this.props.hotelData.length === 0) {
@@ -29,6 +30,9 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+=======
+    console.log('Hotel tile this.props: ', this.props);
+>>>>>>> feat(): API request for airport codes receiving data
     
 
   }

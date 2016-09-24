@@ -9,7 +9,7 @@ import NavigationBar from './NavigationBar';
 const Dashboard = React.createClass({
   render() {
     console.log('>>>>> DASHBOARD <<<<<');
-    console.log('Hotel: ', this.props.expediaHotelInfo);
+    console.log('Hotel this.props: ', this.props);
     // console.log('Flights: ', this.props.expediaFlightInfo);
 
     var startDate = this.props.expediaHotelInfo.startDate
