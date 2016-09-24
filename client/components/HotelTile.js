@@ -48,6 +48,7 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+<<<<<<< 9b60c92a8bb168930f2bc48b4f60aa1cc2008078
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
@@ -68,6 +69,9 @@ const HotelTile = React.createClass({
 
 =======
 >>>>>>> chore(merge): merge conflicts resolved
+=======
+  }
+>>>>>>> refactor(): refactored flights and hotels
 });
 
 export default HotelTile;

@@ -44,6 +44,7 @@ const FlightTile = React.createClass({
         </div>
       );
     }
+<<<<<<< 9b60c92a8bb168930f2bc48b4f60aa1cc2008078
     
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 
@@ -119,4 +120,8 @@ const FlightTile = React.createClass({
 
 =======
 >>>>>>> chore(merge): merge conflicts resolved
+=======
+  }
+});  
+>>>>>>> refactor(): refactored flights and hotels
 export default FlightTile;
