@@ -4,6 +4,7 @@ import Flight from './Flight';
 const FlightTile = React.createClass({
   render() {
 
+<<<<<<< cbb4940c157070a0a00b18c372c26e65a0d1daa9
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight: ', this.props);
 
@@ -31,6 +32,27 @@ const FlightTile = React.createClass({
     }
     
 
+=======
+  render() {
+
+    console.log('>>>>> FLIGHT TILE <<<<<');
+    console.log('Flight: ', this.props);
+    
+    return (
+      <div className="tile-flight">
+        {
+          this.props.flightData.expediaflightInfo.flightList.map((flight) =>
+            <flight
+              key={flight.flightId}
+              flightInfo={flight}
+              startDate={this.props.flightData.startDate}
+              endDate={this.props.flightData.endDate}
+            />
+          )
+        }
+      </div>
+    );
+>>>>>>> feat(flights): adding flights tile and component
   }
 
 });
