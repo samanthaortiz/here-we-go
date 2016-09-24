@@ -3,6 +3,7 @@ import Flight from './Flight';
 
 const FlightTile = React.createClass({
   render() {
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< cbb4940c157070a0a00b18c372c26e65a0d1daa9
@@ -17,6 +18,10 @@ const FlightTile = React.createClass({
 =======
 <<<<<<< 3c62f89262292adf87239385c89c91f045d76765
 >>>>>>> feat(): API request for airport codes receiving data
+=======
+    console.log('>>>>> FLIGHT TILE <<<<<');
+    console.log('Flight: ', this.props);
+>>>>>>> chore(merge): merge conflicts resolved
     if(this.props.flightData.length === 0 || 'test' === 'test') {
       return (
         <div className="tile-flight">
@@ -40,6 +45,7 @@ const FlightTile = React.createClass({
       );
     }
     
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 
 =======
   render() {
@@ -111,4 +117,6 @@ const FlightTile = React.createClass({
 
 });
 
+=======
+>>>>>>> chore(merge): merge conflicts resolved
 export default FlightTile;

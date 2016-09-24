@@ -5,6 +5,7 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
@@ -20,6 +21,10 @@ const HotelTile = React.createClass({
 
     console.log('Hotel tile this.props: ', this.props);
 >>>>>>> chore(git st): merge conflict resolution
+=======
+    console.log('Hotel tile this.props: ', this.props);
+
+>>>>>>> chore(merge): merge conflicts resolved
 
     if(this.props.hotelData.length === 0) {
       return (
@@ -43,6 +48,7 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
@@ -60,6 +66,8 @@ const HotelTile = React.createClass({
 >>>>>>> chore(git st): merge conflict resolution
   }
 
+=======
+>>>>>>> chore(merge): merge conflicts resolved
 });
 
 export default HotelTile;

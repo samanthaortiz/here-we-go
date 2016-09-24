@@ -7,6 +7,7 @@ const Flight = React.createClass({
     let monthDay = newDate.slice(5);
     return monthDay += '/' + year;
   },
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
@@ -22,6 +23,8 @@ const Flight = React.createClass({
 =======
 >>>>>>> chore(git st): merge conflict resolution
 >>>>>>> chore(git st): merge conflict resolution
+=======
+>>>>>>> chore(merge): merge conflicts resolved
   render() {
 
     console.log('>>>>> FLIGHT <<<<<');
@@ -40,6 +43,7 @@ const Flight = React.createClass({
         </div>
       );
     }
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
@@ -86,4 +90,6 @@ const Flight = React.createClass({
   }
 })
 
+=======
+>>>>>>> chore(merge): merge conflicts resolved
 export default Flight;

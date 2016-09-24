@@ -15,6 +15,7 @@ const Panel = React.createClass({
     return (
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
+<<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
@@ -59,6 +60,9 @@ const Panel = React.createClass({
 =======
 >>>>>>> fix(fixed dashboard/account view):
 >>>>>>> fix(fixed dashboard/account view):
+=======
+        <FlightTile flightData={this.props} />
+>>>>>>> chore(merge): merge conflicts resolved
       </div>
     );
   }
