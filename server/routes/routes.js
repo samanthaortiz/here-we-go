@@ -2,10 +2,6 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
-<<<<<<< 535f92954c672a39e7b6a0422981653e3e6a8b26
-<<<<<<< 3c62f89262292adf87239385c89c91f045d76765
-=======
->>>>>>> fix(fixed dashboard/account view):
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
 
@@ -31,7 +27,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
     //add msql connection 
     user: req.user
   });
-});
+}); 
 
 router.get('/logout', function(req, res) {
   req.logout();
@@ -47,17 +43,6 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
-<<<<<<< HEAD
-<<<<<<< 535f92954c672a39e7b6a0422981653e3e6a8b26
-
-=======
-var api = require('./apiConfig')
->>>>>>> feat(): API request for airport codes receiving data
-
-=======
->>>>>>> fix(fixed dashboard/account view):
-=======
->>>>>>> 2841373c1f21d64a8c40e0907724229117ca5c7e
 // DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
