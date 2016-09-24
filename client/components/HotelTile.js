@@ -5,8 +5,8 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
-<<<<<<< HEAD
-    console.log('Hotel: ', this.props.hotelData);
+
+    console.log('Hotel tile this.props: ', this.props);
 
     if(this.props.hotelData.length === 0) {
       return (
@@ -30,11 +30,6 @@ const HotelTile = React.createClass({
         </div>
       );
     }
-=======
-    console.log('Hotel tile this.props: ', this.props);
->>>>>>> feature
-    
-
   }
 
 });
