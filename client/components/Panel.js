@@ -15,6 +15,7 @@ const Panel = React.createClass({
     return (
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
+<<<<<<< b64969dd608a8b2b35b3ac5d375dca4b939dfd4e
 <<<<<<< 3c62f89262292adf87239385c89c91f045d76765
         <FlightTile flightData={this.props} />
         { 
@@ -25,8 +26,13 @@ const Panel = React.createClass({
 >>>>>>> feat(): API request for airport codes receiving data
           <CarRentals/>
           <Activities/>
+=======
+        <FlightTile flightData={this.props} />
+        /*
+        <CarRentals/>
+        <Activities/>
+>>>>>>> chore(git st): merge conflict resolution
           */
-        }
       </div>
     );
   }

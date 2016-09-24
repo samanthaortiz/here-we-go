@@ -7,7 +7,10 @@ const Flight = React.createClass({
     let monthDay = newDate.slice(5);
     return monthDay += '/' + year;
   },
+<<<<<<< b64969dd608a8b2b35b3ac5d375dca4b939dfd4e
 <<<<<<< 82b63c5604d1369cc6bc4d4e34856dfc674ccac5
+=======
+>>>>>>> chore(git st): merge conflict resolution
   render() {
 
     console.log('>>>>> FLIGHT <<<<<');
@@ -26,6 +29,7 @@ const Flight = React.createClass({
         </div>
       );
     }
+<<<<<<< b64969dd608a8b2b35b3ac5d375dca4b939dfd4e
 =======
   render(){
     
@@ -51,6 +55,8 @@ const Flight = React.createClass({
       </div>
     )
 >>>>>>> feat(flights): adding flights tile and component
+=======
+>>>>>>> chore(git st): merge conflict resolution
   }
 })
 
