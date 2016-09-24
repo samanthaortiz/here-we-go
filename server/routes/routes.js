@@ -2,8 +2,12 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+<<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
+=======
+>>>>>>> fix(fixed dashboard/account view):
 var Users = require('../database/models/User')
+var api = require('./apiConfig')
 
 //PASSPORT GOOGLE AUTHENTICATION
 var passport = require('passport');
@@ -42,11 +46,14 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
+<<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
 
 =======
 var api = require('./apiConfig')
 >>>>>>> feat(): API request for airport codes receiving data
 
+=======
+>>>>>>> fix(fixed dashboard/account view):
 // DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {

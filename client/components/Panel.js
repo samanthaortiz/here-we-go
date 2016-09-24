@@ -28,11 +28,14 @@ const Panel = React.createClass({
           <Activities/>
 =======
         <FlightTile flightData={this.props} />
+<<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
         /*
         <CarRentals/>
         <Activities/>
 >>>>>>> chore(git st): merge conflict resolution
           */
+=======
+>>>>>>> fix(fixed dashboard/account view):
       </div>
     );
   }
