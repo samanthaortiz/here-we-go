@@ -29,7 +29,8 @@ router.get('/auth/google/callback',
   }),
   function(req, res) {
     // Authenticated successfully
-    res.redirect('/');
+    console.log("HIII")
+    res.redirect('/account');
   });
 
 router.get('/account', ensureAuthenticated, function(req, res) {
@@ -47,6 +48,7 @@ router.get('/logout', function(req, res) {
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
+    console.log("ACCOUNT")
     return next();
   }
   res.redirect('/login');
