@@ -13,7 +13,7 @@ const Hotel = React.createClass({
     console.log('Hotel: ', this.props.hotelInfo);
 
     return (
-      <div className="tile-hotel">
+      <div className="item-hotel">
         <p>
           <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
           { this.props.hotelInfo.localizedName }
