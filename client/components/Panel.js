@@ -11,7 +11,7 @@ const Panel = React.createClass({
     // console.log('Flights: ', this.props.expediaFlightInfo);
 
     return (
-      <div className="panel-view">
+      <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
         <FlightTile flightData={this.props} />
         { /*

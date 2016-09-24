@@ -3,7 +3,7 @@ var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
 
-// DB ====================================================================== */
+// DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   db.knex.select('*')
@@ -25,7 +25,7 @@ router.post('/user-account/', function(req, res) {
 //     });
 // });
 
-// HOTEL SEARCH API ============================================================ */
+// HOTEL SEARCH API ================================================================== */
 router.post("/HotelSearch", function(req, res) {
   console.log('>> ENTER /HotelSearch');
 
@@ -34,13 +34,11 @@ router.post("/HotelSearch", function(req, res) {
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body);
-      // res.render('dashboard.html', body);
     }
   });
 });
 
-
-// FLIGHT SEARCH API ============================================================ */
+// FLIGHT SEARCH API ================================================================= */
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER /FlightSearch');
 
@@ -49,7 +47,6 @@ router.post("/FlightSearch", function(req, res) {
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(body);
-      // res.render('dashboard.html', body);
     }
   });
 });
