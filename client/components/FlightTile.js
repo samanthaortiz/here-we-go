@@ -4,7 +4,11 @@ import Flight from './Flight';
 const FlightTile = React.createClass({
   render() {
 
+<<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< cbb4940c157070a0a00b18c372c26e65a0d1daa9
+=======
+<<<<<<< 82b63c5604d1369cc6bc4d4e34856dfc674ccac5
+>>>>>>> feat(flights): adding flights tile and component
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight: ', this.props);
 
@@ -35,6 +39,7 @@ const FlightTile = React.createClass({
 
 =======
   render() {
+<<<<<<< a17da5c7b340c98649173414a09634347557ce42
 =======
   render(){
     let flight = this.props;
@@ -63,6 +68,27 @@ const FlightTile = React.createClass({
 =======
     )
 >>>>>>> feat(): API request for airport codes receiving data
+=======
+
+    console.log('>>>>> FLIGHT TILE <<<<<');
+    console.log('Flight: ', this.props);
+    
+    return (
+      <div className="tile-flight">
+        {
+          this.props.flightData.expediaflightInfo.flightList.map((flight) =>
+            <flight
+              key={flight.flightId}
+              flightInfo={flight}
+              startDate={this.props.flightData.startDate}
+              endDate={this.props.flightData.endDate}
+            />
+          )
+        }
+      </div>
+    );
+>>>>>>> feat(flights): adding flights tile and component
+>>>>>>> feat(flights): adding flights tile and component
   }
 
 });
