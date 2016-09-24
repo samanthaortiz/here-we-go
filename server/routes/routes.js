@@ -2,10 +2,14 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+<<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
 =======
 >>>>>>> fix(fixed dashboard/account view):
+=======
+<<<<<<< 3c62f89262292adf87239385c89c91f045d76765
+>>>>>>> feat(): API request for airport codes receiving data
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
 
@@ -93,6 +97,7 @@ router.post("/HotelSearch", function(req, res) {
 // FLIGHT SEARCH API ================================================================= */
 // router.post("/FlightSearch", function(req, res) {
 //   console.log('>> ENTER /FlightSearch');
+<<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 
 //   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
@@ -104,6 +109,19 @@ router.post("/HotelSearch", function(req, res) {
 // });
 
 
+=======
+
+//   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+
+//   request({ url: urlAPI }, function(error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//       res.send(body);
+//     }
+//   });
+// });
+
+
+>>>>>>> feat(): API request for airport codes receiving data
 router.post("/FlightCode", function(req, res) {
   console.log('>> ENTER /FlightCode', req.body);
   // console.log('REQUEST IN FLIGHT CODE', req)
@@ -112,9 +130,14 @@ router.post("/FlightCode", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+<<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
       console.log("FLIGHT BODY", body)
       res.send(body);
+=======
+      console.log('flight code response body', response.body)
+      res.send(response.body);
+>>>>>>> feat(): API request for airport codes receiving data
 =======
       console.log('flight code response body', response.body)
       res.send(response.body);

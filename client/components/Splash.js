@@ -46,8 +46,12 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
+<<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
     document.getElementById("loading-icon").style.display = 'block';
+=======
+    this.props.getFlightCode(this.state.city);
+>>>>>>> feat(): API request for airport codes receiving data
 =======
     this.props.getFlightCode(this.state.city);
 >>>>>>> feat(): API request for airport codes receiving data
