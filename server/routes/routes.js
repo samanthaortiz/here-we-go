@@ -47,6 +47,7 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/login');
 }
 
+<<<<<<< HEAD
 <<<<<<< 535f92954c672a39e7b6a0422981653e3e6a8b26
 
 =======
@@ -55,6 +56,8 @@ var api = require('./apiConfig')
 
 =======
 >>>>>>> fix(fixed dashboard/account view):
+=======
+>>>>>>> 2841373c1f21d64a8c40e0907724229117ca5c7e
 // DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
