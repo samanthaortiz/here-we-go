@@ -10,7 +10,6 @@ var knex = require('knex')({
  }
 });
 
-
 var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('users').then(exists => {
@@ -84,6 +83,17 @@ db.knex.schema.hasTable('hotelResp').then(exists => {
       hotel.timestamps();
     }).then(table => {
       console.log('Created Table', table);
+    });
+  }
+});
+
+db.knex.schema.hasTable('dummyHotel').then(exists => {
+  if (!exists) {
+    db.knex.schema.createTable('dummyHotel', hotel => {
+            hotel.increments('id').primary();
+            hotel.string('dummyInfo');
+          }).then(table => {
+            console.log('Created Table', table);
     });
   }
 });

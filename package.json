@@ -1,7 +1,7 @@
 {
   "name": "here-we-go",
   "description": "## Project Summaries",
-  "main": "./server/server.js",
+  "main": "server/server.js",
   "engines": {
     "node": "4.4.7",
     "npm": "2.15.8"
@@ -76,6 +76,7 @@
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "request": "^2.74.0",
+    "siftapi": "^1.0.4",
     "style": "0.0.3",
     "webpack": "^1.13.2",
     "xml2js": "^0.4.17"
