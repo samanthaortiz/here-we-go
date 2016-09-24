@@ -1,4 +1,5 @@
 import React from 'react';
+import Flight from './Flight';
 
 const FlightTile = React.createClass({
   changeDate(date) {
@@ -8,27 +9,25 @@ const FlightTile = React.createClass({
       return monthDay += '/' + year;
     },
 
-  render(){
-    let flight = this.props;
+  render() {
 
+    console.log('>>>>> FLIGHT TILE <<<<<');
+    console.log('Flight: ', this.props);
+    
     return (
       <div className="tile-flight">
-        {/*<p>
-                  <a href={"https://www.expedia.com/New-York-Flights.h"+this.props.flightInfo.flightId+".Flight-Information?rfrr=TG.LP.TopFlights#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
-                  { this.props.flightInfo.localizedName }
-                  </a>
-                </p>
-                <p>
-                  <img src={'https://images.trvl-media.com' + this.props.flightInfo.largeThumbnailUrl }/>
-                </p>
-                <p>
-                  From ${ this.props.flightInfo.lowRateInfo.priceToShowUsers } per night
-                </p>
-                <p>
-                  { this.props.flightInfo.shortDescription }
-                </p>*/}
+        {
+          this.props.flightData.expediaflightInfo.flightList.map((flight) =>
+            <flight
+              key={flight.flightId}
+              flightInfo={flight}
+              startDate={this.props.flightData.startDate}
+              endDate={this.props.flightData.endDate}
+            />
+          )
+        }
       </div>
-    )
+    );
   }
 })
 
