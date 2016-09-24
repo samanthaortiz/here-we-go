@@ -2,6 +2,62 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+var Users = require('../database/models/User')
+
+//PASSPORT GOOGLE AUTHENTICATION
+var passport = require('passport');
+
+
+router.get('/', function(req, res) {
+  res.render('index', {
+    user: req.user
+  });
+});
+
+router.get('/login', function(req, res){
+  res.render('login', { user: req.user });
+});
+
+
+router.get('/auth/google',
+  passport.authenticate('google', { scope: ['openid email profile'] }));
+
+
+router.get('/auth/google/callback',
+  passport.authenticate('google', {
+    failureRedirect: '/login'
+  }),
+  function(req, res) {
+    // Authenticated successfully
+    res.redirect('/');
+  });
+
+router.get('/account', ensureAuthenticated, function(req, res) {
+  res.render('account', {
+    //add msql connection 
+    user: req.user
+  });
+});
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
+
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
+
+
+
+
+
+
+
 
 // DB ====================================================================== */
 // GET USERNAME
