@@ -23,8 +23,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-app.set('views', __dirname + '../client/views');
-app.set('view engine', 'ejs');
+// app.set('views', __dirname + '../client/views');
+// app.set('view engine', 'ejs');
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
@@ -32,7 +32,6 @@ app.use(express.static(__dirname + '/public'));
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
-var usersRouter = require("./routes/users.js")
 app.use("/api", apiRouter);
 
 //passport config

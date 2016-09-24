@@ -8,17 +8,6 @@ var Users = require('../database/models/User')
 var passport = require('passport');
 
 
-router.get('/', function(req, res) {
-  res.render('index', {
-    user: req.user
-  });
-});
-
-router.get('/login', function(req, res){
-  res.render('login', { user: req.user });
-});
-
-
 router.get('/auth/google',
   passport.authenticate('google', { scope: ['openid email profile'] }));
 
@@ -29,8 +18,7 @@ router.get('/auth/google/callback',
   }),
   function(req, res) {
     // Authenticated successfully
-    console.log("HIII")
-    res.redirect('/account');
+    res.redirect('/');
   });
 
 router.get('/account', ensureAuthenticated, function(req, res) {
@@ -53,11 +41,6 @@ function ensureAuthenticated(req, res, next) {
   }
   res.redirect('/login');
 }
-
-
-
-
-
 
 
 
