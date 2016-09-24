@@ -7,6 +7,7 @@ const Flight = React.createClass({
     let monthDay = newDate.slice(5);
     return monthDay += '/' + year;
   },
+<<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
 <<<<<<< cbb4940c157070a0a00b18c372c26e65a0d1daa9
@@ -15,6 +16,12 @@ const Flight = React.createClass({
 =======
 <<<<<<< 82b63c5604d1369cc6bc4d4e34856dfc674ccac5
 >>>>>>> feat(flights): adding flights tile and component
+=======
+<<<<<<< b64969dd608a8b2b35b3ac5d375dca4b939dfd4e
+<<<<<<< 82b63c5604d1369cc6bc4d4e34856dfc674ccac5
+=======
+>>>>>>> chore(git st): merge conflict resolution
+>>>>>>> chore(git st): merge conflict resolution
   render() {
 
     console.log('>>>>> FLIGHT <<<<<');
@@ -33,10 +40,14 @@ const Flight = React.createClass({
         </div>
       );
     }
+<<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 <<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
 =======
 >>>>>>> feat(flights): adding flights tile and component
+=======
+<<<<<<< b64969dd608a8b2b35b3ac5d375dca4b939dfd4e
+>>>>>>> chore(git st): merge conflict resolution
 =======
   render(){
     
@@ -62,11 +73,16 @@ const Flight = React.createClass({
       </div>
     )
 >>>>>>> feat(flights): adding flights tile and component
+<<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
 =======
 >>>>>>> chore(git st): merge conflict resolution
 =======
 >>>>>>> feat(flights): adding flights tile and component
+=======
+=======
+>>>>>>> chore(git st): merge conflict resolution
+>>>>>>> chore(git st): merge conflict resolution
   }
 })
 
