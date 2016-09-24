@@ -2,6 +2,7 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+var api = require('./apiConfig')
 
 // DB ================================================================================ */
 // GET USERNAME
@@ -33,20 +34,36 @@ router.post("/HotelSearch", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+      // console.log('Hotel Response Body', body);
       res.send(body);
     }
   });
 });
 
 // FLIGHT SEARCH API ================================================================= */
-router.post("/FlightSearch", function(req, res) {
-  console.log('>> ENTER /FlightSearch');
+// router.post("/FlightSearch", function(req, res) {
+//   console.log('>> ENTER /FlightSearch');
 
-  var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+//   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+
+//   request({ url: urlAPI }, function(error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//       res.send(body);
+//     }
+//   });
+// });
+
+
+router.post("/FlightCode", function(req, res) {
+  console.log('>> ENTER /FlightCode', req.body);
+  // console.log('REQUEST IN FLIGHT CODE', req)
+  // console.log('REQUEST/ IN FLIGHT CODE:', req.body)
+  var urlAPI = 'https://iatacodes.org/api/v6/autocomplete?query='+req.body.locationForFlightSearch+'&api_key='+api.flightCode;
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.send(body);
+      console.log('flight code response body', response.body)
+      res.send(response.body);
     }
   });
 });

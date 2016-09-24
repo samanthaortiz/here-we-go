@@ -5,7 +5,7 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
-    console.log('Hotel: ', this.props);
+    console.log('Hotel tile this.props: ', this.props);
     
     return (
       <div className="tile-hotel">
