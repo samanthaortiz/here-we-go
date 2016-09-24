@@ -91,6 +91,21 @@ button {
    text-align: center; 
 }
 
+/* LOADING ICON */
+#loading-icon {
+  margin-top: 15px;
+  border-radius: 6px;
+  opacity: 0.8;
+  padding: 20px 10px;
+  display: none;
+  width: 95%;
+  background: url('../assets/load.gif') no-repeat 90%;
+  background-size: 25%;
+  background-color: #999;
+  text-align: left;
+  padding-left: 20px;
+}
+
 /* NAVIGATION BAR ================================================ */
 
 nav {
