@@ -5,8 +5,13 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
+<<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
     console.log('Hotel: ', this.props.hotelData);
+=======
+
+    console.log('Hotel tile this.props: ', this.props);
+>>>>>>> chore(git st): merge conflict resolution
 
     if(this.props.hotelData.length === 0) {
       return (
@@ -30,11 +35,14 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+<<<<<<< 92cf2a016897d2e4137ac3ba14ed1a22451d0aa9
 =======
     console.log('Hotel tile this.props: ', this.props);
 >>>>>>> feat(): API request for airport codes receiving data
     
 
+=======
+>>>>>>> chore(git st): merge conflict resolution
   }
 
 });
