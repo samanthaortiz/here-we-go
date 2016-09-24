@@ -2,6 +2,7 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
+<<<<<<< 29e77ff9ae7366e00b9ed451537990f20b226cb6
 <<<<<<< adf17ae5c0a1c043f6f172c4dd68d836906f1195
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
@@ -17,6 +18,8 @@ var mysql = require('mysql');
 =======
 >>>>>>> fix(fixed dashboard/account view):
 >>>>>>> fix(fixed dashboard/account view):
+=======
+>>>>>>> chore(router): router cleanup
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
 
@@ -42,7 +45,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
     //add msql connection 
     user: req.user
   });
-});
+}); 
 
 router.get('/logout', function(req, res) {
   req.logout();
@@ -57,6 +60,7 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
+<<<<<<< 29e77ff9ae7366e00b9ed451537990f20b226cb6
 <<<<<<< adf17ae5c0a1c043f6f172c4dd68d836906f1195
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
 =======
@@ -69,6 +73,8 @@ var api = require('./apiConfig')
 
 =======
 >>>>>>> fix(fixed dashboard/account view):
+=======
+>>>>>>> chore(router): router cleanup
 // DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
