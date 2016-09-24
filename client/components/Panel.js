@@ -16,10 +16,6 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
         <FlightTile flightData={this.props} />
-        /*
-        <CarRentals/>
-        <Activities/>
-          */
       </div>
     );
   }

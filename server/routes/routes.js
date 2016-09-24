@@ -2,8 +2,8 @@ var router = require("express").Router();
 var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
-<<<<<<< HEAD
 var Users = require('../database/models/User')
+var api = require('./apiConfig')
 
 //PASSPORT GOOGLE AUTHENTICATION
 var passport = require('passport');
@@ -42,11 +42,6 @@ function ensureAuthenticated(req, res, next) {
   }
   res.redirect('/login');
 }
-
-
-=======
-var api = require('./apiConfig')
->>>>>>> feature
 
 // DB ================================================================================ */
 // GET USERNAME
