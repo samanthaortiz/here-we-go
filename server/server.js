@@ -48,21 +48,19 @@ passport.deserializeUser(function(obj, done) {
 
 
 var User = require('./database/models/User')
-console.log("USER", User)
 
 passport.use(new GoogleStrategy(
   authConfig.google,
  function(accessToken, refreshToken, profile, done) {
   // asynchronous
   // process.nextTick(function(){
-    console.log("ENTER NEXT TICK")
-    new User({'google_id': profile.id}).fetch()
+    User.forge().where({'google_id': profile.id}).fetch()
       // db.knex.select('*')
       // .from('users')
       // .where({'google_id': profile.id})
-      .then(function(err, user){
+      .then(function(user){
         if(!user){
-          console.log("USER", user)
+          console.log("ADDING NEW USER")
           new User({
           'google_id': profile.id, // set the users facebook id                   
         'token': accessToken, // we will save the token that facebook provides to the user                    
@@ -72,12 +70,13 @@ passport.use(new GoogleStrategy(
       }
     })
     .then(function(err, user){
+      console.log("USER ADDED TO DATABASE")
       done(null, profile);
     })
-  console.log("USER ID", typeof profile.id);
-  console.log("NAME", profile.name.givenName + ' ' + profile.name.familyName);
-  console.log("EMAIL", profile.emails[0].value)
-    console.log("TOKEN", accessToken)
+  // console.log("USER ID", profile.id);
+  // console.log("NAME", profile.name.givenName + ' ' + profile.name.familyName);
+  // console.log("EMAIL", profile.emails[0].value)
+  //   console.log("TOKEN", accessToken)
     }));
 
 
