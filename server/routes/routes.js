@@ -14,11 +14,11 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
     passport.authenticate('google', { 
-      successRedirect: '/auth/google/success',
+      successRedirect: '/dashboard',
       failureRedirect: '/auth/google/failure'
     }),
     function(req, res) {
-        res.redirect('http://localhost:4000/#');
+        res.redirect('http://localhost:4000/dashboard');
     } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {

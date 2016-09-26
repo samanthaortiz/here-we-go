@@ -10,14 +10,15 @@ var knex = require('knex')({
  }
 });
 
-var db = require('bookshelf')(knex);
+var DB = require('bookshelf')(knex);
 
-db.knex.schema.hasTable('users').then(exists => {
+Promise.all([
+knex.schema.hasTable('users').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('users', user => {
+     knex.schema.createTable('users', user => {
       user.increments('id').primary();
-      user.integer('google_id').unsigned();
-      user.integer('token').unsigned();
+      user.string('google_id');
+      user.string('token');
       user.string('fullName');
       user.string('email');
       user.string('password')
@@ -26,12 +27,12 @@ db.knex.schema.hasTable('users').then(exists => {
       console.log('Created Table', table);
     });
   }
-});
+}),
 
 
-db.knex.schema.hasTable('bookings').then(exists => {
+ knex.schema.hasTable('bookings').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('bookings', booking => {
+     knex.schema.createTable('bookings', booking => {
       booking.increments('id').primary();
       booking.string('type');
       booking.timestamps();
@@ -39,12 +40,12 @@ db.knex.schema.hasTable('bookings').then(exists => {
       console.log('Created Table', table);
     });
   }
-});
+}),
 
 
-db.knex.schema.hasTable('itineraries').then(exists => {
+ knex.schema.hasTable('itineraries').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('itineraries', itinerary => {
+     knex.schema.createTable('itineraries', itinerary => {
       itinerary.increments('id').primary();
       itinerary.integer('user_id').unsigned();
       itinerary.foreign('user_id').references('id').inTable('users');
@@ -55,12 +56,12 @@ db.knex.schema.hasTable('itineraries').then(exists => {
       console.log('Created Table', table);
     });
   }
-});
+}),
 
 
-db.knex.schema.hasTable('statuses').then(exists => {
+ knex.schema.hasTable('statuses').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('statuses', status => {
+     knex.schema.createTable('statuses', status => {
       status.increments('id').primary();
       status.string('type');
       status.timestamps();
@@ -68,12 +69,12 @@ db.knex.schema.hasTable('statuses').then(exists => {
       console.log('Created Table', table);
     });
   }
-});
+}),
 
 
-db.knex.schema.hasTable('hotelResp').then(exists => {
+ knex.schema.hasTable('hotelResp').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('hotelResp', hotel => {
+     knex.schema.createTable('hotelResp', hotel => {
       hotel.increments('id').primary();
       hotel.integer('reservationId');
       hotel.string('name');
@@ -87,18 +88,21 @@ db.knex.schema.hasTable('hotelResp').then(exists => {
       console.log('Created Table', table);
     });
   }
-});
+}),
 
-db.knex.schema.hasTable('dummyHotel').then(exists => {
+ knex.schema.hasTable('dummyHotel').then(exists => {
   if (!exists) {
-    db.knex.schema.createTable('dummyHotel', hotel => {
+     knex.schema.createTable('dummyHotel', hotel => {
             hotel.increments('id').primary();
             hotel.string('dummyInfo');
           }).then(table => {
             console.log('Created Table', table);
     });
   }
-});
+})
 
-module.exports = db;
+  ])
+
+DB.plugin('registry');
+module.exports = DB;
 // export default db;
