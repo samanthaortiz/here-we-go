@@ -16,6 +16,8 @@ db.knex.schema.hasTable('users').then(exists => {
   if (!exists) {
     db.knex.schema.createTable('users', user => {
       user.increments('id').primary();
+      user.integer('google_id').unsigned();
+      user.integer('token').unsigned();
       user.string('fullName');
       user.string('email');
       user.string('password')

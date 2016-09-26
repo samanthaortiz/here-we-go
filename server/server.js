@@ -1,3 +1,4 @@
+var db = require('../server/database/db.js');
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -45,12 +46,65 @@ passport.deserializeUser(function(obj, done) {
 });
 
 
+var User = require('../server/database/models/User')
+
 passport.use(new GoogleStrategy(
   authConfig.google,
- function(accessToken, refreshToken, profile, done) {
-    return done(null, profile);
-  }
-));
+ function(req, accessToken, refreshToken, profile, done) {
+  // asynchronous
+  process.nextTick(function(){
+    if (!req.user) {
+
+db.knex.select('*')
+  .from('users')
+  .where({'googe_id': profile.id}, function(err, user){
+      if (err)
+        return done(err);
+      if(user){
+        return(null, user);
+      }else{
+        var newUser = new User();
+        newUser.google_id  = profile.id; // set the users facebook id                   
+        newUser.token = accessToken; // we will save the token that facebook provides to the user                    
+        newUser.fullName  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
+        newUser.email = profile.emails[0].value;
+
+         newUser.save()
+         .then(function(err) {
+          if (err)
+            throw err;
+
+          return done(null, newUser);
+        });
+       }
+     });
+  } 
+    else{
+      var user = req.user;
+      user.google_id = profile.id;
+      user.token = accessToken;
+      user.fullName = profile.name.givenName + ' ' + profile.name.familyName;
+      user.email = profile.emails[0].value;
+
+      user.save()
+      .then(function(err){
+        if(err){
+          throw err;
+        }
+        return done(null, user);
+        });
+      }
+
+    });
+// }));
+
+  // if(req.user){
+  //   var user = User.where('email', email);
+  console.log("USER ID", profile.id);
+  console.log("NAME", profile.name.givenName + ' ' + profile.name.familyName);
+  console.log("EMAIL", profile.emails[0].value)
+    // return done(null, profile);
+  }));
 
 
 // app.get('/', function(req, res) {
