@@ -10,9 +10,9 @@ const Flight = React.createClass({
   render() {
 
     console.log('>>>>> FLIGHT <<<<<');
-    console.log('Flight: ', this.props);
+    console.log('Flight this.props: ', this.props);
 
-    if(this.props.hotelInfo === undefined) {
+    if(this.props === undefined) {
       return (
         <div className="item-flight">
           Select Flight!
@@ -21,7 +21,7 @@ const Flight = React.createClass({
     } else {
       return (
         <div className="item-flight">
-          Fight Info Goes Here
+          {this.props.airportName}
         </div>
       );
     }
