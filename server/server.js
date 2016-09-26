@@ -4,7 +4,7 @@ var path = require('path');
 var request = require('request');
 var bodyParser = require('body-parser');
 
-var logger = require('morgan');
+// var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var authConfig = require('./auth/config');
