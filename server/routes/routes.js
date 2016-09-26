@@ -13,13 +13,13 @@ router.get('/auth/google',
 
 
 router.get('/auth/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: '/login'
-  }),
-  function(req, res) {
-    // Authenticated successfully
-    res.redirect('/');
-  });
+    passport.authenticate('google', { 
+      successRedirect: '/dashboard',
+      failureRedirect: '/auth/google/failure'
+    }),
+    function(req, res) {
+        res.redirect('http://localhost:4000/dashboard');
+    } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
@@ -36,10 +36,9 @@ router.get('/logout', function(req, res) {
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    console.log("ACCOUNT")
     return next();
   }
-  res.redirect('/login');
+  res.redirect('/auth/google/');
 }
 
 
@@ -49,7 +48,7 @@ function ensureAuthenticated(req, res, next) {
 router.post('/user-account/', function(req, res) {
   db.knex.select('*')
   .from('users')
-  .where({'username': req.query.username})
+  .where({'google_id': req.query.google_id})
   .then(function(user) {
     res.send(user);
   })
@@ -87,6 +86,7 @@ router.post("/FlightSearch", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+      console.log("FLIGHT BODY", body)
       res.send(body);
     }
   });

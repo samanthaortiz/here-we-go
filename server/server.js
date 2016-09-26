@@ -1,3 +1,5 @@
+var db = require('../server/database/db.js')
+var mySQL = require('mysql');
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -45,12 +47,40 @@ passport.deserializeUser(function(obj, done) {
 });
 
 
+var User = require('./database/models/User')
+
 passport.use(new GoogleStrategy(
   authConfig.google,
  function(accessToken, refreshToken, profile, done) {
-    return done(null, profile);
-  }
-));
+    User.forge().where({'google_id': profile.id}).fetch()
+      .then(function(user){
+        if(!user){
+          console.log("ADDING NEW USER")
+          new User({
+          'google_id': profile.id, // set the users facebook id                   
+        'token': accessToken, // we will save the token that facebook provides to the user                    
+        'fullName': profile.name.givenName + ' ' + profile.name.familyName, // look at the passport user profile to see how names are returned
+        'email': profile.emails[0].value
+        }).save()
+      }
+    })
+    .then(function(err, user){
+      console.log("USER ADDED TO DATABASE")
+      done(null, profile);
+    })
+  // console.log("USER ID", profile.id);
+  // console.log("NAME", profile.name.givenName + ' ' + profile.name.familyName);
+  // console.log("EMAIL", profile.emails[0].value)
+  //   console.log("TOKEN", accessToken)
+    }));
+
+
+
+// }));
+
+  // if(req.user){
+  //   var user = User.where('email', email);
+    // return done(null, profile);
 
 
 // app.get('/', function(req, res) {
