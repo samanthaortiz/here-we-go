@@ -4,6 +4,8 @@ var db = require('../database/db.js');
 var mysql = require('mysql');
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
+var All = require('../../client/data/fullAirportList');
+var Valid = require('../../client/data/validFlightCodes');
 
 //PASSPORT GOOGLE AUTHENTICATION
 var passport = require('passport');
@@ -120,5 +122,26 @@ router.post('/hotel-resp/', function(req, res) {
   });
 });
 
+
+router.get('/airport-list/', function(req, res){
+
+    var all = [];
+    All.forEach(function(airport){
+      if(Valid.indexOf(airport.code) !== -1){
+        all.push(airport);
+      }
+    })
+
+
+    var selectableAirports = all.map(function(airport, i){
+      return airport.name
+    });
+
+    console.log(selectableAirports);
+
+
+
+  res.send(selectableAirports)
+});
 
 module.exports = router;

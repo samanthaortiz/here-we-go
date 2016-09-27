@@ -21,7 +21,7 @@ const Flight = React.createClass({
     } else {
       return (
         <div className="item-flight">
-          {this.props.airportName}
+          {this.props.destAirportName}
         </div>
       );
     }
