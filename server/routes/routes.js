@@ -22,6 +22,8 @@ var mysql = require('mysql');
 >>>>>>> chore(router): router cleanup
 var Users = require('../database/models/User')
 var api = require('./apiConfig')
+var All = require('../../client/data/fullAirportList');
+var Valid = require('../../client/data/validFlightCodes');
 
 //PASSPORT GOOGLE AUTHENTICATION
 var passport = require('passport');
@@ -115,15 +117,21 @@ router.post("/HotelSearch", function(req, res) {
 });
 
 // FLIGHT SEARCH API ================================================================= */
+<<<<<<< HEAD
 // router.post("/FlightSearch", function(req, res) {
 //   console.log('>> ENTER /FlightSearch');
 <<<<<<< HEAD
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 =======
 >>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
+=======
+router.post("/FlightSearch", function(req, res) {
+  console.log('>> ENTER /FlightSearch');
+>>>>>>> feature
 
-//   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+  var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
+<<<<<<< HEAD
 //   request({ url: urlAPI }, function(error, response, body) {
 //     if (!error && response.statusCode == 200) {
 //       res.send(body);
@@ -131,6 +139,14 @@ router.post("/HotelSearch", function(req, res) {
 //   });
 // });
 <<<<<<< HEAD
+=======
+  request({ url: urlAPI }, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body);
+    }
+  });
+});
+>>>>>>> feature
 
 
 =======
@@ -192,5 +208,26 @@ router.post('/hotel-resp/', function(req, res) {
   });
 });
 
+
+router.get('/airport-list/', function(req, res){
+
+    var all = [];
+    All.forEach(function(airport){
+      if(Valid.indexOf(airport.code) !== -1){
+        all.push(airport);
+      }
+    })
+
+
+    var selectableAirports = all.map(function(airport, i){
+      return airport.name
+    });
+
+    console.log(selectableAirports);
+
+
+
+  res.send(selectableAirports)
+});
 
 module.exports = router;

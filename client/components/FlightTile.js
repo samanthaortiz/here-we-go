@@ -1,7 +1,55 @@
 import React from 'react';
 import Flight from './Flight';
+// import Valid from '../data/validAirports';
+import ValidCodes from '../data/validFlightCodes'
+// import All from '../data/fullAirportList';
+// import Bloodhound from "bloodhound-js";
+// import $ from "jquery";
+// import { typeahead } from '../../bower_components/typeahead.js/dist/typeahead.jquery';
+
 
 const FlightTile = React.createClass({
+
+  getAllAirports(ValidCodes){
+    let codes = [];
+
+    this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports_by_cities.forEach(function(airport){
+      if(ValidCodes.indexOf(airport.code) !== -1){
+        codes.push(airport);
+      }
+    });
+
+    this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports.forEach(function(airport){
+      if(ValidCodes.indexOf(airport.code) !== -1){
+        codes.push(airport);
+      }
+    });
+
+    return codes
+  },
+
+  componentDidMount() {
+    console.log('IM IN!');
+    $('#prefetch .typeahead').on('focusout', function() {
+      console.log('type!');
+    });
+
+    var countries = new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      // url points to a json file that contains an array of country names, see
+      // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
+      prefetch: '../data/airports.json'
+    });
+
+    // passing in `null` for the `options` arguments will result in the default
+    // options being used
+    $('#prefetch .typeahead').typeahead(null, {
+      name: 'countries',
+      source: countries
+    });
+  },
+
   render() {
 <<<<<<< HEAD
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
@@ -21,6 +69,7 @@ const FlightTile = React.createClass({
 >>>>>>> feat(): API request for airport codes receiving data
 =======
     console.log('>>>>> FLIGHT TILE <<<<<');
+<<<<<<< HEAD
     console.log('Flight: ', this.props);
 >>>>>>> chore(merge): merge conflicts resolved
 =======
@@ -28,27 +77,38 @@ const FlightTile = React.createClass({
     console.log('Flight: ', this.props);
 >>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
     if(this.props.flightData.length === 0 || 'test' === 'test') {
+=======
+    console.log('Flight this.props in flightTile: ', this.props);
+    
+    let codes = this.getAllAirports(ValidCodes);
+
+    if(codes.length > 0){
+>>>>>>> feature
       return (
         <div className="tile-flight">
-          <Flight />
+          <h3>Choose your departure and destination airports</h3>
+          <div id="prefetch">
+            <label htmlFor="tagss">Airport</label>
+            <input className="typeahead" ref="tagss"/>
+          </div>
+            {codes.map((airport, i) =>
+                <Flight
+                  key={i}
+                  destAirportCode={airport.code}
+                  destAirportName={airport.name}
+                />
+            )}
         </div>
       );
     } else {
       return (
         <div className="tile-flight">
-          {
-            this.props.flightData.map((flight) =>
-              <Flight
-                key={flight.hotelId}
-                hotelInfo={flight}
-                startDate={this.props.hotelData.startDate}
-                endDate={this.props.hotelData.endDate}
-              />
-            )
-          }
+          <h3>No Flights Available</h3>
         </div>
-      );
+        )
     }
+    }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< 9b60c92a8bb168930f2bc48b4f60aa1cc2008078
     
@@ -132,6 +192,8 @@ const FlightTile = React.createClass({
 >>>>>>> refactor(): refactored flights and hotels
 =======
   }
+=======
+>>>>>>> feature
 });  
 >>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 export default FlightTile;

@@ -44,6 +44,9 @@ export function axiosHotelCall(location, startDate, endDate){
 
 
 //=============== FLIGHTS ===============
+
+//GET AIRPORT CODE FOR FLIGHT SEARCH
+
 export const getFlightCode = (locationForFlightSearch) => {
   console.log('LOCATIONForFlightSearch', locationForFlightSearch);
   return function(dispatch){
@@ -66,18 +69,6 @@ export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearc
   };
 }
 
-export function hydrateFlightStoreExpedia(expediaFlightInfo, locationForFlightSearch, startDate, endDate){
-  return {
-    type: 'POST_FLIGHT_EXPEDIA',
-    expediaFlightInfo,
-    locationForFlightSearch,
-    startDate,
-    endDate
-  };
-}
-
-
-
 export function axiosFlightCode(locationForFlightSearch){
   console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
   return axios.post('/api/FlightCode', {
@@ -85,25 +76,35 @@ export function axiosFlightCode(locationForFlightSearch){
     });
 }
 
-// export function axiosFlightCall(location, startDate, endDate){
-//   return axios.post('/api/flightSearch', {
-//       location: location,
-//       startDate: startDate,
-//       endDate: endDate
-//     });
-// }
 
+//POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
 
-// export const postFlightExpedia = (location, startDate, endDate) => {
-//   console.log(location, startDate, endDate);
-//   return function(dispatch){
-//     return axiosFlightCall(location, startDate, endDate)
-//     .then(res => {
-//       // console.log("HERE HERE HERE -- FLIGHTS", res.data);
-//       dispatch(hydrateFlightStore(res.data, location, startDate, endDate))
-//       browserHistory.push('/dashboard')
+export const postFlightExpedia = (codeArr, startDate, endDate) => {
+  console.log(codeArr, startDate, endDate);
+  return function(dispatch){
+    return axiosFlightCall(codeArr, startDate, endDate)
+    .then(res => {
+      dispatch(hydrateFlightStore(res.data, codeArr, startDate, endDate))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
 
-//     })
-//     .catch(error => console.log(error));
-//   };
-// };
+export function axiosFlightCall(codeArr, startDate, endDate){
+  return axios.post('/api/flightSearch', {
+      codeArr: codeArr,
+      startDate: startDate,
+      endDate: endDate
+    });
+}
+
+export function hydrateFlightStoreExpedia(expediaFlightInfo, code, startDate, endDate){
+  return {
+    type: 'POST_FLIGHT_EXPEDIA',
+    expediaFlightInfo,
+    code,
+    startDate,
+    endDate
+  };
+}

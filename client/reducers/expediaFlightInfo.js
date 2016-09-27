@@ -5,7 +5,7 @@ const expediaFlightInfo = (state = [], action) => {
     case 'POST_FLIGHT_EXPEDIA':
       return {
         expediaFlightInfo: action.expediaFlightInfo,
-        locationForFlightSearch: action.locationForFlightSearch,
+        code: action.code,
         startDate: action.startDate,
         endDate: action.endDate
       }
