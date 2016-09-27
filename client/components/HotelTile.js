@@ -5,6 +5,7 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
+<<<<<<< HEAD
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
@@ -25,6 +26,10 @@ const HotelTile = React.createClass({
     console.log('Hotel tile this.props: ', this.props);
 
 >>>>>>> chore(merge): merge conflicts resolved
+=======
+    console.log('Hotel tile this.props: ', this.props);
+
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 
     if(this.props.hotelData.length === 0) {
       return (
@@ -48,6 +53,7 @@ const HotelTile = React.createClass({
         </div>
       );
     }
+<<<<<<< HEAD
 <<<<<<< 9b60c92a8bb168930f2bc48b4f60aa1cc2008078
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 <<<<<<< 8596438e8a97853c9a2541723ae88ea0256e49d0
@@ -72,6 +78,9 @@ const HotelTile = React.createClass({
 =======
   }
 >>>>>>> refactor(): refactored flights and hotels
+=======
+  }
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 });
 
 export default HotelTile;

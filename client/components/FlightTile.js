@@ -3,6 +3,7 @@ import Flight from './Flight';
 
 const FlightTile = React.createClass({
   render() {
+<<<<<<< HEAD
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
 
 <<<<<<< a17da5c7b340c98649173414a09634347557ce42
@@ -22,6 +23,10 @@ const FlightTile = React.createClass({
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight: ', this.props);
 >>>>>>> chore(merge): merge conflicts resolved
+=======
+    console.log('>>>>> FLIGHT TILE <<<<<');
+    console.log('Flight: ', this.props);
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
     if(this.props.flightData.length === 0 || 'test' === 'test') {
       return (
         <div className="tile-flight">
@@ -44,6 +49,7 @@ const FlightTile = React.createClass({
         </div>
       );
     }
+<<<<<<< HEAD
 <<<<<<< 9b60c92a8bb168930f2bc48b4f60aa1cc2008078
     
 <<<<<<< 089f2ed5cafd088cd52c8001fbadb2dbfb597189
@@ -124,4 +130,8 @@ const FlightTile = React.createClass({
   }
 });  
 >>>>>>> refactor(): refactored flights and hotels
+=======
+  }
+});  
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 export default FlightTile;

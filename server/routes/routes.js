@@ -60,6 +60,7 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
+<<<<<<< HEAD
 <<<<<<< 29e77ff9ae7366e00b9ed451537990f20b226cb6
 <<<<<<< adf17ae5c0a1c043f6f172c4dd68d836906f1195
 <<<<<<< f6f7a38780bb45dce246e451978335ff47ad2342
@@ -75,6 +76,8 @@ var api = require('./apiConfig')
 >>>>>>> fix(fixed dashboard/account view):
 =======
 >>>>>>> chore(router): router cleanup
+=======
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 // DB ================================================================================ */
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
@@ -114,7 +117,10 @@ router.post("/HotelSearch", function(req, res) {
 // FLIGHT SEARCH API ================================================================= */
 // router.post("/FlightSearch", function(req, res) {
 //   console.log('>> ENTER /FlightSearch');
+<<<<<<< HEAD
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
+=======
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 
 //   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
@@ -124,6 +130,7 @@ router.post("/HotelSearch", function(req, res) {
 //     }
 //   });
 // });
+<<<<<<< HEAD
 
 
 =======
@@ -139,6 +146,10 @@ router.post("/HotelSearch", function(req, res) {
 
 
 >>>>>>> feat(): API request for airport codes receiving data
+=======
+
+
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 router.post("/FlightCode", function(req, res) {
   console.log('>> ENTER /FlightCode', req.body);
   // console.log('REQUEST IN FLIGHT CODE', req)
@@ -147,6 +158,7 @@ router.post("/FlightCode", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
+<<<<<<< HEAD
 <<<<<<< 2415d603c1d8601290028943cbeaa22c83102176
 <<<<<<< 21aa11db6000c3cbee7ac247f81fe5274e0b2adc
       console.log("FLIGHT BODY", body)
@@ -159,6 +171,10 @@ router.post("/FlightCode", function(req, res) {
       console.log('flight code response body', response.body)
       res.send(response.body);
 >>>>>>> feat(): API request for airport codes receiving data
+=======
+      console.log('flight code response body', response.body)
+      res.send(response.body);
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
     }
   });
 });

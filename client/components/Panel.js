@@ -27,6 +27,7 @@ const Panel = React.createClass({
 <<<<<<< 3c62f89262292adf87239385c89c91f045d76765
 >>>>>>> feat(): API request for airport codes receiving data
         <FlightTile flightData={this.props} />
+<<<<<<< HEAD
         { 
           /*
 =======
@@ -63,6 +64,8 @@ const Panel = React.createClass({
 =======
         <FlightTile flightData={this.props} />
 >>>>>>> chore(merge): merge conflicts resolved
+=======
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
       </div>
     );
   }

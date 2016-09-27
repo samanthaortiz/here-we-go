@@ -89,6 +89,7 @@ const Flight = React.createClass({
 >>>>>>> chore(git st): merge conflict resolution
 >>>>>>> chore(git st): merge conflict resolution
   }
+<<<<<<< HEAD
 })
 
 =======
@@ -97,4 +98,7 @@ const Flight = React.createClass({
   }
 });
 >>>>>>> refactor(): refactored flights and hotels
+=======
+});
+>>>>>>> 11c1660695ee6a40495cb0cfb4a2fcd474e338ec
 export default Flight;
