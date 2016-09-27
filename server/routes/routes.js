@@ -21,7 +21,7 @@ router.get('/auth/google/callback',
       failureRedirect: '/auth/google/failure'
     }),
     function(req, res) {
-        res.redirect('http://localhost:4000/dashboard');
+        res.redirect('/dashboard');
     } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {

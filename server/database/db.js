@@ -21,7 +21,6 @@ knex.schema.hasTable('users').then(exists => {
       user.string('token');
       user.string('fullName');
       user.string('email');
-      user.string('password')
       user.timestamps();
     }).then(table => {
       console.log('Created Table', table);
@@ -29,29 +28,106 @@ knex.schema.hasTable('users').then(exists => {
   }
 }),
 
-
- knex.schema.hasTable('bookings').then(exists => {
+ knex.schema.hasTable('hotelReservations').then(exists => {
   if (!exists) {
-     knex.schema.createTable('bookings', booking => {
-      booking.increments('id').primary();
-      booking.string('type');
-      booking.timestamps();
+     knex.schema.createTable('hotelReservations', hotel => {
+      hotel.increments('id').primary();
+      hotel.integer('trip_id').unsigned();
+      hotel.foreign('trip_id').references('id').inTable('itineraries');
+      hotel.string('status_id').unsigned();
+      hotel.foreign('status_id').references('id').inTable('statuses');
+      hotel.string('type_id').unsigned();
+      hotel.string('type_id').references('id').inTable('types');
+      hotel.string('providerName');
+      hotel.string('address_line1');
+      hotel.string('address_line2');
+      hotel.string('address_line3');
+      hotel.string('city');
+      hotel.string('state');
+      hotel.string('zip');
+      hotel.string('telephone');
+      hotel.integer('days');
+      hotel.date('startDate');
+      hotel.date('endDate');
+      hotel.string('organization');
+      hotel.timestamps();
     }).then(table => {
       console.log('Created Table', table);
     });
   }
 }),
 
-
- knex.schema.hasTable('itineraries').then(exists => {
+  knex.schema.hasTable('flightReservations').then(exists => {
   if (!exists) {
-     knex.schema.createTable('itineraries', itinerary => {
-      itinerary.increments('id').primary();
-      itinerary.integer('user_id').unsigned();
-      itinerary.foreign('user_id').references('id').inTable('users');
-      itinerary.integer('booking_id').unsigned();
-      itinerary.foreign('booking_id').references('id').inTable('bookings');
-      itinerary.timestamps();
+     knex.schema.createTable('flightReservations', flight => {
+      flight.increments('id').primary();
+      flight.integer('trip_id').unsigned();
+      flight.foreign('trip_id').references('id').inTable('itineraries')
+      flight.string('status_id').unsigned();
+      flight.foreign('status_id').references('id').inTable('statuses');
+      flight.string('type_id').unsigned();
+      flight.foreign('type_id').references('id').inTable('types');
+      flight.string('terminal');
+      flight.string('airportName');
+      flight.string('airportCode');
+      flight.string('airportCity');
+      flight.string('airline');
+      flight.string('flightNumber');
+      flight.string('ticketNumber');
+      flight.string('seatType');
+      flight.integer('seatRow');
+      flight.string('seatNumber');
+      flight.string('membershipNumber');
+      flight.string('broker');
+      flight.dateTime('departureTime');
+      flight.dateTime('arrivalTime');
+      flight.timestamps();
+    }).then(table => {
+      console.log('Created Table', table);
+    });
+  }
+}),
+
+knex.schema.hasTable('trainReservations').then(exists => {
+  if (!exists) {
+     knex.schema.createTable('trainReservations', train => {
+      train.increments('id').primary();
+      train.integer('trip_id').unsigned();
+      train.foreign('trip_id').references('id').inTable('itineraries')
+      train.string('status_id').unsigned();
+      train.foreign('status_id').references('id').inTable('statuses');
+      train.string('type_id').unsigned();
+      train.foreign('type_id').references('id').inTable('types');
+      train.string('stationName');
+      train.string('stationCode');
+      train.dateTime('departureTime');
+      train.dateTime('arrivalTime');
+      train.string('seatDescription');
+      train.timestamps();
+    }).then(table => {
+      console.log('Created Table', table);
+    });
+  }
+}),
+
+knex.schema.hasTable('carRentals').then(exists => {
+  if (!exists) {
+     knex.schema.createTable('carRentals', car => {
+      car.increments('id').primary();
+      car.integer('trip_id').unsigned();
+      car.foreign('trip_id').references('id').inTable('itineraries')
+      car.string('status_id').unsigned();
+      car.foreign('status_id').references('id').inTable('statuses');
+      car.string('type_id').unsigned();
+      car.foreign('type_id').references('id').inTable('types');
+      car.string('vehicleType');
+      car.string('vehicleBrand');
+      car.string('rentalCompany');
+      car.string('pickUpAddress');
+      car.string('dropOffAddress');
+      car.dateTime('pickUpTime');
+      car.dateTime('dropOffTime');
+      car.timestamps();
     }).then(table => {
       console.log('Created Table', table);
     });
@@ -63,7 +139,7 @@ knex.schema.hasTable('users').then(exists => {
   if (!exists) {
      knex.schema.createTable('statuses', status => {
       status.increments('id').primary();
-      status.string('type');
+      status.string('statusType');
       status.timestamps();
     }).then(table => {
       console.log('Created Table', table);
@@ -72,31 +148,42 @@ knex.schema.hasTable('users').then(exists => {
 }),
 
 
- knex.schema.hasTable('hotelResp').then(exists => {
+ knex.schema.hasTable('types').then(exists => {
   if (!exists) {
-     knex.schema.createTable('hotelResp', hotel => {
-      hotel.increments('id').primary();
-      hotel.integer('reservationId');
-      hotel.string('name');
-      hotel.string('address');
-      hotel.string('telephone');
-      hotel.integer('days');
-      hotel.string('checkinTime');
-      hotel.string('checkoutTime');
-      hotel.timestamps();
+     knex.schema.createTable('types', type => {
+      type.increments('id').primary();
+      type.string('reservationType');
+      type.timestamps();
     }).then(table => {
       console.log('Created Table', table);
     });
   }
 }),
 
- knex.schema.hasTable('dummyHotel').then(exists => {
+
+
+//  knex.schema.hasTable('dummyHotel').then(exists => {
+//   if (!exists) {
+//      knex.schema.createTable('dummyHotel', hotel => {
+//             hotel.increments('id').primary();
+//             hotel.string('dummyInfo');
+//           }).then(table => {
+//             console.log('Created Table', table);
+//     });
+//   }
+// }),
+
+ knex.schema.hasTable('itineraries').then(exists => {
   if (!exists) {
-     knex.schema.createTable('dummyHotel', hotel => {
-            hotel.increments('id').primary();
-            hotel.string('dummyInfo');
-          }).then(table => {
-            console.log('Created Table', table);
+     knex.schema.createTable('itineraries', itinerary => {
+      itinerary.increments('id').primary();
+      itinerary.integer('user_id').unsigned();
+      itinerary.foreign('user_id').references('google_id').inTable('users');
+      itinerary.string('status');
+      itinerary.integer('trip_id');
+      itinerary.timestamps();
+    }).then(table => {
+      console.log('Created Table', table);
     });
   }
 })
