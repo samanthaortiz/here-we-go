@@ -47,6 +47,7 @@ const Splash = React.createClass({
   onSubmit(e) {
     e.preventDefault();
     document.getElementById("loading-icon").style.display = 'block';
+    this.props.getFlightCode(this.state.city);
     this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
     // this.props.postFlightExpedia(this.state.city, this.state.startDate, this.state.endDate)
   },
