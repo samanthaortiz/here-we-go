@@ -57,7 +57,8 @@ const Splash = React.createClass({
     
     return (
       <div>
-      <a href='/api/auth/google'>Login</a>
+      <a className="loginOut" href='/api/auth/google'>Login</a><br/>
+      <a className="loginOut" href='/api/logout'>Logout</a>
         <div>
         <h1 id='logo'>
           Here We Go!
