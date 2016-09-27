@@ -36,18 +36,23 @@ app.use(express.static(__dirname + '/public'));
 var apiRouter = require("./routes/routes.js");
 app.use("/api", apiRouter);
 
+
+
+
 //passport config
+var User = require('./database/models/User')
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
 passport.deserializeUser(function(obj, done) {
   //find user
-  done(null, obj);
+  // console.log('OBJECT IN DES', obj)
+    done(null, obj);
 });
 
 
-var User = require('./database/models/User')
 
 passport.use(new GoogleStrategy(
   authConfig.google,

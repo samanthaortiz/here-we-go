@@ -31,11 +31,20 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-router.get('/logout', function(req, res) {
+// router.get('/logout', function(req, res) {
+//   req.logOut();
+//   res.redirect('/');
+// });
+  var url = require('url');
+
+router.get('/logout', function (req, res, next){
   req.logout();
-  res.redirect('/');
+  res.redirect('https://accounts.google.com/logout')
 });
 
+// router.get('/logout', function(req, res) {
+//     res.redirect('/');
+// });
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
