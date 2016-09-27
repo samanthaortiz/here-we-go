@@ -1,12 +1,6 @@
 import React from 'react';
 import Flight from './Flight';
-// import Valid from '../data/validAirports';
 import ValidCodes from '../data/validFlightCodes'
-// import All from '../data/fullAirportList';
-// import Bloodhound from "bloodhound-js";
-// import $ from "jquery";
-// import { typeahead } from '../../bower_components/typeahead.js/dist/typeahead.jquery';
-
 
 const FlightTile = React.createClass({
 
@@ -53,33 +47,36 @@ const FlightTile = React.createClass({
   render() {
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight this.props in flightTile: ', this.props);
-    
-    let codes = this.getAllAirports(ValidCodes);
 
-    if(codes.length > 0){
-      return (
-        <div className="tile-flight">
-          <h3>Choose your departure and destination airports</h3>
-          <div id="prefetch">
-            <label htmlFor="tagss">Airport</label>
-            <input className="typeahead" ref="tagss"/>
+    if(this.props.flightData.length === 0 || 'test' === 'test') {
+      let codes = this.getAllAirports(ValidCodes);
+
+      if(codes.length > 0){
+        return (
+          <div className="tile-flight">
+            <h3>Choose your departure and destination airports</h3>
+            <div id="prefetch">
+              <label htmlFor="tagss">Airport</label>
+              <input className="typeahead" ref="tagss"/>
+            </div>
+              {codes.map((airport, i) =>
+                  <Flight
+                    key={i}
+                    destAirportCode={airport.code}
+                    destAirportName={airport.name}
+                  />
+              )}
           </div>
-            {codes.map((airport, i) =>
-                <Flight
-                  key={i}
-                  destAirportCode={airport.code}
-                  destAirportName={airport.name}
-                />
-            )}
-        </div>
-      );
-    } else {
-      return (
-        <div className="tile-flight">
-          <h3>No Flights Available</h3>
-        </div>
+        );
+      } else {
+        return (
+          <div className="tile-flight">
+            <h3>No Flights Available</h3>
+          </div>
         )
+      }
     }
-    }
-});  
+  }
+});
+
 export default FlightTile;

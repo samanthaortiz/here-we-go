@@ -1,8 +1,9 @@
-import db from '../db';
+import DB from '../db';
 
-let User = db.Model.extend({
+let User = DB.Model.extend({
 	tableName: 'users',
 	hasTimestamps: true
 })
 
-export default User;
+// console.log(User)
+module.exports = DB.model('User', User);

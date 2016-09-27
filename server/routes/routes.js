@@ -16,13 +16,13 @@ router.get('/auth/google',
 
 
 router.get('/auth/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: '/login'
-  }),
-  function(req, res) {
-    // Authenticated successfully
-    res.redirect('/');
-  });
+    passport.authenticate('google', { 
+      successRedirect: '/dashboard',
+      failureRedirect: '/auth/google/failure'
+    }),
+    function(req, res) {
+        res.redirect('http://localhost:4000/dashboard');
+    } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
@@ -39,10 +39,9 @@ router.get('/logout', function(req, res) {
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
-    console.log("ACCOUNT")
     return next();
   }
-  res.redirect('/login');
+  res.redirect('/auth/google/');
 }
 
 // DB ================================================================================ */
@@ -50,7 +49,7 @@ function ensureAuthenticated(req, res, next) {
 router.post('/user-account/', function(req, res) {
   db.knex.select('*')
   .from('users')
-  .where({'username': req.query.username})
+  .where({'google_id': req.query.google_id})
   .then(function(user) {
     res.send(user);
   })
@@ -82,10 +81,17 @@ router.post("/HotelSearch", function(req, res) {
 });
 
 // FLIGHT SEARCH API ================================================================= */
+
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER /FlightSearch');
 
   var urlAPI = 'http://terminal2.expedia.com:/x/flights/overview/get'+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+//   request({ url: urlAPI }, function(error, response, body) {
+//     if (!error && response.statusCode == 200) {
+//       res.send(body);
+//     }
+//   });
+// });
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -103,7 +109,6 @@ router.post("/FlightCode", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log('flight code response body', response.body)
       res.send(response.body);
     }
   });
@@ -123,25 +128,18 @@ router.post('/hotel-resp/', function(req, res) {
 });
 
 
-router.get('/airport-list/', function(req, res){
-
-    var all = [];
-    All.forEach(function(airport){
-      if(Valid.indexOf(airport.code) !== -1){
-        all.push(airport);
-      }
-    })
-
-
-    var selectableAirports = all.map(function(airport, i){
-      return airport.name
-    });
-
-    console.log(selectableAirports);
-
-
-
-  res.send(selectableAirports)
-});
+// router.get('/airport-list/', function(req, res){
+//     var all = [];
+//     All.forEach(function(airport){
+//       if(Valid.indexOf(airport.code) !== -1){
+//         all.push(airport);
+//       }
+//     })
+//     var selectableAirports = all.map(function(airport, i){
+//       return airport.name
+//     });
+//     console.log(selectableAirports);
+//   res.send(selectableAirports)
+// });
 
 module.exports = router;

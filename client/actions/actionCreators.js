@@ -9,6 +9,7 @@ import { browserHistory } from 'react-router';
 
 //=============== HOTELS ===============
 export const postHotelExpedia = (location, startDate, endDate) => {
+
   // console.log(location, startDate, endDate);
   return function(dispatch){
     return axiosHotelCall(location, startDate, endDate)

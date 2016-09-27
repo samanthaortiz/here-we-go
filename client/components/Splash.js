@@ -46,15 +46,15 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
+    document.getElementById("loading-icon").style.display = 'block';
     this.props.getFlightCode(this.state.city);
     this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
-
     // this.props.postFlightExpedia(this.state.city, this.state.startDate, this.state.endDate)
   },
 
   render() {
-              // <form method="POST" action={this.post} className="splashForm">
-
+    // <form method="POST" action={this.post} className="splashForm">
+    
     return (
       <div>
       <a href='/api/auth/google'>Login</a>
@@ -75,6 +75,7 @@ const Splash = React.createClass({
               <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
               <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>          
               <button type="submit" className="btn btn-secondary">Let's Go!</button>
+              <div id='loading-icon'>Loading...</div>
             </div>
           </form>
         </div>

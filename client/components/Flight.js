@@ -7,6 +7,7 @@ const Flight = React.createClass({
     let monthDay = newDate.slice(5);
     return monthDay += '/' + year;
   },
+
   render() {
 
     console.log('>>>>> FLIGHT <<<<<');
@@ -26,5 +27,5 @@ const Flight = React.createClass({
       );
     }
   }
-});
+})
 export default Flight;

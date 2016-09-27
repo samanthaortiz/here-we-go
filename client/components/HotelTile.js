@@ -7,7 +7,6 @@ const HotelTile = React.createClass({
     console.log('>>>>> HOTEL TILE <<<<<');
     console.log('Hotel tile this.props: ', this.props);
 
-
     if(this.props.hotelData.length === 0) {
       return (
         <div className="tile-hotel">
@@ -27,10 +26,10 @@ const HotelTile = React.createClass({
               />
             )
           }
-        </div>
-      );
+          </div>
+        );
+      }
     }
-  }
 });
 
 export default HotelTile;
