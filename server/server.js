@@ -70,7 +70,7 @@ passport.use(new GoogleStrategy(
       }
     })
     .then(function(err, user){
-      console.log("USER ADDED TO DATABASE")
+      console.log("USER IN DATABASE")
       done(null, profile);
     })
   // console.log("USER ID", profile.id);
