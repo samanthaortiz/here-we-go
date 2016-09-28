@@ -34,10 +34,10 @@ knex.schema.hasTable('users').then(exists => {
       hotel.increments('id').primary();
       hotel.integer('trip_id').unsigned();
       hotel.foreign('trip_id').references('id').inTable('itineraries');
-      hotel.string('status_id').unsigned();
+      hotel.string('status_id');
       hotel.foreign('status_id').references('id').inTable('statuses');
-      hotel.string('type_id').unsigned();
-      hotel.string('type_id').references('id').inTable('types');
+      hotel.string('type_id')
+      hotel.foreign('type_id').references('id').inTable('types');
       hotel.string('providerName');
       hotel.string('address_line1');
       hotel.string('address_line2');
@@ -63,9 +63,9 @@ knex.schema.hasTable('users').then(exists => {
       flight.increments('id').primary();
       flight.integer('trip_id').unsigned();
       flight.foreign('trip_id').references('id').inTable('itineraries')
-      flight.string('status_id').unsigned();
+      flight.string('status_id')
       flight.foreign('status_id').references('id').inTable('statuses');
-      flight.string('type_id').unsigned();
+      flight.string('type_id')
       flight.foreign('type_id').references('id').inTable('types');
       flight.string('terminal');
       flight.string('airportName');
@@ -94,9 +94,9 @@ knex.schema.hasTable('trainReservations').then(exists => {
       train.increments('id').primary();
       train.integer('trip_id').unsigned();
       train.foreign('trip_id').references('id').inTable('itineraries')
-      train.string('status_id').unsigned();
+      train.string('status_id')
       train.foreign('status_id').references('id').inTable('statuses');
-      train.string('type_id').unsigned();
+      train.string('type_id')
       train.foreign('type_id').references('id').inTable('types');
       train.string('stationName');
       train.string('stationCode');
@@ -116,9 +116,9 @@ knex.schema.hasTable('carRentals').then(exists => {
       car.increments('id').primary();
       car.integer('trip_id').unsigned();
       car.foreign('trip_id').references('id').inTable('itineraries')
-      car.string('status_id').unsigned();
+      car.string('status_id');      
       car.foreign('status_id').references('id').inTable('statuses');
-      car.string('type_id').unsigned();
+      car.string('type_id');
       car.foreign('type_id').references('id').inTable('types');
       car.string('vehicleType');
       car.string('vehicleBrand');
@@ -160,19 +160,6 @@ knex.schema.hasTable('carRentals').then(exists => {
   }
 }),
 
-
-
-//  knex.schema.hasTable('dummyHotel').then(exists => {
-//   if (!exists) {
-//      knex.schema.createTable('dummyHotel', hotel => {
-//             hotel.increments('id').primary();
-//             hotel.string('dummyInfo');
-//           }).then(table => {
-//             console.log('Created Table', table);
-//     });
-//   }
-// }),
-
  knex.schema.hasTable('itineraries').then(exists => {
   if (!exists) {
      knex.schema.createTable('itineraries', itinerary => {
@@ -187,6 +174,17 @@ knex.schema.hasTable('carRentals').then(exists => {
     });
   }
 })
+ 
+//  knex.schema.hasTable('dummyHotel').then(exists => {
+//   if (!exists) {
+//      knex.schema.createTable('dummyHotel', hotel => {
+//             hotel.increments('id').primary();
+//             hotel.string('dummyInfo');
+//           }).then(table => {
+//             console.log('Created Table', table);
+//     });
+//   }
+// }),
 
   ])
 
