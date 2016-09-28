@@ -76,41 +76,51 @@ export function axiosFlightCode(locationForFlightSearch){
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
 
+<<<<<<< 474fa2f145f48e3f8ad1b1be6b6a337185eafec0
 <<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
 export const postFlightExpedia = (codeArr, startDate, endDate) => {
   // console.log(codeArr, startDate, endDate);
 =======
 export const postFlightExpedia = (departureAirport, destinationAirport, startDate, endDate) => {
+=======
+export const postFlightExpedia = (departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants) => {
+>>>>>>> feat(flights): user allowed to enter adult, child, and infant info
   // console.log('POST FLIGHT EXPEDIA!', departureAirport, destinationAirport, startDate, endDate);
 >>>>>>> feat(flights): Flights now submitting expedia API request
   return function(dispatch){
-    return axiosFlightCall(departureAirport, destinationAirport, startDate, endDate)
+    return axiosFlightCall(departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants)
     .then(res => {
       // console.log('SUBMISSION TO EXPEDIA FLIGHTS', startDate, endDate, departureAirport, destinationAirport, res.data)
-      dispatch(hydrateFlightStoreExpedia(res.data, departureAirport, destinationAirport, startDate, endDate))
+      dispatch(hydrateFlightStoreExpedia(res.data, departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants))
       browserHistory.push('/dashboard')
     })
     .catch(error => console.log(error));
   };
 };
 
-export function axiosFlightCall(departureAirport, destinationAirport, startDate, endDate){
+export function axiosFlightCall(departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants){
   return axios.post('/api/FlightSearch', {
       departureAirport: departureAirport,
       destinationAirport: destinationAirport,
       startDate: startDate,
-      endDate: endDate
+      endDate: endDate,
+      adults: adults,
+      childUnder18: childUnder18,
+      infants: infants
     });
 }
 
-export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, destinationAirport, startDate, endDate){
+export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants){
   return {
     type: 'POST_FLIGHT_EXPEDIA',
     expediaFlightInfo,
     departureAirport,
     destinationAirport,
     startDate,
-    endDate
+    endDate,
+    adults,
+    childUnder18,
+    infants
   };
 }
 

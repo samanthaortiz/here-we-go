@@ -15,8 +15,8 @@ const FlightTile = React.createClass({
       airportDestinationCode: "",
       availableAirportCodes: [],
       adults: 1,
-      children: 0,
-      infants: 0
+      childUnder18: 0,
+      infants: "false"
     }
   },
 
@@ -177,26 +177,33 @@ const FlightTile = React.createClass({
   },
 
   handleChangeAdults(event) {
-    console.log('changing adults!', event.value)
+    console.log('changing adults!', event.target.value)
     this.setState({
       // airportDestinationSelect: event.target.value,
       adults: +event.target.value
     });
   },
 
-  handleChangeChildren(event) {
-    console.log('changing children!', event.value)
-    this.setState({
-      // airportDestinationSelect: event.target.value,
-      children: +event.target.value
-    });
+  handleChangechildUnder18(event) {
+    console.log('changing childUnder18!', event.target.value)
+    if(event.target.value === "true"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 1
+      });
+    } else if(event.target.value === "false"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 0
+      });
+    }
   },
 
   handleChangeInfants(event) {
-    console.log('changing infants!', event.value)
+    console.log('changing infants!', event.target.value)
     this.setState({
       // airportDestinationSelect: event.target.value,
-      infants: +event.target.value
+      infants: event.target.value
     });
   },
 
@@ -204,7 +211,7 @@ const FlightTile = React.createClass({
     e.preventDefault();
     console.log(e);
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
-    this.props.flightData.data.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightData.data.expediaHotelInfo.startDate, this.props.flightData.data.expediaHotelInfo.endDate)
+    this.props.flightData.data.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightData.data.expediaHotelInfo.startDate, this.props.flightData.data.expediaHotelInfo.endDate, this.state.adults, this.state.childUnder18, this.state.infants)
   },
 
   render() {
@@ -246,7 +253,8 @@ const FlightTile = React.createClass({
               <input value={this.props.airportDepartureCode} className="typeahead" ref="depart"/>
             </div>
             <div>
-                <select value={this.props.airportDestinationCode} onChange={this.handleChangeDestination}>
+                <label htmlFor="destination">Destination Airport: </label>
+                <select ref="destination" value={this.props.airportDestinationCode} onChange={this.handleChangeDestination}>
                   {this.state.availableAirportCodes.map((airport, i) => 
                     <option key={airport.code} value={airport.code}>{airport.name}: {airport.code}</option>
                   )}
@@ -254,19 +262,26 @@ const FlightTile = React.createClass({
             </div>
 
             <div>
-              <label htmlFor="adults">Adults: </label>
+              <label htmlFor="adults">Number of Adults: </label>
               <input value={this.props.adults} ref="adults" onChange={this.handleChangeAdults}/>
             </div>
             <div>
-              <label htmlFor="children">Children: </label>
-              <input value={this.props.children} ref="children" onChange={this.handleChangeChildren}/>
+              <label htmlFor="childUnder18">Child traveling? </label>
+              <select ref="childUnder18" value={this.props.childUnder18} onChange={this.handleChangechildUnder18}>
+                  <option key="false" value="false">No</option>
+                  <option key="true" value="true">Yes</option>
+              </select>            
             </div>
             <div>
-              <label htmlFor="infants">Infants on Lap: </label>
-              <input value={this.props.infants} ref="infants" onChange={this.handleChangeInfants}/> 
+              <label htmlFor="infants">Infant on Lap? </label>
+
+              <select ref="infants" value={this.props.infants} onChange={this.handleChangeInfants}>
+                  <option key="false" value="false">No</option>
+                  <option key="true" value="true">Yes</option>
+              </select> 
             </div>
-              <button type="submit">Let's Fly!</button> 
-            </form>
+              <button type="submit">Let's Fly!</button>
+              </form>
             </div>
 >>>>>>> feat(flights): Flights now submitting expedia API request
         );
