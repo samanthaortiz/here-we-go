@@ -13,7 +13,8 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
   expediaHotelInfo: [],
-  expediaFlightInfo: []
+  expediaFlightInfo: [],
+  expediaCarRentalInfo: []
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
