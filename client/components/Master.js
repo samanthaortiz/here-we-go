@@ -7,7 +7,8 @@ function mapStateToProps(state){
   return {
     expediaHotelInfo: state.expediaHotelInfo,
     expediaFlightInfo: state.expediaFlightInfo,
-    expediaCarRentalInfo: state.expediaCarRentalInfo
+    expediaCarRentalInfo: state.expediaCarRentalInfo,
+    expediaActivityInfo: state.expediaActivityInfo
   }
 }
 
