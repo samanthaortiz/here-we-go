@@ -76,6 +76,7 @@ export function axiosFlightCode(locationForFlightSearch){
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
 
+<<<<<<< HEAD
 <<<<<<< 474fa2f145f48e3f8ad1b1be6b6a337185eafec0
 <<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
 export const postFlightExpedia = (codeArr, startDate, endDate) => {
@@ -87,6 +88,10 @@ export const postFlightExpedia = (departureAirport, destinationAirport, startDat
 >>>>>>> feat(flights): user allowed to enter adult, child, and infant info
   // console.log('POST FLIGHT EXPEDIA!', departureAirport, destinationAirport, startDate, endDate);
 >>>>>>> feat(flights): Flights now submitting expedia API request
+=======
+export const postFlightExpedia = (departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants) => {
+  // console.log('POST FLIGHT EXPEDIA!', departureAirport, destinationAirport, startDate, endDate);
+>>>>>>> 1ba20946ac23cc10976fc963e28664c03715bfcd
   return function(dispatch){
     return axiosFlightCall(departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants)
     .then(res => {
@@ -121,6 +126,7 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
     adults,
     childUnder18,
     infants
+<<<<<<< HEAD
   };
 }
 
@@ -136,6 +142,8 @@ export const getCarRentals = (location, pickUpDate, dropOffDate) => {
       browserHistory.push('/dashboard');
     })
     .catch(error => console.log(error));
+=======
+>>>>>>> 1ba20946ac23cc10976fc963e28664c03715bfcd
   };
 };
 
