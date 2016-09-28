@@ -76,31 +76,39 @@ export function axiosFlightCode(locationForFlightSearch){
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
 
+<<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
 export const postFlightExpedia = (codeArr, startDate, endDate) => {
   // console.log(codeArr, startDate, endDate);
+=======
+export const postFlightExpedia = (departureAirport, destinationAirport, startDate, endDate) => {
+  // console.log('POST FLIGHT EXPEDIA!', departureAirport, destinationAirport, startDate, endDate);
+>>>>>>> feat(flights): Flights now submitting expedia API request
   return function(dispatch){
-    return axiosFlightCall(codeArr, startDate, endDate)
+    return axiosFlightCall(departureAirport, destinationAirport, startDate, endDate)
     .then(res => {
-      dispatch(hydrateFlightStore(res.data, codeArr, startDate, endDate))
+      // console.log('SUBMISSION TO EXPEDIA FLIGHTS', startDate, endDate, departureAirport, destinationAirport, res.data)
+      dispatch(hydrateFlightStoreExpedia(res.data, departureAirport, destinationAirport, startDate, endDate))
       browserHistory.push('/dashboard')
     })
     .catch(error => console.log(error));
   };
 };
 
-export function axiosFlightCall(codeArr, startDate, endDate){
-  return axios.post('/api/flightSearch', {
-      codeArr: codeArr,
+export function axiosFlightCall(departureAirport, destinationAirport, startDate, endDate){
+  return axios.post('/api/FlightSearch', {
+      departureAirport: departureAirport,
+      destinationAirport: destinationAirport,
       startDate: startDate,
       endDate: endDate
     });
 }
 
-export function hydrateFlightStoreExpedia(expediaFlightInfo, code, startDate, endDate){
+export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, destinationAirport, startDate, endDate){
   return {
     type: 'POST_FLIGHT_EXPEDIA',
     expediaFlightInfo,
-    code,
+    departureAirport,
+    destinationAirport,
     startDate,
     endDate
   };

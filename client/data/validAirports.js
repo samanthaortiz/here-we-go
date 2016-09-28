@@ -1,4 +1,4 @@
-[
+let airports = [
     {
         "name": "Louisville International Airport",
         "code": "SDF",
@@ -1960,3 +1960,4 @@
         "city": "State College Pennsylvania"
     }
 ]
+module.exports = airports;
