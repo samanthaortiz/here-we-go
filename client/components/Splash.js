@@ -44,23 +44,10 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-<<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
-    // DISPLAY LOADING ICON
     document.getElementById('loading-icon').style.display = 'block';
-
-    // SEND SPLASH PAGE FORM DATA TO API CALLS
-    // FLIGHTS
-    // this.props.getFlightCode(this.state.city);
-    // HOTELS
-    this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate);
-    // CAR RENTAL API
     this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
-=======
-    document.getElementById("loading-icon").style.display = 'block';
     // this.props.getFlightCode(this.state.city);
     this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
->>>>>>> feat(flights): Flights now submitting expedia API request
-    // this.props.postFlightExpedia(this.state.city, this.state.startDate, this.state.endDate)
   },
 
   render() {
