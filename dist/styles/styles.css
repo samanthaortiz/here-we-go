@@ -181,6 +181,13 @@ article {
   margin-bottom: 10px;
 }
 
+[class^='item-'] > div {
+  float: left;
+  width: 30%;
+  margin: 0 5px;
+  border: 1px solid red;
+}
+
 div.tile-hotel {
   float: left;
   margin-right: 2%;
