@@ -1,3 +1,4 @@
+// DASHBOARD > PANEL > FLIGHT TILE ============================================
 import React from 'react';
 import Flight from './Flight';
 import ValidCodes from '../data/validFlightCodes';
@@ -19,8 +20,9 @@ const FlightTile = React.createClass({
     }
   },
 
-  getAllAirports(ValidCodes){
+  getAllAirports(ValidCodes) {
     // if(this.props.flightData.data.expediaFlightInfo.expediaFlightInfo !== undefined) {
+
     //   let codes = [];
 
     //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports_by_cities.forEach(function(airport){
@@ -30,46 +32,45 @@ const FlightTile = React.createClass({
     //   });
 
     //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports.forEach(function(airport){
-    //     if(ValidCodes.indexOf(airport.code) !== -1 && codes.indexOf(airport) === -1){
+    //     if(ValidCodes.indexOf(airport.code) !== -1){
     //       codes.push(airport);
     //     }
     //   });
 
     //   return codes
     // }
-
     let codes = {
-      "processingDurationMillis": 2,
-      "authorisedAPI": true,
-      "success": true,
-      "airline": null,
-      "errorMessage": null,
-      "airports": [
-        {
-          "code": "DAL",
-          "name": "Dallas Love Fld",
-          "city": "Dallas",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.847111,
-          "lng": -96.851778,
-          "terminal": null,
-          "gate": null
-        },
-        {
-          "code": "DFW",
-          "name": "Dallas Fort Worth Intl",
-          "city": "Dallas-Fort Worth",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.896828,
-          "lng": -97.037997,
-          "terminal": null,
-          "gate": null
-        }
-      ]
-    }
-    return codes.airports
+       "processingDurationMillis": 2,
+       "authorisedAPI": true,
+       "success": true,
+       "airline": null,
+       "errorMessage": null,
+       "airports": [
+         {
+           "code": "DAL",
+           "name": "Dallas Love Fld",
+           "city": "Dallas",
+           "country": "United States",
+           "timezone": "America/Chicago",
+           "lat": 32.847111,
+           "lng": -96.851778,
+           "terminal": null,
+           "gate": null
+         },
+         {
+           "code": "DFW",
+           "name": "Dallas Fort Worth Intl",
+           "city": "Dallas-Fort Worth",
+           "country": "United States",
+           "timezone": "America/Chicago",
+           "lat": 32.896828,
+           "lng": -97.037997,
+           "terminal": null,
+           "gate": null
+         }
+       ]
+     }
+     return codes.airports
   },
 
   componentDidMount() {
@@ -142,6 +143,21 @@ const FlightTile = React.createClass({
     }
   },
 
+  handleChangechildUnder18(event) {
+    console.log('changing childUnder18!', event.target.value)
+    if(event.target.value === "true"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 1
+      });
+    } else if(event.target.value === "false"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 0
+      });
+    }
+  },
+
   handleChangeInfants(event) {
     console.log('changing infants!', event.target.value)
     this.setState({
@@ -157,7 +173,7 @@ const FlightTile = React.createClass({
     this.props.flightData.data.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightData.data.expediaHotelInfo.startDate, this.props.flightData.data.expediaHotelInfo.endDate, this.state.adults, this.state.childUnder18, this.state.infants)
   },
 
-  render() {
+    render() {
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight this.props in flightTile: ', this.props);
       
@@ -213,5 +229,4 @@ const FlightTile = React.createClass({
     }
 
 });
-
 export default FlightTile;

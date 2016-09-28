@@ -4,18 +4,16 @@ import { createStore } from 'redux';
 import DatePicker from 'react-bootstrap-date-picker';
 // import { expediaInfo } from '../actions/actionCreators';
 
-
 const Splash = React.createClass({
-
   getInitialState() {
     let date = new Date().toISOString().substring(0, 10);
     return {
-            city: '',
-            startDate: date,
-            endDate: date
-          };
-
+      city: '',
+      startDate: date,
+      endDate: date
+    };
   },
+
   handleChangeValue(event) {
     this.setState({
       city: event.target.value
@@ -46,18 +44,18 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-    document.getElementById("loading-icon").style.display = 'block';
+    document.getElementById('loading-icon').style.display = 'block';
+    this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
     // this.props.getFlightCode(this.state.city);
     this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
-    // this.props.postFlightExpedia(this.state.city, this.state.startDate, this.state.endDate)
   },
 
   render() {
-    // <form method="POST" action={this.post} className="splashForm">
     
     return (
       <div>
-      <a href='/api/auth/google'>Login</a>
+      <a className="loginOut" href='/api/auth/google'>Login</a><br/>
+      <a className="loginOut" href='/api/logout'>Logout</a>
         <div>
         <h1 id='logo'>
           Here We Go!
@@ -83,4 +81,5 @@ const Splash = React.createClass({
     );
   }
 });
+
 export default Splash;

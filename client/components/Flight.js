@@ -1,3 +1,4 @@
+// DASHBOARD > PANEL > FLIGHT TILE >  FLIGHT ==================================
 import React from 'react';
 
 const Flight = React.createClass({
@@ -10,22 +11,23 @@ const Flight = React.createClass({
 
   render() {
 
-    console.log('>>>>> FLIGHT <<<<<');
-    console.log('Flight this.props: ', this.props);
+    // console.log('>>>>> FLIGHT <<<<<');
+    // console.log('Flight this.props: ', this.props);
 
-    if(this.props === undefined) {
+    if(this.props !== undefined) {
       return (
         <div className="item-flight">
-          Select Flight!
+          { this.props.destAirportName }
         </div>
       );
     } else {
       return (
         <div className="item-flight">
-          {this.props.destAirportName}
+          <h3>Select Your Flight</h3>
         </div>
       );
     }
-  }
-})
+  } 
+});
+
 export default Flight;
