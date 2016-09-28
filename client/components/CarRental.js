@@ -4,7 +4,7 @@ import React from 'react';
 
 const CarRental = React.createClass({
   render() {
-    console.log('CarRental.js: ' this.props.carInfo)
+    console.log('CarRental.js: ', this.props.carInfo)
     return (
       <div className="item-car-rental">
         CAR RENTAL
