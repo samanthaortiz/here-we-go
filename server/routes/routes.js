@@ -17,11 +17,11 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
     passport.authenticate('google', { 
-      successRedirect: '/dashboard',
+      successRedirect: '/',
       failureRedirect: '/auth/google/failure'
     }),
     function(req, res) {
-        res.redirect('/dashboard');
+        res.redirect('/');
     } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
