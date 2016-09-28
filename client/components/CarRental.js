@@ -4,10 +4,22 @@ import React from 'react';
 
 const CarRental = React.createClass({
   render() {
-    console.log('CarRental.js: ', this.props.carInfo)
     return (
-      <div className="item-car-rental">
-        CAR RENTAL
+      <div className="item-car-rental clearfix">
+        <div>
+          <img src={this.props.carInfo.ThumbnailUrl} /><br/>
+          {this.props.carInfo.SupplierName}
+        </div>
+        <div>
+          {this.props.carInfo.CarMakeModel}<br/>
+          {this.props.carInfo.CarClass}<br/>
+          D: {this.props.carInfo.CarDoorCount.Max} P: {this.props.carInfo.Capacity.AdultCount}
+        </div>
+        <div>
+          $$ per day<br/>
+          ${this.props.carInfo.Price.TotalRate.Value}<br/>
+          RESERVE
+        </div>
       </div>
     );
   } 
