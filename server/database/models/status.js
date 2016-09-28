@@ -5,4 +5,5 @@ let Status = db.Model.extend({
 	hasTimestamps: true
 })
 
-export default Status;
+// export default Status;
+module.exports = db.model('Status', Status);

@@ -26,6 +26,8 @@ const router = (
         <IndexRoute component={Splash} />
         <Route path="dashboard" component={Dashboard} />
         <Route path="account" component={Dashboard} />
+        <Route path="account" component={Splash} />
+        <Route path="logout" component={Splash} />
         <Route path="*" component={Master} />
       </Route>
     </Router>

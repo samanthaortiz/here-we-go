@@ -17,11 +17,11 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
     passport.authenticate('google', { 
-      successRedirect: '/dashboard',
+      successRedirect: '/',
       failureRedirect: '/auth/google/failure'
     }),
     function(req, res) {
-        res.redirect('http://localhost:4000/dashboard');
+        res.redirect('/');
     } );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
@@ -31,11 +31,20 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-router.get('/logout', function(req, res) {
+// router.get('/logout', function(req, res) {
+//   req.logOut();
+//   res.redirect('/');
+// });
+  var url = require('url');
+
+router.get('/logout', function (req, res, next){
   req.logout();
-  res.redirect('/');
+  res.redirect('https://accounts.google.com/logout')
 });
 
+// router.get('/logout', function(req, res) {
+//     res.redirect('/');
+// });
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
