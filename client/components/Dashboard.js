@@ -1,16 +1,14 @@
-// DASHBOARD COMPONENT ===================================================
+// DASHBOARD COMPONENT ========================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-// import HotelTile from './HotelTile';
-// import FlightTile from './FlightTile';
-import Panel from './Panel';
 import NavigationBar from './NavigationBar';
+import Itinerary from './Itinerary';
+import Panel from './Panel';
 
 const Dashboard = React.createClass({
   render() {
     console.log('>>>>> DASHBOARD <<<<<');
-    console.log('Hotel this.props: ', this.props);
-    // console.log('Flights: ', this.props.expediaFlightInfo);
+    console.log('=====> ', this.props);
 
     var startDate = this.props.expediaHotelInfo.startDate
     var endDate = this.props.expediaHotelInfo.endDate
@@ -19,6 +17,7 @@ const Dashboard = React.createClass({
       <div className='outer-dashboard-container'>
         <NavigationBar/>
         <article>
+          <Itinerary />
           <Panel data={this.props}/>
         </article>
       </div> 

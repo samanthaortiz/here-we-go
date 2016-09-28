@@ -1,3 +1,4 @@
+// DASHBOARD > PANEL > HOTEL TILE =============================================
 import React from 'react';
 import Hotel from './Hotel';
 
@@ -5,15 +6,9 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
-    console.log('Hotel tile this.props: ', this.props);
+    // console.log('Hotel tile this.props: ', this.props);
 
-    if(this.props.hotelData.length === 0) {
-      return (
-        <div className="tile-hotel">
-          <Hotel />
-        </div>
-      );
-    } else {
+    if(this.props.hotelData.length !== 0) {
       return (
         <div className="tile-hotel">
           {
@@ -26,10 +21,17 @@ const HotelTile = React.createClass({
               />
             )
           }
-          </div>
-        );
-      }
+        </div>
+      );
+    } else {
+      return (
+        <div className="tile-hotel">
+          <Hotel />
+        </div>
+      );
     }
+
+  }
 });
 
 export default HotelTile;
