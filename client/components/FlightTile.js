@@ -20,16 +20,9 @@ const FlightTile = React.createClass({
     }
   },
 
-<<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
   getAllAirports(ValidCodes) {
-    // if(this.props.flightData.data.expediaFlightInfo.length !== 0) {
-=======
-  getAllAirports(ValidCodes){
     // if(this.props.flightData.data.expediaFlightInfo.expediaFlightInfo !== undefined) {
-<<<<<<< HEAD
->>>>>>> feat(flights): Flights now submitting expedia API request
-=======
->>>>>>> 1ba20946ac23cc10976fc963e28664c03715bfcd
+
     //   let codes = [];
 
     //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports_by_cities.forEach(function(airport){
@@ -39,8 +32,6 @@ const FlightTile = React.createClass({
     //   });
 
     //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports.forEach(function(airport){
-<<<<<<< HEAD
-<<<<<<< 1ad00f266aa9635b106c9326d23289d66aded78e
     //     if(ValidCodes.indexOf(airport.code) !== -1){
     //       codes.push(airport);
     //     }
@@ -83,104 +74,7 @@ const FlightTile = React.createClass({
   },
 
   componentDidMount() {
-    // console.log('IM IN!');
-    // $('#prefetch .typeahead').on('focusout', function() {
-    //   console.log('type!');
-    // });
-
-    var countries = new Bloodhound({
-=======
-    //     if(ValidCodes.indexOf(airport.code) !== -1 && codes.indexOf(airport) === -1){
-    //       codes.push(airport);
-    //     }
-    //   });
-
-    //   return codes
-    // }
-
-    let codes = {
-      "processingDurationMillis": 2,
-      "authorisedAPI": true,
-      "success": true,
-      "airline": null,
-      "errorMessage": null,
-      "airports": [
-        {
-          "code": "DAL",
-          "name": "Dallas Love Fld",
-          "city": "Dallas",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.847111,
-          "lng": -96.851778,
-          "terminal": null,
-          "gate": null
-        },
-        {
-          "code": "DFW",
-          "name": "Dallas Fort Worth Intl",
-          "city": "Dallas-Fort Worth",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.896828,
-          "lng": -97.037997,
-          "terminal": null,
-          "gate": null
-        }
-      ]
-    }
-    return codes.airports
-  },
-
-  componentDidMount() {
     var airports = new Bloodhound({
->>>>>>> feat(flights): Flights now submitting expedia API request
-=======
-    //     if(ValidCodes.indexOf(airport.code) !== -1 && codes.indexOf(airport) === -1){
-    //       codes.push(airport);
-    //     }
-    //   });
-
-    //   return codes
-    // }
-
-    let codes = {
-      "processingDurationMillis": 2,
-      "authorisedAPI": true,
-      "success": true,
-      "airline": null,
-      "errorMessage": null,
-      "airports": [
-        {
-          "code": "DAL",
-          "name": "Dallas Love Fld",
-          "city": "Dallas",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.847111,
-          "lng": -96.851778,
-          "terminal": null,
-          "gate": null
-        },
-        {
-          "code": "DFW",
-          "name": "Dallas Fort Worth Intl",
-          "city": "Dallas-Fort Worth",
-          "country": "United States",
-          "timezone": "America/Chicago",
-          "lat": 32.896828,
-          "lng": -97.037997,
-          "terminal": null,
-          "gate": null
-        }
-      ]
-    }
-    return codes.airports
-  },
-
-  componentDidMount() {
-    var airports = new Bloodhound({
->>>>>>> 1ba20946ac23cc10976fc963e28664c03715bfcd
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       // url points to a json file that contains an array of country names, see
@@ -231,8 +125,22 @@ const FlightTile = React.createClass({
     this.setState({
       // airportDestinationSelect: event.target.value,
       adults: +event.target.value
-<<<<<<< HEAD
     });
+  },
+
+  handleChangechildUnder18(event) {
+    console.log('changing childUnder18!', event.target.value)
+    if(event.target.value === "true"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 1
+      });
+    } else if(event.target.value === "false"){
+      this.setState({
+        // airportDestinationSelect: event.target.value,
+        childUnder18: 0
+      });
+    }
   },
 
   handleChangechildUnder18(event) {
@@ -258,34 +166,6 @@ const FlightTile = React.createClass({
     });
   },
 
-=======
-    });
-  },
-
-  handleChangechildUnder18(event) {
-    console.log('changing childUnder18!', event.target.value)
-    if(event.target.value === "true"){
-      this.setState({
-        // airportDestinationSelect: event.target.value,
-        childUnder18: 1
-      });
-    } else if(event.target.value === "false"){
-      this.setState({
-        // airportDestinationSelect: event.target.value,
-        childUnder18: 0
-      });
-    }
-  },
-
-  handleChangeInfants(event) {
-    console.log('changing infants!', event.target.value)
-    this.setState({
-      // airportDestinationSelect: event.target.value,
-      infants: event.target.value
-    });
-  },
-
->>>>>>> 1ba20946ac23cc10976fc963e28664c03715bfcd
   onSubmit(e) {
     e.preventDefault();
     console.log(e);
