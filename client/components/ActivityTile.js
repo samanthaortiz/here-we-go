@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-// DASHBOARD > PANEL > CAR RENTAL TILE ========================================
-=======
->>>>>>> feature
 import React from 'react';
 import Activity from './Activity';
 
