@@ -18,19 +18,22 @@ const Panel = React.createClass({
     }
   },
 
-  // renderFlights() {
-  //   return (
-  //     <div {...this.props}>
-  //     this.props.flightData.expediaFlightInfo.flightList.map((flight) =>
-  //       <Flight
-  //         key={flight.flightId}
-  //         flightInfo={flight}
-  //         startDate={this.props.flightData.startDate}
-  //         endDate={this.props.flightData.endDate}
-  //       />
-  //     </div>
-  //   )
-  // },
+
+
+
+  renderFlights(offers) {
+    console.log(offers);
+    return (
+      offers.map((flight) =>
+        <Flight
+          key={flight.productKey}
+          flightInfo={flight}
+          startDate={this.props.data.expediaFlightInfo.startDate}
+          endDate={this.props.data.expediaFlightInfo.endDate}
+        />
+      )
+    )
+  },
 
   render() {
     //to render later: <CarRentalTile carData={this.props}/>  <div>{flightTile}</div>  <FlightTile flightData={this.props}/>
@@ -39,8 +42,12 @@ const Panel = React.createClass({
     // console.log('Flights: ', this.props.expediaFlightInfo);
 //{this.state.gotFlights ? this.renderFlights() : <FlightTile flightData={this.props}/>}
     var flightTile;
+
+
     if(this.state.gotFlights){
-      flightTile = "GOT FLIGHTS!"
+      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      var flightInfo = this.props.data.expediaFlightInfo.expediaFlightInfo.offers
+      flightTile = this.renderFlights(flightInfo)
     } else {
       flightTile = <FlightTile flightData={this.props} flightOptions={this.state}/>
     } 

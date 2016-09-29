@@ -104,7 +104,7 @@ router.post("/FlightSearch", function(req, res) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log('flight request from expedia response', response.body);
+      // console.log('flight request from expedia response', response.body);
       res.send(body);
     } else {
       console.error(error)
