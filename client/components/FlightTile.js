@@ -9,16 +9,17 @@ import {MenuItem} from 'react-bootstrap';
 
 
 const FlightTile = React.createClass({
-  getInitialState: function() {
-   return {
-      airportDepartureCode: "",
-      airportDestinationCode: "",
-      availableAirportCodes: [],
-      adults: 1,
-      childUnder18: 0,
-      infants: "false"
-    }
-  },
+  // getInitialState: function() {
+  //  return {
+  //     airportDepartureCode: "",
+  //     airportDestinationCode: "",
+  //     availableAirportCodes: [],
+  //     adults: 1,
+  //     childUnder18: 0,
+  //     infants: "false",
+  //     gotFlights: "false"
+  //   }
+  // },
 
   getAllAirports(ValidCodes) {
     // if(this.props.flightData.data.expediaFlightInfo.expediaFlightInfo !== undefined) {
@@ -171,6 +172,7 @@ const FlightTile = React.createClass({
     console.log(e);
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
     this.props.flightData.data.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightData.data.expediaHotelInfo.startDate, this.props.flightData.data.expediaHotelInfo.endDate, this.state.adults, this.state.childUnder18, this.state.infants)
+    this.props.flightOptions.gotFlights = true;
   },
 
     render() {
@@ -183,10 +185,12 @@ const FlightTile = React.createClass({
           <div className="tile-flight">
             <form className="airportForm" onSubmit={this.onSubmit}>
             <h3>Choose your departure and destination airports</h3>
+
             <div id="prefetch">
               <label htmlFor="depart">Departure Airport: </label>
               <input value={this.props.airportDepartureCode} className="typeahead" ref="depart"/>
             </div>
+
             <div>
                 <label htmlFor="destination">Destination Airport: </label>
                 <select ref="destination" value={this.props.airportDestinationCode} onChange={this.handleChangeDestination}>
@@ -200,6 +204,7 @@ const FlightTile = React.createClass({
               <label htmlFor="adults">Number of Adults: </label>
               <input value={this.props.adults} ref="adults" onChange={this.handleChangeAdults}/>
             </div>
+
             <div>
               <label htmlFor="childUnder18">Child traveling? </label>
               <select ref="childUnder18" value={this.props.childUnder18} onChange={this.handleChangechildUnder18}>
@@ -207,14 +212,15 @@ const FlightTile = React.createClass({
                   <option key="true" value="true">Yes</option>
               </select>            
             </div>
+
             <div>
               <label htmlFor="infants">Infant on Lap? </label>
-
               <select ref="infants" value={this.props.infants} onChange={this.handleChangeInfants}>
                   <option key="false" value="false">No</option>
                   <option key="true" value="true">Yes</option>
               </select> 
             </div>
+
               <button type="submit">Let's Fly!</button>
               </form>
             </div>
