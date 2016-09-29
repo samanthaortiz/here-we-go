@@ -6,7 +6,7 @@ const HotelTile = React.createClass({
   render() {
 
     console.log('>>>>> HOTEL TILE <<<<<');
-    // console.log('Hotel tile this.props: ', this.props);
+    console.log('Hotel tile this.props: ',  this.props);
 
     if(this.props.hotelData.length !== 0) {
       return (

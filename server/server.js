@@ -6,13 +6,14 @@ var path = require('path');
 var request = require('request');
 var bodyParser = require('body-parser');
 
-// var logger = require('morgan');
+
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var authConfig = require('./auth/config');
 var passport = require('passport')
-var util = require('util')
+// var util = require('util')
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+var User = require('./database/models/User')
 
 
 
@@ -25,22 +26,13 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
-// app.set('views', __dirname + '../client/views');
-// app.set('view engine', 'ejs');
+
+//passport config
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/public'));
 
 
-// API ROUTES
-var apiRouter = require("./routes/routes.js");
-app.use("/api", apiRouter);
-
-
-
-
-//passport config
-var User = require('./database/models/User')
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -81,57 +73,9 @@ passport.use(new GoogleStrategy(
 
 
 
-// }));
-
-  // if(req.user){
-  //   var user = User.where('email', email);
-    // return done(null, profile);
-
-
-// app.get('/', function(req, res) {
-//   res.render('index', {
-//     user: req.user
-//   });
-// });
-
-// app.get('/login', function(req, res){
-//   res.render('login', { user: req.user });
-// });
-
-
-// app.get('/auth/google',
-//   passport.authenticate('google', { scope: ['openid email profile'] }));
-
-
-// app.get('/auth/google/callback',
-//   passport.authenticate('google', {
-//     failureRedirect: '/login'
-//   }),
-//   function(req, res) {
-//     // Authenticated successfully
-//     res.redirect('/');
-//   });
-
-// app.get('/account', ensureAuthenticated, function(req, res) {
-//   res.render('account', {
-//     user: req.user
-//   });
-// });
-
-// app.get('/logout', function(req, res) {
-//   req.logout();
-//   res.redirect('/');
-// });
-
-
-// function ensureAuthenticated(req, res, next) {
-//   if (req.isAuthenticated()) {
-//     return next();
-//   }
-//   res.redirect('/login');
-// }
-
-
+// API ROUTES
+var apiRouter = require("./routes/routes.js");
+app.use("/api", apiRouter);
 
 
 app.use(express.static('./dist'));
