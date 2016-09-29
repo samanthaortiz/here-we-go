@@ -387,8 +387,6 @@ console.log("ACTIVITY<<<<" , req.activityData)
 
 
 
-
-<<<<<<< HEAD
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -411,31 +409,7 @@ router.post("/ActivitiesSearch", function(req, res) {
   //     res.send(body);
   //   }
   // });
-});
-=======
-// // ACTIVITIES SEARCH API ================================================================== 
-// router.post("/activitiesSearch", function(req, res) {
-//   console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
-
-//   var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
-
-//   request({ url: urlAPI }, function(error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       // console.log('Hotel Response Body', body);
-//       res.send(body);
-//     }
-//   });
-// });
 
 
-
-//   // request({ url: TEST_URL }, function(error, response, body) {
-//   //   if (!error && response.statusCode == 200) {
-//   //     console.log('CAR RENTAL RESPONSE: ', body);
-//   //     res.send(body);
-//   //   }
-//   // });
-//});
->>>>>>> feature
 
 module.exports = router;
