@@ -45,9 +45,12 @@ const Splash = React.createClass({
   onSubmit(e) {
     e.preventDefault();
     document.getElementById('loading-icon').style.display = 'block';
+<<<<<<< e3408d90308fb3d17dc89ed38128ac314958ec55
     // CALL ACTION CREATOR
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate);
 
+=======
+>>>>>>> feat(flights): Panel component dynamically rendering flights tile
     // this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
     // this.props.getFlightCode(this.state.city);
     // this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
