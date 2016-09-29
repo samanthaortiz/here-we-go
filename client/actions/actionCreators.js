@@ -148,3 +148,42 @@ export const hydrateCarRentalStore = (expediaCarRentalInfo, location, pickUpDate
     dropOffDate
   };
 };
+
+
+
+
+
+
+//=============== ACTIVITIES ===============
+export const getActivities = (location, startDate, endDate) => {
+
+  // console.log(location, startDate, endDate);
+  return function(dispatch){
+    return axiosHotelCall(location, startDate, endDate)
+    .then(res => {
+      dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
+      browserHistory.push('/dashboard')
+
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function hydrateHotelStore(expediaActivityInfo, location, startDate, endDate){
+  return {
+    type: 'POST_ACTIVITIES_EXPEDIA',
+    expediaActivityInfo,
+    location,
+    startDate,
+    endDate
+  };
+}
+
+export function axiosHotelCall(location, startDate, endDate){
+  return axios.post('/api/ActivitiesSearch', {
+    location,
+    startDate,
+    endDate
+  });
+}
+
