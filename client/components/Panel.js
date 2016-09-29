@@ -24,6 +24,7 @@ const Panel = React.createClass({
     }
   },
 
+<<<<<<< fc352281dc384a17da4697b704af4265392007a2
   // renderFlights() {
   //   return (
   //     <div {...this.props}>
@@ -38,6 +39,24 @@ const Panel = React.createClass({
   //   )
   // },
 >>>>>>> feat(flights): Panel component dynamically rendering flights tile
+=======
+
+
+
+  renderFlights(offers) {
+    console.log(offers);
+    return (
+      offers.map((flight) =>
+        <Flight
+          key={flight.productKey}
+          flightInfo={flight}
+          startDate={this.props.data.expediaFlightInfo.startDate}
+          endDate={this.props.data.expediaFlightInfo.endDate}
+        />
+      )
+    )
+  },
+>>>>>>> perf(flights): flight performance changes: progress
 
   render() {
     //to render later: <CarRentalTile carData={this.props}/>  <div>{flightTile}</div>  <FlightTile flightData={this.props}/>
@@ -55,8 +74,12 @@ const Panel = React.createClass({
 =======
 //{this.state.gotFlights ? this.renderFlights() : <FlightTile flightData={this.props}/>}
     var flightTile;
+
+
     if(this.state.gotFlights){
-      flightTile = "GOT FLIGHTS!"
+      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      var flightInfo = this.props.data.expediaFlightInfo.expediaFlightInfo.offers
+      flightTile = this.renderFlights(flightInfo)
     } else {
       flightTile = <FlightTile flightData={this.props} flightOptions={this.state}/>
     } 
