@@ -14,6 +14,7 @@ export const postHotelExpedia = (location, startDate, endDate) => {
   return function(dispatch){
     return axiosHotelCall(location, startDate, endDate)
     .then(res => {
+       // console.log("GET HOTEL", res.data)
       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
       browserHistory.push('/dashboard')
 
@@ -33,7 +34,7 @@ export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate
 }
 
 export function axiosHotelCall(location, startDate, endDate){
-  return axios.post('/api/hotelsearch', {
+  return axios.post('/api/trips', {
     location,
     startDate,
     endDate
@@ -68,7 +69,7 @@ export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearc
 
 export function axiosFlightCode(locationForFlightSearch){
   // console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
-  return axios.post('/api/FlightCode', {
+  return axios.post('/api/trips', {
       locationForFlightSearch
     });
 }
@@ -148,3 +149,43 @@ export const hydrateCarRentalStore = (expediaCarRentalInfo, location, pickUpDate
     dropOffDate
   };
 };
+
+
+
+
+
+
+//=============== ACTIVITIES ===============
+export const getActivities = (location, startDate, endDate) => {
+
+  // console.log(location, startDate, endDate);
+  return function(dispatch){
+    return axiosActivitiesCall(location, startDate, endDate)
+    .then(res => {
+      // console.log("GET ACTITIVITES", res.data)
+      dispatch(hydrateActivitiesStore(res.data, location, startDate, endDate))
+      browserHistory.push('/dashboard')
+
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function hydrateActivitiesStore(expediaActivityInfo, location, startDate, endDate){
+  return {
+    type: 'POST_ACTIVITIES_EXPEDIA',
+    expediaActivityInfo,
+    location,
+    startDate,
+    endDate
+  };
+}
+
+export function axiosActivitiesCall(location, startDate, endDate){
+  return axios.post('/api/trips', {
+    location,
+    startDate,
+    endDate
+  });
+}
+
