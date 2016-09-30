@@ -2,16 +2,18 @@
 import React from 'react';
 import HotelTile from './HotelTile';
 import FlightTile from './FlightTile';
-import Flight from './Flight';
 import CarRentalTile from './CarRentalTile';
 import ActivityTile from './ActivityTile';
-
 const Panel = React.createClass({
+<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
 <<<<<<< e3408d90308fb3d17dc89ed38128ac314958ec55
 
   
   render() {
 =======
+=======
+
+>>>>>>> feat(flights): refactoring flights, data is persisting
   getInitialState() {
    return {
       airportDepartureCode: "",
@@ -24,6 +26,7 @@ const Panel = React.createClass({
     }
   },
 
+<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
 <<<<<<< fc352281dc384a17da4697b704af4265392007a2
   // renderFlights() {
   //   return (
@@ -74,8 +77,40 @@ const Panel = React.createClass({
 =======
 //{this.state.gotFlights ? this.renderFlights() : <FlightTile flightData={this.props}/>}
     var flightTile;
+=======
+  // renderFlights(offers) {
+  //   console.log(offers);
+  //   return (
+  //     offers.map((flight) =>
+  //       <Flight
+  //         key={flight.productKey}
+  //         flightInfo={flight}
+  //         // startDate={this.props.data.expediaFlightInfo.startDate}
+  //         // endDate={this.props.data.expediaFlightInfo.endDate}
+  //       />
+  //     )
+  //   )
+  // },
 
 
+  
+  render() {
+    console.log('>>>>> PANEL <<<<<');
+    // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
+    // console.log('Flights: ', this.props.expediaFlightInfo);
+    console.log('trip data in panel===> ', this.props)
+>>>>>>> feat(flights): refactoring flights, data is persisting
+
+    // var flightTile;
+    // if(this.state.gotFlights){
+    //   console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+    //   var flightInfo = this.props.data.expediaFlightInfo.expediaFlightInfo.offers
+    //   flightTile = this.renderFlights(flightInfo)
+    // } else {
+    //   flightTile = <FlightTile flightData={this.props} flightOptions={this.state}>
+    // }
+
+<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
     if(this.state.gotFlights){
       console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
       var flightInfo = this.props.data.expediaFlightInfo.expediaFlightInfo.offers
@@ -88,9 +123,19 @@ const Panel = React.createClass({
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
         {flightTile}
 >>>>>>> feat(flights): Panel component dynamically rendering flights tile
+=======
+    return (
+      <div className="dashboard-container clearfix">
+        <HotelTile hotelData={this.props.data.reducerTripData} />
+        {/*{flightTile}*/}
+        <FlightTile flightInfo={this.props.data} />
+        {/*<CarRentalTile carData={this.props}/>*/}
+        <ActivityTile activityData={this.props.data.reducerTripData}/>
+>>>>>>> feat(flights): refactoring flights, data is persisting
       </div>
     );
   }
 });
+
 
 export default Panel;

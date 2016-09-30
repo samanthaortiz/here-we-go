@@ -25,7 +25,11 @@ export function hydrateTripStore(tripData, location, startDate, endDate){
     tripData,
     location,
     startDate,
-    endDate
+    endDate,
+    adults: 1,
+    childUnder18: 0,
+    infants: "false",
+    gotFlights: false
   };
 }
 
@@ -88,7 +92,7 @@ export const getFlightCode = (locationForFlightSearch) => {
   return function(dispatch){
     return axiosFlightCode(locationForFlightSearch)
     .then(res => {
-    // console.log('Flight Code Received', res.data)
+    console.log('Flight Code Received', res.data)
      // console.log('locationForFlightSearch to hydrate store', locationForFlightSearch);
      dispatch(hydrateFlightStoreCode(res.data, locationForFlightSearch))
     });

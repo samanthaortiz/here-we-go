@@ -171,14 +171,15 @@ const FlightTile = React.createClass({
     e.preventDefault();
     console.log(e);
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
-    this.props.flightData.data.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightData.data.expediaHotelInfo.startDate, this.props.flightData.data.expediaHotelInfo.endDate, this.state.adults, this.state.childUnder18, this.state.infants)
-    this.props.flightOptions.gotFlights = true;
+    this.props.flightInfo.postFlightExpedia(this.state.airportDepartureCode, this.state.airportDestinationCode, this.props.flightInfo.reducerTripData.startDate, this.props.flightInfo.reducerTripData.endDate, this.state.adults, this.state.childUnder18, this.state.infants)
+    this.props.flightInfo.reducerTripData.gotFlights = true;
   },
 
     render() {
     console.log('>>>>> FLIGHT TILE <<<<<');
     console.log('Flight this.props in flightTile: ', this.props);
-      
+    console.log('Flight this.props in flightTile: ', this.props);
+
       // let codes = this.getAllAirports(ValidCodes);
       if(this.state.availableAirportCodes.length > 0){
         return (

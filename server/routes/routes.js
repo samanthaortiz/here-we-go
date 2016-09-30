@@ -85,12 +85,15 @@ router.post('/user-account/', function(req, res) {
 
 // TRIP SEARCH API =====================================================================
 
+<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
 <<<<<<< fc352281dc384a17da4697b704af4265392007a2
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
 router.post('/trips', hotelRoute, activityRoute, function(req, res, next) {
   res.send(res.data);
 =======
+=======
+>>>>>>> feat(flights): refactoring flights, data is persisting
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 
@@ -110,7 +113,17 @@ router.post("/FlightSearch", function(req, res) {
       console.error(error)
     }
   });
+<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
 >>>>>>> perf(flights): flight performance changes: progress
+=======
+});
+
+// router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
+// router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
+router.post('/trips', hotelRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
+  // console.log('post request in trips, calling get flight code.. response data:', res.data)
+  res.send(res.data);
+>>>>>>> feat(flights): refactoring flights, data is persisting
 });
 //   console.log("WORKS")
 // });
