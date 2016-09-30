@@ -12,7 +12,7 @@ const HotelTile = React.createClass({
       return (
         <div className="tile-hotel">
           {
-            this.props.hotelData.expediaHotelInfo.hotelList.map((hotel) =>
+            this.props.hotelData.tripData[0].hotelData.hotelList.map((hotel) =>
               <Hotel
                 key={hotel.hotelId}
                 hotelInfo={hotel}
