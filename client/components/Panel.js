@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< b53ee1f29f37ed56d0e8ecfda5d1d46b0fba0aa2
 <<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
 =======
@@ -60,6 +61,9 @@ const Panel = React.createClass({
         <FlightTile flightData={this.props} />
         {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> chore(cleanup): clean up merge artifacts
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
