@@ -84,10 +84,13 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< HEAD
 <<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
 
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+>>>>>>> localBranch
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 
