@@ -7,38 +7,77 @@ import { browserHistory } from 'react-router';
 //BUT this does not update our state. 
 //The reducer will do that.
 
-//=============== HOTELS ===============
-export const postHotelExpedia = (location, startDate, endDate) => {
-
-  // console.log(location, startDate, endDate);
-  return function(dispatch){
-    return axiosHotelCall(location, startDate, endDate)
+//=============== TRIP DATA ===============
+export const postTripData = (location, startDate, endDate) => {
+  return function(dispatch) {
+    return axiosTripCall(location, startDate, endDate)
     .then(res => {
-      dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
-      browserHistory.push('/dashboard')
-
+      dispatch(hydrateTripStore(res.data, location, startDate, endDate))
+      browserHistory.push('/dashboard');
     })
     .catch(error => console.log(error));
   };
 };
 
-export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
+export function hydrateTripStore(tripData, location, startDate, endDate){
   return {
-    type: 'POST_HOTEL_EXPEDIA',
-    expediaHotelInfo,
+    type: 'POST_TRIP_DATA',
+    tripData,
     location,
     startDate,
     endDate
   };
 }
 
-export function axiosHotelCall(location, startDate, endDate){
-  return axios.post('/api/hotelsearch', {
+export function axiosTripCall(location, startDate, endDate){
+  return axios.post('/api/trips', {
     location,
     startDate,
     endDate
   });
-}
+};
+
+
+
+
+// BELOW: TO BE REFACTORED/PURGED
+
+//=============== HOTELS ===============
+// export const postHotelExpedia = (location, startDate, endDate) => {
+
+//   // console.log(location, startDate, endDate);
+//   return function(dispatch){
+//     return axiosHotelCall(location, startDate, endDate)
+//     .then(res => {
+//        // console.log("GET HOTEL", res.data)
+//        console.log('============')
+//        console.log(res.data)
+//        console.log('============')
+//       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
+//       browserHistory.push('/dashboard')
+
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
+
+// export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
+//   return {
+//     type: 'POST_HOTEL_EXPEDIA',
+//     expediaHotelInfo,
+//     location,
+//     startDate,
+//     endDate
+//   };
+// }
+
+// export function axiosHotelCall(location, startDate, endDate){
+//   return axios.post('/api/trips', {
+//     location,
+//     startDate,
+//     endDate
+//   });
+// }
 
 
 //=============== FLIGHTS ===============
@@ -68,7 +107,7 @@ export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearc
 
 export function axiosFlightCode(locationForFlightSearch){
   // console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
-  return axios.post('/api/FlightCode', {
+  return axios.post('/api/trips', {
       locationForFlightSearch
     });
 }
@@ -114,37 +153,72 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
   };
 }
 
-// CAR RENTALS ================================================================
-export const getCarRentals = (location, pickUpDate, dropOffDate) => {
-  // console.log('>>>>>> INSIDE getCarRentals <<<<<<');
-  // console.log('>>>>>> ', location, pickUpDate, dropOffDate);
+// // CAR RENTALS ================================================================
+// export const getCarRentals = (location, pickUpDate, dropOffDate) => {
+//   // console.log('>>>>>> INSIDE getCarRentals <<<<<<');
+//   // console.log('>>>>>> ', location, pickUpDate, dropOffDate);
 
-  return function(dispatch) {
-    return axiosCarRentalCall(location, pickUpDate, dropOffDate)
-    .then(res => {
-      dispatch(hydrateCarRentalStore(res.data, location, pickUpDate, dropOffDate))
-      browserHistory.push('/dashboard');
-    })
-    .catch(error => console.log(error));
-  };
-};
+//   return function(dispatch) {
+//     return axiosCarRentalCall(location, pickUpDate, dropOffDate)
+//     .then(res => {
+//       dispatch(hydrateCarRentalStore(res.data, location, pickUpDate, dropOffDate))
+//       browserHistory.push('/dashboard');
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
 
-export const axiosCarRentalCall = (location, pickUpDate, dropOffDate) => {
-  return axios.post('/api/carRentalSearch', {
-    params : {
-      location: location,
-      pickUpDate: pickUpDate,
-      dropOffDate: dropOffDate
-    }
-  });
-};
+// export const axiosCarRentalCall = (location, pickUpDate, dropOffDate) => {
+//   return axios.post('/api/carRentalSearch', {
+//     params : {
+//       location: location,
+//       pickUpDate: pickUpDate,
+//       dropOffDate: dropOffDate
+//     }
+//   });
+// };
 
-export const hydrateCarRentalStore = (expediaCarRentalInfo, location, pickUpDate, dropOffDate) => {
-  return {
-    type: 'POST_CAR_RENTAL_EXPEDIA',
-    expediaCarRentalInfo,
-    location,
-    pickUpDate,
-    dropOffDate
-  };
-};
+// export const hydrateCarRentalStore = (expediaCarRentalInfo, location, pickUpDate, dropOffDate) => {
+//   return {
+//     type: 'POST_CAR_RENTAL_EXPEDIA',
+//     expediaCarRentalInfo,
+//     location,
+//     pickUpDate,
+//     dropOffDate
+//   };
+// };
+
+// //=============== ACTIVITIES ===============
+// export const getActivities = (location, startDate, endDate) => {
+
+//   // console.log(location, startDate, endDate);
+//   return function(dispatch){
+//     return axiosActivitiesCall(location, startDate, endDate)
+//     .then(res => {
+//       // console.log("GET ACTITIVITES", res.data)
+//       dispatch(hydrateActivitiesStore(res.data, location, startDate, endDate))
+//       browserHistory.push('/dashboard')
+
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
+
+// export function hydrateActivitiesStore(expediaActivityInfo, location, startDate, endDate){
+//   return {
+//     type: 'POST_ACTIVITIES_EXPEDIA',
+//     expediaActivityInfo,
+//     location,
+//     startDate,
+//     endDate
+//   };
+// }
+
+// export function axiosActivitiesCall(location, startDate, endDate){
+//   return axios.post('/api/trips', {
+//     location,
+//     startDate,
+//     endDate
+//   });
+// }
+

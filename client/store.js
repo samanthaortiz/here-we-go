@@ -12,9 +12,12 @@ import rootReducer from './reducers/index';
 //create an obj for default data
 
 const defaultState = {
-  expediaHotelInfo: [],
-  expediaFlightInfo: [],
-  expediaCarRentalInfo: []
+    reducerTripData: [],
+    reducerFlightData: []
+  // expediaHotelInfo: [],
+  // expediaFlightInfo: [],
+  // expediaCarRentalInfo: [],
+  // expediaActivityInfo: []
 }
 
 // let store = createStore(reducer, initialState, compose(applyMiddleware(...middleware),

@@ -4,8 +4,10 @@ import HotelTile from './HotelTile';
 import FlightTile from './FlightTile';
 import Flight from './Flight';
 import CarRentalTile from './CarRentalTile';
+import ActivityTile from './ActivityTile';
 
 const Panel = React.createClass({
+<<<<<<< HEAD
   getInitialState() {
    return {
       airportDepartureCode: "",
@@ -20,6 +22,11 @@ const Panel = React.createClass({
 
 
 
+=======
+
+  
+  render() {
+>>>>>>> dev
 
   renderFlights(offers) {
     console.log(offers);
@@ -38,8 +45,9 @@ const Panel = React.createClass({
   render() {
     //to render later: <CarRentalTile carData={this.props}/>  <div>{flightTile}</div>  <FlightTile flightData={this.props}/>
     console.log('>>>>> PANEL <<<<<');
-    // console.log('Hotel: ', this.props.data.expediaHotelInfo);
+    // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
     // console.log('Flights: ', this.props.expediaFlightInfo);
+<<<<<<< HEAD
 //{this.state.gotFlights ? this.renderFlights() : <FlightTile flightData={this.props}/>}
     var flightTile;
 
@@ -55,6 +63,15 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.expediaHotelInfo} />
         {flightTile}
+=======
+    console.log('hotel data ===> ', this.props)
+    return (
+      <div className="dashboard-container clearfix">
+        <HotelTile hotelData={this.props.data.reducerTripData} />
+        <FlightTile flightData={this.props} />
+        {/*<CarRentalTile carData={this.props}/>*/}
+        <ActivityTile activityData={this.props.data.reducerTripData}/>
+>>>>>>> dev
       </div>
     );
   }
