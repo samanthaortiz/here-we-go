@@ -2,50 +2,34 @@
 import React from 'react';
 import HotelTile from './HotelTile';
 import FlightTile from './FlightTile';
+import Flight from './Flight'
 import CarRentalTile from './CarRentalTile';
 import ActivityTile from './ActivityTile';
 const Panel = React.createClass({
 
   getInitialState() {
    return {
-      airportDepartureCode: "",
-      airportDestinationCode: "",
-      availableAirportCodes: [],
-      adults: 1,
-      childUnder18: 0,
-      infants: false,
       gotFlights: false
     }
   },
-
-  renderFlights(offers) {
-    console.log(offers);
-    return (
-      offers.map((flight) =>
-        <Flight
-          key={flight.productKey}
-          flightInfo={flight}
-          // startDate={this.props.data.expediaFlightInfo.startDate}
-          // endDate={this.props.data.expediaFlightInfo.endDate}
-        />
-      )
-    )
-  },
-
-
   
   render() {
     console.log('>>>>> PANEL <<<<<');
     // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
     // console.log('Flights: ', this.props.expediaFlightInfo);
     console.log('trip data in panel===> ', this.props)
+    console.log('got flights before if statement', this.state.gotFlights)
 
     var flightTile;
-    if(this.props.data.reducerTripData.gotFlights){
-      // console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+    if(this.state.gotFlights){
+      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
-      flightTile = this.renderFlights(flightInfo)
+      var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs
+
+      // flightOffers = this.renderFlights(flightInfo)
+      flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state}/>
     } else {
+      // console.log('dont got flights', typeof this.state.gotFlights) 
       flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state}/>
     }
 
