@@ -27,7 +27,6 @@ const Panel = React.createClass({
     )
   },
 
-  
   render() {
     console.log('>>>>> PANEL <<<<<');
     // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
@@ -38,10 +37,10 @@ const Panel = React.createClass({
     var flightTile;
     if(this.state.gotFlights){
       console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
       var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs
 
-      // flightOffers = this.renderFlights(flightInfo)
       flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state}/>
     } else {
       flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state}/>
@@ -50,18 +49,12 @@ const Panel = React.createClass({
     return (
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
-<<<<<<< HEAD
         {flightTile}
-        {/*<CarRentalTile carData={this.props}/>*/}
-=======
-        <FlightTile flightData={this.props} />
         <CarRentalTile carData={this.props.data.reducerTripData}/>
->>>>>>> localBranch
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
   }
 });
-
 
 export default Panel;
