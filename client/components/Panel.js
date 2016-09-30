@@ -12,7 +12,7 @@ const Panel = React.createClass({
       gotFlights: false
     }
   },
-  
+ 
   renderFlights(offers) {
     console.log(offers);
     return (
@@ -26,6 +26,7 @@ const Panel = React.createClass({
       )
     )
   },
+
   
   render() {
     console.log('>>>>> PANEL <<<<<');
