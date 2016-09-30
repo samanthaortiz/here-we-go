@@ -50,8 +50,8 @@ const Panel = React.createClass({
         <Flight
           key={flight.productKey}
           flightInfo={flight}
-          startDate={this.props.data.expediaFlightInfo.startDate}
-          endDate={this.props.data.expediaFlightInfo.endDate}
+          // startDate={this.props.data.expediaFlightInfo.startDate}
+          // endDate={this.props.data.expediaFlightInfo.endDate}
         />
       )
     )
