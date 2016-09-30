@@ -47,7 +47,6 @@ const Splash = React.createClass({
     document.getElementById('loading-icon').style.display = 'block';
     // CALL ACTION CREATOR
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate);
-
     // this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
     // this.props.getFlightCode(this.state.city);
     // this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)

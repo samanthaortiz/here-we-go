@@ -7,7 +7,7 @@ const reducerTripData = (state = [], action) => {
         tripData: action.tripData,
         location: action.location,
         startDate: action.startDate,
-        endDate: action.endDate
+        endDate: action.endDate,
       }
     default:
       return state;

@@ -20,7 +20,9 @@ const defaultState = {
   // expediaActivityInfo: []
 }
 
-const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
+// let store = createStore(reducer, initialState, compose(applyMiddleware(...middleware),
+  //   window.devToolsExtension ? window.devToolsExtension() : f => f));
+const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
