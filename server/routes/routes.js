@@ -96,6 +96,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< f31ae0137620402c93b920ae0f8f3e75c1a579e0
 <<<<<<< 5624af568c5592224298283ad898eab589affc5e
 <<<<<<< 7f82ca726a44e8c9c084325eb1d9a4c05b229eee
 <<<<<<< 29667d1606633de43ae89ddb71522c7b1cfb873f
@@ -142,6 +143,16 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> Fix merge conflicts
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
+=======
+<<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
+
+router.post("/FlightSearch", function(req, res) {
+  // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
+=======
+router.post("/FlightSearch", function(req, res) {
+  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
 
 >>>>>>> chore(Styles): added css to autocomplete input field
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"

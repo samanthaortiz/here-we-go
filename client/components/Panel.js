@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< f31ae0137620402c93b920ae0f8f3e75c1a579e0
 <<<<<<< 5624af568c5592224298283ad898eab589affc5e
 <<<<<<< 207fd20bb1b2dcc756c2ba2e358cc7fdc96b5aec
 <<<<<<< 29667d1606633de43ae89ddb71522c7b1cfb873f
@@ -72,11 +73,15 @@ const Panel = React.createClass({
 <<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
 >>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+<<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
+>>>>>>> chore(Styles): added css to autocomplete input field
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 =======
         <FlightTile flightData={this.props} />
         {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
 >>>>>>> chore(Styles): added css to autocomplete input field
+<<<<<<< f31ae0137620402c93b920ae0f8f3e75c1a579e0
 <<<<<<< 207fd20bb1b2dcc756c2ba2e358cc7fdc96b5aec
 <<<<<<< 18cecf01a84239ad84e4a9d6495ee4a5108a1e16
 =======
@@ -92,6 +97,8 @@ const Panel = React.createClass({
 =======
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 >>>>>>> Fix merge conflicts
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
