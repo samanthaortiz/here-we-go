@@ -45,12 +45,9 @@ const Splash = React.createClass({
   onSubmit(e) {
     e.preventDefault();
     document.getElementById('loading-icon').style.display = 'block';
-<<<<<<< HEAD
-=======
     // CALL ACTION CREATOR
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate);
 
->>>>>>> dev
     // this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
     // this.props.getFlightCode(this.state.city);
     // this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)

@@ -7,7 +7,11 @@ const reducerTripData = (state = [], action) => {
         tripData: action.tripData,
         location: action.location,
         startDate: action.startDate,
-        endDate: action.endDate
+        endDate: action.endDate,
+        adults: action.adults || 1,
+        childUnder18: action.childUnder18 ||0,
+        infants: action.infants || false,
+        gotFlights: action.gotFlights ||false
       }
     default:
       return state;

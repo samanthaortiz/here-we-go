@@ -85,7 +85,6 @@ router.post('/user-account/', function(req, res) {
 
 // TRIP SEARCH API =====================================================================
 
-<<<<<<< HEAD
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 
@@ -105,12 +104,13 @@ router.post("/FlightSearch", function(req, res) {
       console.error(error)
     }
   });
-=======
+});
+
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
-router.post('/trips', hotelRoute, activityRoute, function(req, res, next) {
+router.post('/trips', hotelRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
+  // console.log('post request in trips, calling get flight code.. response data:', res.data)
   res.send(res.data);
->>>>>>> dev
 });
 //   console.log("WORKS")
 // });
