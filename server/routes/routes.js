@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 <<<<<<< 69ac8ee540ad74740c5c586f9f3b1291b0178a2a
 <<<<<<< f68c22faf592d3e1d05150b7dd8f2b2543cdd88c
 <<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
@@ -124,6 +125,9 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 5ab0a05e606c7d01b2a1c99b09d9be84fd7796d3
 >>>>>>> fix code
 <<<<<<< 35185295f44cb696c95783e95829eb359a7c402b
@@ -167,6 +171,7 @@ router.post("/FlightSearch", function(req, res) {
 =======
 
 >>>>>>> fix code
+<<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 >>>>>>> fix code
 =======
 
@@ -176,6 +181,14 @@ router.post("/FlightSearch", function(req, res) {
 
 >>>>>>> fix code
 >>>>>>> fix code
+=======
+=======
+<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
+
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 =======
