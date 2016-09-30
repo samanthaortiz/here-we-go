@@ -9,6 +9,24 @@ const Flight = React.createClass({
     return monthDay += '/' + year;
   },
 
+  getFlightLegs(){
+    let allLegs = this.props.flightLegs;
+    let givenLegs = this.props.flightInfo.legIds;
+
+    let legs = [];
+    allLegs.forEach(function(leg){
+      if(leg.legId === givenLegs[0] || leg.legId === givenLegs[1]){
+        legs.push(leg);
+      }
+    })
+
+    // let legs = allLegs.map(function(leg){
+    //   return leg.legId === givenLegs[0] || leg.legId === givenLegs[1]
+    // })
+
+    return legs;
+  },
+
   render() {
           // <h3>Select Your Flight</h3>
 
@@ -22,9 +40,15 @@ const Flight = React.createClass({
     //     </div>
     //   );
     // } else {
+      let legs = this.getFlightLegs();
+      console.log(legs)
       return (
         <div className="item-flight">
-        <p>{this.props.flightInfo.baseFare}</p>
+        <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>
+        <p>{legs[0].segments[0].departureAirportCode} to {legs[0].segments[0].arrivalAirportCode}</p>
+        <p>Departure Time: {legs[0].segments[0].departureTime}</p>
+        <p>Arrival Time: {legs[0].segments[0].arrivalTime}</p>
+
         </div>
       );
     // }
