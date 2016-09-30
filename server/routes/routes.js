@@ -84,7 +84,11 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
+=======
+<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
+>>>>>>> chore(Styles): added css to autocomplete input field
 
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
