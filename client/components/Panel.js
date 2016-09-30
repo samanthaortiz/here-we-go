@@ -50,13 +50,9 @@ const Panel = React.createClass({
     return (
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
-<<<<<<< HEAD
         {flightTile}
-        {/*<CarRentalTile carData={this.props}/>*/}
-=======
         <FlightTile flightData={this.props} />
-        <CarRentalTile carData={this.props.data.reducerTripData}/>
->>>>>>> localBranch
+        {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
