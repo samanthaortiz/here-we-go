@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< c19f20061e6e3943db0395e1b9036337db9a7429
 <<<<<<< d520e4c67170cc9b02b8b2bc861a254dc85c42b3
 <<<<<<< 15cb286807499e04e92fa052f7988f2f6112667d
 <<<<<<< 34416c09e735fc495a89f142bc9874e63a4d24da
@@ -75,6 +76,12 @@ const Panel = React.createClass({
 >>>>>>> chore(Styles): added css to autocomplete input field
 =======
 <<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
+=======
+<<<<<<< 6b2ea6eff216e301ea1c168b4687bfc3533cbc90
+<<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
+=======
+<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
+>>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 =======
