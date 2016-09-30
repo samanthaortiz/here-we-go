@@ -85,50 +85,22 @@ router.post('/user-account/', function(req, res) {
 
 // TRIP SEARCH API =====================================================================
 
-<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
-<<<<<<< fc352281dc384a17da4697b704af4265392007a2
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
-router.post('/trips', hotelRoute, activityRoute, function(req, res, next) {
-  res.send(res.data);
-=======
-=======
->>>>>>> feat(flights): refactoring flights, data is persisting
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
-    //   request({ url: urlAPI }, function(error, response, body) {
-    //     if (!error && response.statusCode == 200) {
-    //       res.send(body);
-    //     }
-    //   });
-    // });
-
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log('flight request from expedia response', response.body);
       res.send(body);
     } else {
       console.error(error)
     }
   });
-<<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
->>>>>>> perf(flights): flight performance changes: progress
-=======
 });
 
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
 router.post('/trips', hotelRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
-  // console.log('post request in trips, calling get flight code.. response data:', res.data)
   res.send(res.data);
->>>>>>> feat(flights): refactoring flights, data is persisting
 });
-//   console.log("WORKS")
-// });
-
-
 
 
 // // HOTEL SEARCH API ================================================================== */
