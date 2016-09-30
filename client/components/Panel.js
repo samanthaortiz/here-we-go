@@ -13,24 +13,24 @@ const Panel = React.createClass({
       availableAirportCodes: [],
       adults: 1,
       childUnder18: 0,
-      infants: "false",
+      infants: false,
       gotFlights: false
     }
   },
 
-  // renderFlights(offers) {
-  //   console.log(offers);
-  //   return (
-  //     offers.map((flight) =>
-  //       <Flight
-  //         key={flight.productKey}
-  //         flightInfo={flight}
-  //         // startDate={this.props.data.expediaFlightInfo.startDate}
-  //         // endDate={this.props.data.expediaFlightInfo.endDate}
-  //       />
-  //     )
-  //   )
-  // },
+  renderFlights(offers) {
+    console.log(offers);
+    return (
+      offers.map((flight) =>
+        <Flight
+          key={flight.productKey}
+          flightInfo={flight}
+          // startDate={this.props.data.expediaFlightInfo.startDate}
+          // endDate={this.props.data.expediaFlightInfo.endDate}
+        />
+      )
+    )
+  },
 
 
   
@@ -40,20 +40,19 @@ const Panel = React.createClass({
     // console.log('Flights: ', this.props.expediaFlightInfo);
     console.log('trip data in panel===> ', this.props)
 
-    // var flightTile;
-    // if(this.state.gotFlights){
-    //   console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
-    //   var flightInfo = this.props.data.expediaFlightInfo.expediaFlightInfo.offers
-    //   flightTile = this.renderFlights(flightInfo)
-    // } else {
-    //   flightTile = <FlightTile flightData={this.props} flightOptions={this.state}>
-    // }
+    var flightTile;
+    if(this.props.data.reducerTripData.gotFlights){
+      // console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
+      flightTile = this.renderFlights(flightInfo)
+    } else {
+      flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state}/>
+    }
 
     return (
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
-        {/*{flightTile}*/}
-        <FlightTile flightInfo={this.props.data} />
+        {flightTile}
         {/*<CarRentalTile carData={this.props}/>*/}
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
