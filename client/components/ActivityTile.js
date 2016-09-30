@@ -1,19 +1,40 @@
+// DASHBOARD > PANEL > ACTIVITY TILE =============================================
 import React from 'react';
 import Activity from './Activity';
 
 const ActivityTile = React.createClass({
-	componentWillMount(){
-  	console.log('$$$$$$ACTIVITY TILE', this.props)
-	},
-render() {
-    return (
-      <div>
-        <h1>Things To Do</h1>
+  render() {
 
-      </div> 
-    );
+    console.log('>>>>> Activity TILE <<<<<');
+    console.log('Activity tile this.props: ',  this.props);
+
+    {if(this.props.activityData.length !== 0) {
+          return (
+            <div className="tile-activity">
+            <h3>THINGS TO DO</h3>
+              {
+                this.props.activityData.tripData[1].activityData.activities.map((activity) =>
+                  <Activity
+                    key={activity.id}
+                    activityInfo={activity}
+                    startDate={this.props.activityData.startDate}
+                    endDate={this.props.activityData.endDate}
+                    location={this.props.activityData.location}
+
+                  />
+                )
+              }
+            </div>
+          );
+        } else {
+          return (
+            <div className="tile-activity">
+              <Activity />
+            </div>
+          );
+        }}
+
   }
 });
 
 export default ActivityTile;
-

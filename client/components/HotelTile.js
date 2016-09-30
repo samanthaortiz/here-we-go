@@ -11,6 +11,7 @@ const HotelTile = React.createClass({
     if(this.props.hotelData.length !== 0) {
       return (
         <div className="tile-hotel">
+        <h3>HOTELS</h3>
           {
             this.props.hotelData.tripData[0].hotelData.hotelList.map((hotel) =>
               <Hotel
