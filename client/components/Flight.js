@@ -10,23 +10,24 @@ const Flight = React.createClass({
   },
 
   render() {
+          // <h3>Select Your Flight</h3>
 
-    // console.log('>>>>> FLIGHT <<<<<');
-    // console.log('Flight this.props: ', this.props);
+    console.log('>>>>> FLIGHT <<<<<');
+    console.log('Flight this.props: ', this.props);
 
-    if(this.props !== undefined) {
+    // if(this.props !== undefined) {
+    //   return (
+    //     <div className="item-flight">
+    //       { this.props }
+    //     </div>
+    //   );
+    // } else {
       return (
         <div className="item-flight">
-          { this.props }
+        <p>{this.props.flightInfo.baseFare}</p>
         </div>
       );
-    } else {
-      return (
-        <div className="item-flight">
-          <h3>Select Your Flight</h3>
-        </div>
-      );
-    }
+    // }
   } 
 });
 

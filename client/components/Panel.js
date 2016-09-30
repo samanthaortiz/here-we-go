@@ -2,6 +2,7 @@
 import React from 'react';
 import HotelTile from './HotelTile';
 import FlightTile from './FlightTile';
+import Flight from './Flight'
 import CarRentalTile from './CarRentalTile';
 import ActivityTile from './ActivityTile';
 const Panel = React.createClass({
@@ -16,15 +17,10 @@ const Panel = React.createClass({
 >>>>>>> feat(flights): refactoring flights, data is persisting
   getInitialState() {
    return {
-      airportDepartureCode: "",
-      airportDestinationCode: "",
-      availableAirportCodes: [],
-      adults: 1,
-      childUnder18: 0,
-      infants: false,
       gotFlights: false
     }
   },
+<<<<<<< 6d09b080fc3c12ae69ae9951967ae83a1375c583
 
 <<<<<<< 8c761d6b40301728dbc9576780208702ef5999cd
 <<<<<<< 3dc3db4d43623b6caef3716eeef538d3e829d2d6
@@ -99,20 +95,30 @@ const Panel = React.createClass({
 >>>>>>> perf(flight): render flights
 
 
+=======
+>>>>>>> feat(flights): flight prices rendering
   
   render() {
     console.log('>>>>> PANEL <<<<<');
     // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
     // console.log('Flights: ', this.props.expediaFlightInfo);
     console.log('trip data in panel===> ', this.props)
+<<<<<<< 6d09b080fc3c12ae69ae9951967ae83a1375c583
 >>>>>>> feat(flights): refactoring flights, data is persisting
+=======
+    console.log('got flights before if statement', this.state.gotFlights)
+>>>>>>> feat(flights): flight prices rendering
 
     var flightTile;
-    if(this.props.data.reducerTripData.gotFlights){
-      // console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+    if(this.state.gotFlights){
+      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
-      flightTile = this.renderFlights(flightInfo)
+      var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs
+
+      // flightOffers = this.renderFlights(flightInfo)
+      flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state}/>
     } else {
+      // console.log('dont got flights', typeof this.state.gotFlights) 
       flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state}/>
     }
 
