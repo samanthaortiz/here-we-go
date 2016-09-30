@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< 7464f04bf17764da7fb0f73f785df221fca242cf
 <<<<<<< 1cb83ad6a061a25256399afc25cd284b0dae5a8e
 <<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 <<<<<<< 69ac8ee540ad74740c5c586f9f3b1291b0178a2a
@@ -128,6 +129,9 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< a9e773abfb091f3255a4b16046c3d9331ba6a0c4
+>>>>>>> fix code
 <<<<<<< 37efff517931d54b69c0dc129626fe278938d9bc
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
@@ -157,12 +161,18 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> fix code
 =======
 =======
+<<<<<<< 7464f04bf17764da7fb0f73f785df221fca242cf
 <<<<<<< 1cb83ad6a061a25256399afc25cd284b0dae5a8e
 =======
 <<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
 >>>>>>> fix code
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+=======
+<<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
+>>>>>>> fix code
+>>>>>>> fix code
 <<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
@@ -172,6 +182,7 @@ router.post("/FlightSearch", function(req, res) {
 
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+<<<<<<< 7464f04bf17764da7fb0f73f785df221fca242cf
 <<<<<<< 7f82ca726a44e8c9c084325eb1d9a4c05b229eee
 >>>>>>> chore(Styles): added css to autocomplete input field
 =======
@@ -195,7 +206,15 @@ router.post("/FlightSearch", function(req, res) {
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+<<<<<<< a9e773abfb091f3255a4b16046c3d9331ba6a0c4
+>>>>>>> fix code
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+=======
+
+>>>>>>> fix code
+>>>>>>> fix code
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 =======
