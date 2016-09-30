@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 1cb83ad6a061a25256399afc25cd284b0dae5a8e
 <<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 <<<<<<< 17c9c545718b814185ff0cab76d88e12f41a9aae
 <<<<<<< f68c22faf592d3e1d05150b7dd8f2b2543cdd88c
@@ -127,6 +128,9 @@ const Panel = React.createClass({
 =======
 =======
 =======
+=======
+<<<<<<< 37efff517931d54b69c0dc129626fe278938d9bc
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 8ba0fad191c4dc0fc3af21a3c20ace8db507c411
@@ -140,6 +144,12 @@ const Panel = React.createClass({
 =======
 =======
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
+=======
+<<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
+<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
+=======
+<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
+>>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
         <CarRentalTile carData={this.props.data.reducerTripData}/>
