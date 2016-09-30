@@ -96,6 +96,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< 770d37687bfa2320ed8dad22cb79fdf393d906b0
 <<<<<<< a25859445bb90fcad3b0260202e62aaaff74435d
 <<<<<<< 98a7fc4864bce85fe578b00bcafa88ec9968b995
 =======
@@ -108,6 +109,9 @@ router.post("/FlightSearch", function(req, res) {
   // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
   
 =======
+=======
+
+>>>>>>> fix code
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 
