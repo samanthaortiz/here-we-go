@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< e4254f583fde345177f0c22b44eff848ed4c1466
 <<<<<<< 954aa32508b721fa09ab813600cb80235134b41f
 <<<<<<< 05925d8fe93426b6938b3cb3e236c5eca0a256ba
 <<<<<<< 71e5a5f262df48834644e44314126548fb7503c9
@@ -140,6 +141,9 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< e00148aba0ac05361fcef413c34f4e2e2db0b0ed
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 44fd74dd95effc4bb84e12e506b9b91414952a10
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 1bfee55d6674a8b415391c1ed50115215053d710
@@ -247,6 +251,7 @@ router.post("/FlightSearch", function(req, res) {
 =======
 =======
 =======
+<<<<<<< e4254f583fde345177f0c22b44eff848ed4c1466
 =======
 =======
 <<<<<<< 954aa32508b721fa09ab813600cb80235134b41f
@@ -254,6 +259,8 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> Fix merge conflicts
 <<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
 >>>>>>> fix code
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 38a146ff35915b9742ddbef836c64ddabdcf9651
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 41bdead0806d5f1f19690752b2c7ee94bf634b43
@@ -287,9 +294,12 @@ router.post("/FlightSearch", function(req, res) {
 <<<<<<< 05925d8fe93426b6938b3cb3e236c5eca0a256ba
 =======
 =======
+<<<<<<< e4254f583fde345177f0c22b44eff848ed4c1466
 =======
 <<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
 >>>>>>> fix code
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
