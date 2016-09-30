@@ -85,18 +85,8 @@ router.post('/user-account/', function(req, res) {
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
-<<<<<<< HEAD
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-=======
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
-// router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
-router.post('/trips', [hotelRoute, carRoute, activityRoute], function(req, res, next) {
-  res.send(res.data);
-});
-//   console.log("WORKS")
-// });
->>>>>>> localBranch
 
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
