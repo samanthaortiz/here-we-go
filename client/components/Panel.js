@@ -18,7 +18,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         <FlightTile flightData={this.props} />
-        {/*<CarRentalTile carData={this.props}/>*/}
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
