@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
 <<<<<<< ba2babc299e785f56b2e5117e05f65d120cb5f55
 <<<<<<< b662ae37bf85f82cd621019d3053874e3c9d93e8
 <<<<<<< 7e284b8b120f32b3ba2d416dd6d26517c5af9517
@@ -118,10 +119,15 @@ router.post('/user-account/', function(req, res) {
 
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+<<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
+
+>>>>>>> chore(Styles): added css to autocomplete input field
 router.post("/FlightSearch", function(req, res) {
   // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
   
 =======
+<<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
 =======
 
 >>>>>>> fix code
@@ -217,6 +223,12 @@ router.post("/FlightSearch", function(req, res) {
 
 router.post("/FlightSearch", function(req, res) {
 >>>>>>> Begin sift to db
+=======
+router.post("/FlightSearch", function(req, res) {
+  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
+
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
@@ -326,6 +338,24 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 // //   res.send(selectableAirports)
 // // });
 
+<<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
+=======
+
+
+// ACTIVITIES SEARCH API ================================================================== 
+router.post("/ActivitiesSearch", function(req, res) {
+  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
+
+  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
+
+  request({ url: urlAPI }, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      // console.log('Hotel Response Body', body);
+      res.send(body);
+    }
+  });
+});
+>>>>>>> chore(Styles): added css to autocomplete input field
 
 
 
