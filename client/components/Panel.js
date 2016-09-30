@@ -50,7 +50,12 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
         <CarRentalTile carData={this.props.data.reducerTripData}/>
+=======
+        <FlightTile flightData={this.props} />
+        {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
+>>>>>>> chore(Styles): added css to autocomplete input field
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );

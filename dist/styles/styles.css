@@ -206,6 +206,12 @@ div.tile-hotel:nth-child(odd) {
   margin-right: 5%;
 }*/
 
+.tt-open {
+  border: 1px solid #999;
+  background-color: #fff;
+  padding-left: 2px;
+}
+
 /* ITINERARY VIEW ========================================================== */
 .tile-itinerary {
   border: 1px solid #999;
