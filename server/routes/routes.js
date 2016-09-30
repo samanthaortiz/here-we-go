@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< f68c22faf592d3e1d05150b7dd8f2b2543cdd88c
 <<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
 <<<<<<< ba2babc299e785f56b2e5117e05f65d120cb5f55
 <<<<<<< b662ae37bf85f82cd621019d3053874e3c9d93e8
@@ -120,8 +121,18 @@ router.post('/user-account/', function(req, res) {
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
 =======
+=======
+<<<<<<< 35185295f44cb696c95783e95829eb359a7c402b
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
+=======
+<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
+>>>>>>> chore(Styles): added css to autocomplete input field
 
+<<<<<<< f68c22faf592d3e1d05150b7dd8f2b2543cdd88c
+=======
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
 >>>>>>> chore(Styles): added css to autocomplete input field
 router.post("/FlightSearch", function(req, res) {
   // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
