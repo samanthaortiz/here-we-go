@@ -6,9 +6,15 @@ import Itinerary from './Itinerary';
 import Panel from './Panel';
 
 const Dashboard = React.createClass({
+  getInitialState() {
+
+  },
+
   render() {
     console.log('>>>>> DASHBOARD <<<<<');
     console.log('=====> ', this.props);
+    // console.log('=====> ', body);
+
 
     var startDate = this.props.expediaHotelInfo.startDate
     var endDate = this.props.expediaHotelInfo.endDate

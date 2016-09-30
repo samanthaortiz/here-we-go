@@ -15,6 +15,9 @@ export const postHotelExpedia = (location, startDate, endDate) => {
     return axiosHotelCall(location, startDate, endDate)
     .then(res => {
        // console.log("GET HOTEL", res.data)
+       console.log('============')
+       console.log(res.data)
+       console.log('============')
       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
       browserHistory.push('/dashboard')
 
