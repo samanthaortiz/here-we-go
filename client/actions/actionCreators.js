@@ -25,11 +25,7 @@ export function hydrateTripStore(tripData, location, startDate, endDate){
     tripData,
     location,
     startDate,
-    endDate,
-    adults: 1,
-    childUnder18: 0,
-    infants: "false",
-    gotFlights: false
+    endDate
   };
 }
 
@@ -87,34 +83,34 @@ export function axiosTripCall(location, startDate, endDate){
 //=============== FLIGHTS ===============
 
 //GET AIRPORT CODE FOR FLIGHT SEARCH
-export const getFlightCode = (locationForFlightSearch) => {
-  // console.log('LOCATIONForFlightSearch', locationForFlightSearch);
-  return function(dispatch){
-    return axiosFlightCode(locationForFlightSearch)
-    .then(res => {
-    console.log('Flight Code Received', res.data)
-     // console.log('locationForFlightSearch to hydrate store', locationForFlightSearch);
-     dispatch(hydrateFlightStoreCode(res.data, locationForFlightSearch))
-    });
-  }
-}
+// export const getFlightCode = (locationForFlightSearch) => {
+//   // console.log('LOCATIONForFlightSearch', locationForFlightSearch);
+//   return function(dispatch){
+//     return axiosFlightCode(locationForFlightSearch)
+//     .then(res => {
+//     console.log('Flight Code Received', res.data)
+//      // console.log('locationForFlightSearch to hydrate store', locationForFlightSearch);
+//      dispatch(hydrateFlightStoreCode(res.data, locationForFlightSearch))
+//     });
+//   }
+// }
 
-export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearch){
-  return {
-    type: 'GET_FLIGHT_CODE',
-    expediaFlightInfo,
-    locationForFlightSearch
-    // startDate,
-    // endDate
-  };
-}
+// export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearch){
+//   return {
+//     type: 'GET_FLIGHT_CODE',
+//     expediaFlightInfo,
+//     locationForFlightSearch
+//     // startDate,
+//     // endDate
+//   };
+// }
 
-export function axiosFlightCode(locationForFlightSearch){
-  // console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
-  return axios.post('/api/trips', {
-      locationForFlightSearch
-    });
-}
+// export function axiosFlightCode(locationForFlightSearch){
+//   // console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
+//   return axios.post('/api/trips', {
+//       locationForFlightSearch
+//     });
+// }
 
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
