@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 5624af568c5592224298283ad898eab589affc5e
 <<<<<<< 207fd20bb1b2dcc756c2ba2e358cc7fdc96b5aec
 <<<<<<< 29667d1606633de43ae89ddb71522c7b1cfb873f
 <<<<<<< 18cecf01a84239ad84e4a9d6495ee4a5108a1e16
@@ -88,6 +89,9 @@ const Panel = React.createClass({
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 >>>>>>> chore(cleanup): clean up merge artifacts
 >>>>>>> chore(cleanup): clean up merge artifacts
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> Fix merge conflicts
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
