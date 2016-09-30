@@ -10,14 +10,11 @@ function getHotelData(req, res, next) {
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log('Hotel Response Body', body);
-      // res.send(body);
-      req.hotelData = body;
-  next();
+      res.data = [];
+      res.data.push({ hotelData: JSON.parse(body) });
+      next();
     }
   });
-
-
 }
 
 module.exports = getHotelData;

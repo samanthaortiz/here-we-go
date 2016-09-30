@@ -12,7 +12,7 @@ let getActivityData = function(req, res, next){
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       // console.log('Hotel Response Body', body);
-      req.activityData = body;
+      res.data.push({ activityData: JSON.parse(body) });
       next();
     }
   });

@@ -30,13 +30,11 @@ getFlightCode: function(req, res, next) {
   console.log('REQUEST/ IN FLIGHT CODE:', req.body)
   // var urlAPI = 'https://iatacodes.org/api/v6/autocomplete?query='+req.body.locationForFlightSearch+'?user_key='+api.flightCode;
 
-var urlAPI = 'https://airport.api.aero/airport/match/' + req.body.location + '?user_key=' + api.flightCode;
+  var urlAPI = 'https://airport.api.aero/airport/match/' + req.body.location + '?user_key=' + api.flightCode;
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // res.send(body);
-      req.flightCode = body;
-      // console.log('>>>>>>FLIGHTAPI ', req.flightCode);
-  next();
+      res.data.push({ flightCode: JSON.parse(body) });
+      next();
     }
   });
 }

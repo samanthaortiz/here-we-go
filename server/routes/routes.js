@@ -86,8 +86,11 @@ router.post('/user-account/', function(req, res) {
 // TRIP SEARCH API =====================================================================
 
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
-router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next){
-console.log("ACTIVITY<<<<" , req.activityData)
+// router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
+  router.post('/trips', hotelRoute, activityRoute, function(req, res, next) {
+  
+  // console.log('RESPONSE TRIPS: ', res)
+  res.send(res.data);
 });
 //   console.log("WORKS")
 // });
