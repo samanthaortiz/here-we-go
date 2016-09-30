@@ -9,24 +9,49 @@ const Flight = React.createClass({
     return monthDay += '/' + year;
   },
 
+  getFlightLegs(){
+    let allLegs = this.props.flightLegs;
+    let givenLegs = this.props.flightInfo.legIds;
+
+    let legs = [];
+    allLegs.forEach(function(leg){
+      if(leg.legId === givenLegs[0] || leg.legId === givenLegs[1]){
+        legs.push(leg);
+      }
+    })
+
+    // let legs = allLegs.map(function(leg){
+    //   return leg.legId === givenLegs[0] || leg.legId === givenLegs[1]
+    // })
+
+    return legs;
+  },
+
   render() {
+          // <h3>Select Your Flight</h3>
 
-    // console.log('>>>>> FLIGHT <<<<<');
-    // console.log('Flight this.props: ', this.props);
+    console.log('>>>>> FLIGHT <<<<<');
+    console.log('Flight this.props: ', this.props);
 
-    if(this.props !== undefined) {
+    // if(this.props !== undefined) {
+    //   return (
+    //     <div className="item-flight">
+    //       { this.props }
+    //     </div>
+    //   );
+    // } else {
+      let legs = this.getFlightLegs();
+      console.log(legs)
       return (
         <div className="item-flight">
-          { this.props.destAirportName }
+        <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>
+        <p>{legs[0].segments[0].departureAirportCode} to {legs[0].segments[0].arrivalAirportCode}</p>
+        <p>Departure Time: {legs[0].segments[0].departureTime}</p>
+        <p>Arrival Time: {legs[0].segments[0].arrivalTime}</p>
+
         </div>
       );
-    } else {
-      return (
-        <div className="item-flight">
-          <h3>Select Your Flight</h3>
-        </div>
-      );
-    }
+    // }
   } 
 });
 

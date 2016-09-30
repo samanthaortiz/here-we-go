@@ -85,9 +85,31 @@ router.post('/user-account/', function(req, res) {
 
 // TRIP SEARCH API =====================================================================
 
+router.post("/FlightSearch", function(req, res) {
+  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
+
+  var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
+    //   request({ url: urlAPI }, function(error, response, body) {
+    //     if (!error && response.statusCode == 200) {
+    //       res.send(body);
+    //     }
+    //   });
+    // });
+
+  request({ url: urlAPI }, function(error, response, body) {
+    if (!error && response.statusCode == 200) {
+      // console.log('flight request from expedia response', response.body);
+      res.send(body);
+    } else {
+      console.error(error)
+    }
+  });
+});
+
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, flightRoute.getFlightData, carRoute, activityRoute)
 // router.post('/trips', hotelRoute, flightRoute.getFlightCode, activityRoute, function(req, res, next) {
-router.post('/trips', hotelRoute, activityRoute, function(req, res, next) {
+router.post('/trips', hotelRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
+  // console.log('post request in trips, calling get flight code.. response data:', res.data)
   res.send(res.data);
 });
 //   console.log("WORKS")
