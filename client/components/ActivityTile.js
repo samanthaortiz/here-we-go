@@ -13,7 +13,7 @@ const ActivityTile = React.createClass({
             <div className="tile-activity">
             <h3>THINGS TO DO</h3>
               {
-                this.props.activityData.tripData[1].activityData.activities.map((activity) =>
+                this.props.activityData.tripData[2].activityData.activities.map((activity) =>
                   <Activity
                     key={activity.id}
                     activityInfo={activity}

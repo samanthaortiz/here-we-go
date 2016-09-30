@@ -100,7 +100,7 @@ router.post("/FlightSearch", function(req, res) {
   });
 });
 
-router.post('/trips', hotelRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
+router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
 });
 
