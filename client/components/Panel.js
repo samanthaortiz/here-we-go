@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 6c9c58f2af1d7b4ae64da94185e9f2f64aee71eb
 <<<<<<< 1cb83ad6a061a25256399afc25cd284b0dae5a8e
 <<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 <<<<<<< 17c9c545718b814185ff0cab76d88e12f41a9aae
@@ -129,6 +130,9 @@ const Panel = React.createClass({
 =======
 =======
 =======
+=======
+<<<<<<< 34416c09e735fc495a89f142bc9874e63a4d24da
+>>>>>>> chore(cleanup): clean up merge artifacts
 <<<<<<< 37efff517931d54b69c0dc129626fe278938d9bc
 >>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
@@ -145,6 +149,9 @@ const Panel = React.createClass({
 =======
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
 =======
+=======
+<<<<<<< b53ee1f29f37ed56d0e8ecfda5d1d46b0fba0aa2
+>>>>>>> chore(cleanup): clean up merge artifacts
 <<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
 <<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
 =======
@@ -157,6 +164,7 @@ const Panel = React.createClass({
         <FlightTile flightData={this.props} />
         {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
 >>>>>>> chore(Styles): added css to autocomplete input field
+<<<<<<< 6c9c58f2af1d7b4ae64da94185e9f2f64aee71eb
 <<<<<<< e7d5fd27f7479dc1497b2a5ebf07d33787fce4d3
 <<<<<<< 17c9c545718b814185ff0cab76d88e12f41a9aae
 <<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
@@ -214,13 +222,24 @@ const Panel = React.createClass({
 >>>>>>> chore(cleanup): clean up merge artifacts
 >>>>>>> chore(cleanup): clean up merge artifacts
 =======
+=======
+<<<<<<< 34416c09e735fc495a89f142bc9874e63a4d24da
+>>>>>>> chore(cleanup): clean up merge artifacts
 <<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
 =======
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 >>>>>>> chore(cleanup): clean up merge artifacts
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+<<<<<<< 6c9c58f2af1d7b4ae64da94185e9f2f64aee71eb
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+=======
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> chore(cleanup): clean up merge artifacts
+>>>>>>> chore(cleanup): clean up merge artifacts
+>>>>>>> chore(cleanup): clean up merge artifacts
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
