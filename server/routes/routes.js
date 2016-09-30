@@ -97,6 +97,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< 954aa32508b721fa09ab813600cb80235134b41f
 <<<<<<< 05925d8fe93426b6938b3cb3e236c5eca0a256ba
 <<<<<<< 71e5a5f262df48834644e44314126548fb7503c9
 <<<<<<< 755bbfc3145bd0b0ff28596adb9c4288347236f5
@@ -138,6 +139,9 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< 44fd74dd95effc4bb84e12e506b9b91414952a10
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 1bfee55d6674a8b415391c1ed50115215053d710
 >>>>>>> fix code
 <<<<<<< c19f20061e6e3943db0395e1b9036337db9a7429
@@ -245,6 +249,7 @@ router.post("/FlightSearch", function(req, res) {
 =======
 =======
 =======
+<<<<<<< 954aa32508b721fa09ab813600cb80235134b41f
 <<<<<<< 20906553828de195c8daae8903d9b463f265e24c
 >>>>>>> Fix merge conflicts
 <<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
@@ -256,6 +261,11 @@ router.post("/FlightSearch", function(req, res) {
 =======
 =======
 >>>>>>> fix code
+=======
+=======
+<<<<<<< 41bdead0806d5f1f19690752b2c7ee94bf634b43
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
 <<<<<<< 8765c8231c730498061a6a985f3f20348e9b5e1b
 >>>>>>> fix code
 <<<<<<< 6b2ea6eff216e301ea1c168b4687bfc3533cbc90
@@ -273,6 +283,7 @@ router.post("/FlightSearch", function(req, res) {
 =======
 
 >>>>>>> fix code
+<<<<<<< 954aa32508b721fa09ab813600cb80235134b41f
 <<<<<<< 05925d8fe93426b6938b3cb3e236c5eca0a256ba
 =======
 =======
@@ -298,6 +309,14 @@ router.post("/FlightSearch", function(req, res) {
 =======
 
 >>>>>>> Fix merge conflicts
+=======
+=======
+<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
+
+=======
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
+>>>>>>> chore(Styles): added css to autocomplete input field
 router.post("/FlightSearch", function(req, res) {
   console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 <<<<<<< 755bbfc3145bd0b0ff28596adb9c4288347236f5
