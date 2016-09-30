@@ -62,6 +62,7 @@ passport.use(new GoogleStrategy(
       }
     })
     .then(function(err, user){
+      console.log(profile);
       console.log("USER IN DATABASE")
       done(null, profile);
     })

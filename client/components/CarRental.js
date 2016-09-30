@@ -7,7 +7,7 @@ const CarRental = React.createClass({
     console.log('>>>>> CAR RENTAL <<<<<');
     console.log('carData: ', this.props.carInfo);
 
-    if(this.props.carInfo.CarClass !== 'Special Special') {
+    // if(this.props.carInfo.CarClass !== 'Special Special') {
       return (
         <div className="item-car-rental clearfix">
           <div>
@@ -26,7 +26,7 @@ const CarRental = React.createClass({
           </div>
         </div>
       );
-    };
+    // };
   } 
 });
 
