@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 17c9c545718b814185ff0cab76d88e12f41a9aae
 <<<<<<< f68c22faf592d3e1d05150b7dd8f2b2543cdd88c
 <<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
 <<<<<<< ba2babc299e785f56b2e5117e05f65d120cb5f55
@@ -123,6 +124,9 @@ const Panel = React.createClass({
 =======
 <<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
 =======
+=======
+<<<<<<< 8ba0fad191c4dc0fc3af21a3c20ace8db507c411
+>>>>>>> chore(cleanup): clean up merge artifacts
 <<<<<<< 35185295f44cb696c95783e95829eb359a7c402b
 <<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
 =======
@@ -134,6 +138,7 @@ const Panel = React.createClass({
         <FlightTile flightData={this.props} />
         {/*<CarRentalTile carData={this.props.data.reducerTripData}/>*/}
 >>>>>>> chore(Styles): added css to autocomplete input field
+<<<<<<< 17c9c545718b814185ff0cab76d88e12f41a9aae
 <<<<<<< bd3cd26063108da1e8ce4a1c1d225581be235395
 <<<<<<< 5ac3de2ea53817a7600fc059312d7bf805db06e1
 <<<<<<< 6e5551b708a2f4d196e83a34644daaaba250d3ef
@@ -183,6 +188,11 @@ const Panel = React.createClass({
 >>>>>>> Begin sift to db
 =======
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> chore(cleanup): clean up merge artifacts
+>>>>>>> chore(cleanup): clean up merge artifacts
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
