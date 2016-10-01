@@ -199,6 +199,12 @@ div.tile-activity {
   float: right;
 }
 
+.tt-open {
+  background-color: #fff;
+  border: 1px solid #999;
+  margin-left: 2px;
+}
+
 /*div.tile-hotel:nth-child(even) {
   float: right;
 }

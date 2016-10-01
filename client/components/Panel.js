@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< ba2babc299e785f56b2e5117e05f65d120cb5f55
 <<<<<<< b662ae37bf85f82cd621019d3053874e3c9d93e8
 <<<<<<< 5ac3de2ea53817a7600fc059312d7bf805db06e1
 <<<<<<< 18c3a8a024791417e31e679c32de9ecd57b8cf0f
@@ -165,6 +166,9 @@ const Panel = React.createClass({
 =======
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 >>>>>>> Fix merge conflicts
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> Begin sift to db
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
