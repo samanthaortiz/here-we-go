@@ -92,7 +92,7 @@ const FlightTile = React.createClass({
   },
 
   componentWillMount(){
-    console.log('about to mount flight tile')
+    // console.log('about to mount flight tile')
     let codeArr = this.getAllAirports(ValidCodes) || [];
     this.setState({
       availableAirportCodes: codeArr,
@@ -122,7 +122,7 @@ const FlightTile = React.createClass({
   },
 
   handleChangeAdults(event) {
-    console.log('changing adults!', event.target.value)
+    // console.log('changing adults!', event.target.value)
     this.setState({
       // airportDestinationSelect: event.target.value,
       adults: +event.target.value
@@ -131,7 +131,7 @@ const FlightTile = React.createClass({
 
 
   handleChangechildUnder18(event) {
-    console.log('changing childUnder18!', event.target.value)
+    // console.log('changing childUnder18!', event.target.value)
     if(event.target.value === "true"){
       this.setState({
         // airportDestinationSelect: event.target.value,
@@ -146,7 +146,7 @@ const FlightTile = React.createClass({
   },
 
   handleChangeInfants(event) {
-    console.log('changing infants!', event.target.value)
+    // console.log('changing infants!', event.target.value)
     this.setState({
       // airportDestinationSelect: event.target.value,
       infants: event.target.value
@@ -155,7 +155,7 @@ const FlightTile = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('submitting flight data request');
+    // console.log('submitting flight data request');
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
     this.props.flightData.postFlightExpedia(
       this.state.airportDepartureCode, 
@@ -187,7 +187,7 @@ const FlightTile = React.createClass({
   },
 
     render() {
-      console.log('do we have flights?', this.props.flightOptions);
+      // console.log('do we have flights?', this.props.flightOptions);
       if(this.state.availableAirportCodes.length === 0){
         return (
           <div className="tile-flight">
