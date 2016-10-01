@@ -5,8 +5,8 @@ import Activity from './Activity';
 const ActivityTile = React.createClass({
   render() {
 
-    console.log('>>>>> Activity TILE <<<<<');
-    console.log('Activity tile this.props: ',  this.props);
+    // console.log('>>>>> Activity TILE <<<<<');
+    // console.log('Activity tile this.props: ',  this.props);
 
     {if(this.props.activityData.length !== 0) {
           return (

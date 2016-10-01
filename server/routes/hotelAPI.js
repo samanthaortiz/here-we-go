@@ -4,7 +4,7 @@ var request = require('request');
 
 // // HOTEL SEARCH API ================================================================== */
 function getHotelData(req, res, next) {
-  console.log('>> ENTER HOTEL API ROUTER ', req.body);
+  // console.log('>> ENTER HOTEL API ROUTER ', req.body);
 
   var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
