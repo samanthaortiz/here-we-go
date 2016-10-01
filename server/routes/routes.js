@@ -96,58 +96,12 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
-<<<<<<< 20906553828de195c8daae8903d9b463f265e24c
-<<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
-<<<<<<< 38a146ff35915b9742ddbef836c64ddabdcf9651
-<<<<<<< 41bdead0806d5f1f19690752b2c7ee94bf634b43
-<<<<<<< 8765c8231c730498061a6a985f3f20348e9b5e1b
-<<<<<<< 6b2ea6eff216e301ea1c168b4687bfc3533cbc90
-<<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
 
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
 router.post("/FlightSearch", function(req, res) {
-  // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-=======
-=======
-
->>>>>>> fix code
-=======
-=======
-=======
-<<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
->>>>>>> fix code
-<<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
-
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
->>>>>>> chore(Styles): added css to autocomplete input field
-=======
-=======
-
->>>>>>> fix code
->>>>>>> fix code
-=======
-
->>>>>>> Fix merge conflicts
-router.post("/FlightSearch", function(req, res) {
-  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
->>>>>>> chore(Styles): added css to autocomplete input field
-
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log('flight request from expedia response', response.body);
       res.send(body);
     } else {
       console.error(error)
