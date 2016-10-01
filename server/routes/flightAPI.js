@@ -1,7 +1,7 @@
 var router = require("express").Router();
 var request = require('request');
 
-var api = require('./config/apiConfig')
+var api = require('./config/flightCodeAPIConfig')
 var All = require('../../client/data/fullAirportList');
 var Valid = require('../../client/data/validFlightCodes');
 

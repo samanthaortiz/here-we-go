@@ -3,7 +3,6 @@ var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
 var Users = require('../database/models/User')
-var api = require('./config/apiConfig')
 var All = require('../../client/data/fullAirportList');
 var Valid = require('../../client/data/validFlightCodes');
 let hotelRoute = require('./hotelApi')
