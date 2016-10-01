@@ -83,15 +83,15 @@ passport.use(new GoogleStrategy(
           
           })
 
-        // siftapi.getConnectToken(email)
-        //   .then(function(body) {
-        //     console.log('user token from sift:', body.result.connect_token)
-        //     connectToken = body.result.connect_token;
-        //   })
-        //   .catch(function(err) {
-        //     console.log('error getting connect token')
-        //     return console.log(err);
-        //   }); 
+        siftapi.getConnectToken(email)
+          .then(function(body) {
+            console.log('user token from sift:', body.result.connect_token)
+            connectToken = body.result.connect_token;
+          })
+          .catch(function(err) {
+            console.log('error getting connect token')
+            return console.log(err);
+          }); 
 
 
         // var params = {
@@ -110,6 +110,8 @@ passport.use(new GoogleStrategy(
         //     console.log('error creating email connection')
         //     return console.log(err);
         //   });
+
+
         var emailConnections;
         siftapi.getEmailConnections(email)
           .then(function(body) {
@@ -151,7 +153,14 @@ passport.use(new GoogleStrategy(
 
           siftapi.getSifts(email, {})
             .then(body => {
-                console.log('get sifts body', body)
+              // body.result.forEach(function(item, i){
+              //   console.log('item #'+ i, item.payload)
+              // })
+
+              // body.result[28].payload.reservationFor.forEach(function(res, i){
+              //   console.log('dep air', res.departureAirport, 'arr air', res.arrivalAirport, 'seller',res.seller)
+              // })
+                // console.log('get sifts body', body.result.length)
                 
           //       {
           //           "message": "success",
