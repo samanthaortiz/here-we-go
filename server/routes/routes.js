@@ -96,6 +96,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< 345c90fdcf944e1220b31f0404b2d5fdc6c8eab6
 <<<<<<< 56a02e2b3922669cc6e535a761855f8c06366361
 <<<<<<< c7b0a226cc5b362728a14fb6d97b0408e5a49da8
 <<<<<<< e00148aba0ac05361fcef413c34f4e2e2db0b0ed
@@ -211,11 +212,14 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> chore(Styles): added css to autocomplete input field
 
 >>>>>>> chore(Styles): added css to autocomplete input field
+=======
+
+router.post("/FlightSearch", function(req, res) {
+>>>>>>> Begin sift to db
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log('flight request from expedia response', response.body);
       res.send(body);
     } else {
       console.error(error)
