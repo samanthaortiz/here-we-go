@@ -18,7 +18,8 @@ knex.schema.hasTable('users').then(exists => {
      knex.schema.createTable('users', user => {
       user.increments('id').primary();
       user.string('google_id');
-      user.string('token');
+      user.string('accessToken');
+      user.string('refreshToken');
       user.string('fullName');
       user.string('email');
       user.timestamps();

@@ -30,8 +30,8 @@ const Flight = React.createClass({
   render() {
           // <h3>Select Your Flight</h3>
 
-    console.log('>>>>> FLIGHT <<<<<');
-    console.log('Flight this.props: ', this.props);
+    // console.log('>>>>> FLIGHT <<<<<');
+    // console.log('Flight this.props: ', this.props);
 
     // if(this.props !== undefined) {
     //   return (
@@ -41,7 +41,7 @@ const Flight = React.createClass({
     //   );
     // } else {
       let legs = this.getFlightLegs();
-      console.log(legs)
+      // console.log(legs)
       return (
         <div className="item-flight">
         <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>

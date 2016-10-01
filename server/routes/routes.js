@@ -3,13 +3,14 @@ var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
 var Users = require('../database/models/User')
-var api = require('./config/apiConfig')
 var All = require('../../client/data/fullAirportList');
 var Valid = require('../../client/data/validFlightCodes');
 let hotelRoute = require('./hotelApi')
 let flightRoute = require('./flightApi')
 let carRoute = require('./carApi')
 let activityRoute = require('./activityApi')
+var siftInfo = require('../server');
+var siftConfig = require('./config/siftConfig');
 
 
 
@@ -18,17 +19,28 @@ var passport = require('passport');
 
 
 router.get('/auth/google',
-  passport.authenticate('google', { scope: ['openid email profile'] }));
+  passport.authenticate('google', { scope: ['openid email profile'], accessType: 'offline'  }));
 
 
 router.get('/auth/google/callback',
-    passport.authenticate('google', { 
-      successRedirect: '/',
-      failureRedirect: '/auth/google/failure'
-    }),
-    function(req, res) {
-        res.redirect('/');
-    } );
+  passport.authenticate('google', { 
+    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=f3908da4f6756315ada37ecadc0041f7&redirect_url=http://localhost:4000/"
+
+    //siftInfo.siftInfo.connectToken
+    // failureRedirect: '/auth/google/failure'
+  }),
+  function(req, res) {
+    console.log('RESPONSE GOING TO SPLASH PAGE');
+    res.redirect('/');
+  }
+);
+
+// router.get('/auth/google/callback', function(req, res) {
+//   // passport.authenticate('google', { 
+//     res.redirect(";
+//     console.log('>>>> REDIRECTED <<<<')
+//   // }
+// });
 
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
@@ -86,13 +98,10 @@ router.post('/user-account/', function(req, res) {
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
-  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log('flight request from expedia response', response.body);
       res.send(body);
     } else {
       console.error(error)
@@ -194,7 +203,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
-  console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
+  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
 
   var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
 

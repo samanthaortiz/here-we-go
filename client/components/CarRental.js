@@ -4,8 +4,8 @@ import React from 'react';
 
 const CarRental = React.createClass({
   render() {
-    console.log('>>>>> CAR RENTAL <<<<<');
-    console.log('carData: ', this.props.carInfo);
+    // console.log('>>>>> CAR RENTAL <<<<<');
+    // console.log('carData: ', this.props.carInfo);
 
     // if(this.props.carInfo.CarClass !== 'Special Special') {
       return (

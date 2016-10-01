@@ -5,7 +5,7 @@ var request = require('request');
 
 // ACTIVITIES SEARCH API ================================================================== 
 let getActivityData = function(req, res, next){
-  console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
+  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
 
   var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
 
