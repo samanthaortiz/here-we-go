@@ -53,17 +53,23 @@ passport.use(new GoogleStrategy(
       .then(function(user){
         if(!user){
           console.log("ADDING NEW USER")
+          // console.log("REFRESH TOKEN", refreshToken)
           new User({
-          'google_id': profile.id, // set the users facebook id                   
-        'token': accessToken, // we will save the token that facebook provides to the user                    
+          'google_id': profile.id, // set the users google id                   
+        'accessToken': accessToken, // we will save the token that google provides to the user                    
+        'refreshToken': refreshToken,
         'fullName': profile.name.givenName + ' ' + profile.name.familyName, // look at the passport user profile to see how names are returned
         'email': profile.emails[0].value
         }).save()
       }
+      console.log(user)
     })
     .then(function(err, user){
-      console.log(profile);
-      console.log("USER IN DATABASE")
+      console.log('user profile', profile);
+      console.log('accessToken', accessToken);
+      console.log('refresh token', refreshToken);
+      console.log('profile.refreshToken', refreshToken);
+      console.log("USER IN DATABASE");
       done(null, profile);
     })
   // console.log("USER ID", profile.id);

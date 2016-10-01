@@ -18,7 +18,7 @@ var passport = require('passport');
 
 
 router.get('/auth/google',
-  passport.authenticate('google', { scope: ['openid email profile'] }));
+  passport.authenticate('google', { scope: ['openid email profile'], accessType: 'offline'  }));
 
 
 router.get('/auth/google/callback',
