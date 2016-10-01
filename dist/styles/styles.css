@@ -188,12 +188,14 @@ article {
   border: 1px solid red;
 }
 
-div.tile-hotel {
+div.tile-hotel,
+div.tile-car-rental {
   float: left;
   margin-right: 2%;
 }
 
-div.tile-flight {
+div.tile-flight,
+div.tile-activity {
   float: right;
 }
 
