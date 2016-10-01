@@ -32,6 +32,7 @@ bower_components
 #Config files
 server/database/db.config.js
 server/auth
+server/config/apiConfig.js
 
 # Floobits
 .floo
