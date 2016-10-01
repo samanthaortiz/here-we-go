@@ -3,13 +3,14 @@ var request = require('request');
 var db = require('../database/db.js');
 var mysql = require('mysql');
 var Users = require('../database/models/User')
-var api = require('./config/apiConfig')
 var All = require('../../client/data/fullAirportList');
 var Valid = require('../../client/data/validFlightCodes');
 let hotelRoute = require('./hotelApi')
 let flightRoute = require('./flightApi')
 let carRoute = require('./carApi')
 let activityRoute = require('./activityApi')
+var siftInfo = require('../server');
+var siftConfig = require('./config/siftConfig');
 
 
 
@@ -22,13 +23,24 @@ router.get('/auth/google',
 
 
 router.get('/auth/google/callback',
-    passport.authenticate('google', { 
-      successRedirect: '/',
-      failureRedirect: '/auth/google/failure'
-    }),
-    function(req, res) {
-        res.redirect('/');
-    } );
+  passport.authenticate('google', { 
+    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=f3908da4f6756315ada37ecadc0041f7&redirect_url=http://localhost:4000/"
+
+    //siftInfo.siftInfo.connectToken
+    // failureRedirect: '/auth/google/failure'
+  }),
+  function(req, res) {
+    console.log('RESPONSE GOING TO SPLASH PAGE');
+    res.redirect('/');
+  }
+);
+
+// router.get('/auth/google/callback', function(req, res) {
+//   // passport.authenticate('google', { 
+//     res.redirect(";
+//     console.log('>>>> REDIRECTED <<<<')
+//   // }
+// });
 
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
