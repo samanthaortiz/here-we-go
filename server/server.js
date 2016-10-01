@@ -45,171 +45,81 @@ passport.deserializeUser(function(obj, done) {
     done(null, obj);
 });
 
-
 var newUser;
 var result;
 var connectToken;
+var email;
 
-passport.use(new GoogleStrategy(
-  googleConfig.google,
- function(accessToken, refreshToken, profile, done) {
-    User.forge().where({'google_id': profile.id}).fetch()
-      .then(function(user){
-        if(!user){
-          console.log("ADDING NEW USER")
-          // console.log("REFRESH TOKEN", refreshToken)
-          new User({
-          'google_id': profile.id, // set the users google id                   
+passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refreshToken, profile, done) {
+  User.forge()
+  .where({'google_id': profile.id})
+  .fetch()
+  .then(function(user) {
+    if(!user) {
+      console.log("ADDING NEW USER");
+      new User({
+        'google_id': profile.id, // set the users google id                   
         'accessToken': accessToken, // we will save the token that google provides to the user                    
         'refreshToken': refreshToken,
         'fullName': profile.name.givenName + ' ' + profile.name.familyName, // look at the passport user profile to see how names are returned
         'email': profile.emails[0].value
-        }).save()
-      }
-      console.log('this is the user after adding to db:', user)
+      })
+      .save()
+    }
+    
+    console.log('this is the user after adding to db:', user)
+  }) // CLOSES LINE 58
+  .then(function(err, user) {
+    console.log('user profile before sift', profile);
+    email = profile.emails[0].value;
+    siftapi.addUser(email)
+    .then(body => {
+      newUser = body.result;
+      console.log('new user response', body.result);
     })
-    .then(function(err, user){
-        console.log('user profile before sift', profile);
-        var email = profile.emails[0].value;
-        siftapi.addUser(email)
-          .then(body => {
-          newUser = body.result;
-          console.log('new user response', body.result)
-          
-          // {
-          //     "user_id": "<newly created user id>",
-          //     "username": "<given user name>"
-          // }
-          
-          })
+  })
+  // .then(function() {
+    // siftapi.getConnectToken(email)
+    // .then(function(body) {
+    //   console.log('user token from sift:', body.result.connect_token)
+    //   // connectToken = body.result.connect_token;
+    // })
+    // .then(function() {
 
-        siftapi.getConnectToken(email)
-          .then(function(body) {
-            console.log('user token from sift:', body.result.connect_token)
-            connectToken = body.result.connect_token;
-          })
-          .catch(function(err) {
-            console.log('error getting connect token')
-            return console.log(err);
-          }); 
-
-
-        // var params = {
-        //   account: email,
-        //   refresh_token: '1/DEeyCZbCypQT6-b46pPthFxmEpNVEQSvPlzTAoq1rhA'
-        // };
-
-        // var newEmailConnectionId;
-        // siftapi.addEmailConnection(email, 'google', params)
-        //   .then(function(body) {
-        //     console.log('body from addemail connection', body)
-        //     console.log('added email connection: ', body.result)
-        //     newEmailConnectionId = body.result.id;
-        //   })
-        //   .catch(function(err) {
-        //     console.log('error creating email connection')
-        //     return console.log(err);
-        //   });
-
-
-        var emailConnections;
-        siftapi.getEmailConnections(email)
-          .then(function(body) {
-            console.log('email connections:', body.result)
-            emailConnections = body.result;
-          })
-          .catch(function(err) {
-            console.log('error getting email connections')
-            return console.log(err);
-          });
-
-
-
-          // siftapi.getSift(profile.emails[0].value, '', { include_eml: 1 })
-          //   .then(function(body) {
-          //     console.log('get sift body result:', body.result)
-          //     result = body.result;
-          //   })
-          //   .catch(function(err) {
-          //     return console.log(err);
-          //   });
-
-
-          // fs.readFile('', function(err, eml) {
-          //   if(err) {
-          //     return console.log(err);
-          //   }
-
-          //   sift.discovery('', eml)
-          //     .then(function(body) {
-          //       data = body;
-          //     })
-          //     .catch(function(err) {
-          //       return console.log(err);
-          //     });
-          // });
-
-
-
-          siftapi.getSifts(email, {})
-            .then(body => {
-              // body.result.forEach(function(item, i){
-              //   console.log('item #'+ i, item.payload)
-              // })
-
-              // body.result[28].payload.reservationFor.forEach(function(res, i){
-              //   console.log('dep air', res.departureAirport, 'arr air', res.arrivalAirport, 'seller',res.seller)
-              // })
-                // console.log('get sifts body', body.result.length)
-                
-          //       {
-          //           "message": "success",
-          //           "code": 200,
-          //           "id": "<uuid>",
-          //           "result": [
-          //               {
-          //                   "payload": <schema object for sift payload>,
-          //                   "sift_id": <sift id>,
-          //                   "mime_id": <id of raw email message>,
-          //                   "fid": <id of folder in the email server>,
-          //                   "mid": <id of message in the email server>,
-          //                   "account_id": <id of email account>,
-          //                   "user_id": <id of user>
-          //               }, ...
-          //           ]
-          //       }
-                
-            })
-      // console.log('accessToken', accessToken);
-      // console.log('refresh token', refreshToken);
-      // console.log('profile.refreshToken', refreshToken);
+    //   // app.get('/auth/google/callback', function(req, res) {
+    //   //   // passport.authenticate('google', { 
+    //   //     res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.API_KEY + "&username="+ email + "&token="+ connectToken);
+    //   //     console.log('>>>> REDIRECTED <<<<')
+    //   //   // }
+    //   // });
+    //   console.log('redirecting')
+    // })
+    .then(function(){
+      var emailConnections;
+      siftapi.getEmailConnections(email)
+      .then(function(body) {
+        console.log('email connections:', body.result)
+        emailConnections = body.result;
+      }) // CLOSES LINE 96
+      .then(function(){
+        siftapi.getSifts(email, {})
+        .then(body => {
+          console.log(body.result)
+          // body.result.forEach(function(item, i) {
+          //   console.log('item #'+ i, item.payload);
+          // })
+        })   
+      })
+    })
+    .then(function(){
       console.log("USER IN DATABASE");
       done(null, profile);
     })
-      .catch(err => {
-        console.log(err)
-      });
-  // console.log("USER ID", profile.id);
-  // console.log("NAME", profile.name.givenName + ' ' + profile.name.familyName);
-  // console.log("EMAIL", profile.emails[0].value)
-  //   console.log("TOKEN", accessToken)
-  })
-);
-
-// siftapi.addUser(user)
-//     .then(body => {
-//         newUser = body.result;
-//         console.log('new user response', body.result)
-        
-//         {
-//             "user_id": "<newly created user id>",
-//             "username": "<given user name>"
-//         }
-        
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     });
+    .catch(err => {
+      console.log(err)
+    })
+  // }) // CLOSES LINE 82
+})); // CLOSES 'passport.use(...)'
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
@@ -228,3 +138,12 @@ app.listen(port, function(error){
   if(error) throw error;
   console.log('Express server listening on port', port);
 });
+
+module.exports = {
+  siftInfo: {
+    newUser: newUser,
+    result: result,
+    connectToken: connectToken, 
+    email: email   
+  }
+}
