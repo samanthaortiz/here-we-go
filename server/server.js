@@ -106,44 +106,9 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
       .then(function(){
         siftapi.getSifts(email, {})
         .then(body => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< c0fb13e216a1488958b53fb0948f3e0490cd0fce
-<<<<<<< 144b43525aba1971923632ee6ae1be5c3609fb04
           console.log('>>> ADDING PAYLOAD TO DB <<<')
           // console.log(body.result)
           var counter = 0;
-          body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "flight"){
-                newBookedFlight(item.payload);
-              // counter++;
-              // console.log('item #'+ i, item);
-              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              // console.log('<---===--------===----------===---------===--->')
-              //if (item.domain === "hotel") ...
-                //new Hotel({...}) middleware
-              //else if (item.domain === "rentalCar") ...
-                //new Car({...}) middleware
-              //else if (item.domain === "flight") ...
-
-              //   //for now, add new itinerary into db. (THIS IS WORKING!)
-              // new Itinerary({
-              //   // status: "ticket",
-              //   trip_id: counter,
-              //   status: item.domain
-              // })
-              // .save()
-            } 
-          })
-          console.log('FILTERED LENGTH: ', counter);
-          console.log('RESULT LENGTH: ', body.result.length);
-=======
-=======
-          console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
-          var counter = 0;
->>>>>>> chore(Update): Updated code for routes.js and server.js
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
@@ -167,52 +132,8 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
               // .save()
             } 
           })
-<<<<<<< c0fb13e216a1488958b53fb0948f3e0490cd0fce
-=======
-=======
-          console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
-          var counter = 0;
->>>>>>> a64488c8109bbb59826653baa469ac348c858490
-          body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "hotel"){
-                // newBookedFlight(item.payload);
-              // counter++;
-              console.log('item #'+ i, item);
-              console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              // console.log('<---===--------===----------===---------===--->')
-              //if (item.domain === "hotel") ...
-                //new Hotel({...}) middleware
-              //else if (item.domain === "rentalCar") ...
-                //new Car({...}) middleware
-              //else if (item.domain === "flight") ...
-
-              //   //for now, add new itinerary into db. (THIS IS WORKING!)
-              // new Itinerary({
-              //   // status: "ticket",
-              //   trip_id: counter,
-              //   status: item.domain
-              // })
-              // .save()
-            } 
-          })
-<<<<<<< HEAD
->>>>>>> localBranch
-          // console.log('>>>>> getSifts: ', body.result.payload)
-          // console.log(body.result)
-          // body.result.forEach(function(item, i) {
-          //   console.log('item #'+ i, item.payload);
-          // })
->>>>>>> chore(Styles): Added styles to the dashboard page
-=======
           console.log('FILTERED LENGTH: ', counter);
           console.log('RESULT LENGTH: ', body.result.length);
->>>>>>> chore(Update): Updated code for routes.js and server.js
-=======
-          console.log('FILTERED LENGTH: ', counter);
-          console.log('RESULT LENGTH: ', body.result.length);
->>>>>>> a64488c8109bbb59826653baa469ac348c858490
         })   
       })
     })
