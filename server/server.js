@@ -15,6 +15,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var User = require('./database/models/User')
 var Itinerary = require('./database/models/itinerary')
 var siftConfig = require('./routes/config/siftConfig');
+var newBookedFlight = require('./newBookedFlight');
 
 var SiftAPI = require('siftapi').default;
 var siftapi = new SiftAPI(siftConfig.sift.API_KEY, siftConfig.sift.API_SECRET);
@@ -110,27 +111,25 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           var counter = 0;
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "hotel" || 
-              item.domain === "rentalCar" ||
-              item.domain === "flight"){
-              counter++;
-              console.log('item #'+ i, item);
-              console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              console.log('<---===--------===----------===---------===--->')
+            if(item.domain === "flight"){
+                newBookedFlight(item.payload);
+              // counter++;
+              // console.log('item #'+ i, item);
+              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
+              // console.log('<---===--------===----------===---------===--->')
               //if (item.domain === "hotel") ...
                 //new Hotel({...}) middleware
               //else if (item.domain === "rentalCar") ...
                 //new Car({...}) middleware
               //else if (item.domain === "flight") ...
-                //new Flight({...}) middleweare
 
-                //for now, add new itinerary into db. (THIS IS WORKING!)
-              new Itinerary({
-                // status: "ticket",
-                trip_id: counter,
-                status: item.domain
-              })
-              .save()
+              //   //for now, add new itinerary into db. (THIS IS WORKING!)
+              // new Itinerary({
+              //   // status: "ticket",
+              //   trip_id: counter,
+              //   status: item.domain
+              // })
+              // .save()
             } 
           })
           console.log('FILTERED LENGTH: ', counter);
