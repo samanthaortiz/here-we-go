@@ -22,11 +22,7 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
   passport.authenticate('google', { 
-<<<<<<< HEAD
-    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
-=======
     successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
->>>>>>> localBranch
 
     //siftInfo.siftInfo.connectToken
     // failureRedirect: '/auth/google/failure'
@@ -97,143 +93,8 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< 345c90fdcf944e1220b31f0404b2d5fdc6c8eab6
-<<<<<<< 56a02e2b3922669cc6e535a761855f8c06366361
-<<<<<<< c7b0a226cc5b362728a14fb6d97b0408e5a49da8
-<<<<<<< e00148aba0ac05361fcef413c34f4e2e2db0b0ed
-<<<<<<< 44fd74dd95effc4bb84e12e506b9b91414952a10
-<<<<<<< 1bfee55d6674a8b415391c1ed50115215053d710
-<<<<<<< c19f20061e6e3943db0395e1b9036337db9a7429
-<<<<<<< d520e4c67170cc9b02b8b2bc861a254dc85c42b3
-<<<<<<< 15cb286807499e04e92fa052f7988f2f6112667d
-<<<<<<< a9e773abfb091f3255a4b16046c3d9331ba6a0c4
-<<<<<<< 37efff517931d54b69c0dc129626fe278938d9bc
-<<<<<<< 186196ab4e5524e5d5c8aefb7aba7232840ed0c3
-<<<<<<< 5ab0a05e606c7d01b2a1c99b09d9be84fd7796d3
-<<<<<<< 35185295f44cb696c95783e95829eb359a7c402b
-<<<<<<< 3e4ff4bb01dc2963e17f8ce4ba2c63ff14698577
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
-
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
-router.post("/FlightSearch", function(req, res) {
-  // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-  
-=======
-=======
-
->>>>>>> fix code
-=======
-=======
-=======
-<<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
->>>>>>> fix code
-<<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
-
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< a9e773abfb091f3255a4b16046c3d9331ba6a0c4
->>>>>>> chore(Styles): added css to autocomplete input field
-=======
-=======
-
->>>>>>> fix code
->>>>>>> fix code
-=======
-
->>>>>>> Fix merge conflicts
-router.post("/FlightSearch", function(req, res) {
-  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-=======
-=======
-=======
-=======
-=======
-=======
-=======
-<<<<<<< 20906553828de195c8daae8903d9b463f265e24c
->>>>>>> Fix merge conflicts
-<<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
->>>>>>> fix code
-<<<<<<< 38a146ff35915b9742ddbef836c64ddabdcf9651
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< 41bdead0806d5f1f19690752b2c7ee94bf634b43
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< 8765c8231c730498061a6a985f3f20348e9b5e1b
->>>>>>> fix code
-<<<<<<< 6b2ea6eff216e301ea1c168b4687bfc3533cbc90
->>>>>>> chore(Styles): added css to autocomplete input field
-=======
-<<<<<<< 20906553828de195c8daae8903d9b463f265e24c
-<<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
-<<<<<<< 38a146ff35915b9742ddbef836c64ddabdcf9651
-<<<<<<< 41bdead0806d5f1f19690752b2c7ee94bf634b43
-<<<<<<< 8765c8231c730498061a6a985f3f20348e9b5e1b
-<<<<<<< 6b2ea6eff216e301ea1c168b4687bfc3533cbc90
->>>>>>> 6ab6fb18f6f8bdc68bb5374fdd2cdb547a0a770c
-<<<<<<< f2069aa4b70c4ce99fe0736eccc90e1035eeeb77
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
-
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
-router.post("/FlightSearch", function(req, res) {
-  // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-=======
-=======
-
->>>>>>> fix code
-=======
-=======
-=======
-<<<<<<< bdd2aceaf1969d5a35746d8d638d9b015d6e0e7c
->>>>>>> fix code
-<<<<<<< b1848dc86c4700f0c2750862fdcd197beb2d0e4d
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< f38bf1b68e35f0c696d0ab39e4ac73f270ecd1d2
-=======
-<<<<<<< 5820b11bc12f9ec6d9ddbe071c7a2aec8571965c
->>>>>>> chore(Styles): added css to autocomplete input field
-
-=======
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< 82d1fb6fef08b3c9faea53bf554014ca25529310
->>>>>>> chore(Styles): added css to autocomplete input field
-=======
-=======
-
->>>>>>> fix code
->>>>>>> fix code
-=======
-
->>>>>>> Fix merge conflicts
-router.post("/FlightSearch", function(req, res) {
-  console.log('>> ENTER FLIGHT API ROUTER ', req.body);
->>>>>>> chore(Styles): added css to autocomplete input field
-<<<<<<< HEAD
->>>>>>> chore(Styles): added css to autocomplete input field
-
->>>>>>> chore(Styles): added css to autocomplete input field
-=======
-=======
->>>>>>> 6ab6fb18f6f8bdc68bb5374fdd2cdb547a0a770c
 
 router.post("/FlightSearch", function(req, res) {
->>>>>>> Begin sift to db
-=======
-
-router.post("/FlightSearch", function(req, res) {
->>>>>>> localBranch
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
@@ -248,26 +109,6 @@ router.post("/FlightSearch", function(req, res) {
 router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
 });
-
-
-
-// SIFT DATA TO DATABASE ================================================================
-// router.post('/sift', function(req, res) {
-
-//   // HOTEL DATA =================================
-//   console.log('SIFT RESPONSE DATA: ', res.body);
-
-// })
-
-
-
-
-
-
-
-
-
-
 
 
 

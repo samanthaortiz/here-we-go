@@ -19,12 +19,16 @@ import NavBar from './components/NavigationBar.js';
 
 import Account from './components/Account.js';
 
+// TRIP BUDGET FORM PAGE
+import BudgetForm from './components/BudgetForm';
+
 const router = (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={Master}>
         <IndexRoute component={Splash} />
         <Route path="dashboard" component={Dashboard} />
+        <Route path="formBudget" component={BudgetForm} />
         <Route path="account" component={Dashboard} />
         <Route path="account" component={Splash} />
         <Route path="logout" component={Splash} />
