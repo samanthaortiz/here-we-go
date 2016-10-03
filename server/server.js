@@ -103,9 +103,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         console.log('email connections:', body.result)
         emailConnections = body.result;
       }) // CLOSES LINE 96
-      .then(function(){
+      .then(function() {
+        // GET SIFT DATA AND STORE IN DATABASE ============================
         siftapi.getSifts(email, {})
         .then(body => {
+<<<<<<< HEAD
 <<<<<<< c0fb13e216a1488958b53fb0948f3e0490cd0fce
 <<<<<<< 144b43525aba1971923632ee6ae1be5c3609fb04
           console.log('>>> ADDING PAYLOAD TO DB <<<')
@@ -166,6 +168,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
             } 
           })
 <<<<<<< c0fb13e216a1488958b53fb0948f3e0490cd0fce
+=======
+          body.result.forEach(function(item, i) {
+            console.log('>>>>> ITEM: ', i, item.payload)
+          })
+>>>>>>> localBranch
           // console.log('>>>>> getSifts: ', body.result.payload)
           // console.log(body.result)
           // body.result.forEach(function(item, i) {
