@@ -1,4 +1,4 @@
-// var config = require('./db.config.js') || {}
+var config = require('./db.config.js') || {}
 
 var knex = require('knex')({
  client: 'mysql',
@@ -39,17 +39,13 @@ knex.schema.hasTable('users').then(exists => {
       hotel.foreign('status_id').references('id').inTable('statuses');
       hotel.integer('type_id').unsigned();
       hotel.foreign('type_id').references('id').inTable('types');
+      hotel.integer('sift_id')
       hotel.string('providerName');
-      hotel.string('address_line1');
-      hotel.string('address_line2');
-      hotel.string('address_line3');
-      hotel.string('city');
-      hotel.string('state');
-      hotel.string('zip');
+      hotel.string('address');
       hotel.string('telephone');
       hotel.integer('days');
-      hotel.date('startDate');
-      hotel.date('endDate');
+      hotel.dateTime('startDate');
+      hotel.dateTime('endDate');
       hotel.string('organization');
       hotel.timestamps();
     }).then(table => {
@@ -68,6 +64,7 @@ knex.schema.hasTable('users').then(exists => {
       flight.foreign('status_id').references('id').inTable('statuses');
       flight.integer('type_id').unsigned();
       flight.foreign('type_id').references('id').inTable('types');
+      flight.integer('sift_id')
       flight.string('terminal');
       flight.string('departureAirportName');
       flight.string('departureAirportCode');
@@ -102,6 +99,7 @@ knex.schema.hasTable('trainReservations').then(exists => {
       train.foreign('status_id').references('id').inTable('statuses');
       train.integer('type_id').unsigned();
       train.foreign('type_id').references('id').inTable('types');
+      train.integer('sift_id')
       train.string('stationName');
       train.string('stationCode');
       train.dateTime('departureTime');
@@ -124,6 +122,7 @@ knex.schema.hasTable('carRentals').then(exists => {
       car.foreign('status_id').references('id').inTable('statuses');
       car.integer('type_id').unsigned();
       car.foreign('type_id').references('id').inTable('types');
+      car.integer('sift_id')
       car.string('vehicleType');
       car.string('vehicleBrand');
       car.string('rentalCompany');
