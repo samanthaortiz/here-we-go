@@ -22,11 +22,15 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
   passport.authenticate('google', { 
+<<<<<<< 0040c55a366d6c5bb82e1c425842a68b7946bd71
 <<<<<<< 144b43525aba1971923632ee6ae1be5c3609fb04
     successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
 =======
     successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
 >>>>>>> chore(Styles): Added styles to the dashboard page
+=======
+    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
+>>>>>>> chore(BudgetForm): Coded framework for Budget form
 
     //siftInfo.siftInfo.connectToken
     // failureRedirect: '/auth/google/failure'
@@ -97,6 +101,7 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< 0040c55a366d6c5bb82e1c425842a68b7946bd71
 <<<<<<< d4e1f664581a16b3386066f370d309b286daafc4
 <<<<<<< d4ce4a0dbf7320fea6ade5028e5f6662205ef981
 <<<<<<< 70c02c4dbb6e2dc031d6794bd33c8ccc7daa609c
@@ -375,6 +380,8 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> chore(Styles): added css to autocomplete input field
 =======
 =======
+=======
+>>>>>>> chore(BudgetForm): Coded framework for Budget form
 
 >>>>>>> fix code
 >>>>>>> fix code
@@ -382,6 +389,7 @@ router.post("/FlightSearch", function(req, res) {
 
 >>>>>>> Fix merge conflicts
 router.post("/FlightSearch", function(req, res) {
+<<<<<<< 0040c55a366d6c5bb82e1c425842a68b7946bd71
   // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
 =======
 =======
@@ -406,6 +414,8 @@ router.post("/FlightSearch", function(req, res) {
 >>>>>>> chore(Styles): added css to autocomplete input field
 =======
 >>>>>>> Begin sift to db
+=======
+>>>>>>> chore(BudgetForm): Coded framework for Budget form
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
@@ -420,26 +430,6 @@ router.post("/FlightSearch", function(req, res) {
 router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
 });
-
-
-
-// SIFT DATA TO DATABASE ================================================================
-// router.post('/sift', function(req, res) {
-
-//   // HOTEL DATA =================================
-//   console.log('SIFT RESPONSE DATA: ', res.body);
-
-// })
-
-
-
-
-
-
-
-
-
-
 
 
 
