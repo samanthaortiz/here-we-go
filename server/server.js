@@ -111,11 +111,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           var counter = 0;
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "flight"){
-                newBookedFlight(item.payload);
+            if(item.domain === "hotel"){
+                // newBookedFlight(item.payload);
               // counter++;
-              // console.log('item #'+ i, item);
-              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
+              console.log('item #'+ i, item);
+              console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
               // console.log('<---===--------===----------===---------===--->')
               //if (item.domain === "hotel") ...
                 //new Hotel({...}) middleware
