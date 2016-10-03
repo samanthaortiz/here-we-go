@@ -1,4 +1,4 @@
-import db from './db';
+import db from '../db';
 
 let Status = db.Model.extend({
 	tableName: 'statuses',
