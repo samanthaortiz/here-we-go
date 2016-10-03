@@ -17,14 +17,16 @@ var siftConfig = require('./config/siftConfig');
 //PASSPORT GOOGLE AUTHENTICATION
 var passport = require('passport');
 
-
 router.get('/auth/google',
   passport.authenticate('google', { scope: ['openid email profile'], accessType: 'offline'  }));
 
-
 router.get('/auth/google/callback',
   passport.authenticate('google', { 
+<<<<<<< HEAD
     successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
+=======
+    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
+>>>>>>> localBranch
 
     //siftInfo.siftInfo.connectToken
     // failureRedirect: '/auth/google/failure'
@@ -94,8 +96,8 @@ router.post('/user-account/', function(req, res) {
 // });
 
 
-
 // TRIP/FLIGHT SEARCH API =====================================================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< 345c90fdcf944e1220b31f0404b2d5fdc6c8eab6
 <<<<<<< 56a02e2b3922669cc6e535a761855f8c06366361
@@ -228,6 +230,10 @@ router.post("/FlightSearch", function(req, res) {
 
 router.post("/FlightSearch", function(req, res) {
 >>>>>>> Begin sift to db
+=======
+
+router.post("/FlightSearch", function(req, res) {
+>>>>>>> localBranch
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
@@ -244,19 +250,27 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 });
 
 
-// // HOTEL SEARCH API ================================================================== */
-// router.post("/HotelSearch", function(req, res) {
-//   console.log('>> ENTER HOTEL API ROUTER ', req.body);
 
-//   var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+// SIFT DATA TO DATABASE ================================================================
+// router.post('/sift', function(req, res) {
 
-//   request({ url: urlAPI }, function(error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       // console.log('Hotel Response Body', body);
-//       res.send(body);
-//     }
-//   });
-// });
+//   // HOTEL DATA =================================
+//   console.log('SIFT RESPONSE DATA: ', res.body);
+
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // FLIGHT SEARCH API ================================================================= */
 
@@ -331,28 +345,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 
 
 
-// ACTIVITIES SEARCH API ================================================================== 
-router.post("/ActivitiesSearch", function(req, res) {
-  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
 
-  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
-
-  request({ url: urlAPI }, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      // console.log('Hotel Response Body', body);
-      res.send(body);
-    }
-  });
-});
-
-
-
-  // request({ url: TEST_URL }, function(error, response, body) {
-  //   if (!error && response.statusCode == 200) {
-  //     console.log('CAR RENTAL RESPONSE: ', body);
-  //     res.send(body);
-  //   }
-  // });
 
 
 

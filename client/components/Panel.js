@@ -51,6 +51,7 @@ const Panel = React.createClass({
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< 345c90fdcf944e1220b31f0404b2d5fdc6c8eab6
 <<<<<<< 56a02e2b3922669cc6e535a761855f8c06366361
 <<<<<<< 5bafa6b80cfb6c624b858764779d49f3738d9c85
@@ -194,6 +195,9 @@ const Panel = React.createClass({
 >>>>>>> Begin sift to db
 =======
 >>>>>>> 6ab6fb18f6f8bdc68bb5374fdd2cdb547a0a770c
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> localBranch
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
