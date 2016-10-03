@@ -173,7 +173,7 @@ article {
   padding: 10px;
   margin-bottom: 2%;
   height: 300px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 [class^='item-'] {
