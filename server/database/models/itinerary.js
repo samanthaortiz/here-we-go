@@ -1,7 +1,5 @@
-import db from './db';
-import User from './user';
-import Statuses from './status';
-
+import db from '../db';
+import User from './User';
 
 let Itinerary = db.Model.extend({
 	tableName: 'itineraries',
