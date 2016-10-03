@@ -121,29 +121,29 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
-              Hotel.forge()
-              .where({"sift_id": item.sift_id})
-              .then(function(hotel){
-                if(!hotel){
+              // Hotel.forge()
+              // .where({"sift_id": item.sift_id})
+              // .then(function(hotel){
+              //   if(!hotel){
                   newBookedHotel(item);
-                }
-              })
+                // }
+              // })
             } else if(item.domain === "flight"){
-              Flight.forge()
-              .where({"sift_id": item.sift_id})
-              .then(function(flight){
-                if(!flight){
+              // Flight.forge()
+              // .where({"sift_id": item.sift_id})
+              // .then(function(flight){
+              //   if(!flight){
                   newBookedFlight(item);
-                }
-              })
+                // }
+              // })
             } else if(item.domain === "rentalcar"){
-              Car.forge()
-              .where({"sift_id": item.sift_id})
-              .then(function(car){
-                if(!car){
+              // Car.forge()
+              // .where({"sift_id": item.sift_id})
+              // .then(function(car){
+              //   if(!car){
                   newBookedCar(item);
-                }
-              })
+              //   }
+              // })
             }
             // if(item.payload.reservationType["@type"] === "Car"){
               // counter++;
