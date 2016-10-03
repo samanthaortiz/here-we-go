@@ -230,6 +230,52 @@ div.tile-hotel:nth-child(odd) {
   margin-right: 1%
 }
 
+/* BUDGET FORM VIEW ======================================================== */
+.container-form-budget {
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+.form-budget {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-budget ul {
+  margin:0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.form-budget li {
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 50%;
+}
+
+.form-budget li.field-full {
+  width: 100%;
+  text-align: center;
+}
+
+.form-budget label,
+.form-budget input {
+  display: block;
+  width: 100%;
+}
+
+.form-budget .form-body input {
+  width: 95%;
+}
+
+.form-budget button {
+  border-radius: 5px;
+}
+
 
 /* MEDIA QUERIES =========================================================== */
 @media (max-width: 2000px) {

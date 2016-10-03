@@ -50,6 +50,7 @@ const Panel = React.createClass({
       <div className="dashboard-container clearfix">
         <HotelTile hotelData={this.props.data.reducerTripData} />
         {flightTile}
+<<<<<<< 0040c55a366d6c5bb82e1c425842a68b7946bd71
 <<<<<<< d4e1f664581a16b3386066f370d309b286daafc4
 <<<<<<< d4ce4a0dbf7320fea6ade5028e5f6662205ef981
 <<<<<<< 6aec9158fa9de117c7ee83d71cacbc49a8659d0d
@@ -377,6 +378,9 @@ const Panel = React.createClass({
 =======
         <CarRentalTile carData={this.props.data.reducerTripData}/>
 >>>>>>> Begin sift to db
+=======
+        <CarRentalTile carData={this.props.data.reducerTripData}/>
+>>>>>>> chore(BudgetForm): Coded framework for Budget form
         <ActivityTile activityData={this.props.data.reducerTripData}/>
       </div>
     );
