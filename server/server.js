@@ -103,9 +103,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         console.log('email connections:', body.result)
         emailConnections = body.result;
       }) // CLOSES LINE 96
-      .then(function(){
+      .then(function() {
+        // GET SIFT DATA AND STORE IN DATABASE ============================
         siftapi.getSifts(email, {})
         .then(body => {
+<<<<<<< 144b43525aba1971923632ee6ae1be5c3609fb04
           console.log('>>> ADDING PAYLOAD TO DB <<<')
           // console.log(body.result)
           var counter = 0;
@@ -134,6 +136,16 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           })
           console.log('FILTERED LENGTH: ', counter);
           console.log('RESULT LENGTH: ', body.result.length);
+=======
+          body.result.forEach(function(item, i) {
+            console.log('>>>>> ITEM: ', i, item.payload)
+          })
+          // console.log('>>>>> getSifts: ', body.result.payload)
+          // console.log(body.result)
+          // body.result.forEach(function(item, i) {
+          //   console.log('item #'+ i, item.payload);
+          // })
+>>>>>>> chore(Styles): Added styles to the dashboard page
         })   
       })
     })
