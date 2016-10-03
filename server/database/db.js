@@ -69,9 +69,12 @@ knex.schema.hasTable('users').then(exists => {
       flight.integer('type_id').unsigned();
       flight.foreign('type_id').references('id').inTable('types');
       flight.string('terminal');
-      flight.string('airportName');
-      flight.string('airportCode');
-      flight.string('airportCity');
+      flight.string('departureAirportName');
+      flight.string('departureAirportCode');
+      flight.string('departureAirportCity');
+      flight.string('arrivalAirportName');
+      flight.string('arrivalAirportCode');
+      flight.string('arrivalAirportCity');
       flight.string('airline');
       flight.string('flightNumber');
       flight.string('ticketNumber');
