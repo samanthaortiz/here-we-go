@@ -42,33 +42,6 @@ export function axiosTripCall(location, startDate, endDate){
 <<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 =======
 
-//=============== DATABASE DATA ===============
-
-export const getDatabaseData = () => {
-  return function(dispatch) {
-    return axiosDBCall()
-    .then(res => {
-      dispatch(hydrateDBStore(res.data))
-      browserHistory.push('/dashboard');
-    })
-    .catch(error => console.log(error));
-  };
-};
-
-export function axiosDBCall(){
-  return axios.get('/api/dbData', {
-  
-  });
-};
-
-export function hydrateDBStore(dbData){
-  return {
-    type: 'GET_DB_DATA',
-    dbData
-  };
-}
-
-
 
 // BELOW: TO BE REFACTORED/PURGED
 

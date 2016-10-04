@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 282f30541c2e13db795be3896f073aa477d14eb8
 import reducerFlightData from './reducerFlightData'; 
 <<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 import reducerLoginData from './reducerLoginData';
@@ -9,6 +10,9 @@ import reducerFlightItin from './reducerFlightItin';
 import reducerCarItin from './reducerCarItin';
 =======
 import reducerDatabaseData from './reducerDatabaseData'; 
+=======
+import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // import expediaHotelInfo from './expediaHotelInfo'; 
 // import expediaFlightInfo from './expediaFlightInfo';
@@ -20,6 +24,7 @@ import reducerDatabaseData from './reducerDatabaseData';
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 282f30541c2e13db795be3896f073aa477d14eb8
 <<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
   reducerLoginData,
   reducerHotelItin,
@@ -27,6 +32,8 @@ const rootReducer = combineReducers({
   reducerCarItin,
 =======
   reducerDatabaseData,
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo,
   // expediaFlightInfo,
   // expediaCarRentalInfo,
