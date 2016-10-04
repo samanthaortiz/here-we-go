@@ -40,7 +40,6 @@ export function axiosTripCall(location, startDate, endDate){
 };
 
 
-<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 
 //=============== DATABASE DATA ===============
 
@@ -68,9 +67,6 @@ export function hydrateDBStore(dbData){
   };
 }
 
-
-=======
->>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -111,6 +107,37 @@ export function hydrateDBStore(dbData){
 //   });
 // }
 
+
+//=============== DATABASE DATA ===============
+
+export const getDatabaseData = () => {
+  return function(dispatch) {
+    return axiosDBCall()
+    .then(res => {
+      dispatch(hydrateDBStore(res.data))
+      browserHistory.push('/dashboard');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosDBCall(){
+  return axios.get('/api/dbData', {
+  
+  });
+};
+
+export function hydrateDBStore(dbData){
+  return {
+    type: 'GET_DB_DATA',
+    dbData
+  };
+}
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
 
 //=============== FLIGHTS ===============
 
