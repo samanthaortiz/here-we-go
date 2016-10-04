@@ -6,6 +6,7 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< ebdcfb1b766d9fe80364d2d3795b586966613349
 <<<<<<< 5aaccc52731c27e7d4012af743a4493a893daa61
 <<<<<<< 78bc001c0ca98711fa4371148788ab1b65bb8e93
@@ -26,6 +27,9 @@ const defaultState = {
 =======
 =======
 =======
+=======
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
@@ -36,6 +40,9 @@ const defaultState = {
 <<<<<<< ebdcfb1b766d9fe80364d2d3795b586966613349
 =======
 =======
+=======
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
@@ -142,12 +149,22 @@ const defaultState = {
 =======
     reducerFlightData: []
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
+=======
+=======
+<<<<<<< 9add38837ff52066af48823227777537884c289a
+    reducerFlightData: [],
+    reducerLoginData: []
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
   // expediaActivityInfo: []
+<<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< 78bc001c0ca98711fa4371148788ab1b65bb8e93
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -203,6 +220,9 @@ const defaultState = {
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+=======
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
@@ -217,7 +237,13 @@ const defaultState = {
 >>>>>>> Merge conflicts resolved
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
