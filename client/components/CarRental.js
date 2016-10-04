@@ -10,6 +10,7 @@ const CarRental = React.createClass({
     // if(this.props.carInfo.CarClass !== 'Special Special') {
       return (
         <div className="item-car-rental clearfix">
+          <button type="button" className="btn">Save Car</button>
           <div>
             <img src={this.props.carInfo.ThumbnailUrl} /><br/>
             {this.props.carInfo.SupplierName}

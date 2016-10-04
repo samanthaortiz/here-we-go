@@ -13,7 +13,7 @@ class NavigationBar extends Component {
         </div>
         <div className="acct-menu">
           <ul>
-            <li>username</li>
+            <li>{this.props.data.reducerTripData.email}</li>
           </ul>
         </div>
       </nav>

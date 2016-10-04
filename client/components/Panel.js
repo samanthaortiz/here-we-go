@@ -5,6 +5,7 @@ import FlightTile from './FlightTile';
 import Flight from './Flight'
 import CarRentalTile from './CarRentalTile';
 import ActivityTile from './ActivityTile';
+// import CampgroundTile from './CampgroundTile';
 const Panel = React.createClass({
 
   getInitialState() {
@@ -52,6 +53,7 @@ const Panel = React.createClass({
         {flightTile}
         <CarRentalTile carData={this.props.data.reducerTripData}/>
         <ActivityTile activityData={this.props.data.reducerTripData}/>
+      {/*<CampgroundTile campgroundData={this.props.data.reducerTripData}/>*/}
       </div>
     );
   }

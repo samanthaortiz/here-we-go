@@ -18,6 +18,7 @@ const Hotel = React.createClass({
     if(this.props.hotelInfo !== undefined) {
       return (
         <div className="item-hotel">
+          <button type="button" className="btn">Save Hotel</button>
           <p>
             <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
             { this.props.hotelInfo.localizedName }

@@ -44,6 +44,7 @@ const Flight = React.createClass({
       // console.log(legs)
       return (
         <div className="item-flight">
+        <button type="button" className="btn">Save Flight</button>
         <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>
         <p>{legs[0].segments[0].departureAirportCode} to {legs[0].segments[0].arrivalAirportCode}</p>
         <p>Departure Time: {legs[0].segments[0].departureTime}</p>

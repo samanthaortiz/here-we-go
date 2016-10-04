@@ -6,11 +6,14 @@ import DatePicker from 'react-bootstrap-date-picker';
 
 const Splash = React.createClass({
   getInitialState() {
+    let loc = window.location.href;
     let date = new Date().toISOString().substring(0, 10);
     return {
       city: '',
       startDate: date,
-      endDate: date
+      endDate: date,
+      isUserLoggedIn: loc.indexOf("?") !== -1,
+      email: loc.split("=")[1]
     };
   },
 
@@ -33,9 +36,20 @@ const Splash = React.createClass({
       endValue: endDate
     })
   },
+  login(e){
+    console.log(e);
+    this.props.login();
+  },
 
   componentDidMount() {
     document.body.classList.toggle('splashClass')
+
+    if (this.state.isUserLoggedIn) {
+      this.setState({
+        email: this.state.email.split("#")[0]
+      })
+      // this.props.getStuff(this.state.email.split("#")[0])
+    }
   },
 
   componentWillUnmount(){
@@ -46,7 +60,7 @@ const Splash = React.createClass({
     e.preventDefault();
     document.getElementById('loading-icon').style.display = 'block';
     // CALL ACTION CREATOR
-    this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate);
+    this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate, this.state.email, this.state.isUserLoggedIn);
     // this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
     // this.props.getFlightCode(this.state.city);
     // this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
@@ -57,7 +71,8 @@ const Splash = React.createClass({
     
     return (
       <div>
-      <a className="loginOut" href='/api/auth/google'>Login</a><br/>
+      {!this.state.isUserLoggedIn && <a className="loginOut" href='/api/auth/google'>Login</a>}
+      <br/>
       <a className="loginOut" href='/api/logout'>Logout</a>
         <div>
         <h1 id='logo'>

@@ -15,6 +15,7 @@ const Activity = React.createClass({
 	if(this.props.activityInfo !== undefined) {
    return (
       <div>
+      <button type="button" className="btn">Save Activity</button>
         <div>
       {/*{this.props.activityInfo.categories[0]}<br/>*/}
         <a href={'https://www.expedia.com/things-to-do/title.a'+ this.props.activityInfo.id + '.activity-details?srp=true&location=' +this.props.location + '&startDate=' + this.changeDate(this.props.startDate) + '&endDate=' + this.changeDate(this.props.endDate)} target="_blank">
