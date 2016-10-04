@@ -32,6 +32,7 @@ router.get('/auth/google/callback',
   // }
 );
 
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -89,6 +90,9 @@ router.get('/auth/google/callback',
 =======
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
@@ -104,11 +108,19 @@ router.get('/auth/google/callback',
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 =======
+=======
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 =======
 
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -116,6 +128,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 <<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
@@ -152,6 +165,9 @@ router.get('/account', ensureAuthenticated, function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
@@ -182,12 +198,15 @@ var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
 =======
 =======
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 =======
 =======
 <<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
@@ -195,6 +214,7 @@ var url = require('url');
 =======
   var url = require('url');
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 6555def7defc39e7c072a64078fc266301812472
 >>>>>>> feat(Database): User email linked to each table
 =======
@@ -249,7 +269,15 @@ var url = require('url');
 =======
   var url = require('url');
 >>>>>>> feat(Database): User email linked to each table
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 
 =======
 <<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
@@ -304,6 +332,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -348,6 +377,9 @@ function ensureAuthenticated(req, res, next) {
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
@@ -360,7 +392,16 @@ function ensureAuthenticated(req, res, next) {
 =======
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -383,6 +424,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
@@ -415,9 +457,17 @@ router.post('/budgetData', function(req, res) {
 >>>>>>> Merge conflicts
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
+=======
+=======
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 });
 
@@ -760,6 +810,7 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
@@ -793,6 +844,12 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
+=======
+=======
+});
+
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
@@ -816,6 +873,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -858,6 +916,9 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
@@ -870,7 +931,16 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 =======
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -885,6 +955,7 @@ router.post("/ActivitiesSearch", function(req, res) {
   });
 });
 
+<<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -929,19 +1000,28 @@ router.post("/ActivitiesSearch", function(req, res) {
 >>>>>>> Merge conflicts
 =======
 =======
+=======
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 >>>>>>> feat(Routes): Routes and server changes
 =======
 =======
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
+=======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> feat(Routes): Routes and server changes
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 
 module.exports = router;
