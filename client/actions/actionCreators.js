@@ -47,6 +47,7 @@ export function axiosTripCall(location, startDate, endDate){
 <<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 =======
 
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 
 <<<<<<< b87257826dd4ae830a010ea0b2a6ba055206c281
 // BELOW: TO BE REFACTORED/PURGED
@@ -268,6 +269,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 export function axiosLogin(){
   return axios.get('/api/auth/google')
@@ -281,6 +283,10 @@ export function axiosLogin(){
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 

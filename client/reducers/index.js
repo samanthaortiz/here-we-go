@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
 <<<<<<< bf5c7d9c550e05e80a556bb84fed6cc745e36bb1
 <<<<<<< 1cf3d4e0499b03f91ab368f3e40df10d41aa74a6
@@ -20,6 +21,9 @@ import reducerTripData from './reducerTripData';
 =======
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerFlightData from './reducerFlightData'; 
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
@@ -72,7 +76,13 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 import reducerDatabaseData from './reducerDatabaseData'; 
+<<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // import expediaHotelInfo from './expediaHotelInfo'; 
 // import expediaFlightInfo from './expediaFlightInfo';
@@ -113,6 +123,7 @@ import reducerHotelItin from './reducerHotelItin';
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
 <<<<<<< bf5c7d9c550e05e80a556bb84fed6cc745e36bb1
@@ -185,6 +196,9 @@ const rootReducer = combineReducers({
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 =======
+=======
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 54d2c7812406b7c8acfb0d633bad5c7a2462dd9f
 >>>>>>> feat(Database): User email linked to each table
   reducerLoginData,
@@ -197,6 +211,8 @@ const rootReducer = combineReducers({
 =======
 =======
   reducerDatabaseData,
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo,
   // expediaFlightInfo,
   // expediaCarRentalInfo,
