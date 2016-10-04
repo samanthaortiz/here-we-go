@@ -159,6 +159,8 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
               // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
                 // newBookedFlight(item.payload);
               // counter++;
+                // newBookedFlight(item.payload);
+              // counter++;
               console.log('item #'+ i, item);
               console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
               // console.log('<---===--------===----------===---------===--->')
