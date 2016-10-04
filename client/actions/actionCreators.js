@@ -333,6 +333,7 @@ export const getDatabaseData = () => {
 =======
 >>>>>>> feat(Database): User email linked to each table
 
+<<<<<<< b2d34cf068ea7e6797a550c95ce05a46a0886a54
 export function axiosDBCall(){
   return axios.get('/api/dbData', {
   
@@ -378,6 +379,9 @@ export function axiosLogin(){
 
 >>>>>>> feat(Database): User email linked to each table
 =======
+=======
+<<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 >>>>>>> feat(Database): User email linked to each table
 // BELOW: TO BE REFACTORED/PURGED
@@ -500,6 +504,8 @@ export function axiosLogin(){
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
