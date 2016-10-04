@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
@@ -79,10 +80,15 @@ import reducerFlightData from './reducerFlightData';
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+import reducerFlightData from './reducerFlightData'; 
+import reducerLoginData from './reducerLoginData';
+>>>>>>> Merge conflicts resolved
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -151,6 +157,9 @@ const rootReducer = combineReducers({
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+  reducerLoginData,
+>>>>>>> Merge conflicts resolved
   routing: routerReducer
 });
 
