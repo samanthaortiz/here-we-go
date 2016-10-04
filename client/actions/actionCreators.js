@@ -156,6 +156,7 @@ export function axiosLogin(){
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
+<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -195,6 +196,7 @@ export function axiosLogin(){
 //   });
 // }
 
+<<<<<<< 3b3d89d046bdc010a77e13b442c4145bf0356720
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
@@ -204,6 +206,39 @@ export function axiosLogin(){
 };
 >>>>>>> Merge conflicts resolved
 =======
+=======
+=======
+//=============== DATABASE DATA ===============
+
+export const getDatabaseData = () => {
+  return function(dispatch) {
+    return axiosDBCall()
+    .then(res => {
+      dispatch(hydrateDBStore(res.data))
+      browserHistory.push('/dashboard');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosDBCall(){
+  return axios.get('/api/dbData', {
+  
+  });
+};
+
+export function hydrateDBStore(dbData){
+  return {
+    type: 'GET_DB_DATA',
+    dbData
+  };
+}
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
+>>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
 
 >>>>>>> feat(Database): User email linked to each table
