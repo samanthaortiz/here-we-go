@@ -61,6 +61,7 @@ var result;
 var connectToken;
 var email;
 var emailConnections;
+var google_id;
 
 passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refreshToken, profile, done) {
   User.forge()
@@ -82,6 +83,7 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
     .then(function(){
       console.log("USER IN DATABASE");
       email = profile.emails[0].value;
+      google_id = profile.id;
       done(null, profile);
     })
     .catch(err => {
@@ -97,6 +99,7 @@ app.use("/api", apiRouter);
 
 
 app.get('/siftAuth', function(req, res){
+  // console.log('res in sift', res.body)
     siftapi.addUser(email)
     .then(body => {
       newUser = body.result;
@@ -113,14 +116,17 @@ app.get('/siftAuth', function(req, res){
         .then(function(body) {
           console.log('email connections:', body.result)
           emailConnections = body.result;
+          // res.end(emailConnections[0].email);
       }) 
     .then(function() {
       if(emailConnections.length === 0){
-      res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username="+ email + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
-      console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
-      }
-      else{
-        res.redirect('/')
+        res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" 
+          + siftConfig.sift.API_KEY + "&username="+ email 
+          + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+        console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+      } else{
+
+        res.redirect('/?email='+email);
       }
       })
   })
@@ -128,10 +134,8 @@ app.get('/siftAuth', function(req, res){
         siftapi.getSifts(email, {})
         .then(body => {
           console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
           var counter = 0;
           body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
               Hotel.forge()
               .where({"sift_id": item.sift_id})
