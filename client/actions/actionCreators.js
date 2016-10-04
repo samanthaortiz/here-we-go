@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
@@ -109,6 +110,11 @@ export function hydrateLoginStore(loginData){
 <<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+
+>>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -136,6 +142,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
@@ -143,6 +150,8 @@ export function axiosLogin(){
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -183,6 +192,7 @@ export function axiosLogin(){
 //   });
 // }
 
+<<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
@@ -190,6 +200,8 @@ export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
 >>>>>>> Merge conflicts resolved
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 >>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
