@@ -32,6 +32,10 @@ router.get('/auth/google/callback',
   // }
 );
 
+<<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
+=======
+
+>>>>>>> feat(Database): User email linked to each table
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -39,7 +43,11 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 var url = require('url');
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -54,6 +62,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
+<<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -188,6 +197,23 @@ router.post('/activityItin', function(req, res) {
 
 
 
+=======
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+});
+
+>>>>>>> feat(Database): User email linked to each table
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
@@ -211,6 +237,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -225,5 +252,7 @@ router.post("/ActivitiesSearch", function(req, res) {
   });
 });
 
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 module.exports = router;

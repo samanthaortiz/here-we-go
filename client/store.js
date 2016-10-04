@@ -7,8 +7,16 @@ import rootReducer from './reducers/index';
 const defaultState = {
     reducerTripData: [],
     reducerFlightData: [],
+<<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
     reducerLoginData: [],
     reducerHotelItin: []
+=======
+    reducerDatabaseData: []
+  // expediaHotelInfo: [],
+  // expediaFlightInfo: [],
+  // expediaCarRentalInfo: [],
+  // expediaActivityInfo: []
+>>>>>>> feat(Database): User email linked to each table
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
