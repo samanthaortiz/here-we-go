@@ -1,6 +1,7 @@
 // BUDGET FORM COMPONENT ===================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+<<<<<<< HEAD
 import { createStore } from 'redux';
 
 const BudgetForm = React.createClass({
@@ -20,10 +21,28 @@ const BudgetForm = React.createClass({
 
   onClick: function(event) {
     event.preventDefault();
+=======
+
+const BudgetForm = React.createClass({
+  getInitialState() {
+    return {
+      totalBudget: '',
+      hotelBudget: '',
+      flightBudget: '',
+      carRentalBudget: '',
+      activityBudget: ''
+    };
+  },
+
+  closeForm: function(event) {
+    event.preventDefault();
+    // CLOSE BUDGET FOR LIGHTBOX
+>>>>>>> dev
     document.getElementById('light').style.display='none';
     document.getElementById('fade').style.display='none';
   },
 
+<<<<<<< HEAD
   handleFormSubmission: function(event) {
     event.preventDefault();
     document.getElementById('light').style.display='none';
@@ -53,10 +72,43 @@ const BudgetForm = React.createClass({
       },
       error: function (data) {
         console.error('FAILED TO SEND DATA ', data);
+=======
+  handleInputValueChange: function(event) {
+    var key = event.target.name;
+    this.setState({
+      [key]: event.target.value
+    });
+  },
+
+  submitBudgetFormData: function(event) {
+    event.preventDefault();
+
+    var formData = {
+      totalBudget: this.state.totalBudget,
+      hotelBudget: this.state.hotelBudget,
+      flightBudget: this.state.flightBudget,
+      carRentalBudget: this.state.carRentalBudget,
+      activityBudget: this.state.activityBudget
+    };
+
+    $.ajax({
+      url: '/api/budgetData',
+      type: 'POST',
+      data: JSON.stringify(formData),
+      contentType: 'application/json',
+      success: function (data) {
+        console.log("HOLY CRAP WE DID IT!")
+        // // Trigger a fetch to update the messages, pass true to animate
+        // app.fetch();
+      },
+      error: function (data) {
+        console.error('ERROR SENDING TO DATABASE: ', data);
+>>>>>>> dev
       }
     });
   },
 
+<<<<<<< HEAD
   // getPage: function(page) {
   //   // Setup our ajax request
   //   let request = new XMLHttpRequest();
@@ -84,11 +136,28 @@ const BudgetForm = React.createClass({
         
         <form className="form-budget" onSubmit={this.handleFormSubmission}>
 
+=======
+  render() {
+    return (
+      <div className="container-form-budget">
+        
+        <form className="form-budget" onSubmit={this.submitBudgetFormData}>
+>>>>>>> dev
           <div>
             <ul>
               <li className="field-full">
                 <label htmlFor="LABEL">Total Budget</label>
+<<<<<<< HEAD
                 <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
+=======
+                <input
+                  type="text"
+                  name="totalBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.totalBudget}
+                  onChange={this.handleInputValueChange}
+                />
+>>>>>>> dev
               </li>
             </ul>
           </div>
@@ -97,6 +166,7 @@ const BudgetForm = React.createClass({
             <ul>
               <li>
                 <label htmlFor="Hotel">Hotel</label>
+<<<<<<< HEAD
                 <input type="text" name="Hotel-Budget" placeholder="Hotel Budget" />
               </li>
               <li>
@@ -110,6 +180,45 @@ const BudgetForm = React.createClass({
               <li>
                 <label htmlFor="Activities">Activites</label>
                 <input type="text" name="Activities-Budget" placeholder="Activities Budgets" />
+=======
+                <input
+                  type="text"
+                  name="hotelBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.hotelBudget}
+                  onChange={this.handleInputValueChange}
+                />
+              </li>
+              <li>
+                <label htmlFor="Flight">Flight</label>
+                <input
+                  type="text"
+                  name="flightBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.flightBudget}
+                  onChange={this.handleInputValueChange}
+                />
+              </li>
+              <li>
+                <label htmlFor="CarRental">Car Rental</label>
+                <input
+                  type="text"
+                  name="carRentalBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.carRentalBudget}
+                  onChange={this.handleInputValueChange}
+                />
+              </li>
+              <li>
+                <label htmlFor="Activities">Activites</label>
+                <input
+                  type="text"
+                  name="activityBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.activityBudget}
+                  onChange={this.handleInputValueChange}
+                />
+>>>>>>> dev
               </li>
             </ul>
           </div>
@@ -119,6 +228,7 @@ const BudgetForm = React.createClass({
               <li className="field-full">
                 <button className="submit" type="submit">Submit Form</button>
               </li>
+<<<<<<< HEAD
               <li><a href="" onClick={this.onClick}>close form</a></li>
             </ul>
           </div>
@@ -156,6 +266,15 @@ const BudgetForm = React.createClass({
           </ul>
         */}
         </form>
+=======
+              <li className="field-full">
+                <a onClick={this.closeForm}>close</a>
+              </li>
+            </ul>
+          </div>
+        </form>
+
+>>>>>>> dev
       </div> 
     );
   }

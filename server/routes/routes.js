@@ -97,10 +97,9 @@ router.post('/user-account/', function(req, res) {
 
 
 // TRIP/FLIGHT SEARCH API =====================================================================
-
 router.post("/FlightSearch", function(req, res) {
   // console.log('>> ENTER FLIGHT API ROUTER ', req.body);
-  
+
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767"
 
   request({ url: urlAPI }, function(error, response, body) {
@@ -115,6 +114,12 @@ router.post("/FlightSearch", function(req, res) {
 
 router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
+});
+
+// HANDLE BUDGET FORM DATA =========================================================== */
+router.post('/budgetData', function(req, res) {
+  console.log('>>>>> SAVING TO DATABASE: ', req.body);
+  res.send();
 });
 
 
@@ -409,7 +414,6 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 // res.send(TEST_RESPONSE);
 
 
-
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -423,6 +427,7 @@ router.post("/ActivitiesSearch", function(req, res) {
     }
   });
 });
+
 
 
 

@@ -230,6 +230,7 @@ div.tile-hotel:nth-child(odd) {
   margin-right: 1%
 }
 
+<<<<<<< HEAD
 .tile-itinerary a {
   color: #000;
   cursor: pointer;
@@ -272,6 +273,13 @@ div.tile-hotel:nth-child(odd) {
   border-radius: 5px;
 }
 /* LIGHTBOX */
+=======
+/* BUDGET FORM VIEW ======================================================== */
+.container-form-budget {
+  border: 1px solid #999;
+  padding: 20px;
+}
+>>>>>>> dev
 
 .form-budget {
   width: 300px;
@@ -313,6 +321,33 @@ div.tile-hotel:nth-child(odd) {
   border-radius: 5px;
 }
 
+<<<<<<< HEAD
+=======
+/* FORM LIGHTBOX =========================================================== */
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+       opacity: .80;
+        filter: alpha(opacity=80);
+}
+
+.lightbox-content {
+  display: none;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
+>>>>>>> dev
 
 /* MEDIA QUERIES =========================================================== */
 @media (max-width: 2000px) {
