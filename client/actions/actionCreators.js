@@ -47,7 +47,6 @@ export function axiosTripCall(location, startDate, endDate){
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
 
-<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 // BELOW: TO BE REFACTORED/PURGED
@@ -269,6 +268,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 export function axiosLogin(){
@@ -288,6 +288,8 @@ export function axiosLogin(){
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
+=======
+>>>>>>> feat(Database): User email linked to each table
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -336,6 +338,40 @@ export function axiosLogin(){
 =======
 >>>>>>> Merge conflicts resolved
 =======
+
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
+>>>>>>> feat(Database): User email linked to each table
+=======
+//=============== DATABASE DATA ===============
+
+export const getDatabaseData = () => {
+  return function(dispatch) {
+    return axiosDBCall()
+    .then(res => {
+      dispatch(hydrateDBStore(res.data))
+      browserHistory.push('/dashboard');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosDBCall(){
+  return axios.get('/api/dbData', {
+  
+  });
+};
+
+export function hydrateDBStore(dbData){
+  return {
+    type: 'GET_DB_DATA',
+    dbData
+  };
+}
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
 
 >>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
