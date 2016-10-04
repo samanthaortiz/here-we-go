@@ -119,6 +119,25 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 // HANDLE BUDGET FORM DATA =========================================================== */
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING TO DATABASE: ', req.body);
+
+  // SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES ((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
+
+  var subSQL;
+  var data = req.body;
+
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
+
   res.send();
 });
 

@@ -36,11 +36,11 @@ const BudgetForm = React.createClass({
     document.getElementById('fade').style.display='none';
 
     var formData = {
-      totalBudget: this.state.totalBudget,
-      hotelBudget: this.state.hotelBudget,
-      flightBudget: this.state.flightBudget,
-      carRentalBudget: this.state.carRentalBudget,
-      activityBudget: this.state.activityBudget
+      // totalBudget: this.state.totalBudget,
+      hotel: this.state.hotelBudget,
+      flight: this.state.flightBudget,
+      car: this.state.carRentalBudget,
+      attraction: this.state.activityBudget
     };
 
     $.ajax({
