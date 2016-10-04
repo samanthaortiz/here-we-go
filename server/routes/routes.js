@@ -39,7 +39,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-var url = require('url');
+  var url = require('url');
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -77,6 +77,23 @@ router.post('/budgetData', function(req, res) {
 
   res.send();
 });
+
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+});
+
+
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
