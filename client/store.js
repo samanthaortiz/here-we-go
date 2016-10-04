@@ -19,6 +19,7 @@ const defaultState = {
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
 >>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
@@ -120,6 +121,9 @@ const defaultState = {
 =======
     reducerLoginData: [],
     reducerHotelItin: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+    reducerLoginData: []
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));

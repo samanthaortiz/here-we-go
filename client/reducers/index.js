@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
@@ -46,6 +47,9 @@ import reducerFlightData from './reducerFlightData';
 >>>>>>> feat(Database): User email linked to each table
 =======
 import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+import reducerFlightData from './reducerFlightData'; 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerLoginData from './reducerLoginData';
 <<<<<<< 546279dadafc751fb02f9fe439e31e811ff3c3c0
