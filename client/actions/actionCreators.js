@@ -68,6 +68,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -177,6 +178,11 @@ export function axiosLogin(){
 //     endDate
 //   });
 // }
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
 
 
 //=============== FLIGHTS ===============
