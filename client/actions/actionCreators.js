@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
 <<<<<<< 78bc001c0ca98711fa4371148788ab1b65bb8e93
@@ -279,6 +280,9 @@ export function hydrateLoginStore(loginData){
 =======
 =======
 =======
+=======
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
+>>>>>>> Merge conflicts resolved
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -824,7 +828,12 @@ export function axiosLogin(){
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> Merge conflicts resolved
+>>>>>>> Merge conflicts resolved
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
@@ -894,8 +903,12 @@ export function hydrateHotelItin(hotelItinData, email){
     hotelItinData,
     email
   };
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
+=======
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
+>>>>>>> Merge conflicts resolved
 }
 
 
@@ -961,6 +974,9 @@ export function hydrateCarItin(CarItinData, email){
 =======
 }
 >>>>>>> Merge conflicts resolved
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 =======
 }
+>>>>>>> Merge conflicts resolved
+=======
 >>>>>>> Merge conflicts resolved

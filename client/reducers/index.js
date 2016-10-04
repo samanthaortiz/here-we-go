@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< ebdcfb1b766d9fe80364d2d3795b586966613349
 <<<<<<< 5aaccc52731c27e7d4012af743a4493a893daa61
@@ -52,6 +53,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 =======
+=======
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
+>>>>>>> Merge conflicts resolved
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
@@ -287,10 +291,15 @@ import reducerHotelItin from './reducerHotelItin';
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+import reducerFlightData from './reducerFlightData'; 
+import reducerLoginData from './reducerLoginData';
+>>>>>>> Merge conflicts resolved
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< ebdcfb1b766d9fe80364d2d3795b586966613349
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
@@ -318,6 +327,9 @@ const rootReducer = combineReducers({
 =======
 =======
 =======
+=======
+<<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
+>>>>>>> Merge conflicts resolved
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
@@ -516,6 +528,9 @@ const rootReducer = combineReducers({
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+  reducerLoginData,
+>>>>>>> Merge conflicts resolved
   routing: routerReducer
 });
 
