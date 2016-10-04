@@ -71,7 +71,6 @@ const Splash = React.createClass({
     
     return (
       <div>
-      <a className="loginOut" onClick={this.login}>Login for real</a><br/>
       {!this.state.isUserLoggedIn && <a className="loginOut" href='/api/auth/google'>Login</a>}
       <br/>
       <a className="loginOut" href='/api/logout'>Logout</a>
