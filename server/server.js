@@ -76,11 +76,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         'email': profile.emails[0].value
       })
       .save()
-      new Itinerary({
-        'status': "All",                 
-        'user_email': profile.emails[0].value
-      })
-      .save()
+      // new Itinerary({
+      //   'status': "All",              
+      //   'user_email': profile.emails[0].value
+      // })
+      // .save()
     }
     
     console.log('this is the user after adding to db:', user)
