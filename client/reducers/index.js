@@ -135,9 +135,15 @@ import reducerDatabaseData from './reducerDatabaseData';
 =======
 import reducerFlightData from './reducerFlightData'; 
 import reducerLoginData from './reducerLoginData';
+<<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
 >>>>>>> Merge conflicts resolved
 =======
+=======
+<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
+>>>>>>> Merge conflicts resolved
 import reducerHotelItin from './reducerHotelItin';
+=======
+>>>>>>> Merge conflicts resolved
 
 >>>>>>> Routing updated
 =======
@@ -244,6 +250,7 @@ const rootReducer = combineReducers({
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
   reducerLoginData,
+<<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
 <<<<<<< e339ff194dea6fd879ee8649042ec21d5d0c08d8
 >>>>>>> Merge conflicts resolved
 =======
@@ -275,6 +282,12 @@ const rootReducer = combineReducers({
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
+  reducerHotelItin,
+=======
+>>>>>>> Merge conflicts resolved
+>>>>>>> Merge conflicts resolved
   routing: routerReducer
 });
 
