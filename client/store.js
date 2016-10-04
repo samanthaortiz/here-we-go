@@ -6,6 +6,7 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< c028e2f0c3f145c4eff0cd750a9575b509c355f0
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
 <<<<<<< bf5c7d9c550e05e80a556bb84fed6cc745e36bb1
 <<<<<<< 1cf3d4e0499b03f91ab368f3e40df10d41aa74a6
@@ -17,6 +18,9 @@ const defaultState = {
 <<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 07dd22deababa6f1de4e79bdb4a93aa3a1b1bed0
 >>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -43,6 +47,7 @@ const defaultState = {
     reducerHotelItin: []
 =======
     reducerDatabaseData: []
+<<<<<<< c028e2f0c3f145c4eff0cd750a9575b509c355f0
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
@@ -80,6 +85,11 @@ const defaultState = {
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
