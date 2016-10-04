@@ -72,6 +72,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 6623b3353bd23542e20a0b51df8fc42befc326d7
 <<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
@@ -142,6 +143,9 @@ var url = require('url');
 =======
   var url = require('url');
 >>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -211,8 +215,6 @@ router.post('/budgetData', function(req, res) {
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
 });
-
-<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
 
 router.post('/hotelItin', function(req, res) {
   console.log('this is the req body: ', req.body);
@@ -408,6 +410,7 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 6623b3353bd23542e20a0b51df8fc42befc326d7
 <<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
@@ -420,6 +423,8 @@ router.post('/user-account/', function(req, res) {
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -434,6 +439,7 @@ router.post('/user-account/', function(req, res) {
   //   console.error(error)
   // });
 });
+<<<<<<< 6623b3353bd23542e20a0b51df8fc42befc326d7
 <<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 
@@ -451,6 +457,8 @@ router.post('/user-account/', function(req, res) {
 
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 
 >>>>>>> feat(Database): User email linked to each table
 =======
