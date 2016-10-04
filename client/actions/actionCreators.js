@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 81639c1bedcf7df839b5772fcc6af66b304715c1
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
@@ -283,6 +284,9 @@ export function hydrateLoginStore(loginData){
 =======
 =======
 =======
+=======
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
+>>>>>>> feat(Database): User email linked to each table
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
@@ -295,7 +299,11 @@ export function hydrateLoginStore(loginData){
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
+=======
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
+>>>>>>> feat(Database): User email linked to each table
 
+<<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 14eab16f70ac442a1b66b546a4a30ac388ff1ef9
 <<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< c028e2f0c3f145c4eff0cd750a9575b509c355f0
@@ -304,6 +312,12 @@ export function hydrateLoginStore(loginData){
 =======
 <<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 
 <<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 export const getDatabaseData = () => {
@@ -869,9 +883,13 @@ export function axiosLogin(){
 =======
 =======
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 >>>>>>> feat(Database): User email linked to each table
 =======
+=======
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
+>>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -960,8 +978,17 @@ export function axiosLogin(){
 };
 
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 >>>>>>> Merge conflicts resolved
+<<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 >>>>>>> Merge conflicts resolved
+=======
+=======
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
