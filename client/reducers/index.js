@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
 <<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
@@ -56,6 +57,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 =======
+=======
+<<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
@@ -123,7 +127,13 @@ import reducerFlightData from './reducerFlightData';
 =======
 <<<<<<< 54d2c7812406b7c8acfb0d633bad5c7a2462dd9f
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+import reducerFlightData from './reducerFlightData'; 
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerLoginData from './reducerLoginData';
 <<<<<<< 891a855f09a683faa27d992e2b7e4e57a1bfe014
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
@@ -154,6 +164,7 @@ import reducerLoginData from './reducerLoginData';
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerHotelItin from './reducerHotelItin';
+<<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
 <<<<<<< abe9159f2bf98e8a367aeefd4884179a4fc60478
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
@@ -162,6 +173,9 @@ import reducerHotelItin from './reducerHotelItin';
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
 import reducerFlightItin from './reducerFlightItin';
 import reducerCarItin from './reducerCarItin';
+=======
+<<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 import reducerDatabaseData from './reducerDatabaseData'; 
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
@@ -337,10 +351,13 @@ import reducerHotelItin from './reducerHotelItin';
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
 <<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< 81639c1bedcf7df839b5772fcc6af66b304715c1
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
@@ -374,6 +391,9 @@ const rootReducer = combineReducers({
 =======
 =======
 =======
+=======
+<<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
@@ -585,11 +605,14 @@ const rootReducer = combineReducers({
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 54d2c7812406b7c8acfb0d633bad5c7a2462dd9f
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   reducerLoginData,
 <<<<<<< 546279dadafc751fb02f9fe439e31e811ff3c3c0
 >>>>>>> Merge conflicts resolved
 =======
   reducerHotelItin,
+<<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 >>>>>>> Routing updated
 =======
@@ -603,6 +626,8 @@ const rootReducer = combineReducers({
   // expediaActivityInfo,
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   routing: routerReducer
 });
 
