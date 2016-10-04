@@ -118,6 +118,7 @@ import reducerHotelItin from './reducerHotelItin';
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
+
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,

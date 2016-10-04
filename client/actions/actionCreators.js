@@ -268,6 +268,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< c0038fcac80a6f3ec1eb460db00a3c27fd7f428c
 <<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
@@ -290,6 +291,9 @@ export function axiosLogin(){
 
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+
+>>>>>>> Merge conflicts resolved
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -416,7 +420,15 @@ export function axiosLogin(){
 // }
 
 
+<<<<<<< c0038fcac80a6f3ec1eb460db00a3c27fd7f428c
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
+
+
+>>>>>>> Merge conflicts resolved
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
