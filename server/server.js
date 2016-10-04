@@ -171,39 +171,11 @@ app.get('/siftAuth', function(req, res){
                 }
               })
             }
-            // if(item.payload.reservationType["@type"] === "Car"){
-              // counter++;
-              // console.log('item #'+ i, item);
-              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-                // newBookedFlight(item.payload);
-              // counter++;
-                // newBookedFlight(item.payload);
-              // counter++;
-              console.log('item #'+ i, item);
-              console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              // console.log('<---===--------===----------===---------===--->')
-              //if (item.domain === "hotel") ...
-                //new Hotel({...}) middleware
-              //else if (item.domain === "rentalCar") ...
-                //new Car({...}) middleware
-              //else if (item.domain === "flight") ...
-
-              //   //for now, add new itinerary into db. (THIS IS WORKING!)
-              // new Itinerary({
-              //   // status: "ticket",
-              //   trip_id: counter,
-              //   status: item.domain
-              // })
-              // .save()
-            } 
           })
-          // console.log('FILTERED LENGTH: ', counter);
-          console.log('RESULT LENGTH: ', body.result.length);
-        })   
+        })
       })
     })
 })
-
 
 app.use(express.static('./dist'));
 
