@@ -62,6 +62,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
 <<<<<<< 3b3d89d046bdc010a77e13b442c4145bf0356720
 <<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -85,6 +86,9 @@ var url = require('url');
 =======
 =======
 =======
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
@@ -106,7 +110,13 @@ var url = require('url');
 =======
   var url = require('url');
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -158,10 +168,14 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
 <<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
 <<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 =======
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
 });
@@ -311,6 +325,9 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 >>>>>>> feat(Routes): Routes and server changes
@@ -332,11 +349,16 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
 
 
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
