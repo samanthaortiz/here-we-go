@@ -7,8 +7,7 @@ import rootReducer from './reducers/index';
 const defaultState = {
     reducerTripData: [],
     reducerFlightData: [],
-    reducerLoginData: [],
-    reducerHotelItin: []
+    reducerLoginData: []
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
