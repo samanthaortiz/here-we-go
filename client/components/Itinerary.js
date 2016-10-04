@@ -5,6 +5,7 @@ import BudgetForm from './BudgetForm';
 const Itinerary = React.createClass({
 <<<<<<< HEAD
   componentWillMount(){
+<<<<<<< 5dcf8c511bc8190b0fc8a297e0b6a4dff06c23e9
 
 =======
   handleBudgetForm: function(event) {
@@ -15,7 +16,20 @@ const Itinerary = React.createClass({
 >>>>>>> localBranch
   },
 
+=======
+    // console.log(this.props);
+    var email = this.props.data.reducerTripData.email;
+    // var hotelData;
+      if(this.props.data.reducerTripData.loggedIn){
+        this.props.data.postHotelItin(email)
+        .then(function(res){
+          console.log('res', res)
+        });
+      }
+ },
+>>>>>>> feat(getting hotel itin data to front end):
   render() {
+      //          {hotelData}
     return (
       <div className="tile-itinerary">
         <h3>My Itinerary</h3>
