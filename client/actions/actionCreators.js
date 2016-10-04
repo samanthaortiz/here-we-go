@@ -56,6 +56,7 @@ export function axiosTripCall(location, startDate, endDate){
 =======
 >>>>>>> feat(Database): User email linked to each table
 
+<<<<<<< abe9159f2bf98e8a367aeefd4884179a4fc60478
 <<<<<<< b87257826dd4ae830a010ea0b2a6ba055206c281
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -167,6 +168,8 @@ export function axiosLogin(){
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 

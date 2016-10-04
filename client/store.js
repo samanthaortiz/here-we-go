@@ -19,6 +19,7 @@ const defaultState = {
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
 >>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
+<<<<<<< abe9159f2bf98e8a367aeefd4884179a4fc60478
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
@@ -116,6 +117,10 @@ const defaultState = {
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+    reducerLoginData: [],
+    reducerHotelItin: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
