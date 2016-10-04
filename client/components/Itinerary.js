@@ -35,7 +35,6 @@ const Itinerary = React.createClass({
                 email={this.props.data.reducerHotelItin.email}
               />
             })}
-
               {/* map over cars
               <CarItin
                 key={hotel.sift_id}
