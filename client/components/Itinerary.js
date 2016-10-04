@@ -3,30 +3,25 @@ import { Link } from 'react-router';
 import BudgetForm from './BudgetForm';
 
 const Itinerary = React.createClass({
-<<<<<<< HEAD
-  componentWillMount(){
-<<<<<<< 5dcf8c511bc8190b0fc8a297e0b6a4dff06c23e9
 
-=======
+  componentWillMount(){
+    var email = this.props.data.reducerTripData.email;
+    if(this.props.data.reducerTripData.loggedIn){
+      this.props.data.postHotelItin(email)
+      // this.props.data.postCarItin(email)
+      // this.props.data.postAirItin(email)
+    }
+  },
+
   handleBudgetForm: function(event) {
     event.preventDefault();
     // DISPLAY BUDGET FOR LIGHTBOX
     document.getElementById('light').style.display='block';
     document.getElementById('fade').style.display='block';
->>>>>>> localBranch
   },
 
-=======
-    // console.log(this.props);
-    var email = this.props.data.reducerTripData.email;
-    // var hotelData;
-      if(this.props.data.reducerTripData.loggedIn){
-        // this.props.data.postHotelItin(email)
-        // this.props.data.postCarItin(email)
-        // this.props.data.postAirItin(email)
-      }
- },
->>>>>>> feat(getting hotel itin data to front end):
+
+
   render() {
 
     return (
