@@ -20,8 +20,6 @@ const Itinerary = React.createClass({
     document.getElementById('fade').style.display='block';
   },
 
-
-
   render() {
 
     return (
