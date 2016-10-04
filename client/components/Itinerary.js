@@ -21,7 +21,6 @@ const Itinerary = React.createClass({
   },
 
   render() {
-
     return (
       <div className="tile-itinerary">
         <h3>My Itinerary</h3>
@@ -36,7 +35,7 @@ const Itinerary = React.createClass({
         <div id="light" className="lightbox-content">
           <BudgetForm />
         </div>
-        <div id="fade" className="black_overlay"></div>
+        <div id="fade" className="overlay"></div>
       </div>
     );
   } 
