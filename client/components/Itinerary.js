@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import BudgetForm from './BudgetForm';
 
 const Itinerary = React.createClass({
+  handleBudgetForm: function(event) {
+    console.log('OPEN LIGHTBOX')
+    event.preventDefault();
+    // DISPLAY BUDGET FOR LIGHTBOX
+    document.getElementById('light').style.display='block';
+    document.getElementById('fade').style.display='block';
+  },
+
   render() {
     return (
       <div className="tile-itinerary">
@@ -11,8 +20,12 @@ const Itinerary = React.createClass({
           <li>Upcoming</li>
           <li>Previous</li>
           <li>Cancelled</li>
-          <li>Budget</li>
+          <li><a onClick={this.handleBudgetForm}>Budget</a></li>
         </ul>
+        <div id="light" className="lightbox-content">
+          <BudgetForm />
+        </div>
+        <div id="fade" className="black_overlay"></div>
       </div>
     );
   } 

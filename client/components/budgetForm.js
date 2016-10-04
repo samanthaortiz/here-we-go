@@ -3,17 +3,73 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 const BudgetForm = React.createClass({
+  getInitialState() {
+    return {
+      totalBudget: '',
+      hotelBudget: '',
+      flightBudget: '',
+      carRentalBudget: '',
+      activityBudget: ''
+    };
+  },
+
+  closeForm: function(event) {
+    event.preventDefault();
+    // CLOSE BUDGET FOR LIGHTBOX
+    document.getElementById('light').style.display='none';
+    document.getElementById('fade').style.display='none';
+  },
+
+  handleInputValueChange: function(event) {
+    var key = event.target.name;
+    this.setState({
+      [key]: event.target.value
+    });
+  },
+
+  submitBudgetFormData: function(event) {
+    event.preventDefault();
+
+    var formData = {
+      totalBudget: this.state.totalBudget,
+      hotelBudget: this.state.hotelBudget,
+      flightBudget: this.state.flightBudget,
+      carRentalBudget: this.state.carRentalBudget,
+      activityBudget: this.state.activityBudget
+    };
+
+    $.ajax({
+      url: '/api/budgetData',
+      type: 'POST',
+      data: JSON.stringify(formData),
+      contentType: 'application/json',
+      success: function (data) {
+        console.log("HOLY CRAP WE DID IT!")
+        // // Trigger a fetch to update the messages, pass true to animate
+        // app.fetch();
+      },
+      error: function (data) {
+        console.error('ERROR SENDING TO DATABASE: ', data);
+      }
+    });
+  },
+
   render() {
     return (
       <div className="container-form-budget">
         
-        <form className="form-budget" action="" method="post">
-
+        <form className="form-budget" onSubmit={this.submitBudgetFormData}>
           <div>
             <ul>
               <li className="field-full">
                 <label htmlFor="LABEL">Total Budget</label>
-                <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
+                <input
+                  type="text"
+                  name="totalBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.totalBudget}
+                  onChange={this.handleInputValueChange}
+                />
               </li>
             </ul>
           </div>
@@ -22,19 +78,43 @@ const BudgetForm = React.createClass({
             <ul>
               <li>
                 <label htmlFor="Hotel">Hotel</label>
-                <input type="text" name="Hotel-Budget" placeholder="Hotel Budget" />
+                <input
+                  type="text"
+                  name="hotelBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.hotelBudget}
+                  onChange={this.handleInputValueChange}
+                />
               </li>
               <li>
                 <label htmlFor="Flight">Flight</label>
-                <input type="text" name="Flight-Budget" placeholder="Flight Budget" />
+                <input
+                  type="text"
+                  name="flightBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.flightBudget}
+                  onChange={this.handleInputValueChange}
+                />
               </li>
               <li>
                 <label htmlFor="CarRental">Car Rental</label>
-                <input type="text" name="Car-Rental-Budget" placeholder="Car Rental" />
+                <input
+                  type="text"
+                  name="carRentalBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.carRentalBudget}
+                  onChange={this.handleInputValueChange}
+                />
               </li>
               <li>
                 <label htmlFor="Activities">Activites</label>
-                <input type="text" name="Activities-Budget" placeholder="Activities Budgets" />
+                <input
+                  type="text"
+                  name="activityBudget"
+                  placeholder="PLACEHOLDER"
+                  value={this.state.activityBudget}
+                  onChange={this.handleInputValueChange}
+                />
               </li>
             </ul>
           </div>
@@ -44,41 +124,11 @@ const BudgetForm = React.createClass({
               <li className="field-full">
                 <button className="submit" type="submit">Submit Form</button>
               </li>
+              <li className="field-full">
+                <a onClick={this.closeForm}>close</a>
+              </li>
             </ul>
           </div>
-
-          {/*
-          <ul>
-            <li>
-              <label for="LABEL">LABEL</label>
-              <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
-            </li>
-
-            <li>
-              <label for="LABEL">LABEL</label>
-              <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
-            </li>
-
-            <li>
-              <label for="LABEL">LABEL</label>
-              <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
-            </li>
-
-            <li>
-              <label for="LABEL">LABEL</label>
-              <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
-            </li>
-
-            <li>
-              <label for="LABEL">LABEL</label>
-              <input type="text" name="LABEL" placeholder="PLACEHOLDER" />
-            </li>
-
-            <li>
-              <button class="submit" type="submit">Submit Form</button>
-            </li>
-          </ul>
-        */}
         </form>
 
       </div> 

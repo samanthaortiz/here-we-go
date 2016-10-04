@@ -115,6 +115,12 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+// HANDLE BUDGET FORM DATA =========================================================== */
+router.post('/budgetData', function(req, res) {
+  console.log('>>>>> SAVING TO DATABASE: ', req.body);
+  res.send();
+});
+
 
 // // HOTEL SEARCH API ================================================================== */
 // router.post("/HotelSearch", function(req, res) {
