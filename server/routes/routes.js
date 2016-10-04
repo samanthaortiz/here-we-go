@@ -106,6 +106,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
 <<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
@@ -136,6 +137,9 @@ router.get('/account', ensureAuthenticated, function(req, res) {
 >>>>>>> feat(Database): User email linked to each table
 =======
 =======
+=======
+<<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
+>>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
@@ -179,6 +183,7 @@ var url = require('url');
 =======
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
+<<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 <<<<<<< 086136b4d63291f06707b5df8739a3746777c66c
 >>>>>>> feat(Routes): Routes and server changes
 =======
@@ -222,6 +227,11 @@ var url = require('url');
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 
 =======
 <<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
@@ -698,8 +708,31 @@ router.post('/user-account/', function(req, res) {
 =======
 });
 
+<<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 >>>>>>> feat(Routes): Routes and server changes
+<<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 >>>>>>> feat(Routes): Routes and server changes
+=======
+=======
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+});
+
+
+
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
