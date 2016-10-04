@@ -32,6 +32,7 @@ router.get('/auth/google/callback',
   // }
 );
 
+<<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
@@ -80,6 +81,8 @@ router.get('/auth/google/callback',
 =======
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -87,6 +90,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< 6623b3353bd23542e20a0b51df8fc42befc326d7
@@ -178,6 +182,10 @@ var url = require('url');
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+var url = require('url');
+
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -192,6 +200,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
+<<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
@@ -225,6 +234,8 @@ function ensureAuthenticated(req, res, next) {
 =======
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -247,6 +258,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< eb8b55ca6462177ef658888c59b5654d14af7478
 <<<<<<< 6555def7defc39e7c072a64078fc266301812472
@@ -261,6 +273,8 @@ router.post('/budgetData', function(req, res) {
 =======
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 });
 
 router.post('/hotelItin', function(req, res) {
