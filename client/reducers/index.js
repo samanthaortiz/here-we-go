@@ -27,6 +27,7 @@ import reducerTripData from './reducerTripData';
 <<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerFlightData from './reducerFlightData'; 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
@@ -39,6 +40,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 import reducerFlightData from './reducerFlightData'; 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+>>>>>>> feat(Database): User email linked to each table
 import reducerLoginData from './reducerLoginData';
 <<<<<<< 546279dadafc751fb02f9fe439e31e811ff3c3c0
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
@@ -48,6 +52,7 @@ import reducerLoginData from './reducerLoginData';
 <<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerHotelItin from './reducerHotelItin';
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 =======
 import reducerDatabaseData from './reducerDatabaseData'; 
@@ -79,12 +84,17 @@ import reducerFlightData from './reducerFlightData';
 import reducerFlightData from './reducerFlightData';
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+=======
+import reducerDatabaseData from './reducerDatabaseData'; 
+>>>>>>> feat(Database): User email linked to each table
 
 // import expediaHotelInfo from './expediaHotelInfo'; 
 // import expediaFlightInfo from './expediaFlightInfo';
 // import expediaCarRentalInfo from './expediaCarRentalInfo'; 
 // import expediaActivityInfo from './expediaActivityInfo'; 
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -117,11 +127,15 @@ import reducerHotelItin from './reducerHotelItin';
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
@@ -203,11 +217,15 @@ const rootReducer = combineReducers({
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+>>>>>>> feat(Database): User email linked to each table
   reducerLoginData,
 <<<<<<< 546279dadafc751fb02f9fe439e31e811ff3c3c0
 >>>>>>> Merge conflicts resolved
 =======
   reducerHotelItin,
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 >>>>>>> Routing updated
@@ -216,14 +234,21 @@ const rootReducer = combineReducers({
   reducerDatabaseData,
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+=======
+  reducerDatabaseData,
+>>>>>>> feat(Database): User email linked to each table
   // expediaHotelInfo,
   // expediaFlightInfo,
   // expediaCarRentalInfo,
   // expediaActivityInfo,
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+>>>>>>> feat(Database): User email linked to each table
   routing: routerReducer
 });
 

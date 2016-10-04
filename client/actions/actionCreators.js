@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
@@ -46,7 +47,14 @@ export function axiosTripCall(location, startDate, endDate){
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
+=======
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
+>>>>>>> feat(Database): User email linked to each table
 
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 // BELOW: TO BE REFACTORED/PURGED
@@ -343,9 +351,13 @@ export function axiosLogin(){
 >>>>>>> Merge conflicts resolved
 =======
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 >>>>>>> feat(Database): User email linked to each table
 =======
+=======
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
+>>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -428,7 +440,13 @@ export function axiosLogin(){
 };
 
 
+<<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 >>>>>>> Merge conflicts resolved
+=======
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
