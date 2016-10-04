@@ -422,6 +422,7 @@ export function hydrateLoginStore(loginData){
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 =======
 
+<<<<<<< e28ba6d77464595c58479854beb377373007492f
 >>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
 
@@ -463,6 +464,8 @@ export function axiosLogin(){
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 
