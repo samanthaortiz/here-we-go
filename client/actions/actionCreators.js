@@ -102,6 +102,7 @@ export function axiosHotelItin(email){
 }
 
 export function hydrateHotelItin(hotelItinData, email){
+  console.log();
   return {
     type: "POST_HOTEL_ITIN",
     hotelItinData,
