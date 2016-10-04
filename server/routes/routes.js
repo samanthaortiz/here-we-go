@@ -39,7 +39,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-  var url = require('url');
+var url = require('url');
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -76,6 +76,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
 });
 
 // GET USERNAME
@@ -91,9 +92,9 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
 });
-
-
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
