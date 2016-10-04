@@ -411,6 +411,7 @@ export function hydrateLoginStore(loginData){
   };
 }
 
+<<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 //=============== DATABASE DATA ===============
@@ -492,6 +493,7 @@ export function axiosLogin(){
 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+<<<<<<< 5aaccc52731c27e7d4012af743a4493a893daa61
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
 >>>>>>> feat(Database): User email linked to each table
@@ -661,11 +663,17 @@ export function axiosLogin(){
 <<<<<<< 0736bc7aa328064da48aaff360ae9b690a68c607
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
+>>>>>>> Merge conflicts resolved
+=======
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
+<<<<<<< 5aaccc52731c27e7d4012af743a4493a893daa61
 
 <<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
+=======
+>>>>>>> Merge conflicts resolved
+>>>>>>> Merge conflicts resolved
 
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 >>>>>>> Merge conflicts resolved
