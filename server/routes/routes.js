@@ -39,7 +39,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-  var url = require('url');
+var url = require('url');
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -77,8 +77,6 @@ router.post('/budgetData', function(req, res) {
 
   res.send();
 });
-
-<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
 
 router.post('/hotelItin', function(req, res) {
   // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
@@ -176,8 +174,6 @@ router.post('/activityItin', function(req, res) {
 
 
 
-=======
->>>>>>> feat(Database): User email linked to each table
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -192,12 +188,6 @@ router.post('/user-account/', function(req, res) {
   //   console.error(error)
   // });
 });
-<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
-});
-=======
-
-
->>>>>>> feat(Database): User email linked to each table
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
