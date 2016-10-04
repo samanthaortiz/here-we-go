@@ -8,24 +8,26 @@ import { browserHistory } from 'react-router';
 //The reducer will do that.
 
 //=============== TRIP DATA ===============
-export const postTripData = (location, startDate, endDate) => {
+export const postTripData = (location, startDate, endDate, email, loggedIn) => {
   return function(dispatch) {
     return axiosTripCall(location, startDate, endDate)
     .then(res => {
-      dispatch(hydrateTripStore(res.data, location, startDate, endDate))
+      dispatch(hydrateTripStore(res.data, location, startDate, endDate, email, loggedIn))
       browserHistory.push('/dashboard');
     })
     .catch(error => console.log(error));
   };
 };
 
-export function hydrateTripStore(tripData, location, startDate, endDate){
+export function hydrateTripStore(tripData, location, startDate, endDate, email, loggedIn){
   return {
     type: 'POST_TRIP_DATA',
     tripData,
     location,
     startDate,
-    endDate
+    endDate,
+    email,
+    loggedIn
   };
 }
 
@@ -37,81 +39,31 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+export const login = () => {
+  console.log("You get this far");
+  return function(dispatch) {
+    return axiosLogin()
+    .then(res => {
+      console.log("You don't get to here");
+      dispatch(hydrateLoginStore(res.data))
+      browserHistory.push('/api/auth/google');
+    })
+    .catch(error => console.log(error));
+  };
+};
 
+export function hydrateLoginStore(loginData){
+  return {
+    type: 'GET_LOGIN',
+    loginData
+  };
+}
 
-
-// BELOW: TO BE REFACTORED/PURGED
-
-//=============== HOTELS ===============
-// export const postHotelExpedia = (location, startDate, endDate) => {
-
-//   // console.log(location, startDate, endDate);
-//   return function(dispatch){
-//     return axiosHotelCall(location, startDate, endDate)
-//     .then(res => {
-//        // console.log("GET HOTEL", res.data)
-//        console.log('============')
-//        console.log(res.data)
-//        console.log('============')
-//       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
-//       browserHistory.push('/dashboard')
-
-//     })
-//     .catch(error => console.log(error));
-//   };
-// };
-
-// export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
-//   return {
-//     type: 'POST_HOTEL_EXPEDIA',
-//     expediaHotelInfo,
-//     location,
-//     startDate,
-//     endDate
-//   };
-// }
-
-// export function axiosHotelCall(location, startDate, endDate){
-//   return axios.post('/api/trips', {
-//     location,
-//     startDate,
-//     endDate
-//   });
-// }
-
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
 
 //=============== FLIGHTS ===============
-
-//GET AIRPORT CODE FOR FLIGHT SEARCH
-// export const getFlightCode = (locationForFlightSearch) => {
-//   // console.log('LOCATIONForFlightSearch', locationForFlightSearch);
-//   return function(dispatch){
-//     return axiosFlightCode(locationForFlightSearch)
-//     .then(res => {
-//     console.log('Flight Code Received', res.data)
-//      // console.log('locationForFlightSearch to hydrate store', locationForFlightSearch);
-//      dispatch(hydrateFlightStoreCode(res.data, locationForFlightSearch))
-//     });
-//   }
-// }
-
-// export function hydrateFlightStoreCode(expediaFlightInfo, locationForFlightSearch){
-//   return {
-//     type: 'GET_FLIGHT_CODE',
-//     expediaFlightInfo,
-//     locationForFlightSearch
-//     // startDate,
-//     // endDate
-//   };
-// }
-
-// export function axiosFlightCode(locationForFlightSearch){
-//   // console.log('in axios call, locationForFlightSearch is:', locationForFlightSearch)
-//   return axios.post('/api/trips', {
-//       locationForFlightSearch
-//     });
-// }
-
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
 
@@ -152,72 +104,3 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
     infants
   };
 }
-
-// // CAR RENTALS ================================================================
-// export const getCarRentals = (location, pickUpDate, dropOffDate) => {
-//   // console.log('>>>>>> INSIDE getCarRentals <<<<<<');
-//   // console.log('>>>>>> ', location, pickUpDate, dropOffDate);
-
-//   return function(dispatch) {
-//     return axiosCarRentalCall(location, pickUpDate, dropOffDate)
-//     .then(res => {
-//       dispatch(hydrateCarRentalStore(res.data, location, pickUpDate, dropOffDate))
-//       browserHistory.push('/dashboard');
-//     })
-//     .catch(error => console.log(error));
-//   };
-// };
-
-// export const axiosCarRentalCall = (location, pickUpDate, dropOffDate) => {
-//   return axios.post('/api/carRentalSearch', {
-//     params : {
-//       location: location,
-//       pickUpDate: pickUpDate,
-//       dropOffDate: dropOffDate
-//     }
-//   });
-// };
-
-// export const hydrateCarRentalStore = (expediaCarRentalInfo, location, pickUpDate, dropOffDate) => {
-//   return {
-//     type: 'POST_CAR_RENTAL_EXPEDIA',
-//     expediaCarRentalInfo,
-//     location,
-//     pickUpDate,
-//     dropOffDate
-//   };
-// };
-
-// //=============== ACTIVITIES ===============
-// export const getActivities = (location, startDate, endDate) => {
-
-//   // console.log(location, startDate, endDate);
-//   return function(dispatch){
-//     return axiosActivitiesCall(location, startDate, endDate)
-//     .then(res => {
-//       // console.log("GET ACTITIVITES", res.data)
-//       dispatch(hydrateActivitiesStore(res.data, location, startDate, endDate))
-//       browserHistory.push('/dashboard')
-
-//     })
-//     .catch(error => console.log(error));
-//   };
-// };
-
-// export function hydrateActivitiesStore(expediaActivityInfo, location, startDate, endDate){
-//   return {
-//     type: 'POST_ACTIVITIES_EXPEDIA',
-//     expediaActivityInfo,
-//     location,
-//     startDate,
-//     endDate
-//   };
-// }
-
-// export function axiosActivitiesCall(location, startDate, endDate){
-//   return axios.post('/api/trips', {
-//     location,
-//     startDate,
-//     endDate
-//   });
-// }
