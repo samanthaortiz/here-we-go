@@ -106,6 +106,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 <<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< b689a5a39e928ad3bd56996f1efc62722473f215
@@ -138,6 +139,9 @@ router.get('/account', ensureAuthenticated, function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
@@ -251,6 +255,7 @@ var url = require('url');
 =======
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
+<<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 =======
@@ -258,6 +263,8 @@ var url = require('url');
 
 =======
 var url = require('url');
+=======
+>>>>>>> feat(Routes): Routes and server changes
 
 >>>>>>> Merge conflicts
 router.get('/logout', function (req, res, next){
@@ -342,6 +349,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 <<<<<<< eafe1de20f312d9d6bd9ce7fed86f3b015b2735d
 <<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
 <<<<<<< f12cecc570447b38609ab558bb14614442b52ad0
@@ -372,6 +380,9 @@ router.post('/budgetData', function(req, res) {
 =======
 >>>>>>> Merge conflicts
 =======
+=======
+<<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 >>>>>>> feat(Routes): Routes and server changes
 });
@@ -706,6 +717,9 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> Merge conflicts
 =======
 =======
+=======
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 <<<<<<< cac1a4bc6d44d3610c4146ac9259da7cd387c936
@@ -727,12 +741,20 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
 
 
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
