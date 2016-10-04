@@ -72,6 +72,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< eb8b55ca6462177ef658888c59b5654d14af7478
@@ -138,6 +139,9 @@ var url = require('url');
 =======
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -208,6 +212,7 @@ router.post('/budgetData', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
 
 router.post('/hotelItin', function(req, res) {
   console.log('this is the req body: ', req.body);
@@ -403,6 +408,7 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
@@ -410,6 +416,10 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 >>>>>>> feat(Routes): Routes and server changes
+=======
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -424,6 +434,7 @@ router.post('/user-account/', function(req, res) {
   //   console.error(error)
   // });
 });
+<<<<<<< 8153ee4e373a1c219af1040cb7691b2973e84eba
 <<<<<<< b7f701510eeb5a10fa129af89e4b10c638f2f3eb
 
 >>>>>>> feat(Database): User email linked to each table
@@ -432,6 +443,14 @@ router.post('/user-account/', function(req, res) {
 =======
 });
 >>>>>>> feat(Routes): Routes and server changes
+=======
+<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
+});
+=======
+
+
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 
 >>>>>>> feat(Database): User email linked to each table
 =======
