@@ -7,6 +7,7 @@ var bookedFlight = function(item){
       status_id: 1,
       type_id: 1,
       sift_id: item.sift_id,
+      user_email: email,
       departureAirportName: leg.departureAirport.name,
       departureAirportCode: leg.departureAirport.iataCode,
       departureAirportCity: leg.departureAirport["x-cityName"],

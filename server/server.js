@@ -76,6 +76,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         'email': profile.emails[0].value
       })
       .save()
+      new Itinerary({
+        'status': "All",                 
+        'user_email': profile.emails[0].value
+      })
+      .save()
     }
     
     console.log('this is the user after adding to db:', user)
@@ -121,29 +126,32 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
-              // Hotel.forge()
-              // .where({"sift_id": item.sift_id})
-              // .then(function(hotel){
-              //   if(!hotel){
+              Hotel.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(hotel, email){
+                if(!hotel){
                   newBookedHotel(item);
-                // }
-              // })
+                }
+              })
             } else if(item.domain === "flight"){
-              // Flight.forge()
-              // .where({"sift_id": item.sift_id})
-              // .then(function(flight){
-              //   if(!flight){
+              Flight.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(flight, email){
+                if(!flight){
                   newBookedFlight(item);
-                // }
-              // })
+                }
+              })
             } else if(item.domain === "rentalcar"){
-              // Car.forge()
-              // .where({"sift_id": item.sift_id})
-              // .then(function(car){
-              //   if(!car){
+              Car.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(car, email){
+                if(!car){
                   newBookedCar(item);
-              //   }
-              // })
+                }
+              })
             }
             // if(item.payload.reservationType["@type"] === "Car"){
               // counter++;
