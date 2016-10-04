@@ -85,15 +85,16 @@ router.post('/hotelItin', function(req, res) {
   console.log('this is the req body',req.body)
   var subSQL;
   var email = req.body.email;
+  // var info;
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
-      // console.log('GOT INFO', info)
+      // info = data
+      console.log('GOT INFO', info)
+      res.send(info);
     })
     .catch(function(error) {
       console.error(error)
     });
-
-  res.send();
 });
 
 router.post('/flightItin', function(req, res) {

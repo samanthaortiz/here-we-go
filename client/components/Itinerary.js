@@ -21,21 +21,20 @@ const Itinerary = React.createClass({
     var email = this.props.data.reducerTripData.email;
     // var hotelData;
       if(this.props.data.reducerTripData.loggedIn){
-        this.props.data.postHotelItin(email)
-        .then(function(res){
-          console.log('res', res)
-        });
+        // this.props.data.postHotelItin(email)
+        // this.props.data.postCarItin(email)
+        // this.props.data.postAirItin(email)
       }
  },
 >>>>>>> feat(getting hotel itin data to front end):
   render() {
-      //          {hotelData}
+
     return (
       <div className="tile-itinerary">
         <h3>My Itinerary</h3>
         <ul>
           <li>Saved</li>
-
+          {}
           <li>Upcoming</li>
           <li>Previous</li>
           <li>Cancelled</li>
