@@ -6,9 +6,13 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 07dd22deababa6f1de4e79bdb4a93aa3a1b1bed0
+=======
+<<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
+>>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
@@ -19,6 +23,7 @@ const defaultState = {
     reducerHotelItin: []
 =======
     reducerDatabaseData: []
+<<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 =======
     reducerFlightData: []
@@ -32,6 +37,11 @@ const defaultState = {
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
