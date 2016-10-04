@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import BudgetForm from './BudgetForm';
-import HotelItin from './HotelItin'
+import HotelItin from './HotelItin';
+import FlightItin from './FlightItin';
+import CarItin from './CarItin';
+
 
 const Itinerary = React.createClass({
 
@@ -9,8 +12,8 @@ const Itinerary = React.createClass({
     var email = this.props.data.reducerTripData.email;
     if(this.props.data.reducerTripData.loggedIn){
       this.props.data.postHotelItin(email)
-      // this.props.data.postCarItin(email)
-      // this.props.data.postAirItin(email)
+      this.props.data.postCarItin(email)
+      this.props.data.postFlightItin(email)
     }
   },
 
@@ -35,21 +38,22 @@ const Itinerary = React.createClass({
                 email={this.props.data.reducerHotelItin.email}
               />
             })}
-              {/* map over cars
-              <CarItin
-                key={hotel.sift_id}
-                hotelInfo={hotel}
-                email={this.props.reducerHotelItin.email}
-              />
-              */}
 
-              {/* map over flights
-              <FlightItin
-                key={hotel.sift_id}
-                hotelInfo={hotel}
-                email={this.props.reducerHotelItin.email}
+            {this.props.data.reducerCarItin.carItinData.map(function(carItin){
+              <CarItin
+                key={carItin.sift_id}
+                carInfo={carItin}
+                email={this.props.reducerCarItin.email}
               />
-              */}
+            })}              
+            
+            {this.props.data.reducerFlightItin.flightItinData.map(function(flightItin){
+              <FlightItin
+                key={flightItin.sift_id}
+                carInfo={flightItin}
+                email={this.props.reducerFlightItin.email}
+              />
+            })} 
 
               {/* map over activities
               <ActivityItin
