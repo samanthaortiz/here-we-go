@@ -32,13 +32,6 @@ router.get('/auth/google/callback',
   // }
 );
 
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
-<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
-=======
-
->>>>>>> feat(Database): User email linked to each table
-=======
->>>>>>> feat(Routes): Routes and server changes
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -46,23 +39,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
-<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
-<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
-<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 var url = require('url');
-=======
-  var url = require('url');
->>>>>>> feat(Database): User email linked to each table
-=======
-var url = require('url');
->>>>>>> feat(Routes): Routes and server changes
-=======
-  var url = require('url');
->>>>>>> feat(Database): User email linked to each table
-=======
-var url = require('url');
->>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -77,10 +54,6 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
-<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
-=======
->>>>>>> feat(Routes): Routes and server changes
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -103,8 +76,6 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
-<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 });
 
 
@@ -204,57 +175,8 @@ router.post('/activityItin', function(req, res) {
 
 
 
-=======
-// GET USERNAME
-router.post('/user-account/', function(req, res) {
-  console.log("USER REQ", res);
-  // db.knex.select('*')
-  // .from('users')
-  // .where({'email': req})
-  // .then(function(user) {
-  //   res.send(user);
-  //   console.log("USER ACCOUNT", user)
-  // })
-  // .catch(function(error) {
-  //   console.error(error)
-  // });
-});
-
->>>>>>> feat(Database): User email linked to each table
 
 
-=======
-=======
-<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
->>>>>>> feat(Routes): Routes and server changes
-});
-
-<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
->>>>>>> feat(Routes): Routes and server changes
-=======
-// GET USERNAME
-router.post('/user-account/', function(req, res) {
-  console.log("USER REQ", res);
-  // db.knex.select('*')
-  // .from('users')
-  // .where({'email': req})
-  // .then(function(user) {
-  //   res.send(user);
-  //   console.log("USER ACCOUNT", user)
-  // })
-  // .catch(function(error) {
-  //   console.error(error)
-  // });
-=======
->>>>>>> feat(Routes): Routes and server changes
-});
-
-<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
-
-
->>>>>>> feat(Database): User email linked to each table
-=======
->>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
@@ -276,10 +198,6 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
-<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
-=======
->>>>>>> feat(Routes): Routes and server changes
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -294,10 +212,5 @@ router.post("/ActivitiesSearch", function(req, res) {
   });
 });
 
-<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
-=======
->>>>>>> feat(Database): User email linked to each table
-=======
->>>>>>> feat(Routes): Routes and server changes
 
 module.exports = router;
