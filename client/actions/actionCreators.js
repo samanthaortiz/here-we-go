@@ -43,6 +43,7 @@ export function axiosTripCall(location, startDate, endDate){
 =======
 
 
+<<<<<<< b87257826dd4ae830a010ea0b2a6ba055206c281
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -82,6 +83,38 @@ export function axiosTripCall(location, startDate, endDate){
 //   });
 // }
 
+=======
+//=============== DATABASE DATA ===============
+
+export const getDatabaseData = () => {
+  return function(dispatch) {
+    return axiosDBCall()
+    .then(res => {
+      dispatch(hydrateDBStore(res.data))
+      browserHistory.push('/dashboard');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosDBCall(){
+  return axios.get('/api/dbData', {
+  
+  });
+};
+
+export function hydrateDBStore(dbData){
+  return {
+    type: 'GET_DB_DATA',
+    dbData
+  };
+}
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
+>>>>>>> feat(Database): User email linked to each table
 
 >>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============

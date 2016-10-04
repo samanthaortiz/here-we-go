@@ -46,6 +46,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< b87257826dd4ae830a010ea0b2a6ba055206c281
 <<<<<<< 02f81e8c5223072afd89578d47100b9619cec30e
 <<<<<<< 2a53bd763ddf801209605c2c14c07736a9f48aab
 var url = require('url');
@@ -55,6 +56,9 @@ var url = require('url');
 =======
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -230,7 +234,27 @@ router.post('/user-account/', function(req, res) {
 =======
 });
 
+<<<<<<< b87257826dd4ae830a010ea0b2a6ba055206c281
 >>>>>>> feat(Routes): Routes and server changes
+=======
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+});
+
+
+
+>>>>>>> feat(Database): User email linked to each table
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
