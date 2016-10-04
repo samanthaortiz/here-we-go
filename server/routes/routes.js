@@ -32,10 +32,13 @@ router.get('/auth/google/callback',
   // }
 );
 
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
 
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -43,11 +46,15 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 var url = require('url');
 =======
   var url = require('url');
 >>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -62,7 +69,10 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
+=======
+>>>>>>> feat(Routes): Routes and server changes
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -85,6 +95,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 });
 
 
@@ -194,6 +205,10 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Database): User email linked to each table
 
 
+=======
+});
+
+>>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
@@ -215,7 +230,10 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
+=======
+>>>>>>> feat(Routes): Routes and server changes
 // ACTIVITIES SEARCH API ================================================================== 
 router.post("/ActivitiesSearch", function(req, res) {
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
@@ -230,7 +248,10 @@ router.post("/ActivitiesSearch", function(req, res) {
   });
 });
 
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 
 module.exports = router;
