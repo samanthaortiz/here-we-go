@@ -101,16 +101,16 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
       connectToken = body.result.connect_token;
     })
   })
-    // .then(function() {
+    .then(function() {
 
-    //   // app.get('/auth/google/callback', function(req, res) {
-    //   //   // passport.authenticate('google', { 
-    //   //     res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.API_KEY + "&username="+ email + "&token="+ connectToken);
-    //   //     console.log('>>>> REDIRECTED <<<<')
-    //   //   // }
-    //   // });
-    //   console.log('redirecting')
-    // })
+      app.get('/auth/google/callback', function(req, res) {
+        // passport.authenticate('google', { 
+          res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.API_KEY + "&username="+ email + "&token="+ connectToken);
+          console.log('>>>> REDIRECTED <<<<')
+        // }
+      });
+      console.log('redirecting')
+    })
     .then(function(){
       var emailConnections;
       siftapi.getEmailConnections(email)
