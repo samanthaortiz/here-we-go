@@ -6,6 +6,7 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 07dd22deababa6f1de4e79bdb4a93aa3a1b1bed0
     reducerFlightData: [],
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
@@ -16,11 +17,22 @@ const defaultState = {
 =======
     reducerFlightData: []
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 9add38837ff52066af48823227777537884c289a
+    reducerFlightData: [],
+    reducerLoginData: []
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
   // expediaActivityInfo: []
+<<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
