@@ -123,7 +123,7 @@ router.post('/budgetData', function(req, res) {
 });
 
 
-// // HOTEL SEARCH API ================================================================== */
+// // HOTEL SEARCH API =============================================================== */
 // router.post("/HotelSearch", function(req, res) {
 //   console.log('>> ENTER HOTEL API ROUTER ', req.body);
 
@@ -437,14 +437,6 @@ router.post("/ActivitiesSearch", function(req, res) {
   //     res.send(body);
   //   }
   // });
-
-// BUDGET FORM ===========
-router.post('/formBudget', function(req, res) {
-  console.log('>>>> POST /formBudget: ', req.body)
-  console.log('>>>>>>>>>> SUBMIT FORM DATA <<<<<<<<<<');
-  res.send(req.body);
-});
-
 
 
 module.exports = router;
