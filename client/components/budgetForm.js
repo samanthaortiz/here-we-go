@@ -1,13 +1,41 @@
 // BUDGET FORM COMPONENT ===================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { createStore } from 'redux';
 
 const BudgetForm = React.createClass({
+
+  // componentDidMount() {
+  //   let thisForm = document.querySelector('.container-form-budget');
+  //   if(thisForm.className.match('show_form')) {
+  //     thisForm.className = 'container-form-budget';
+  //   } else {
+  //     thisForm.className = 'container-form-budget show_form';
+  //   };
+  // },
+
+  // componentWillUnmount(){
+  //   document.body.classList.toggle('splashClass')
+  // },
+
+  onClick: function(event) {
+    event.preventDefault();
+    document.getElementById('light').style.display='none';
+    document.getElementById('fade').style.display='none';
+  },
+
+  handleFormSubmission: function(event) {
+    event.preventDefault();
+    document.getElementById('light').style.display='none';
+    document.getElementById('fade').style.display='none';
+    this.props.submitBudgetFormData('TOTAL BUDGET', 'HOTEL BUDGET', 'FLIGHT BUDGET', 'CAR RENTAL BUDGET', 'ACTIVITY BUDGET');
+  },
+
   render() {
     return (
       <div className="container-form-budget">
         
-        <form className="form-budget" action="" method="post">
+        <form className="form-budget" onSubmit={this.handleFormSubmission}>
 
           <div>
             <ul>
@@ -44,6 +72,7 @@ const BudgetForm = React.createClass({
               <li className="field-full">
                 <button className="submit" type="submit">Submit Form</button>
               </li>
+              <li><a href="" onClick={this.onClick}>close form</a></li>
             </ul>
           </div>
 
@@ -80,7 +109,6 @@ const BudgetForm = React.createClass({
           </ul>
         */}
         </form>
-
       </div> 
     );
   }
