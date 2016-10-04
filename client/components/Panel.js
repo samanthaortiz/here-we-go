@@ -15,7 +15,7 @@ const Panel = React.createClass({
   },
  
   renderFlights(offers) {
-    console.log(offers);
+    // console.log(offers);
     return (
       offers.map((flight) =>
         <Flight
@@ -29,15 +29,15 @@ const Panel = React.createClass({
   },
 
   render() {
-    console.log('>>>>> PANEL <<<<<');
+    // console.log('>>>>> PANEL <<<<<');
     // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
     // console.log('Flights: ', this.props.expediaFlightInfo);
-    console.log('trip data in panel===> ', this.props)
-    console.log('got flights before if statement', this.state.gotFlights)
+    // console.log('trip data in panel===> ', this.props)
+    // console.log('got flights before if statement', this.state.gotFlights)
 
     var flightTile;
     if(this.state.gotFlights){
-      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      // console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
       
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
       var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs

@@ -39,30 +39,6 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
-export const login = () => {
-  console.log("You get this far");
-  return function(dispatch) {
-    return axiosLogin()
-    .then(res => {
-      console.log("You don't get to here");
-      dispatch(hydrateLoginStore(res.data))
-      browserHistory.push('/api/auth/google');
-    })
-    .catch(error => console.log(error));
-  };
-};
-
-export function hydrateLoginStore(loginData){
-  return {
-    type: 'GET_LOGIN',
-    loginData
-  };
-}
-
-export function axiosLogin(){
-  return axios.get('/api/auth/google')
-};
-
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
@@ -102,5 +78,34 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
     adults,
     childUnder18,
     infants
+  };
+}
+
+//=============== DB DATA ===============
+export const postHotelItin = (email) => {
+  return function(dispatch){
+    return axiosHotelItin(email)
+    .then(res => {
+      console.log('getting into response obj, about to hydrate store', res.data)
+      dispatch(hydrateHotelItin(res.data, email))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosHotelItin(email){
+  console.log('posting email req', email)
+  return axios.post('/api/hotelItin', {
+    email
+  })
+}
+
+export function hydrateHotelItin(hotelItinData, email){
+  console.log();
+  return {
+    type: "POST_HOTEL_ITIN",
+    hotelItinData,
+    email
   };
 }
