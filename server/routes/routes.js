@@ -24,11 +24,12 @@ router.get('/auth/google/callback',
   passport.authenticate('google', { 
     successRedirect: '/siftAuth',
     failureRedirect: '/auth/google/failure'
-  }),
-  function(req, res) {
-    console.log('RESPONSE GOING TO SPLASH PAGE', res);
-    res.redirect('/');
-  }
+  })
+  // ,
+  // function(req, res) {
+  //   console.log('RESPONSE GOING TO SPLASH PAGE', res);
+  //   res.redirect('/');
+  // }
 );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
@@ -52,37 +53,30 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
-//get user function
-//use bookshelf to state new User with this username.. fetch them with all their data
-// withRelated:['flights', 'etc'].then(cb) //cb will res.send data to the axios call in the action creator
-
-
 // DB ================================================================================ */
-// // GET USERNAME
-// router.get('/id/:id', function(req, res) {
-//   console.log('in the id api', req.params.id)
-//   var id = req.params.id;
-//   db.knex.select('*')
-//   .from('users')
-//   .where({'google_id': id})
-//   .then(function(user) {
-//     console.log('------------------- found user! ---------------------', user)
-//     res.send(user);
-//   })
-//   .catch(function(error) {
-//     console.error(error)
-//   });
-// });
+router.post('/budgetData', function(req, res) {
+  console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
+  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
+  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
 
-// router.get('/user-account', function (req, res) {
-//   Users.fetch()
-//     .then(function(user) {
-//       console.log("SUCCESS: ", user);
-//       res.send(user);
-//     });
-// });
+  var subSQL;
+  var data = req.body;
 
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
 
+  res.send();
+});
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 

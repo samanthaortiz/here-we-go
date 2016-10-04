@@ -134,10 +134,8 @@ app.get('/siftAuth', function(req, res){
         siftapi.getSifts(email, {})
         .then(body => {
           console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
           var counter = 0;
           body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
               Hotel.forge()
               .where({"sift_id": item.sift_id})
