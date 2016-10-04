@@ -800,6 +800,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
 <<<<<<< a94472299bb4b7a89ce7ce0d7227499d940f542c
 <<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
@@ -959,6 +960,10 @@ var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 
+=======
+var url = require('url');
+
+>>>>>>> Merge conflicts
 router.get('/logout', function (req, res, next){
   req.logout();
   res.redirect('https://accounts.google.com/logout')
@@ -1035,6 +1040,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
 <<<<<<< a94472299bb4b7a89ce7ce0d7227499d940f542c
 <<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
@@ -1060,6 +1066,8 @@ router.post('/budgetData', function(req, res) {
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> Merge conflicts
 });
 
 router.post('/hotelItin', function(req, res) {
@@ -1213,6 +1221,7 @@ router.post('/user-account/', function(req, res) {
 =======
 >>>>>>> feat(Database): User email linked to each table
 
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
 
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< e540e9c0377bce62d9aaacc892ad47c878276bf5
@@ -1275,6 +1284,8 @@ router.post('/user-account/', function(req, res) {
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> Merge conflicts
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -1289,6 +1300,7 @@ router.post('/user-account/', function(req, res) {
   //   console.error(error)
   // });
 });
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< 3ccb13c0d88034756c87f97782a85f59275247b6
 <<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
@@ -1339,6 +1351,10 @@ router.post('/user-account/', function(req, res) {
 <<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
 =======
 =======
+=======
+});
+
+>>>>>>> Merge conflicts
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -1352,19 +1368,21 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
-=======
->>>>>>> feat(Routes): Routes and server changes
-});
 
-<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
-
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
 
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+<<<<<<< ba483e0706e024c1763da268228a47cf7fab85dd
 >>>>>>> feat(Routes): Routes and server changes
+=======
+=======
+});
+>>>>>>> Merge conflicts
+>>>>>>> Merge conflicts
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
@@ -1386,6 +1404,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< ba483e0706e024c1763da268228a47cf7fab85dd
 <<<<<<< bfc3693c814327ca4a93c65a9f6daa3eb04aab7c
 <<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 5289ffb71c2309a10e7505622f4463f31c76378e
@@ -1438,6 +1457,9 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
 =======
 =======
 =======
+=======
+<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
+>>>>>>> Merge conflicts
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
@@ -1603,5 +1625,8 @@ router.post("/ActivitiesSearch", function(req, res) {
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> feat(Routes): Routes and server changes
+=======
+
+>>>>>>> Merge conflicts
 
 module.exports = router;
