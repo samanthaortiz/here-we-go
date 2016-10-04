@@ -39,7 +39,12 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
 
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 //=============== DATABASE DATA ===============
 
@@ -109,6 +114,7 @@ export function hydrateDBStore(dbData){
 // }
 
 
+<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -185,6 +191,9 @@ export function axiosLogin(){
 };
 
 
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
