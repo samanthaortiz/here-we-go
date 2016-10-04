@@ -40,6 +40,7 @@ export function axiosTripCall(location, startDate, endDate){
 };
 
 
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 
 //=============== DATABASE DATA ===============
 
@@ -68,6 +69,8 @@ export function hydrateDBStore(dbData){
 }
 
 
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 
