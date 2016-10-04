@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
@@ -43,6 +44,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 >>>>>>> feat(Database): User email linked to each table
+=======
+import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerLoginData from './reducerLoginData';
 <<<<<<< 546279dadafc751fb02f9fe439e31e811ff3c3c0
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
@@ -52,6 +56,7 @@ import reducerLoginData from './reducerLoginData';
 <<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerHotelItin from './reducerHotelItin';
+<<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 =======
@@ -131,10 +136,13 @@ import reducerHotelItin from './reducerHotelItin';
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
 
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
@@ -249,6 +257,10 @@ const rootReducer = combineReducers({
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+  reducerLoginData,
+  reducerHotelItin,
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   routing: routerReducer
 });
 
