@@ -61,17 +61,12 @@ const Splash = React.createClass({
     document.getElementById('loading-icon').style.display = 'block';
     // CALL ACTION CREATOR
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate, this.state.email, this.state.isUserLoggedIn);
-    // this.props.getCarRentals(this.state.city, this.state.startDate, this.state.endDate);
-    // this.props.getFlightCode(this.state.city);
-    // this.props.postHotelExpedia(this.state.city, this.state.startDate, this.state.endDate)
-    // this.props.getActivities(this.state.city, this.state.startDate, this.state.endDate)
   },
 
   render() {
     
     return (
       <div>
-      <a className="loginOut" onClick={this.login}>Login for real</a><br/>
       {!this.state.isUserLoggedIn && <a className="loginOut" href='/api/auth/google'>Login</a>}
       <br/>
       <a className="loginOut" href='/api/logout'>Logout</a>
