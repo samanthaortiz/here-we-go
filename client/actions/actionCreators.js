@@ -86,7 +86,7 @@ export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
-      console.log('getting into response obj, about to hydrate store', res.data)
+      // console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateHotelItin(res.data, email))
       browserHistory.push('/dashboard')
     })
@@ -109,3 +109,64 @@ export function hydrateHotelItin(hotelItinData, email){
     email
   };
 }
+
+
+//FLIGHTS
+export const postFlightItin = (email) => {
+  return function(dispatch){
+    return axiosFlightItin(email)
+    .then(res => {
+      console.log('getting into response obj, about to hydrate store', res.data)
+      dispatch(hydrateFlightItin(res.data, email))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosFlightItin(email){
+  console.log('posting email req', email)
+  return axios.post('/api/flightItin', {
+    email
+  })
+}
+
+export function hydrateFlightItin(hotelItinData, email){
+  console.log();
+  return {
+    type: "POST_FLIGHT_ITIN",
+    flightItinData,
+    email
+  };
+}
+
+//CARS
+export const postCarItin = (email) => {
+  return function(dispatch){
+    return axiosCarItin(email)
+    .then(res => {
+      console.log('getting into response obj, about to hydrate store', res.data)
+      dispatch(hydrateCarItin(res.data, email))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosCarItin(email){
+  console.log('posting email req', email)
+  return axios.post('/api/carItin', {
+    email
+  })
+}
+
+export function hydrateCarItin(CarItinData, email){
+  console.log();
+  return {
+    type: "POST_FLIGHT_ITIN",
+    flightItinData,
+    email
+  };
+}
+
+
