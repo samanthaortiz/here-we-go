@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
 <<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
 <<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
 
@@ -247,6 +248,8 @@ export function axiosLogin(){
 =======
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> Merge conflicts resolved
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
