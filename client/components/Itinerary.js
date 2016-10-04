@@ -33,6 +33,7 @@ const Itinerary = React.createClass({
           <li>Upcoming</li>
           <li>Previous</li>
           <li>Cancelled</li>
+          <li><a onClick={this.form}>New Itinerary</a></li>
           <li><a className="link-budget" onClick={this.form}>Budget</a></li>
         </ul>
         <div id="light" className="white_content">
