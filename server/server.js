@@ -76,132 +76,111 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         'email': profile.emails[0].value
       })
       .save()
-      // new Itinerary({
-      //   'status': "All",              
-      //   'user_email': profile.emails[0].value
-      // })
-      // .save()
     }
-    
-    console.log('this is the user after adding to db:', user)
-  }) // CLOSES LINE 58
-  .then(function(err, user) {
-    console.log('user profile before sift', profile);
-    email = profile.emails[0].value;
-    siftapi.addUser(email)
-    .then(body => {
-      newUser = body.result;
-      console.log('new user response', body.result);
-    })
   })
-  // .then(function() {
-    // siftapi.getConnectToken(email)
-    // .then(function(body) {
-    //   console.log('user token from sift:', body.result.connect_token)
-    //   // connectToken = body.result.connect_token;
-    // })
-    // .then(function() {
-
-    //   // app.get('/auth/google/callback', function(req, res) {
-    //   //   // passport.authenticate('google', { 
-    //   //     res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.API_KEY + "&username="+ email + "&token="+ connectToken);
-    //   //     console.log('>>>> REDIRECTED <<<<')
-    //   //   // }
-    //   // });
-    //   console.log('redirecting')
-    // })
-    .then(function(){
-      var emailConnections;
-      siftapi.getEmailConnections(email)
-      .then(function(body) {
-        console.log('email connections:', body.result)
-        emailConnections = body.result;
-      }) // CLOSES LINE 96
-      .then(function(){
-        siftapi.getSifts(email, {})
-        .then(body => {
-          console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
-          var counter = 0;
-          body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "hotel"){
-              Hotel.forge()
-              .where({"sift_id": item.sift_id})
-              .fetch()
-              .then(function(hotel, email){
-                if(!hotel){
-                  newBookedHotel(item);
-                }
-              })
-            } else if(item.domain === "flight"){
-              Flight.forge()
-              .where({"sift_id": item.sift_id})
-              .fetch()
-              .then(function(flight, email){
-                if(!flight){
-                  newBookedFlight(item);
-                }
-              })
-            } else if(item.domain === "rentalcar"){
-              Car.forge()
-              .where({"sift_id": item.sift_id})
-              .fetch()
-              .then(function(car, email){
-                if(!car){
-                  newBookedCar(item);
-                }
-              })
-            }
-            // if(item.payload.reservationType["@type"] === "Car"){
-              // counter++;
-              // console.log('item #'+ i, item);
-              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-                // newBookedFlight(item.payload);
-              // counter++;
-                // newBookedFlight(item.payload);
-              // counter++;
-                // newBookedFlight(item.payload);
-              // counter++;
-              console.log('item #'+ i, item);
-              console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              // console.log('<---===--------===----------===---------===--->')
-              //if (item.domain === "hotel") ...
-                //new Hotel({...}) middleware
-              //else if (item.domain === "rentalCar") ...
-                //new Car({...}) middleware
-              //else if (item.domain === "flight") ...
-
-              //   //for now, add new itinerary into db. (THIS IS WORKING!)
-              // new Itinerary({
-              //   // status: "ticket",
-              //   trip_id: counter,
-              //   status: item.domain
-              // })
-              // .save()
-            } 
-          })
-          // console.log('FILTERED LENGTH: ', counter);
-          console.log('RESULT LENGTH: ', body.result.length);
-        })   
-      })
-    })
     .then(function(){
       console.log("USER IN DATABASE");
+      email = profile.emails[0].value;
       done(null, profile);
     })
     .catch(err => {
       console.log(err)
     })
-  // }) // CLOSES LINE 82
-})); // CLOSES 'passport.use(...)'
+})); 
+
+
+// CLOSES 'passport.use(...)'
+      // new Itinerary({
+      //   'status': "All",              
+      //   'user_email': profile.emails[0].value
+      // })
+      // .save()
+    
+  //   console.log('this is the user after adding to db:', user)
+  // }) // CLOSES LINE 58
+  // .then(function(err, user) {
+  //   console.log('user profile before sift', profile);
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
 app.use("/api", apiRouter);
 
 
+app.get('/siftAuth', function(req, res){
+    siftapi.addUser(email)
+    .then(body => {
+      newUser = body.result;
+      console.log('new user response', body.result);
+    })
+  .then(function() {
+    siftapi.getConnectToken(email)
+    .then(function(body) {
+      console.log('user token from sift:', body.result.connect_token)
+      connectToken = body.result.connect_token;
+    })
+    .then(function() {
+      res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username="+ email + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+      console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+      })
+  })
+    .then(function(){
+      var emailConnections;
+      siftapi.getEmailConnections(email)
+        .then(function(body) {
+          console.log('email connections:', body.result)
+          emailConnections = body.result;
+      }) // CLOSES LINE 96
+      // .then(function(){
+      //   siftapi.getSifts(email, {})
+      //   .then(body => {
+      //     console.log('>>> ADDING PAYLOAD TO DB <<<')
+      //     // console.log(body.result)
+      //     var counter = 0;
+      //     body.result.forEach(function(item, i) {
+      //       //add custom middlware here to call within forEach depending on item domain type
+      //       if(item.domain === "hotel"){
+      //         Hotel.forge()
+      //         .where({"sift_id": item.sift_id})
+      //         .fetch()
+      //         .then(function(hotel, email){
+      //           if(!hotel){
+      //             newBookedHotel(item);
+      //           }
+      //         })
+      //       } else if(item.domain === "flight"){
+      //         Flight.forge()
+      //         .where({"sift_id": item.sift_id})
+      //         .fetch()
+      //         .then(function(flight, email){
+      //           if(!flight){
+      //             newBookedFlight(item);
+      //           }
+      //         })
+      //       } else if(item.domain === "rentalcar"){
+      //         Car.forge()
+      //         .where({"sift_id": item.sift_id})
+      //         .fetch()
+      //         .then(function(car, email){
+      //           if(!car){
+      //             newBookedCar(item);
+      //           }
+      //         })
+      //       }
+      //       // if(item.payload.reservationType["@type"] === "Car"){
+      //         // counter++;
+      //         // console.log('item #'+ i, item);
+      //         // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
+      //     })
+      //     // console.log('FILTERED LENGTH: ', counter);
+      //     console.log('RESULT LENGTH: ', body.result.length);
+      //   })   
+      // })
+    })
+})
+
+
 app.use(express.static('./dist'));
+
 
 app.use('/', function (req, res){
   res.sendFile(path.resolve('client/index.html'));
