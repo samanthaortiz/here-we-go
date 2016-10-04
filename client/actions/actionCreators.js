@@ -59,79 +59,9 @@ export function hydrateLoginStore(loginData){
   };
 }
 
-<<<<<<< 9add38837ff52066af48823227777537884c289a
-//=============== DATABASE DATA ===============
-
-export const getDatabaseData = () => {
-  return function(dispatch) {
-    return axiosDBCall()
-    .then(res => {
-      dispatch(hydrateDBStore(res.data))
-      browserHistory.push('/dashboard');
-    })
-    .catch(error => console.log(error));
-  };
-};
-
-export function axiosDBCall(){
-  return axios.get('/api/dbData', {
-  
-  });
-};
-
-export function hydrateDBStore(dbData){
-  return {
-    type: 'GET_DB_DATA',
-    dbData
-  };
-}
-
-
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
-=======
-
-// BELOW: TO BE REFACTORED/PURGED
-
-//=============== HOTELS ===============
-// export const postHotelExpedia = (location, startDate, endDate) => {
-
-//   // console.log(location, startDate, endDate);
-//   return function(dispatch){
-//     return axiosHotelCall(location, startDate, endDate)
-//     .then(res => {
-//        // console.log("GET HOTEL", res.data)
-//        console.log('============')
-//        console.log(res.data)
-//        console.log('============')
-//       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
-//       browserHistory.push('/dashboard')
-
-//     })
-//     .catch(error => console.log(error));
-//   };
-// };
-
-// export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
-//   return {
-//     type: 'POST_HOTEL_EXPEDIA',
-//     expediaHotelInfo,
-//     location,
-//     startDate,
-//     endDate
-//   };
-// }
-
-// export function axiosHotelCall(location, startDate, endDate){
-//   return axios.post('/api/trips', {
-//     location,
-//     startDate,
-//     endDate
-//   });
-// }
-
->>>>>>> revert(Frontend): Frontend routing for login reversed
 
 //=============== FLIGHTS ===============
 
