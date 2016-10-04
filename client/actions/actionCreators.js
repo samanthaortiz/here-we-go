@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
 <<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
 <<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
@@ -154,6 +155,8 @@ export const getDatabaseData = () => {
     .catch(error => console.log(error));
   };
 };
+=======
+>>>>>>> Merge conflicts
 
 export function axiosDBCall(){
   return axios.get('/api/dbData', {
@@ -224,6 +227,7 @@ export function axiosLogin(){
 //   });
 // }
 
+<<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
 <<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 086136b4d63291f06707b5df8739a3746777c66c
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
@@ -381,6 +385,9 @@ export function axiosLogin(){
 =======
 =======
 =======
+=======
+
+>>>>>>> Merge conflicts
 export const login = () => {
   console.log("You get this far");
   return function(dispatch) {
@@ -401,10 +408,13 @@ export function hydrateLoginStore(loginData){
   };
 }
 
+<<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+>>>>>>> Merge conflicts
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -435,12 +445,7 @@ export function hydrateDBStore(dbData){
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
-<<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
-=======
-<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
->>>>>>> feat(Database): User email linked to each table
-=======
-=======
+
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -481,9 +486,6 @@ export function axiosLogin(){
 //   });
 // }
 
->>>>>>> revert(Frontend): Frontend routing for login reversed
->>>>>>> revert(Frontend): Frontend routing for login reversed
->>>>>>> revert(Frontend): Frontend routing for login reversed
 
 <<<<<<< ee0d9c92eeea5aac925e39c5e327578e07dbc4e5
 >>>>>>> feat(Database): User email linked to each table
@@ -535,6 +537,7 @@ export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
 
+<<<<<<< f989404c78d4f3e75884906d6cb49e83c3735850
 
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 >>>>>>> Merge conflicts resolved
@@ -545,6 +548,8 @@ export function axiosLogin(){
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> Merge conflicts resolved
+=======
+>>>>>>> Merge conflicts
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
