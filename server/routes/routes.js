@@ -39,8 +39,28 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
 var url = require('url');
 
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+var url = require('url');
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -77,6 +97,11 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 router.post('/hotelItin', function(req, res) {
@@ -201,8 +226,38 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Database): User email linked to each table
 
 =======
+=======
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
 });
 
+>>>>>>> feat(Routes): Routes and server changes
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
+=======
+=======
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
+});
+
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+
+
+>>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
