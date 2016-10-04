@@ -28,10 +28,57 @@ const BudgetForm = React.createClass({
     event.preventDefault();
     document.getElementById('light').style.display='none';
     document.getElementById('fade').style.display='none';
-    this.props.submitBudgetFormData('TOTAL BUDGET', 'HOTEL BUDGET', 'FLIGHT BUDGET', 'CAR RENTAL BUDGET', 'ACTIVITY BUDGET');
+    // this.props.data.submitBudgetFormData('TOTAL BUDGET', 'HOTEL BUDGET', 'FLIGHT BUDGET', 'CAR RENTAL BUDGET', 'ACTIVITY BUDGET');
+    this.send('/api/formBudget', {
+      totalBudget: 'Total Budget',
+      hotel: 'Hotel Budget',
+      flight: 'Flight Budget',
+      car: 'Car Rental Budget',
+      activity: 'Activity Budget'
+    });
+
   },
 
+  send: function(postURL, objData) {
+    console.log('IN SEND AJAX')
+    // POST the message to the server
+    $.ajax({
+      url: postURL,
+      type: 'POST',
+      data: JSON.stringify(objData),
+      contentType: 'application/json',
+      success: function (data) {
+        // Trigger a fetch to update the messages, pass true to animate
+        console.log('WE DID IT AMERICA!');
+      },
+      error: function (data) {
+        console.error('FAILED TO SEND DATA ', data);
+      }
+    });
+  },
+
+  // getPage: function(page) {
+  //   // Setup our ajax request
+  //   let request = new XMLHttpRequest();
+  //   let self = this;
+  //   request.open('POST', 'formBudget', true);
+  //   request.onload = function() {
+  //     // If everything is cool...
+  //     if (request.status >= 200 && request.status < 400) {
+  //       // Load our next page
+  //       self.loadPagedTweets(JSON.parse(request.responseText));
+  //     } else {
+  //       // Set application state (Not paging, paging complete)
+  //       self.setState({paging: false, done: true});
+  //     }
+  //   };
+
+  //   // Fire!
+  //   request.send();
+  // },
+
   render() {
+    console.log('this.props: ', this.props.data)
     return (
       <div className="container-form-budget">
         

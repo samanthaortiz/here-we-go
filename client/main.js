@@ -7,19 +7,14 @@ import store, { history } from './store';
 
 // APP PAGE <== ENTRY POINT TO APPLICATION
 import Master from './components/Master.js';
-
 // SPLASH PAGE
 import Splash from './components/Splash.js';
-
 // DASHBOARD PAGE
 import Dashboard from './components/Dashboard.js';
-
 // DASHBOARD PAGE
 import NavBar from './components/NavigationBar.js';
-
+// LOGIN ACCOUNT
 import Account from './components/Account.js';
-// TRIP BUDGET FORM PAGE
-// import BudgetForm from './components/BudgetForm';
 
 const router = (
   <Provider store={store}>

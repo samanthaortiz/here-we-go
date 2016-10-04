@@ -437,8 +437,8 @@ router.post("/ActivitiesSearch", function(req, res) {
 router.post('/formBudget', function(req, res) {
   console.log('>>>> POST /formBudget: ', req.body)
   console.log('>>>>>>>>>> SUBMIT FORM DATA <<<<<<<<<<');
-
-})
+  res.send(req.body);
+});
 
 
 

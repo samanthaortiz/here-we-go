@@ -20,7 +20,7 @@ const Dashboard = React.createClass({
       <div className='outer-dashboard-container'>
         <NavigationBar/>
         <article>
-          <Itinerary />
+          <Itinerary data={this.props} />
           <Panel data={this.props}/>
         </article>
       </div> 

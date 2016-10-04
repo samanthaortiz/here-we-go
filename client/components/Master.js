@@ -1,15 +1,13 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
-import * as formActionCreators from '../actions/formActionCreators';
 import App from './App';
 
 function mapStateToProps(state){
   // console.log('master.js: ', state)
   return {
     reducerTripData: state.reducerTripData,
-    reducerFlightData: state.reducerFlightData,
-    reducerBudgetFormData: state.reducerBudgetFormData
+    reducerFlightData: state.reducerFlightData
     // expediaHotelInfo: state.expediaHotelInfo,
     // expediaFlightInfo: state.expediaFlightInfo,
     // expediaCarRentalInfo: state.expediaCarRentalInfo,
@@ -19,7 +17,7 @@ function mapStateToProps(state){
 
 //dispatch triggers a state change
 function mapDispatchToProps(dispatch){
-  return bindActionCreators(actionCreators, formActionCreators, dispatch);
+  return bindActionCreators(actionCreators, dispatch);
 }
 
 const Master = connect(mapStateToProps, mapDispatchToProps)(App);

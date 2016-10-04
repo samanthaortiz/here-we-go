@@ -21,7 +21,7 @@ const Itinerary = React.createClass({
   render() {
     let formVal;
     if (this.state.linkVal === 'Budget') {
-      formVal = <BudgetForm />;
+      formVal = <BudgetForm data={this.props.data} />;
       document.getElementById('light').style.display='block';
       document.getElementById('fade').style.display='block';
     }
