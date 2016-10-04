@@ -19,6 +19,7 @@ const defaultState = {
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
 >>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
+<<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< 4d07f2b8e197e616510f4e382e102ac5bc5ec68d
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
@@ -29,10 +30,14 @@ const defaultState = {
 =======
 <<<<<<< 54d2c7812406b7c8acfb0d633bad5c7a2462dd9f
 >>>>>>> feat(Database): User email linked to each table
+=======
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+>>>>>>> feat(Database): User email linked to each table
     reducerLoginData: [],
     reducerHotelItin: []
 =======
     reducerDatabaseData: []
+<<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< 1cf3d4e0499b03f91ab368f3e40df10d41aa74a6
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
@@ -64,10 +69,13 @@ const defaultState = {
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Database): User email linked to each table
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
   // expediaActivityInfo: []
+<<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
 <<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< bf5c7d9c550e05e80a556bb84fed6cc745e36bb1
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
@@ -105,6 +113,9 @@ const defaultState = {
     reducerLoginData: [],
     reducerHotelItin: []
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
