@@ -196,41 +196,4 @@ module.exports = {
     connectToken: connectToken, 
     email: email   
   }
-}if(item.domain === "rentalcar"){
-              Car.forge()
-              .where({"sift_id": item.sift_id})
-              .fetch()
-              .then(function(car, email){
-                if(!car){
-                  newBookedCar(item);
-                }
-              })
-            }
-          })
-        })
-      })
-    })
-})
-
-app.use(express.static('./dist'));
-
-
-app.use('/', function (req, res){
-  res.sendFile(path.resolve('client/index.html'));
-})
-
-var port = process.env.PORT || 4000;
-
-app.listen(port, function(error){
-  if(error) throw error;
-  console.log('Express server listening on port', port);
-});
-
-module.exports = {
-  siftInfo: {
-    newUser: newUser,
-    result: result,
-    connectToken: connectToken, 
-    email: email   
-  }
 }
