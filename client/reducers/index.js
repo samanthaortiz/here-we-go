@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
 <<<<<<< b2d34cf068ea7e6797a550c95ce05a46a0886a54
 <<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
 <<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
@@ -60,6 +61,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 =======
+=======
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< cba7860f98464323c21957b41552c98bb0bd5445
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< d00c73fc96141773edab569d817315ffc5f8e244
@@ -152,6 +156,11 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+<<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
+=======
+=======
+import reducerFlightData from './reducerFlightData'; 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerLoginData from './reducerLoginData';

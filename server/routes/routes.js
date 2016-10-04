@@ -32,6 +32,7 @@ router.get('/auth/google/callback',
   // }
 );
 
+<<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
 <<<<<<< bfc3693c814327ca4a93c65a9f6daa3eb04aab7c
 <<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 5289ffb71c2309a10e7505622f4463f31c76378e
@@ -99,6 +100,9 @@ router.get('/auth/google/callback',
 =======
 =======
 =======
+=======
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
 >>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
@@ -787,6 +791,8 @@ router.post('/user-account/', function(req, res) {
 =======
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
     //add msql connection 
@@ -794,6 +800,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< 3ccb13c0d88034756c87f97782a85f59275247b6
@@ -922,6 +929,10 @@ var url = require('url');
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+var url = require('url');
+
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -939,6 +950,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 // DB ================================================================================ */
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
 <<<<<<< 0ecb3ef9cd46c3d4e35f97df2e1d52501d13ef2f
@@ -974,6 +986,8 @@ function ensureAuthenticated(req, res, next) {
 =======
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 router.post('/budgetData', function(req, res) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
   // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
@@ -996,6 +1010,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 <<<<<<< d54671d524e2019b63448b39fa5782aece2e2e19
 <<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
 <<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
@@ -1010,6 +1025,8 @@ router.post('/budgetData', function(req, res) {
 =======
 <<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
 >>>>>>> feat(Routes): Routes and server changes
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 });
 
 router.post('/hotelItin', function(req, res) {
