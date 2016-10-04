@@ -6,11 +6,15 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< c89939f1f83f6cdb2ea8e61d2015449a3106c0e0
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 07dd22deababa6f1de4e79bdb4a93aa3a1b1bed0
 =======
+=======
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< d383f6dfe1d18cb426ad8a49abf6e62356b94f8d
 >>>>>>> revert(Frontend): Frontend routing for login reversed
     reducerFlightData: [],
@@ -41,11 +45,21 @@ const defaultState = {
 =======
     reducerFlightData: []
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
+=======
+=======
+<<<<<<< 9add38837ff52066af48823227777537884c289a
+    reducerFlightData: [],
+    reducerLoginData: []
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
   // expediaActivityInfo: []
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 >>>>>>> feat(Database): User email linked to each table
@@ -58,7 +72,13 @@ const defaultState = {
 >>>>>>> Merge conflicts resolved
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));

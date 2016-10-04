@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
 <<<<<<< b1fc23a8d6c912170028de6fa20419b3eda4471f
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
@@ -111,6 +112,9 @@ export function hydrateLoginStore(loginData){
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
+=======
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
 =======
 
@@ -208,6 +212,29 @@ export function axiosLogin(){
 =======
 =======
 =======
+=======
+export const login = () => {
+  console.log("You get this far");
+  return function(dispatch) {
+    return axiosLogin()
+    .then(res => {
+      console.log("You don't get to here");
+      dispatch(hydrateLoginStore(res.data))
+      browserHistory.push('/api/auth/google');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function hydrateLoginStore(loginData){
+  return {
+    type: 'GET_LOGIN',
+    loginData
+  };
+}
+
+<<<<<<< 9add38837ff52066af48823227777537884c289a
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -238,8 +265,56 @@ export function hydrateDBStore(dbData){
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
+<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+=======
+
+// BELOW: TO BE REFACTORED/PURGED
+
+//=============== HOTELS ===============
+// export const postHotelExpedia = (location, startDate, endDate) => {
+
+//   // console.log(location, startDate, endDate);
+//   return function(dispatch){
+//     return axiosHotelCall(location, startDate, endDate)
+//     .then(res => {
+//        // console.log("GET HOTEL", res.data)
+//        console.log('============')
+//        console.log(res.data)
+//        console.log('============')
+//       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
+//       browserHistory.push('/dashboard')
+
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
+
+// export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
+//   return {
+//     type: 'POST_HOTEL_EXPEDIA',
+//     expediaHotelInfo,
+//     location,
+//     startDate,
+//     endDate
+//   };
+// }
+
+// export function axiosHotelCall(location, startDate, endDate){
+//   return axios.post('/api/trips', {
+//     location,
+//     startDate,
+//     endDate
+//   });
+// }
+
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 >>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
