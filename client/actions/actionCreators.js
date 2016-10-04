@@ -296,6 +296,7 @@ export function hydrateLoginStore(loginData){
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
 
+<<<<<<< 14eab16f70ac442a1b66b546a4a30ac388ff1ef9
 <<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< c028e2f0c3f145c4eff0cd750a9575b509c355f0
 >>>>>>> feat(Database): User email linked to each table
@@ -315,6 +316,8 @@ export const getDatabaseData = () => {
     .catch(error => console.log(error));
   };
 };
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 export function axiosDBCall(){
   return axios.get('/api/dbData', {
@@ -775,6 +778,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 export function axiosLogin(){
@@ -803,6 +807,8 @@ export function axiosLogin(){
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 
+=======
+>>>>>>> feat(Database): User email linked to each table
 // BELOW: TO BE REFACTORED/PURGED
 
 //=============== HOTELS ===============
@@ -858,6 +864,40 @@ export function axiosLogin(){
 >>>>>>> Merge conflicts resolved
 =======
 =======
+
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
+>>>>>>> feat(Database): User email linked to each table
+=======
+//=============== DATABASE DATA ===============
+
+export const getDatabaseData = () => {
+  return function(dispatch) {
+    return axiosDBCall()
+    .then(res => {
+      dispatch(hydrateDBStore(res.data))
+      browserHistory.push('/dashboard');
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosDBCall(){
+  return axios.get('/api/dbData', {
+  
+  });
+};
+
+export function hydrateDBStore(dbData){
+  return {
+    type: 'GET_DB_DATA',
+    dbData
+  };
+}
+
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
 
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table

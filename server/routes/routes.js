@@ -760,6 +760,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 0ecb3ef9cd46c3d4e35f97df2e1d52501d13ef2f
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
@@ -857,6 +858,9 @@ var url = require('url');
 =======
 var url = require('url');
 >>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -932,6 +936,7 @@ router.post('/budgetData', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
 
 router.post('/hotelItin', function(req, res) {
   // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
@@ -1124,6 +1129,7 @@ router.post('/user-account/', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 0ecb3ef9cd46c3d4e35f97df2e1d52501d13ef2f
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
@@ -1131,6 +1137,10 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 >>>>>>> feat(Routes): Routes and server changes
+=======
+=======
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 // GET USERNAME
 router.post('/user-account/', function(req, res) {
   console.log("USER REQ", res);
@@ -1145,6 +1155,7 @@ router.post('/user-account/', function(req, res) {
   //   console.error(error)
   // });
 });
+<<<<<<< c42c6ab96797fd247154a4ed3ffba178c975f33d
 <<<<<<< 0ecb3ef9cd46c3d4e35f97df2e1d52501d13ef2f
 
 >>>>>>> feat(Database): User email linked to each table
@@ -1153,6 +1164,14 @@ router.post('/user-account/', function(req, res) {
 =======
 });
 >>>>>>> feat(Routes): Routes and server changes
+=======
+<<<<<<< 04a0d22977b681bb3a74aa3cda575828ec17c2e4
+});
+=======
+
+
+>>>>>>> feat(Database): User email linked to each table
+>>>>>>> feat(Database): User email linked to each table
 
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
