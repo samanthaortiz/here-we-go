@@ -24,19 +24,7 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
   passport.authenticate('google', { 
-<<<<<<< c0fb13e216a1488958b53fb0948f3e0490cd0fce
-<<<<<<< 0040c55a366d6c5bb82e1c425842a68b7946bd71
-<<<<<<< 144b43525aba1971923632ee6ae1be5c3609fb04
     successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
-=======
-    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
->>>>>>> chore(Styles): Added styles to the dashboard page
-=======
-    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=0d2aa1c632831d4c41abf168864caa01&redirect_url=http://localhost:4000/"
->>>>>>> chore(BudgetForm): Coded framework for Budget form
-=======
-    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
->>>>>>> chore(Update): Updated code for routes.js and server.js
 
     //siftInfo.siftInfo.connectToken
     // failureRedirect: '/auth/google/failure'
