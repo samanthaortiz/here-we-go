@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< e7473a8f0ce741fcd2063243def647f7da39e456
 <<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
 <<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 81639c1bedcf7df839b5772fcc6af66b304715c1
@@ -287,6 +288,9 @@ export function hydrateLoginStore(loginData){
 =======
 =======
 =======
+=======
+<<<<<<< dabe2e8f606cb2f11ae22fa6ce608fabdbef8574
+>>>>>>> Merge conflicts resolved
 <<<<<<< 734d224cb0fe208a4eadd88a4296cd2480df2597
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 89404abda2599c69ae07cfce0bb0357c03f26fb3
@@ -305,6 +309,9 @@ export function hydrateLoginStore(loginData){
 =======
 =======
 =======
+=======
+<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
+>>>>>>> Merge conflicts resolved
 <<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
@@ -1087,6 +1094,8 @@ export function axiosLogin(){
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
 >>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> Merge conflicts resolved
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
@@ -1156,10 +1165,14 @@ export function hydrateHotelItin(hotelItinData, email){
     hotelItinData,
     email
   };
+<<<<<<< e7473a8f0ce741fcd2063243def647f7da39e456
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
 =======
+=======
+<<<<<<< dabe2e8f606cb2f11ae22fa6ce608fabdbef8574
+>>>>>>> Merge conflicts resolved
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
 >>>>>>> Merge conflicts resolved
 }
@@ -1227,9 +1240,15 @@ export function hydrateCarItin(CarItinData, email){
 =======
 }
 >>>>>>> Merge conflicts resolved
+<<<<<<< e7473a8f0ce741fcd2063243def647f7da39e456
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 =======
 }
 >>>>>>> Merge conflicts resolved
 =======
+>>>>>>> Merge conflicts resolved
+=======
+=======
+}
+>>>>>>> Merge conflicts resolved
 >>>>>>> Merge conflicts resolved
