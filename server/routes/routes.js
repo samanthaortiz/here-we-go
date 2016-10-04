@@ -90,6 +90,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< f12cecc570447b38609ab558bb14614442b52ad0
 <<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< 2eedc288ae4bf78dc1aac23aacceba4f37b19c1e
@@ -186,6 +187,30 @@ var url = require('url');
 var url = require('url');
 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
+var url = require('url');
+
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
+var url = require('url');
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 
 router.get('/logout', function (req, res, next){
   req.logout();
@@ -258,6 +283,7 @@ router.post('/budgetData', function(req, res) {
   };
 
   res.send();
+<<<<<<< f12cecc570447b38609ab558bb14614442b52ad0
 <<<<<<< ae0f2b2d8f67c22ba30e05ae5d6e01ddc7f13654
 <<<<<<< 11fe321f7b266e5d7ce0831ac695f0431dc47973
 <<<<<<< eb8b55ca6462177ef658888c59b5654d14af7478
@@ -275,6 +301,13 @@ router.post('/budgetData', function(req, res) {
 >>>>>>> feat(Routes): Routes and server changes
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 router.post('/hotelItin', function(req, res) {
@@ -542,8 +575,40 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
 });
 
+>>>>>>> feat(Routes): Routes and server changes
+<<<<<<< f12cecc570447b38609ab558bb14614442b52ad0
+=======
+<<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
+=======
+=======
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
+});
+
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+
+
+>>>>>>> feat(Database): User email linked to each table
+=======
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
