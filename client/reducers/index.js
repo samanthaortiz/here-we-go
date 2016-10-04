@@ -10,6 +10,8 @@ const rootReducer = combineReducers({
   reducerFlightData,
   reducerLoginData,
   reducerHotelItin,
+  reducerFlightItin,
+  reducerCarItin,
   routing: routerReducer
 });
 
