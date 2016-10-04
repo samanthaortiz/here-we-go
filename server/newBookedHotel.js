@@ -1,6 +1,6 @@
 var Hotel = require('./database/models/Hotel');
 
-var bookedHotel = function(item){
+var bookedHotel = function(item, email){
     new Hotel({
       status_id: 1,
       type_id: 2,

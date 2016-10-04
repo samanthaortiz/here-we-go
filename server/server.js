@@ -60,6 +60,7 @@ var newUser;
 var result;
 var connectToken;
 var email;
+var emailConnections;
 
 passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refreshToken, profile, done) {
   User.forge()
@@ -118,63 +119,67 @@ app.get('/siftAuth', function(req, res){
       console.log('user token from sift:', body.result.connect_token)
       connectToken = body.result.connect_token;
     })
-    .then(function() {
-      res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username="+ email + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
-      console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
-      })
-  })
     .then(function(){
-      var emailConnections;
       siftapi.getEmailConnections(email)
         .then(function(body) {
           console.log('email connections:', body.result)
           emailConnections = body.result;
-      }) // CLOSES LINE 96
-      // .then(function(){
-      //   siftapi.getSifts(email, {})
-      //   .then(body => {
-      //     console.log('>>> ADDING PAYLOAD TO DB <<<')
-      //     // console.log(body.result)
-      //     var counter = 0;
-      //     body.result.forEach(function(item, i) {
-      //       //add custom middlware here to call within forEach depending on item domain type
-      //       if(item.domain === "hotel"){
-      //         Hotel.forge()
-      //         .where({"sift_id": item.sift_id})
-      //         .fetch()
-      //         .then(function(hotel, email){
-      //           if(!hotel){
-      //             newBookedHotel(item);
-      //           }
-      //         })
-      //       } else if(item.domain === "flight"){
-      //         Flight.forge()
-      //         .where({"sift_id": item.sift_id})
-      //         .fetch()
-      //         .then(function(flight, email){
-      //           if(!flight){
-      //             newBookedFlight(item);
-      //           }
-      //         })
-      //       } else if(item.domain === "rentalcar"){
-      //         Car.forge()
-      //         .where({"sift_id": item.sift_id})
-      //         .fetch()
-      //         .then(function(car, email){
-      //           if(!car){
-      //             newBookedCar(item);
-      //           }
-      //         })
-      //       }
-      //       // if(item.payload.reservationType["@type"] === "Car"){
-      //         // counter++;
-      //         // console.log('item #'+ i, item);
-      //         // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-      //     })
-      //     // console.log('FILTERED LENGTH: ', counter);
-      //     console.log('RESULT LENGTH: ', body.result.length);
-      //   })   
-      // })
+      }) 
+    .then(function() {
+      if(emailConnections.length === 0){
+      res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username="+ email + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+      console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+      }
+      else{
+        res.redirect('/')
+      }
+      })
+  })
+      .then(function(){
+        siftapi.getSifts(email, {})
+        .then(body => {
+          console.log('>>> ADDING PAYLOAD TO DB <<<')
+          // console.log(body.result)
+          var counter = 0;
+          body.result.forEach(function(item, i) {
+            //add custom middlware here to call within forEach depending on item domain type
+            if(item.domain === "hotel"){
+              Hotel.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(hotel, email){
+                if(!hotel){
+                  newBookedHotel(item);
+                }
+              })
+            } else if(item.domain === "flight"){
+              Flight.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(flight, email){
+                if(!flight){
+                  newBookedFlight(item);
+                }
+              })
+            } else if(item.domain === "rentalcar"){
+              Car.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(car, email){
+                if(!car){
+                  newBookedCar(item);
+                }
+              })
+            }
+            // if(item.payload.reservationType["@type"] === "Car"){
+              // counter++;
+              // console.log('item #'+ i, item);
+              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
+          })
+          // console.log('FILTERED LENGTH: ', counter);
+          console.log('RESULT LENGTH: ', body.result.length);
+        })   
+      })
     })
 })
 

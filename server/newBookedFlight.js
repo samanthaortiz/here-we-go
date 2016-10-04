@@ -1,7 +1,7 @@
 var db = require('./database/db.js');
 var Flight = require('./database/models/Flight');
 
-var bookedFlight = function(item){
+var bookedFlight = function(item, email){
   item.payload.reservationFor.forEach(function(leg){
     new Flight({
       status_id: 1,
