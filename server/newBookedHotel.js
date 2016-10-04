@@ -5,6 +5,7 @@ var bookedHotel = function(item){
       status_id: 1,
       type_id: 2,
       sift_id: item.sift_id,
+      user_email: email,
       providerName: item.payload.reservationFor.name,
       address: item.payload.reservationFor.address,
       telephone: item.payload.reservationFor.telephone ,
