@@ -6,6 +6,7 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< 86be8d952ac520dba49004860fe8aa99823c95d0
 <<<<<<< 52862e54fe6c7760bce63da1635f84688f6b7e9f
 <<<<<<< 282f30541c2e13db795be3896f073aa477d14eb8
     reducerFlightData: [],
@@ -33,6 +34,10 @@ const defaultState = {
 =======
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+    reducerFlightData: [],
+    reducerLoginData: []
+>>>>>>> Merge conflicts resolved
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));

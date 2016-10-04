@@ -106,6 +106,7 @@ export function hydrateLoginStore(loginData){
   };
 }
 
+<<<<<<< 86be8d952ac520dba49004860fe8aa99823c95d0
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 //=============== DATABASE DATA ===============
@@ -184,6 +185,11 @@ export function axiosLogin(){
 
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
+>>>>>>> Merge conflicts resolved
 
 >>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
