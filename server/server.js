@@ -94,12 +94,13 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
       console.log('new user response', body.result);
     })
   })
-  // .then(function() {
-    // siftapi.getConnectToken(email)
-    // .then(function(body) {
-    //   console.log('user token from sift:', body.result.connect_token)
-    //   // connectToken = body.result.connect_token;
-    // })
+  .then(function() {
+    siftapi.getConnectToken(email)
+    .then(function(body) {
+      console.log('user token from sift:', body.result.connect_token)
+      connectToken = body.result.connect_token;
+    })
+  })
     // .then(function() {
 
     //   // app.get('/auth/google/callback', function(req, res) {

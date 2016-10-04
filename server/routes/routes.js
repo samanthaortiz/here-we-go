@@ -24,9 +24,7 @@ router.get('/auth/google',
 
 router.get('/auth/google/callback',
   passport.authenticate('google', { 
-    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=eroussopoulos@gmail.com" + "&token=5065399dc833fabebfa3fd5d978b3c25&redirect_url=http://localhost:4000/"
-
-    //siftInfo.siftInfo.connectToken
+    successRedirect: "https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username=" + siftInfo.siftInfo.email + "&token=" + siftInfo.siftInfo.connectToken + "&redirect_url=http://localhost:4000/"
     // failureRedirect: '/auth/google/failure'
   }),
   function(req, res) {
