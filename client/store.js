@@ -13,7 +13,8 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
-    reducerFlightData: []
+    reducerFlightData: [],
+    reducerLoginData: []
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],

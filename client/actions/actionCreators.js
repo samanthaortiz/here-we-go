@@ -8,24 +8,26 @@ import { browserHistory } from 'react-router';
 //The reducer will do that.
 
 //=============== TRIP DATA ===============
-export const postTripData = (location, startDate, endDate) => {
+export const postTripData = (location, startDate, endDate, email, loggedIn) => {
   return function(dispatch) {
     return axiosTripCall(location, startDate, endDate)
     .then(res => {
-      dispatch(hydrateTripStore(res.data, location, startDate, endDate))
+      dispatch(hydrateTripStore(res.data, location, startDate, endDate, email, loggedIn))
       browserHistory.push('/dashboard');
     })
     .catch(error => console.log(error));
   };
 };
 
-export function hydrateTripStore(tripData, location, startDate, endDate){
+export function hydrateTripStore(tripData, location, startDate, endDate, email, loggedIn){
   return {
     type: 'POST_TRIP_DATA',
     tripData,
     location,
     startDate,
-    endDate
+    endDate,
+    email,
+    loggedIn
   };
 }
 
@@ -38,7 +40,33 @@ export function axiosTripCall(location, startDate, endDate){
 };
 
 
+export const login = () => {
+  console.log("You get this far");
+  return function(dispatch) {
+    return axiosLogin()
+    .then(res => {
+      console.log("You don't get to here");
+      dispatch(hydrateLoginStore(res.data))
+      browserHistory.push('/api/auth/google');
+    })
+    .catch(error => console.log(error));
+  };
+};
 
+export function hydrateLoginStore(loginData){
+  return {
+    type: 'GET_LOGIN',
+    loginData
+  };
+}
+
+export function axiosLogin(){
+  return axios.get('/api/auth/google')
+};
+
+
+//one call hydrates store, one call updates component
+//update component with props from hydration
 
 // BELOW: TO BE REFACTORED/PURGED
 
