@@ -128,6 +128,7 @@ router.get('/account', ensureAuthenticated, function(req, res) {
   });
 }); 
 
+<<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
 <<<<<<< 4a7a99b594b6661e16ee1f69a6baa0534729cedd
 <<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 <<<<<<< 023e421cde6380e2e6bfa671a4f76d3942ab9391
@@ -168,6 +169,9 @@ router.get('/account', ensureAuthenticated, function(req, res) {
 =======
 =======
 =======
+=======
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
+>>>>>>> feat(Routes): Routes and server changes
 <<<<<<< 3b3d89d046bdc010a77e13b442c4145bf0356720
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
@@ -769,7 +773,15 @@ router.post('/user-account/', function(req, res) {
 =======
 <<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
 =======
+<<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
 
+=======
+=======
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+>>>>>>> feat(Routes): Routes and server changes
+<<<<<<< 0d12075c1445af27817d0e7b6c8147b96d2e004c
+>>>>>>> feat(Routes): Routes and server changes
 >>>>>>> feat(Database): User email linked to each table
 =======
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -784,7 +796,23 @@ router.post('/user-account/', function(req, res) {
 =======
 =======
 =======
+<<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
 <<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
+=======
+  var url = require('url');
+>>>>>>> feat(Database): User email linked to each table
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
+>>>>>>> feat(Database): User email linked to each table
+=======
+=======
+var url = require('url');
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
+
+router.get('/logout', function (req, res, next){
+  req.logout();
+  res.redirect('https://accounts.google.com/logout')
 >>>>>>> feat(Routes): Routes and server changes
 });
 
@@ -794,7 +822,127 @@ router.post('/user-account/', function(req, res) {
 <<<<<<< 31c97592f3d0981918397a9cedc96f755d626708
 =======
 =======
+<<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
 =======
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
+router.post('/budgetData', function(req, res) {
+  console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
+  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
+  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
+
+  var subSQL;
+  var data = req.body;
+
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
+
+  res.send();
+<<<<<<< 024a3bd273fed2c0a6bddc26d59bbff0b34c6ed1
+<<<<<<< c1ede926cb880705fb79d5a238adc1cd8421cf92
+<<<<<<< edd33282155155ccc4cec088405ebfea1cc640fc
+<<<<<<< f481570ed74664be39e6cabb32ce86267cb90b44
+=======
+=======
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
+>>>>>>> feat(Routes): Routes and server changes
+<<<<<<< eb8d84603075a422e6d14283e1c98fae8624cec0
+>>>>>>> feat(Routes): Routes and server changes
+});
+
+
+router.post('/hotelItin', function(req, res) {
+  // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
+  // RAW SQL: SELECT * FROM hotelReservations VALUES WHERE hotel.user_email = email), 100)
+  console.log('this is the req body',req.body)
+  var subSQL;
+  var email = req.body.email;
+  // var info;
+    db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
+    .then(function(info) {
+      // info = data
+      console.log('GOT INFO', info)
+      res.send(info);
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
+});
+
+router.post('/flightItin', function(req, res) {
+  console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
+  var subSQL;
+  var email = req.body.email;
+
+  db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
+  .then(function(info) {
+    console.log('GOT INFO', info)
+    res.send(info);
+  })
+  .catch(function(error) {
+    console.error(error)
+  });
+});
+
+
+router.post('/carItin', function(req, res) {
+  console.log('>>>>> SAVING CAR ITIN TO DATABASE: ', req.body);
+  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
+  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
+
+  var subSQL;
+  var data = req.body;
+
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
+
+  res.send();
+});
+
+router.post('/activityItin', function(req, res) {
+  console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
+  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
+  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
+
+  var subSQL;
+  var data = req.body;
+
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
+
+  res.send();
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 >>>>>>> Merge conflicts
@@ -868,6 +1016,9 @@ router.post('/user-account/', function(req, res) {
 <<<<<<< bfc26c5bb22bff3891aeec5a37d5d8e15324dcb8
 =======
 =======
+=======
+<<<<<<< 4f8db11f1a3650743826543a5ef4b0fede0ddeed
+>>>>>>> feat(Routes): Routes and server changes
 });
 
 >>>>>>> feat(Routes): Routes and server changes
@@ -892,12 +1043,20 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
+=======
+>>>>>>> feat(Routes): Routes and server changes
 });
 
+<<<<<<< 4ed8cb7f53b66b054bb443303a295f1dcc9c282b
 
 
 >>>>>>> feat(Database): User email linked to each table
+<<<<<<< f0ce8429911496aff226e74601e00fdca8d0c262
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> feat(Routes): Routes and server changes
+>>>>>>> feat(Routes): Routes and server changes
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
