@@ -8,7 +8,8 @@ function mapStateToProps(state){
   return {
     reducerTripData: state.reducerTripData,
     reducerFlightData: state.reducerFlightData,
-    reducerLoginData: state.reducerLoginData
+    reducerLoginData: state.reducerLoginData,
+    reducerHotelItin: state.reducerHotelItin
     // expediaHotelInfo: state.expediaHotelInfo,
     // expediaFlightInfo: state.expediaFlightInfo,
     // expediaCarRentalInfo: state.expediaCarRentalInfo,
