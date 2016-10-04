@@ -73,8 +73,8 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
       new User({
         'google_id': profile.id, // set the users google id                   
         'accessToken': accessToken, // we will save the token that google provides to the user                    
-        'refreshToken': refreshToken,
-        'fullName': profile.name.givenName + ' ' + profile.name.familyName, // look at the passport user profile to see how names are returned
+        'refreshToken': refreshToken, // needed for sift api 
+        'fullName': profile.name.givenName + ' ' + profile.name.familyName,
         'email': profile.emails[0].value
       })
       .save()
