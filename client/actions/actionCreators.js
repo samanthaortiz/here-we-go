@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< b9327a09e905593425b326e54972209f03461f1b
 <<<<<<< 18543cb9b54081504ec03e90b3ba2223cd0f113a
 <<<<<<< bf5c7d9c550e05e80a556bb84fed6cc745e36bb1
 <<<<<<< b49447b5396e5ef02e9536f89a51b26820ff4f3f
@@ -236,6 +237,10 @@ export function hydrateLoginStore(loginData){
 
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+=======
+
+
+>>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -263,6 +268,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< b9327a09e905593425b326e54972209f03461f1b
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
@@ -273,6 +279,8 @@ export function axiosLogin(){
 =======
 =======
 =======
+=======
+>>>>>>> feat(Database): User email linked to each table
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -313,6 +321,7 @@ export function axiosLogin(){
 //   });
 // }
 
+<<<<<<< b9327a09e905593425b326e54972209f03461f1b
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
@@ -320,6 +329,9 @@ export function axiosLogin(){
 >>>>>>> feat(Database): User email linked to each table
 =======
 >>>>>>> Merge conflicts resolved
+=======
+
+>>>>>>> feat(Database): User email linked to each table
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
