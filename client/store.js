@@ -6,12 +6,16 @@ import rootReducer from './reducers/index';
 
 const defaultState = {
     reducerTripData: [],
+<<<<<<< 07dd22deababa6f1de4e79bdb4a93aa3a1b1bed0
     reducerFlightData: [],
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
     reducerLoginData: [],
     reducerHotelItin: []
 =======
     reducerDatabaseData: []
+=======
+    reducerFlightData: []
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo: [],
   // expediaFlightInfo: [],
   // expediaCarRentalInfo: [],
