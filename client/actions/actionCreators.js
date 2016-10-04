@@ -373,7 +373,50 @@ export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
 
+<<<<<<< ee0d9c92eeea5aac925e39c5e327578e07dbc4e5
 >>>>>>> feat(Database): User email linked to each table
+=======
+// BELOW: TO BE REFACTORED/PURGED
+
+//=============== HOTELS ===============
+// export const postHotelExpedia = (location, startDate, endDate) => {
+
+//   // console.log(location, startDate, endDate);
+//   return function(dispatch){
+//     return axiosHotelCall(location, startDate, endDate)
+//     .then(res => {
+//        // console.log("GET HOTEL", res.data)
+//        console.log('============')
+//        console.log(res.data)
+//        console.log('============')
+//       dispatch(hydrateHotelStore(res.data, location, startDate, endDate))
+//       browserHistory.push('/dashboard')
+
+//     })
+//     .catch(error => console.log(error));
+//   };
+// };
+
+// export function hydrateHotelStore(expediaHotelInfo, location, startDate, endDate){
+//   return {
+//     type: 'POST_HOTEL_EXPEDIA',
+//     expediaHotelInfo,
+//     location,
+//     startDate,
+//     endDate
+//   };
+// }
+
+// export function axiosHotelCall(location, startDate, endDate){
+//   return axios.post('/api/trips', {
+//     location,
+//     startDate,
+//     endDate
+//   });
+// }
+
+
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
