@@ -61,6 +61,7 @@ var result;
 var connectToken;
 var email;
 var emailConnections;
+var google_id;
 
 passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refreshToken, profile, done) {
   User.forge()
@@ -82,6 +83,7 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
     .then(function(){
       console.log("USER IN DATABASE");
       email = profile.emails[0].value;
+      google_id = profile.id;
       done(null, profile);
     })
     .catch(err => {
@@ -90,17 +92,6 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
 })); 
 
 
-// CLOSES 'passport.use(...)'
-      // new Itinerary({
-      //   'status': "All",              
-      //   'user_email': profile.emails[0].value
-      // })
-      // .save()
-    
-  //   console.log('this is the user after adding to db:', user)
-  // }) // CLOSES LINE 58
-  // .then(function(err, user) {
-  //   console.log('user profile before sift', profile);
 
 // API ROUTES
 var apiRouter = require("./routes/routes.js");
@@ -108,6 +99,7 @@ app.use("/api", apiRouter);
 
 
 app.get('/siftAuth', function(req, res){
+  // console.log('res in sift', res.body)
     siftapi.addUser(email)
     .then(body => {
       newUser = body.result;
@@ -124,14 +116,17 @@ app.get('/siftAuth', function(req, res){
         .then(function(body) {
           console.log('email connections:', body.result)
           emailConnections = body.result;
+          // res.end(emailConnections[0].email);
       }) 
     .then(function() {
       if(emailConnections.length === 0){
-      res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.sift.API_KEY + "&username="+ email + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
-      console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
-      }
-      else{
-        res.redirect('/')
+        res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" 
+          + siftConfig.sift.API_KEY + "&username="+ email 
+          + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+        console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+      } else{
+
+        res.redirect('/?email='+email);
       }
       })
   })
@@ -148,8 +143,9 @@ app.get('/siftAuth', function(req, res){
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(hotel, email){
+                email = emailConnections[0].email
                 if(!hotel){
-                  newBookedHotel(item);
+                  newBookedHotel(item, email);
                 }
               })
             } else if(item.domain === "flight"){
@@ -157,8 +153,9 @@ app.get('/siftAuth', function(req, res){
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(flight, email){
+                 email = emailConnections[0].email
                 if(!flight){
-                  newBookedFlight(item);
+                  newBookedFlight(item, email);
                 }
               })
             } else if(item.domain === "rentalcar"){
@@ -166,8 +163,9 @@ app.get('/siftAuth', function(req, res){
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(car, email){
+                 email = emailConnections[0].email
                 if(!car){
-                  newBookedCar(item);
+                  newBookedCar(item, email);
                 }
               })
             }
@@ -176,6 +174,8 @@ app.get('/siftAuth', function(req, res){
       })
     })
 })
+
+
 
 app.use(express.static('./dist'));
 
