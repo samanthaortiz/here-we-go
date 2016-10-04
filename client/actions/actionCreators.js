@@ -39,18 +39,6 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
-<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
-<<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
-<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
-
-=======
-=======
-<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
->>>>>>> revert(Frontend): Frontend routing for login reversed
-<<<<<<< 2120f9ccaab1fcea4aff7a5e3979b7e6359257f4
-=======
->>>>>>> feat(Database): User email linked to each table
-
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -91,12 +79,7 @@ export function axiosTripCall(location, startDate, endDate){
 //   });
 // }
 
-<<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
 
-<<<<<<< 4d4867ba2ceca8bfeb8a857e3406fc46433287c8
-=======
-=======
-=======
 export const login = () => {
   console.log("You get this far");
   return function(dispatch) {
@@ -117,9 +100,6 @@ export function hydrateLoginStore(loginData){
   };
 }
 
-<<<<<<< 9add38837ff52066af48823227777537884c289a
->>>>>>> revert(Frontend): Frontend routing for login reversed
->>>>>>> revert(Frontend): Frontend routing for login reversed
 //=============== DATABASE DATA ===============
 
 export const getDatabaseData = () => {
@@ -150,12 +130,7 @@ export function hydrateDBStore(dbData){
 export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
-<<<<<<< 942e4c46409c03f0da04216e5025bc2872593f3e
-=======
-<<<<<<< 6df3551360344106de446e696515d64f20d8e2dd
->>>>>>> feat(Database): User email linked to each table
-=======
-=======
+
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -196,9 +171,6 @@ export function axiosLogin(){
 //   });
 // }
 
->>>>>>> revert(Frontend): Frontend routing for login reversed
->>>>>>> revert(Frontend): Frontend routing for login reversed
->>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 
@@ -244,12 +216,6 @@ export function axiosLogin(){
   return axios.get('/api/auth/google')
 };
 
-
-=======
->>>>>>> feat(Database): User email linked to each table
->>>>>>> feat(Database): User email linked to each table
-=======
->>>>>>> Merge conflicts resolved
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
