@@ -3,8 +3,7 @@ import { routerReducer } from 'react-router-redux';
 
 // import posts from'./posts';
 import reducerTripData from './reducerTripData';
-import reducerFlightData from './reducerFlightData'; 
-import reducerDatabaseData from './reducerDatabaseData'; 
+import reducerFlightData from './reducerFlightData';
 
 // import expediaHotelInfo from './expediaHotelInfo'; 
 // import expediaFlightInfo from './expediaFlightInfo';
@@ -15,7 +14,6 @@ import reducerDatabaseData from './reducerDatabaseData';
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
-  reducerDatabaseData,
   // expediaHotelInfo,
   // expediaFlightInfo,
   // expediaCarRentalInfo,
