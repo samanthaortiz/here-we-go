@@ -296,9 +296,13 @@ export function hydrateLoginStore(loginData){
 <<<<<<< 371eff1c0641067453a159c01cbb934104e5309c
 =======
 
+<<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< c028e2f0c3f145c4eff0cd750a9575b509c355f0
 >>>>>>> feat(Database): User email linked to each table
 //=============== DATABASE DATA ===============
+=======
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 <<<<<<< 0b0d5e9e25cdf39754d0b54b6dece655ff2c1930
 export const getDatabaseData = () => {
@@ -771,6 +775,7 @@ export function hydrateDBStore(dbData){
 }
 
 
+<<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 export function axiosLogin(){
   return axios.get('/api/auth/google')
@@ -793,6 +798,10 @@ export function axiosLogin(){
 =======
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // BELOW: TO BE REFACTORED/PURGED
 

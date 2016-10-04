@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
 <<<<<<< ebdcfb1b766d9fe80364d2d3795b586966613349
@@ -54,6 +55,9 @@ import reducerFlightData from './reducerFlightData';
 =======
 =======
 =======
+=======
+<<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
 >>>>>>> Merge conflicts resolved
 <<<<<<< dab3f78c5b204eee0675d3152d413216c5bce6ab
@@ -92,6 +96,11 @@ import reducerFlightData from './reducerFlightData';
 =======
 <<<<<<< 9add38837ff52066af48823227777537884c289a
 >>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+<<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
+=======
+=======
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 import reducerFlightData from './reducerFlightData'; 
@@ -155,6 +164,7 @@ import reducerFlightItin from './reducerFlightItin';
 import reducerCarItin from './reducerCarItin';
 =======
 import reducerDatabaseData from './reducerDatabaseData'; 
+<<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 <<<<<<< e28ba6d77464595c58479854beb377373007492f
 <<<<<<< 4b1fb89bd94788b963cd8b0890eddf7f13109b54
@@ -225,6 +235,11 @@ import reducerFlightData from './reducerFlightData';
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 >>>>>>> feat(Database): User email linked to each table
+=======
+=======
+import reducerFlightData from './reducerFlightData';
+>>>>>>> revert(Frontend): Frontend routing for login reversed
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 
 // import expediaHotelInfo from './expediaHotelInfo'; 
 // import expediaFlightInfo from './expediaFlightInfo';
@@ -326,6 +341,7 @@ import reducerHotelItin from './reducerHotelItin';
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< 7c64e758e20ba76f03209ec7de2f6c9e0ae3a088
 <<<<<<< 81639c1bedcf7df839b5772fcc6af66b304715c1
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< e7293b29502d84a390b61ce5a09808a21c9a03dc
@@ -357,6 +373,9 @@ const rootReducer = combineReducers({
 =======
 =======
 =======
+=======
+<<<<<<< 6425d50e55c46291fb694b3bcfad16cb5e1fb814
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< ec7d3b6da9bd5d46bc92108749f93501751b0d78
 >>>>>>> feat(Database): User email linked to each table
 <<<<<<< 23f41d0253ac4520f5dc54ec2e416eacb8724e60
@@ -561,6 +580,9 @@ const rootReducer = combineReducers({
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
 =======
+=======
+<<<<<<< e4db8282208558316f753b7567fe51925efe15d4
+>>>>>>> revert(Frontend): Frontend routing for login reversed
 <<<<<<< 54d2c7812406b7c8acfb0d633bad5c7a2462dd9f
 >>>>>>> feat(Database): User email linked to each table
   reducerLoginData,
@@ -573,6 +595,8 @@ const rootReducer = combineReducers({
 =======
 =======
   reducerDatabaseData,
+=======
+>>>>>>> revert(Frontend): Frontend routing for login reversed
   // expediaHotelInfo,
   // expediaFlightInfo,
   // expediaCarRentalInfo,
