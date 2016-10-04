@@ -17,4 +17,3 @@ const reducerTripData = (state = [], action) => {
 };
 
 export default reducerTripData;
-//this is the api call
