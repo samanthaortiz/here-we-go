@@ -60,6 +60,8 @@ var newUser;
 var result;
 var connectToken;
 var email;
+var emailConnections;
+var google_id;
 
 passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refreshToken, profile, done) {
   User.forge()
@@ -76,63 +78,72 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         'email': profile.emails[0].value
       })
       .save()
-      // new Itinerary({
-      //   'status': "All",              
-      //   'user_email': profile.emails[0].value
-      // })
-      // .save()
     }
-    
-    console.log('this is the user after adding to db:', user)
-  }) // CLOSES LINE 58
-  .then(function(err, user) {
-    console.log('user profile before sift', profile);
-    email = profile.emails[0].value;
+  })
+    .then(function(){
+      console.log("USER IN DATABASE");
+      email = profile.emails[0].value;
+      google_id = profile.id;
+      done(null, profile);
+    })
+    .catch(err => {
+      console.log(err)
+    })
+})); 
+
+
+
+// API ROUTES
+var apiRouter = require("./routes/routes.js");
+app.use("/api", apiRouter);
+
+
+app.get('/siftAuth', function(req, res){
+  // console.log('res in sift', res.body)
     siftapi.addUser(email)
     .then(body => {
       newUser = body.result;
       console.log('new user response', body.result);
     })
-  })
   .then(function() {
     siftapi.getConnectToken(email)
     .then(function(body) {
       console.log('user token from sift:', body.result.connect_token)
       connectToken = body.result.connect_token;
     })
-  })
-    .then(function() {
-
-      app.get('/auth/google/callback', function(req, res) {
-        // passport.authenticate('google', { 
-          res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" + siftConfig.API_KEY + "&username="+ email + "&token="+ connectToken);
-          console.log('>>>> REDIRECTED <<<<')
-        // }
-      });
-      console.log('redirecting')
-    })
     .then(function(){
-      var emailConnections;
       siftapi.getEmailConnections(email)
-      .then(function(body) {
-        console.log('email connections:', body.result)
-        emailConnections = body.result;
-      }) // CLOSES LINE 96
+        .then(function(body) {
+          console.log('email connections:', body.result)
+          emailConnections = body.result;
+          // res.end(emailConnections[0].email);
+      }) 
+    .then(function() {
+      if(emailConnections.length === 0){
+        res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" 
+          + siftConfig.sift.API_KEY + "&username="+ email 
+          + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+        console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+      } else{
+
+        res.redirect('/?email='+email);
+      }
+      })
+  })
       .then(function(){
         siftapi.getSifts(email, {})
         .then(body => {
           console.log('>>> ADDING PAYLOAD TO DB <<<')
-          // console.log(body.result)
           var counter = 0;
           body.result.forEach(function(item, i) {
-            //add custom middlware here to call within forEach depending on item domain type
             if(item.domain === "hotel"){
               Hotel.forge()
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(hotel, email){
+                email = emailConnections[0].email
                 if(!hotel){
-                  newBookedHotel(item);
+                  newBookedHotel(item, email);
                 }
               })
             } else if(item.domain === "flight"){
@@ -140,8 +151,9 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(flight, email){
+                 email = emailConnections[0].email
                 if(!flight){
-                  newBookedFlight(item);
+                  newBookedFlight(item, email);
                 }
               })
             } else if(item.domain === "rentalcar"){
@@ -149,37 +161,22 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
               .where({"sift_id": item.sift_id})
               .fetch()
               .then(function(car, email){
+                 email = emailConnections[0].email
                 if(!car){
-                  newBookedCar(item);
+                  newBookedCar(item, email);
                 }
               })
             }
-            // if(item.payload.reservationType["@type"] === "Car"){
-              // counter++;
-              // console.log('item #'+ i, item);
-              // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
           })
-          // console.log('FILTERED LENGTH: ', counter);
-          console.log('RESULT LENGTH: ', body.result.length);
-        })   
+        })
       })
     })
-    .then(function(){
-      console.log("USER IN DATABASE");
-      done(null, profile);
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  // }) // CLOSES LINE 82
-})); // CLOSES 'passport.use(...)'
+})
 
-// API ROUTES
-var apiRouter = require("./routes/routes.js");
-app.use("/api", apiRouter);
 
 
 app.use(express.static('./dist'));
+
 
 app.use('/', function (req, res){
   res.sendFile(path.resolve('client/index.html'));
