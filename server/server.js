@@ -9,16 +9,25 @@ var fs = require('fs');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var googleConfig = require('./routes/config/googleConfig');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var passport = require('passport')
 // var util = require('util')
-var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-var User = require('./database/models/User')
-var Itinerary = require('./database/models/itinerary')
-var siftConfig = require('./routes/config/siftConfig');
-var newBookedFlight = require('./newBookedFlight');
 
+//DATABASE MODELS:
+var User = require('./database/models/User');
+var Hotel = require('./database/models/Hotel');
+var Car = require('./database/models/Car');
+var Flight = require('./database/models/Flight');
+var Itinerary = require('./database/models/itinerary')
+
+
+var siftConfig = require('./routes/config/siftConfig');
 var SiftAPI = require('siftapi').default;
 var siftapi = new SiftAPI(siftConfig.sift.API_KEY, siftConfig.sift.API_SECRET);
+
+var newBookedFlight = require('./newBookedFlight');
+var newBookedHotel = require('./newBookedHotel');
+var newBookedCar = require('./newBookedCar');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -67,6 +76,11 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
         'email': profile.emails[0].value
       })
       .save()
+      // new Itinerary({
+      //   'status': "All",              
+      //   'user_email': profile.emails[0].value
+      // })
+      // .save()
     }
     
     console.log('this is the user after adding to db:', user)
@@ -111,28 +125,40 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
           var counter = 0;
           body.result.forEach(function(item, i) {
             //add custom middlware here to call within forEach depending on item domain type
-            if(item.domain === "flight"){
-                newBookedFlight(item.payload);
+            if(item.domain === "hotel"){
+              Hotel.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(hotel, email){
+                if(!hotel){
+                  newBookedHotel(item);
+                }
+              })
+            } else if(item.domain === "flight"){
+              Flight.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(flight, email){
+                if(!flight){
+                  newBookedFlight(item);
+                }
+              })
+            } else if(item.domain === "rentalcar"){
+              Car.forge()
+              .where({"sift_id": item.sift_id})
+              .fetch()
+              .then(function(car, email){
+                if(!car){
+                  newBookedCar(item);
+                }
+              })
+            }
+            // if(item.payload.reservationType["@type"] === "Car"){
               // counter++;
               // console.log('item #'+ i, item);
               // console.log('item #'+ i +"payload: "+ JSON.stringify(item.payload))
-              // console.log('<---===--------===----------===---------===--->')
-              //if (item.domain === "hotel") ...
-                //new Hotel({...}) middleware
-              //else if (item.domain === "rentalCar") ...
-                //new Car({...}) middleware
-              //else if (item.domain === "flight") ...
-
-              //   //for now, add new itinerary into db. (THIS IS WORKING!)
-              // new Itinerary({
-              //   // status: "ticket",
-              //   trip_id: counter,
-              //   status: item.domain
-              // })
-              // .save()
-            } 
           })
-          console.log('FILTERED LENGTH: ', counter);
+          // console.log('FILTERED LENGTH: ', counter);
           console.log('RESULT LENGTH: ', body.result.length);
         })   
       })
