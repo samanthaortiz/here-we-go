@@ -62,7 +62,6 @@ const Itinerary = React.createClass({
                 hotelInfo={hotelItin}
                 email={this.props.data.reducerHotelItin.email}
               />
-              <div>hotelItin.providerName</div>
             })}
 
 <<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
@@ -114,6 +113,7 @@ const Itinerary = React.createClass({
           <div id="fade" className="black_overlay"></div>
         </div>
       );
+<<<<<<< 377dfba279b430cbc66d51f7834c7d1a572b40ae
     } else {
       return (
        <div className="tile-itinerary">
@@ -136,6 +136,22 @@ const Itinerary = React.createClass({
 =======
     )
     }
+=======
+    // } else {
+    //   return (
+    //    <div className="tile-itinerary">
+    //     <h3>My Itinerary</h3>
+    //     <ul>
+    //         <li>Saved</li>
+    //         <li>Upcoming</li>
+    //         <li>Previous</li>
+    //         <li>Cancelled</li>
+    //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
+    //       </ul>
+    //   </div>
+    // )
+    // }
+>>>>>>> fix(itinerary): removed if/else in itin component
   } 
 >>>>>>> feat(itin): itin component - working on rendering db data
 })
