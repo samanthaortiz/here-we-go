@@ -97,6 +97,9 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
 var apiRouter = require("./routes/routes.js");
 app.use("/api", apiRouter);
 
+var reservationRouter = require('./routes/reservationRoutes');
+app.use('/', reservationRouter)
+
 
 app.get('/siftAuth', function(req, res){
   // console.log('res in sift', res.body)
