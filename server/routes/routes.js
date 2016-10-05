@@ -73,11 +73,13 @@ router.post('/budgetData', function(req, res) {
   res.send();
 });
 
-
 router.post('/hotelItin', function(req, res) {
   console.log('this is the req body',req.body)
-  var email = req.body.email;
-  // var info;
+  var firstEmail = req.body.email.split("=")[1];
+  console.log("this is the email", firstEmail)
+  var email = firstEmail.split("#")[0]
+  console.log("this is the second email", email)
+
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
       // info = data
@@ -90,18 +92,19 @@ router.post('/hotelItin', function(req, res) {
 });
 
 router.post('/flightItin', function(req, res) {
-  console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
-  var subSQL;
+  // console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
+  // RAW SQL: SELECT * FROM flightReservations VALUES WHERE hotel.user_email = email)
+  console.log('this is the req body',req.body)
   var email = req.body.email;
-
-  db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
-  .then(function(info) {
-    console.log('GOT INFO', info)
-    res.send(info);
-  })
-  .catch(function(error) {
-    console.error(error)
-  });
+  // var info;
+    db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
+    .then(function(info) {
+      console.log('GOT INFO', info)
+      res.send(info);
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
 });
 
 router.post('/carItin', function(req, res) {
@@ -121,21 +124,21 @@ router.post('/carItin', function(req, res) {
 });
 
 
-router.post('/activityItin', function(req, res) {
-  // console.log('>>>>> SAVING CARRENTALS ITIN TO DATABASE: ', req.body);
-  // RAW SQL: SELECT * FROM carRentals VALUES WHERE hotel.user_email = email), 100)
-  console.log('this is the req body',req.body)
-  var email = req.body.email;
-  // var info;
-    db.knex('carRentals').where('activities.user_email', email).select("*")
-    .then(function(info) {
-      console.log('GOT INFO', info)
-      res.send(info);
-    })
-    .catch(function(error) {
-      console.error(error)
-    });
-});
+// router.post('/activityItin', function(req, res) {
+//   // console.log('>>>>> SAVING ACTIVITIES ITIN TO DATABASE: ', req.body);
+//   // RAW SQL: SELECT * FROM activites VALUES WHERE hotel.user_email = email), 100)
+//   console.log('this is the req body',req.body)
+//   var email = req.body.email;
+//   // var info;
+//     db.knex('carRentals').where('activities.user_email', email).select("*")
+//     .then(function(info) {
+//       console.log('GOT INFO', info)
+//       res.send(info);
+//     })
+//     .catch(function(error) {
+//       console.error(error)
+//     });
+// });
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
@@ -157,5 +160,6 @@ router.post("/FlightSearch", function(req, res) {
 router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
 });
+
 
 module.exports = router;
