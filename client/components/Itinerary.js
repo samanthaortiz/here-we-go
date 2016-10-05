@@ -37,7 +37,6 @@ const Itinerary = React.createClass({
                 hotelInfo={hotelItin}
                 email={this.props.data.reducerHotelItin.email}
               />
-              <div>hotelItin.providerName</div>
             })}
 
           {this.props.data.reducerCarItin.carItinData.map(function(carItin){
@@ -74,20 +73,20 @@ const Itinerary = React.createClass({
           <div id="fade" className="black_overlay"></div>
         </div>
       );
-    } else {
-      return (
-       <div className="tile-itinerary">
-        <h3>My Itinerary</h3>
-        <ul>
-            <li>Saved</li>
-            <li>Upcoming</li>
-            <li>Previous</li>
-            <li>Cancelled</li>
-            <li><a onClick={this.handleBudgetForm}>Budget</a></li>
-          </ul>
-      </div>
-    )
-    }
+    // } else {
+    //   return (
+    //    <div className="tile-itinerary">
+    //     <h3>My Itinerary</h3>
+    //     <ul>
+    //         <li>Saved</li>
+    //         <li>Upcoming</li>
+    //         <li>Previous</li>
+    //         <li>Cancelled</li>
+    //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
+    //       </ul>
+    //   </div>
+    // )
+    // }
   } 
 })
 
