@@ -6,7 +6,7 @@ const HotelTile = React.createClass({
   render() {
 
     // console.log('>>>>> HOTEL TILE <<<<<');
-    // console.log('Hotel tile this.props: ',  this.props);
+    // console.log('Hotel tile this.props: ',  this.props.hotelData.loggedIn);
 
     if(this.props.hotelData.length !== 0) {
       return (
@@ -17,6 +17,8 @@ const HotelTile = React.createClass({
               <Hotel
                 key={hotel.hotelId}
                 hotelInfo={hotel}
+                isLoggedIn={this.props.hotelData.loggedIn}
+                userEmail={this.props.hotelData.email}
                 startDate={this.props.hotelData.startDate}
                 endDate={this.props.hotelData.endDate}
               />

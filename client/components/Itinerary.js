@@ -22,13 +22,13 @@ const Itinerary = React.createClass({
   },
 
   render() {
-    if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
+    if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined) {
       return (
         <div className="tile-itinerary">
           <h3>My Itinerary</h3>
           <ul>
             <li>Saved</li>
-            {this.props.data.reducerHotelItin.hotelItinData.map(function(hotelItin){
+            {this.props.data.reducerHotelItin.hotelItinData.map(function(hotelItin) {
               <HotelItin
                 key={hotelItin.sift_id}
                 hotelInfo={hotelItin}
@@ -80,6 +80,10 @@ const Itinerary = React.createClass({
             <li>Cancelled</li>
             <li><a onClick={this.handleBudgetForm}>Budget</a></li>
           </ul>
+          <div id="light" className="lightbox-content">
+            <BudgetForm />
+          </div>
+          <div id="fade" className="black_overlay"></div>
       </div>
         )
     }
