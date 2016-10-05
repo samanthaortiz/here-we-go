@@ -75,11 +75,16 @@ router.post('/budgetData', function(req, res) {
 
 router.post('/hotelItin', function(req, res) {
   console.log('this is the req body',req.body)
+<<<<<<< f3384c81ba504d1a68aaee0a7204749d34173910
   var firstEmail = req.body.email.split("=")[1];
   console.log("this is the email", firstEmail)
   var email = firstEmail.split("#")[0]
   console.log("this is the second email", email)
 
+=======
+  var email = req.body.email;
+  // var info;
+>>>>>>> feat(itinerary): hotel itin data sending to itin component
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
       // info = data
@@ -183,6 +188,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< f3384c81ba504d1a68aaee0a7204749d34173910
 <<<<<<< 9c70735257b9242a4f714597a8d491acebcb395f
 =======
 // ACTIVITIES SEARCH API ================================================================== 
@@ -200,4 +206,6 @@ router.post("/ActivitiesSearch", function(req, res) {
 });
 >>>>>>> feat(car and flight itin): setting up proper routes
 
+=======
+>>>>>>> feat(itinerary): hotel itin data sending to itin component
 module.exports = router;
