@@ -111,6 +111,7 @@ router.post('/hotelItin', function(req, res) {
 router.post('/flightItin', function(req, res) {
   var firstEmail = req.body.email.split("=")[1];
   var email = firstEmail.split("#")[0]
+<<<<<<< HEAD
 <<<<<<< 1bc0d487f3f7ed800ad3a4c49423eb951c6f10a6
 
   console.log('>>>>> GETTING FLIGHT ITIN FROM DATABASE: ', req.body);
@@ -118,6 +119,8 @@ router.post('/flightItin', function(req, res) {
 <<<<<<< HEAD
 =======
 >>>>>>> feat(itinerary): adding cars to itinerary
+=======
+>>>>>>> dd07ab67dfdb318acc0009fc166afbf2b428bcad
     db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
     .then(function(info) {
       console.log('GOT FLIGHT INFO', info)

@@ -3434,6 +3434,7 @@
 /* 563 */
 /***/ function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 <<<<<<< 8a7635b7230cf0a9f2d906124329296482680069
 <<<<<<< 8eee5ba0659ebbde4ba4caca763a8e0f523ccc4b
 <<<<<<< HEAD
@@ -3447,6 +3448,9 @@
 =======
 	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar CarItin = _react2.default.createClass({\n  displayName: 'CarItin',\n  render: function render() {\n    console.log('rendering car itin', this.props);\n    return _react2.default.createElement(\n      'div',\n      { className: 'item-car-itin' },\n      _react2.default.createElement(\n        'h4',\n        null,\n        'CAR ITIN'\n      ),\n      _react2.default.createElement(\n        'p',\n        null,\n        this.props.carItinInfo.rentalCompany\n      ),\n      _react2.default.createElement(\n        'p',\n        null,\n        this.props.carItinInfo.vehicleBrand\n      )\n    );\n  }\n});\n\nexports.default = CarItin;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/CarItin.js\n ** module id = 563\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/CarItin.js?");
 >>>>>>> feat(itinerary): car itin now rendering in itinerary component successfully
+=======
+	eval("'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(2);\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar CarItin = _react2.default.createClass({\n  displayName: 'CarItin',\n  render: function render() {\n    console.log('rendering car itin', this.props);\n    return _react2.default.createElement(\n      'div',\n      { className: 'item-car-itin' },\n      _react2.default.createElement(\n        'h4',\n        null,\n        'CAR ITIN'\n      ),\n      _react2.default.createElement(\n        'p',\n        null,\n        this.props.carItinInfo.rentalCompany\n      ),\n      _react2.default.createElement(\n        'p',\n        null,\n        this.props.carItinInfo.vehicleBrand\n      )\n    );\n  }\n});\n\nexports.default = CarItin;\n\n/*****************\n ** WEBPACK FOOTER\n ** ./client/components/CarItin.js\n ** module id = 563\n ** module chunks = 0\n **/\n//# sourceURL=webpack:///./client/components/CarItin.js?");
+>>>>>>> dd07ab67dfdb318acc0009fc166afbf2b428bcad
 
 /***/ },
 /* 564 */
