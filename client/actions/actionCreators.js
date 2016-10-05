@@ -169,5 +169,3 @@ export function hydrateCarItin(CarItinData, email){
     email
   };
 }
-
-

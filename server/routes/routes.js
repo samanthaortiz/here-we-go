@@ -25,11 +25,6 @@ router.get('/auth/google/callback',
     successRedirect: '/siftAuth',
     failureRedirect: '/auth/google/failure'
   })
-  // ,
-  // function(req, res) {
-  //   console.log('RESPONSE GOING TO SPLASH PAGE', res);
-  //   res.redirect('/');
-  // }
 );
 
 router.get('/account', ensureAuthenticated, function(req, res) {
@@ -80,10 +75,7 @@ router.post('/budgetData', function(req, res) {
 
 
 router.post('/hotelItin', function(req, res) {
-  // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
-  // RAW SQL: SELECT * FROM hotelReservations VALUES WHERE hotel.user_email = email), 100)
   console.log('this is the req body',req.body)
-  var subSQL;
   var email = req.body.email;
   // var info;
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
@@ -164,20 +156,6 @@ router.post("/FlightSearch", function(req, res) {
 
 router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
   res.send(res.data);
-});
-
-// ACTIVITIES SEARCH API ================================================================== 
-router.post("/ActivitiesSearch", function(req, res) {
-  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
-
-  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
-
-  request({ url: urlAPI }, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      // console.log('Hotel Response Body', body);
-      res.send(body);
-    }
-  });
 });
 
 module.exports = router;
