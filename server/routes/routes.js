@@ -74,10 +74,8 @@ router.post('/budgetData', function(req, res) {
 });
 
 router.post('/hotelItin', function(req, res) {
-<<<<<<< HEAD
   var firstEmail = req.body.email.split("=")[1];
   var email = firstEmail.split("#")[0]
-
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
       // console.log('GOT INFO', info)
@@ -86,27 +84,7 @@ router.post('/hotelItin', function(req, res) {
     .catch(function(error) {
       console.error(error)
     });
-=======
   console.log('this is the req body: ', req.body);
-  /*
-
-    RAW SQL: INSERT INTO hotelReservations (hotelReservations.status_id, hotelReservations.type_id, hotelReservations.providerName, hotelReservations.address, hotelReservations.startDate, hotelReservations.endDate, hotelReservations.organization) VALUES ();
-
-  */
-
-  // var subSQL;
-  // var email = req.body.email;
-  // // var info;
-  //   db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
-  //   .then(function(info) {
-  //     // info = data
-  //     console.log('GOT INFO', info)
-  //     res.send(info);
-  //   })
-  //   .catch(function(error) {
-  //     console.error(error)
-  //   });
->>>>>>> codeCleanup
 });
 
 router.post('/flightItin', function(req, res) {
@@ -114,8 +92,6 @@ router.post('/flightItin', function(req, res) {
   var email = firstEmail.split("#")[0]
 
   console.log('>>>>> GETTING FLIGHT ITIN FROM DATABASE: ', req.body);
-
-<<<<<<< HEAD
     db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
     .then(function(info) {
       console.log('GOT FLIGHT INFO', info)
@@ -124,10 +100,6 @@ router.post('/flightItin', function(req, res) {
     .catch(function(error) {
       console.error(error)
     });
-=======
-router.post('/carItin', function(req, res) {
-  console.log('>>>>> SAVING CAR ITIN TO DATABASE: ', req.body);
->>>>>>> codeCleanup
 });
 
 router.post('/carItin', function(req, res) {

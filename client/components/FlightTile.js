@@ -74,9 +74,6 @@ const FlightTile = React.createClass({
      return codes.airports
   },
 
-  // componentDidMount() {
-  // },
-
   componentWillMount(){
     // console.log('about to mount flight tile')
     let codeArr = this.getAllAirports(ValidCodes) || [];
@@ -87,7 +84,9 @@ const FlightTile = React.createClass({
       // airportDestinationSelect: codeArr[0].name,
       airportDestinationCode: codeArr[0].code
     })
+  },
 
+  componentDidMount() {
     var airports = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
