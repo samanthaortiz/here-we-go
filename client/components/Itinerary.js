@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import BudgetForm from './BudgetForm';
+<<<<<<< HEAD
 <<<<<<< 7f1af54d8f2ff4cf3d5c1b6192c2718f05930f6d
 import HotelItin from './HotelItin'
 import CarRental from './CarRental';
@@ -8,6 +9,8 @@ import CarRental from './CarRental';
 const Itinerary = React.createClass({
 
 =======
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
 import CarItin from './CarItin';
@@ -33,6 +36,7 @@ const Itinerary = React.createClass({
   },
 
   render() {
+<<<<<<< HEAD
 <<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
     console.log("PROPS ITIN", this.props.data)
     console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
@@ -40,6 +44,9 @@ const Itinerary = React.createClass({
 =======
     // if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
 >>>>>>> feat(itin): itin component - working on rendering db data
+=======
+    // if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
       return (
         <div className="tile-itinerary">
           <h3>My Itinerary</h3>
@@ -64,12 +71,16 @@ const Itinerary = React.createClass({
               />
             })}
 
+<<<<<<< HEAD
 <<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
             {this.props.data.reducerCarItin.carItinData.map(function(carItin){
 >>>>>>> feat(car, flight itin): added car and flight itinerary components
 =======
           {this.props.data.reducerCarItin.carItinData.map(function(carItin){
 >>>>>>> feat(itin): itin component - working on rendering db data
+=======
+          {this.props.data.reducerCarItin.carItinData.map(function(carItin){
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
               <CarItin
                 key={carItin.sift_id}
                 carInfo={carItin}
@@ -90,6 +101,7 @@ const Itinerary = React.createClass({
                 key={hotel.sift_id}
                 hotelInfo={hotel}
                 email={this.props.reducerHotelItin.email}
+<<<<<<< HEAD
 <<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
               />
               */}
@@ -99,6 +111,8 @@ const Itinerary = React.createClass({
             <p><a onClick={this.handleBudgetForm}>Budget</a></p>
         
 =======
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
               />*/}
 
             <li>Saved</li>
@@ -113,6 +127,7 @@ const Itinerary = React.createClass({
           <div id="fade" className="black_overlay"></div>
         </div>
       );
+<<<<<<< HEAD
 <<<<<<< 377dfba279b430cbc66d51f7834c7d1a572b40ae
     } else {
       return (
@@ -137,6 +152,8 @@ const Itinerary = React.createClass({
     )
     }
 =======
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
     // } else {
     //   return (
     //    <div className="tile-itinerary">
@@ -151,7 +168,10 @@ const Itinerary = React.createClass({
     //   </div>
     // )
     // }
+<<<<<<< HEAD
 >>>>>>> fix(itinerary): removed if/else in itin component
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
   } 
 >>>>>>> feat(itin): itin component - working on rendering db data
 })

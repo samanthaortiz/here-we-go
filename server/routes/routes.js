@@ -75,6 +75,7 @@ router.post('/budgetData', function(req, res) {
 
 router.post('/hotelItin', function(req, res) {
   console.log('this is the req body',req.body)
+<<<<<<< HEAD
 <<<<<<< f3384c81ba504d1a68aaee0a7204749d34173910
   var firstEmail = req.body.email.split("=")[1];
   console.log("this is the email", firstEmail)
@@ -82,6 +83,8 @@ router.post('/hotelItin', function(req, res) {
   console.log("this is the second email", email)
 
 =======
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
   var email = req.body.email;
   // var info;
 >>>>>>> feat(itinerary): hotel itin data sending to itin component
@@ -126,6 +129,7 @@ router.post('/carItin', function(req, res) {
     .catch(function(error) {
       console.error(error)
     });
+<<<<<<< HEAD
 <<<<<<< 9c70735257b9242a4f714597a8d491acebcb395f
 });
 
@@ -167,6 +171,27 @@ router.post('/activityItin', function(req, res) {
 });
 
 >>>>>>> feat(car and flight itin): setting up proper routes
+=======
+});
+
+
+router.post('/activityItin', function(req, res) {
+  // console.log('>>>>> SAVING CARRENTALS ITIN TO DATABASE: ', req.body);
+  // RAW SQL: SELECT * FROM carRentals VALUES WHERE hotel.user_email = email), 100)
+  console.log('this is the req body',req.body)
+  var email = req.body.email;
+  // var info;
+    db.knex('carRentals').where('activities.user_email', email).select("*")
+    .then(function(info) {
+      console.log('GOT INFO', info)
+      res.send(info);
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
+});
+
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
@@ -188,6 +213,7 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
+<<<<<<< HEAD
 <<<<<<< f3384c81ba504d1a68aaee0a7204749d34173910
 <<<<<<< 9c70735257b9242a4f714597a8d491acebcb395f
 =======
@@ -208,4 +234,6 @@ router.post("/ActivitiesSearch", function(req, res) {
 
 =======
 >>>>>>> feat(itinerary): hotel itin data sending to itin component
+=======
+>>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
 module.exports = router;
