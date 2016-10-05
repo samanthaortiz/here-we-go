@@ -81,16 +81,8 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
   };
 }
 
-<<<<<<< 9c70735257b9242a4f714597a8d491acebcb395f
 //=============== HOTEL ITIN ===============
 
-=======
-//=============== DB DATA ===============
-//HOTELS
-<<<<<<< HEAD
->>>>>>> feat(car and flight itin): setting up proper routes
-=======
->>>>>>> 58fa0f4e474e0d061ceceac3ce252c6ae0f62af5
 export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
