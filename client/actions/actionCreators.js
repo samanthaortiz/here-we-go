@@ -143,8 +143,8 @@ export const postCarItin = (email) => {
     return axiosCarItin(email)
     .then(res => {
       console.log('getting into response obj, about to hydrate store', res.data)
-      dispatch(hydrateCarItin(res.data, email))
-      browserHistory.push('/dashboard')
+      dispatch(hydrateCarItin(res.data))
+      browserHistory.push('/')
     })
     .catch(error => console.log(error));
   };
@@ -157,10 +157,9 @@ export function axiosCarItin(email){
   })
 }
 
-export function hydrateCarItin(CarItinData, email){
+export function hydrateCarItin(carItinData){
   return {
     type: "POST_CAR_ITIN",
-    carItinData,
-    email
+    carItinData
   };
 }
