@@ -150,8 +150,8 @@ export function axiosCarItin(email){
 export function hydrateCarItin(CarItinData, email){
   console.log();
   return {
-    type: "POST_FLIGHT_ITIN",
-    flightItinData,
+    type: "POST_CAR_ITIN",
+    carItinData,
     email
   };
 }
