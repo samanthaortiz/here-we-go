@@ -7,7 +7,6 @@ import DatePicker from 'react-bootstrap-date-picker';
 const Splash = React.createClass({
   getInitialState() {
     let loc = window.location.href;
-    // let splitLoc = loc.split("=")[1]
     let date = new Date().toISOString().substring(0, 10);
     return {
       city: '',
@@ -50,6 +49,8 @@ const Splash = React.createClass({
       })
       this.props.postHotelItin(this.state.email)
       this.props.postFlightItin(this.state.email)
+      this.props.postCarItin(this.state.email)
+
     }
   },
 

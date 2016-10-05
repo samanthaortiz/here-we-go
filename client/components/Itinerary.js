@@ -21,9 +21,9 @@ const Itinerary = React.createClass({
       return (
         <div className="tile-itinerary">
           <h3>My Itinerary</h3>
-          {this.props.data.reducerHotelItin.hotelItinData.map((hotelItin) => 
+          {this.props.data.reducerHotelItin.hotelItinData.map((hotelItin, i) => 
             <HotelItin
-              key={hotelItin.sift_id}
+              key={i}
               hotelItinInfo={hotelItin}
               startDate={this.props.data.reducerTripData.startDate}
               endDate={this.props.data.reducerTripData.endDate}
@@ -34,14 +34,13 @@ const Itinerary = React.createClass({
                 key={i}
                 flightItinInfo={flightItin}
             />
-            )} 
-              {/* map over cars
+            )}
+            {this.props.data.reducerCarItin.carItinData.map((carItin, i) => 
               <CarItin
-                key={carItin.sift_id}
-                carInfo={carItin}
-                email={this.props.reducerCarItin.email}
+                key={i}
+                carItinInfo={carItin}
               />
-            })}              
+            )}              
 
               {/* map over activities
               <ActivityItin
