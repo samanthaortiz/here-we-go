@@ -4,6 +4,8 @@ import reducerTripData from './reducerTripData';
 import reducerFlightData from './reducerFlightData'; 
 import reducerLoginData from './reducerLoginData';
 import reducerHotelItin from './reducerHotelItin';
+import reducerFlightItin from './reducerFlightItin';
+import reducerCarItin from './reducerCarItin';
 
 const rootReducer = combineReducers({
   reducerTripData,
