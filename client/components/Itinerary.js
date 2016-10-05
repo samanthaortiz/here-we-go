@@ -3,7 +3,11 @@ import { Link } from 'react-router';
 import BudgetForm from './BudgetForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
+<<<<<<< 5d8a836fe690071c09d3a138bbd1320cb0b0643d
 import CarItin from './CarItin';
+=======
+import CarRental from './CarRental';
+>>>>>>> Schema edited
 
 const Itinerary = React.createClass({
 
@@ -71,6 +75,7 @@ const Itinerary = React.createClass({
     //         <li>Cancelled</li>
     //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
     //       </ul>
+<<<<<<< 5d8a836fe690071c09d3a138bbd1320cb0b0643d
     //        <div id="light" className="lightbox-content">
     //           <BudgetForm />
     //        </div>
@@ -79,6 +84,16 @@ const Itinerary = React.createClass({
     // )
     //}
   } 
+=======
+    //       <div id="light" className="lightbox-content">
+    //         <BudgetForm />
+    //       </div>
+    //       <div id="fade" className="black_overlay"></div>
+    //   </div>
+    //)
+    //}
+    }
+>>>>>>> Schema edited
 })
 
 export default Itinerary;

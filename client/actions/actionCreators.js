@@ -110,7 +110,10 @@ export function hydrateHotelItin(hotelItinData){
 };
 
 //=============== FLIGHTS ITIN ===============
+<<<<<<< 5d8a836fe690071c09d3a138bbd1320cb0b0643d
 
+=======
+>>>>>>> Schema edited
 export const postFlightItin = (email) => {
   return function(dispatch){
     return axiosFlightItin(email)
@@ -130,10 +133,17 @@ export function axiosFlightItin(email){
   })
 }
 
+<<<<<<< 5d8a836fe690071c09d3a138bbd1320cb0b0643d
 export function hydrateFlightItin(flightItinData){
   return {
     type: "POST_FLIGHT_ITIN",
     flightItinData,
+=======
+export function hydrateFlightItin(hotelItinData){
+  return {
+    type: "POST_FLIGHT_ITIN",
+    flightItinData
+>>>>>>> Schema edited
   };
 }
 
@@ -157,7 +167,11 @@ export function axiosCarItin(email){
   })
 }
 
+<<<<<<< 5d8a836fe690071c09d3a138bbd1320cb0b0643d
 export function hydrateCarItin(carItinData){
+=======
+export function hydrateCarItin(CarItinData, email){
+>>>>>>> Schema edited
   return {
     type: "POST_CAR_ITIN",
     carItinData
