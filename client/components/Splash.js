@@ -7,13 +7,14 @@ import DatePicker from 'react-bootstrap-date-picker';
 const Splash = React.createClass({
   getInitialState() {
     let loc = window.location.href;
+    // let splitLoc = loc.split("=")[1]
     let date = new Date().toISOString().substring(0, 10);
     return {
       city: '',
       startDate: date,
       endDate: date,
       isUserLoggedIn: loc.indexOf("?") !== -1,
-      email: loc.split("=")[1]
+      email: loc
     };
   },
 
@@ -41,14 +42,16 @@ const Splash = React.createClass({
     this.props.login();
   },
 
-  componentDidMount() {
+  componentWillMount() {
     document.body.classList.toggle('splashClass')
-
     if (this.state.isUserLoggedIn) {
       this.setState({
-        email: this.state.email.split("#")[0]
+        email: this.state.email
       })
+      this.props.postHotelItin(this.state.email)
+
       // this.props.getStuff(this.state.email.split("#")[0])
+      // this.props.postHotelItin(this.state.email)
     }
   },
 
@@ -64,7 +67,11 @@ const Splash = React.createClass({
   },
 
   render() {
-    
+    //     // console.log('this.state.email in render method', this.state.email)
+    // if (this.state.isUserLoggedIn) {
+    //   console.log('in if statement in render', ;
+    //   // this.props.postHotelItin(this.state.email)
+    // }
     return (
       <div>
       {!this.state.isUserLoggedIn && <a className="loginOut" href='/api/auth/google'>Login</a>}

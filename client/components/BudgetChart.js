@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const BudgetChart = React.createClass({
 
-  componentDidMount: function() {
+  componentWillMount: function() {
     this.renderChart();
   },
 

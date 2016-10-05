@@ -264,8 +264,8 @@ export const postHotelItin = (email) => {
     return axiosHotelItin(email)
     .then(res => {
       console.log('getting into response obj, about to hydrate store', res.data)
-      dispatch(hydrateHotelItin(res.data, email))
-      browserHistory.push('/dashboard')
+      dispatch(hydrateHotelItin(res.data))
+      browserHistory.push('/')
     })
     .catch(error => console.log(error));
   };
@@ -278,11 +278,10 @@ export function axiosHotelItin(email){
   })
 }
 
-export function hydrateHotelItin(hotelItinData, email){
+export function hydrateHotelItin(hotelItinData){
   console.log();
   return {
     type: "POST_HOTEL_ITIN",
     hotelItinData,
-    email
   };
 }

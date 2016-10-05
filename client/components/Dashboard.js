@@ -12,7 +12,7 @@ const Dashboard = React.createClass({
 
   render() {
     // console.log('>>>>> DASHBOARD <<<<<');
-    // console.log('=====> ', this.props);
+    console.log('=====> ', this.props);
     // var startDate = this.props.expediaHotelInfo.startDate
     // var endDate = this.props.expediaHotelInfo.endDate
   

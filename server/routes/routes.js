@@ -83,7 +83,10 @@ router.post('/hotelItin', function(req, res) {
   // RAW SQL: SELECT * FROM hotelReservations VALUES WHERE hotel.user_email = email), 100)
   console.log('this is the req body',req.body)
   var subSQL;
-  var email = req.body.email;
+  var firstEmail = req.body.email.split("=")[1];
+  console.log("this is the email", firstEmail)
+  var email = firstEmail.split("#")[0]
+  console.log("this is the second email", email)
   // var info;
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
@@ -162,7 +165,6 @@ router.post('/user-account/', function(req, res) {
   // .catch(function(error) {
   //   console.error(error)
   // });
-});
 });
 
 // GET USERNAME

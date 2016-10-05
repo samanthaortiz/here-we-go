@@ -74,7 +74,20 @@ const FlightTile = React.createClass({
      return codes.airports
   },
 
-  componentDidMount() {
+  // componentDidMount() {
+  // },
+
+  componentWillMount(){
+    // console.log('about to mount flight tile')
+    let codeArr = this.getAllAirports(ValidCodes) || [];
+    this.setState({
+      availableAirportCodes: codeArr,
+      // airportDepartureSelect: 'My Departure Airport',
+      airportDepartureCode: "",
+      // airportDestinationSelect: codeArr[0].name,
+      airportDestinationCode: codeArr[0].code
+    })
+
     var airports = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
@@ -89,18 +102,6 @@ const FlightTile = React.createClass({
       name: 'airports',
       source: airports
     }).on('typeahead:change', this.handleChangeDeparture)
-  },
-
-  componentWillMount(){
-    // console.log('about to mount flight tile')
-    let codeArr = this.getAllAirports(ValidCodes) || [];
-    this.setState({
-      availableAirportCodes: codeArr,
-      // airportDepartureSelect: 'My Departure Airport',
-      airportDepartureCode: "",
-      // airportDestinationSelect: codeArr[0].name,
-      airportDestinationCode: codeArr[0].code
-    })
   },
 
   handleChangeDestination(event) {
