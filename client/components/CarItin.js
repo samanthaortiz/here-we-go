@@ -3,11 +3,12 @@ import React from 'react';
 const CarItin = React.createClass({
 
   render() {
+    console.log('rendering car itin', this.props)
       return (
         <div>
-          {this.props.carInfo.rentalCompany}
-          {this.props.carInfo.vehicleBrand}
-          {this.props.carInfo.pickupTime} to {this.props.carInfo.dropoffTime}
+          {this.props.carItinInfo.rentalCompany}
+          {this.props.carItinInfo.vehicleBrand}
+          {this.props.carItinInfo.pickupTime} to {this.props.carItinInfo.dropoffTime}
         </div>
       );
     } 
