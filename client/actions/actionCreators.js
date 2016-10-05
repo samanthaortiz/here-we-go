@@ -82,6 +82,7 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
 }
 
 //=============== DB DATA ===============
+//HOTELS
 export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
@@ -163,8 +164,8 @@ export function axiosCarItin(email){
 export function hydrateCarItin(CarItinData, email){
   console.log();
   return {
-    type: "POST_FLIGHT_ITIN",
-    flightItinData,
+    type: "POST_CAR_ITIN",
+    carItinData,
     email
   };
 }
