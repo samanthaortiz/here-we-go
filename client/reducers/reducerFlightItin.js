@@ -5,7 +5,6 @@ const reducerFlightItin = (state = [], action) => {
     case 'POST_FLIGHT_ITIN':
       return {
         flightItinData: action.flightItinData,
-        email: action.email
       }
     default:
       return state;
