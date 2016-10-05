@@ -87,24 +87,6 @@ router.post('/hotelItin', function(req, res) {
 
   */
 
-  db.knex('hotelReservations')
-    .insert({
-      status_id: req.body.status_id,
-      type_id: req.body.type_id,
-      providerName: req.body.providerName,
-      address: req.body.address,
-      startDate: req.body.startDate,
-      endDate: req.body.endDate,
-      organization: req.body.organization
-    })
-    .then(function(data) {
-      console.log('ADDED HOTEL');
-      res.send(data);
-    })
-    .catch(function(error) {
-      console.error(error);
-    });
-
   // var subSQL;
   // var email = req.body.email;
   // // var info;
@@ -137,26 +119,6 @@ router.post('/flightItin', function(req, res) {
 
 router.post('/carItin', function(req, res) {
   console.log('>>>>> SAVING CAR ITIN TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
-  res.send();
 });
 
 router.post('/activityItin', function(req, res) {

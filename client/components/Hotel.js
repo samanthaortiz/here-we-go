@@ -43,10 +43,10 @@ const Hotel = React.createClass({
       organization: 'Expedia'
     };
 
-    console.log('>>>> ', dataObj);
+    // console.log('>>>> ', dataObj);
 
     $.ajax({
-      url: '/api/hotelItin',
+      url: '/hotelReservations',
       type: 'POST',
       data: JSON.stringify(dataObj),
       contentType: 'application/json',

@@ -27,6 +27,11 @@ const Flight = React.createClass({
     return legs;
   },
 
+  // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
+  handleSaveFlight: function(event) {
+    console.log('SELECTED FLIGHT: ', this.props)
+  },
+
   render() {
           // <h3>Select Your Flight</h3>
 
@@ -44,12 +49,11 @@ const Flight = React.createClass({
       // console.log(legs)
       return (
         <div className="item-flight">
-        <button type="button" className="btn">Save Flight</button>
-        <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>
-        <p>{legs[0].segments[0].departureAirportCode} to {legs[0].segments[0].arrivalAirportCode}</p>
-        <p>Departure Time: {legs[0].segments[0].departureTime}</p>
-        <p>Arrival Time: {legs[0].segments[0].arrivalTime}</p>
-
+          <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+          <p>Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}</p>
+          <p>{legs[0].segments[0].departureAirportCode} to {legs[0].segments[0].arrivalAirportCode}</p>
+          <p>Departure Time: {legs[0].segments[0].departureTime}</p>
+          <p>Arrival Time: {legs[0].segments[0].arrivalTime}</p>
         </div>
       );
     // }
