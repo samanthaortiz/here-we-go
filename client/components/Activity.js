@@ -3,6 +3,13 @@ import React from 'react';
 import Hotel from './Hotel';
 
 const Activity = React.createClass({
+  getInitialState() {
+    return {
+      status_id: '',
+      type_id: '',
+      user_email: ''
+    };
+  },
   changeDate(date) {
     let newDate = date.split("-").join("/");
     let year = newDate.slice(0,4);
@@ -13,6 +20,26 @@ const Activity = React.createClass({
   handleSaveActivity: function(event) {
     event.preventDefault();
     console.log('SELECTED ACTIVITY: ', this.props);
+    
+    let dataObj = {
+      status_id: 2,
+      type_id: 4,
+      user_email: `${this.props.userEmail}`
+    };
+
+    $.ajax({
+      url: '/activityReservation',
+      type: 'POST',
+      data: JSON.stringify(dataObj),
+      contentType: 'application/json',
+      success: function (data) {
+        // // Trigger a fetch to update the messages, pass true to animate
+        // app.fetch();
+      },
+      error: function (data) {
+        console.error('ERROR SENDING TO DATABASE: ', data);
+      }
+    });
   },
 
   render() {

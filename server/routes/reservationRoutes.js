@@ -3,7 +3,7 @@ var request = require('request');
 var db = require('../database/db.js');
 
 reservationRoutes.post('/hotelReservations', function(req, res) {
-  console.log('this is the req body: ', req.body);
+  console.log('>>>>> SAVING HOTEL RESERVATION: ', req.body);
     db.knex('hotelReservations')
     .insert({
       status_id: req.body.status_id,
@@ -24,11 +24,11 @@ reservationRoutes.post('/hotelReservations', function(req, res) {
 });
 
 reservationRoutes.post('/flightReservation', function(req, res) {
-
+  onsole.log('>>>>> SAVING FLIGHT RESERVATION: ', req.body);
 });
 
 reservationRoutes.post('/carReservation', function(req, res) {
-  console.log('>>>>> SAVING CAR ITIN TO DATABASE: ', req.body);
+  console.log('>>>>> SAVING CAR RESERVATION: ', req.body);
   
   db.knex('hotelReservations')
     .insert({
@@ -50,7 +50,7 @@ reservationRoutes.post('/carReservation', function(req, res) {
 });
 
 reservationRoutes.post('/activityReservation', function(req, res) {
-  
+  console.log('>>>>> SAVING ACTIVITY RESERVATION: ', req.body);
 });
 
 module.exports = reservationRoutes;
