@@ -78,7 +78,6 @@ router.post('/budgetData', function(req, res) {
   res.send();
 });
 
-
 router.post('/hotelItin', function(req, res) {
   // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
   // RAW SQL: SELECT * FROM hotelReservations VALUES WHERE hotel.user_email = email), 100)
@@ -98,85 +97,89 @@ router.post('/hotelItin', function(req, res) {
 });
 
 router.post('/flightItin', function(req, res) {
-  console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
-  res.send();
+  // console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
+  // RAW SQL: SELECT * FROM flightReservations VALUES WHERE hotel.user_email = email)
+  console.log('this is the req body',req.body)
+  var email = req.body.email;
+  // var info;
+    db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
+    .then(function(info) {
+      console.log('GOT INFO', info)
+      res.send(info);
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
 });
 
 
 router.post('/carItin', function(req, res) {
-  console.log('>>>>> SAVING CAR ITIN TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
-  res.send();
-});
-
-router.post('/activityItin', function(req, res) {
-  console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
-  res.send();
+  // console.log('>>>>> SAVING CARRENTALS ITIN TO DATABASE: ', req.body);
+  // RAW SQL: SELECT * FROM carRentals VALUES WHERE hotel.user_email = email), 100)
+  console.log('this is the req body',req.body)
+  var email = req.body.email;
+  // var info;
+    db.knex('carRentals').where('carRentals.user_email', email).select("*")
+    .then(function(info) {
+      console.log('GOT INFO', info)
+      res.send(info);
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
 });
 
 
+// router.post('/activityItin', function(req, res) {
+//     // console.log('>>>>> SAVING HOTEL ITIN TO DATABASE: ', req.body);
+//   // RAW SQL: SELECT * FROM hotelReservations VALUES WHERE hotel.user_email = email), 100)
+//   console.log('this is the req body',req.body)
+//   var email = req.body.email;
+//   // var info;
+//     db.knex('activities').where('activities.user_email', email).select("*")
+//     .then(function(info) {
+//       console.log('GOT INFO', info)
+//       res.send(info);
+//     })
+//     .catch(function(error) {
+//       console.error(error)
+//     });
+// });
 
 
 
 
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
+});
+});
 
+// GET USERNAME
+router.post('/user-account/', function(req, res) {
+  console.log("USER REQ", res);
+  // db.knex.select('*')
+  // .from('users')
+  // .where({'email': req})
+  // .then(function(user) {
+  //   res.send(user);
+  //   console.log("USER ACCOUNT", user)
+  // })
+  // .catch(function(error) {
+  //   console.error(error)
+  // });
 
+});
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
@@ -198,19 +201,6 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
-// ACTIVITIES SEARCH API ================================================================== 
-router.post("/ActivitiesSearch", function(req, res) {
-  // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
-
-  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
-
-  request({ url: urlAPI }, function(error, response, body) {
-    if (!error && response.statusCode == 200) {
-      // console.log('Hotel Response Body', body);
-      res.send(body);
-    }
-  });
-});
 
 
 module.exports = router;
