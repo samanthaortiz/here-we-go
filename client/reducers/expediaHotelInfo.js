@@ -15,4 +15,3 @@ const expediaHotelInfo = (state = [], action) => {
 }
 
 export default expediaHotelInfo
-//this is the api call
