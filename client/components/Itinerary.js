@@ -33,9 +33,13 @@ const Itinerary = React.createClass({
   },
 
   render() {
+<<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
     console.log("PROPS ITIN", this.props.data)
     console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
+=======
+    // if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
+>>>>>>> feat(itin): itin component - working on rendering db data
       return (
         <div className="tile-itinerary">
           <h3>My Itinerary</h3>
@@ -51,17 +55,22 @@ const Itinerary = React.createClass({
               {/* map over cars
 =======
           <ul>
-            <li>Saved</li>
+            <li>Booked</li>
             {this.props.data.reducerHotelItin.hotelItinData.map(function(hotelItin){
               <HotelItin
                 key={hotelItin.sift_id}
                 hotelInfo={hotelItin}
                 email={this.props.data.reducerHotelItin.email}
               />
+              <div>hotelItin.providerName</div>
             })}
 
+<<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
             {this.props.data.reducerCarItin.carItinData.map(function(carItin){
 >>>>>>> feat(car, flight itin): added car and flight itinerary components
+=======
+          {this.props.data.reducerCarItin.carItinData.map(function(carItin){
+>>>>>>> feat(itin): itin component - working on rendering db data
               <CarItin
                 key={carItin.sift_id}
                 carInfo={carItin}
@@ -82,6 +91,7 @@ const Itinerary = React.createClass({
                 key={hotel.sift_id}
                 hotelInfo={hotel}
                 email={this.props.reducerHotelItin.email}
+<<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
               />
               */}
             <p>Upcoming</p>
@@ -89,6 +99,15 @@ const Itinerary = React.createClass({
             <p>Cancelled</p>
             <p><a onClick={this.handleBudgetForm}>Budget</a></p>
         
+=======
+              />*/}
+
+            <li>Saved</li>
+            <li>Previous</li>
+            <li>Cancelled</li>
+            <li><a onClick={this.handleBudgetForm}>Budget</a></li>
+          </ul>
+>>>>>>> feat(itin): itin component - working on rendering db data
           <div id="light" className="lightbox-content">
             <BudgetForm />
           </div>
@@ -111,8 +130,14 @@ const Itinerary = React.createClass({
           </div>
           <div id="fade" className="black_overlay"></div>
       </div>
+<<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
         )
     } 
+=======
+    )
+    }
+  } 
+>>>>>>> feat(itin): itin component - working on rendering db data
 })
 
 export default Itinerary;

@@ -11,6 +11,10 @@ const defaultState = {
     reducerHotelItin: [],
     reducerFlightItin: [],
     reducerCarItin: []
+<<<<<<< b687877d83afd5fea2b1904f776b201c60ea060f
+=======
+
+>>>>>>> feat(itin): itin component - working on rendering db data
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
