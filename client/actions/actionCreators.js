@@ -39,6 +39,7 @@ export function axiosTripCall(location, startDate, endDate){
   });
 };
 
+<<<<<<< f64834ce90cd66716593d08bfb87fa02953b205b
 <<<<<<< ba483e0706e024c1763da268228a47cf7fab85dd
 <<<<<<< e7473a8f0ce741fcd2063243def647f7da39e456
 <<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
@@ -1104,6 +1105,8 @@ export function axiosLogin(){
 >>>>>>> Merge conflicts resolved
 =======
 >>>>>>> Merge conflicts
+=======
+>>>>>>> Merge conflicts
 //=============== FLIGHTS ===============
 
 //POST REQ TO EXPEDIA TO SEARCH FOR FLIGHTS BY AIRPORT CODE AND DATES
@@ -1151,7 +1154,7 @@ export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
-      // console.log('getting into response obj, about to hydrate store', res.data)
+      console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateHotelItin(res.data, email))
       browserHistory.push('/dashboard')
     })
@@ -1173,6 +1176,7 @@ export function hydrateHotelItin(hotelItinData, email){
     hotelItinData,
     email
   };
+<<<<<<< f64834ce90cd66716593d08bfb87fa02953b205b
 <<<<<<< e7473a8f0ce741fcd2063243def647f7da39e456
 <<<<<<< 0abef1180b35c351c994ca4975047a61676d080c
 <<<<<<< 17a2e961d9729c0268c73b36756781a8ad3be15a
@@ -1260,3 +1264,6 @@ export function hydrateCarItin(CarItinData, email){
 }
 >>>>>>> Merge conflicts resolved
 >>>>>>> Merge conflicts resolved
+=======
+}
+>>>>>>> Merge conflicts

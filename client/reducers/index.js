@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import reducerTripData from './reducerTripData';
+<<<<<<< f64834ce90cd66716593d08bfb87fa02953b205b
 <<<<<<< ab7bed1e01bc3f206fdc83f5405c78545a7defb1
 <<<<<<< b2d34cf068ea7e6797a550c95ce05a46a0886a54
 <<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
@@ -394,37 +395,16 @@ import reducerHotelItin from './reducerHotelItin';
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 >>>>>>> revert(Frontend): Frontend routing for login reversed
 =======
+=======
+>>>>>>> Merge conflicts
 import reducerFlightData from './reducerFlightData'; 
 import reducerLoginData from './reducerLoginData';
->>>>>>> Merge conflicts resolved
-=======
 import reducerHotelItin from './reducerHotelItin';
-
->>>>>>> Routing updated
-=======
->>>>>>> feat(Database): User email linked to each table
->>>>>>> feat(Database): User email linked to each table
-=======
->>>>>>> revert(Frontend): Frontend routing for login reversed
-=======
->>>>>>> feat(Database): User email linked to each table
->>>>>>> feat(Database): User email linked to each table
-
-=======
->>>>>>> revert(Frontend): Frontend routing for login reversed
-=======
-<<<<<<< bd727bb550119863c1dc38e9607c40ca1c8ab1ad
-import reducerHotelItin from './reducerHotelItin';
-=======
->>>>>>> Merge conflicts resolved
->>>>>>> Merge conflicts resolved
-=======
-import reducerHotelItin from './reducerHotelItin';
->>>>>>> Merge conflicts
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
+<<<<<<< f64834ce90cd66716593d08bfb87fa02953b205b
 <<<<<<< b2d34cf068ea7e6797a550c95ce05a46a0886a54
 <<<<<<< faa67ee73a657d0dc9ea89e01e80dac14fc90a5f
 <<<<<<< 8978958219bb4d9d99612eb8926e4120e80de6db
@@ -716,17 +696,10 @@ const rootReducer = combineReducers({
 =======
 >>>>>>> feat(Database): User email linked to each table
 =======
-  reducerLoginData,
-  reducerHotelItin,
-<<<<<<< 3df6ed2f57a9b72dc5990be8f7e8b02a5b1fbcdf
-<<<<<<< dabe2e8f606cb2f11ae22fa6ce608fabdbef8574
->>>>>>> revert(Frontend): Frontend routing for login reversed
-=======
-=======
->>>>>>> Merge conflicts resolved
->>>>>>> Merge conflicts resolved
 =======
 >>>>>>> Merge conflicts
+  reducerLoginData,
+  reducerHotelItin,
   routing: routerReducer
 });
 
