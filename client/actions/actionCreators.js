@@ -81,14 +81,15 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
   };
 }
 
-//=============== DB DATA ===============
+//=============== HOTEL ITIN ===============
+
 export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
-      // console.log('getting into response obj, about to hydrate store', res.data)
-      dispatch(hydrateHotelItin(res.data, email))
-      browserHistory.push('/dashboard')
+      console.log('getting into response obj, about to hydrate store', res.data)
+      dispatch(hydrateHotelItin(res.data))
+      browserHistory.push('/')
     })
     .catch(error => console.log(error));
   };
@@ -101,29 +102,15 @@ export function axiosHotelItin(email){
   })
 }
 
-export function hydrateHotelItin(hotelItinData, email){
+export function hydrateHotelItin(hotelItinData){
   console.log();
   return {
     type: "POST_HOTEL_ITIN",
     hotelItinData,
-    email
-  };
-}
-
-
-//FLIGHTS
-export const postFlightItin = (email) => {
-  return function(dispatch){
-    return axiosFlightItin(email)
-    .then(res => {
-      console.log('getting into response obj, about to hydrate store', res.data)
-      dispatch(hydrateFlightItin(res.data, email))
-      browserHistory.push('/dashboard')
-    })
-    .catch(error => console.log(error));
   };
 };
 
+//=============== FLIGHTS ITIN ===============
 export function axiosFlightItin(email){
   console.log('posting email req', email)
   return axios.post('/api/flightItin', {
@@ -140,7 +127,7 @@ export function hydrateFlightItin(hotelItinData, email){
   };
 }
 
-//CARS
+//=============== CARS ITIN ===============
 export const postCarItin = (email) => {
   return function(dispatch){
     return axiosCarItin(email)
@@ -168,5 +155,3 @@ export function hydrateCarItin(CarItinData, email){
     email
   };
 }
-
-

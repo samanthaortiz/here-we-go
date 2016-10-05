@@ -5,7 +5,6 @@ const reducerHotelItin = (state = [], action) => {
     case 'POST_HOTEL_ITIN':
       return {
         hotelItinData: action.hotelItinData,
-        email: action.email
       }
     default:
       return state;
