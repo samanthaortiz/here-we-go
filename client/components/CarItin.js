@@ -5,10 +5,10 @@ const CarItin = React.createClass({
   render() {
     console.log('rendering car itin', this.props)
       return (
-        <div>
-          {this.props.carItinInfo.rentalCompany}
-          {this.props.carItinInfo.vehicleBrand}
-          {this.props.carItinInfo.pickupTime} to {this.props.carItinInfo.dropoffTime}
+        <div className='item-car-itin'>
+          <h4>CAR ITIN</h4>
+          <p>{this.props.carItinInfo.rentalCompany}</p>
+          <p>{this.props.carItinInfo.vehicleBrand}</p>
         </div>
       );
     } 
