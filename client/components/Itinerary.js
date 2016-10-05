@@ -25,21 +25,22 @@ const Itinerary = React.createClass({
   },
 
   render() {
-    if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
+    // if(this.props.data.reducerTripData.loggedIn && this.props.data.reducerHotelItin.hotelItinData !== undefined){
       return (
         <div className="tile-itinerary">
           <h3>My Itinerary</h3>
           <ul>
-            <li>Saved</li>
+            <li>Booked</li>
             {this.props.data.reducerHotelItin.hotelItinData.map(function(hotelItin){
               <HotelItin
                 key={hotelItin.sift_id}
                 hotelInfo={hotelItin}
                 email={this.props.data.reducerHotelItin.email}
               />
+              <div>hotelItin.providerName</div>
             })}
 
-            {this.props.data.reducerCarItin.carItinData.map(function(carItin){
+          {this.props.data.reducerCarItin.carItinData.map(function(carItin){
               <CarItin
                 key={carItin.sift_id}
                 carInfo={carItin}
@@ -60,9 +61,9 @@ const Itinerary = React.createClass({
                 key={hotel.sift_id}
                 hotelInfo={hotel}
                 email={this.props.reducerHotelItin.email}
-              />
-              */}
-            <li>Upcoming</li>
+              />*/}
+
+            <li>Saved</li>
             <li>Previous</li>
             <li>Cancelled</li>
             <li><a onClick={this.handleBudgetForm}>Budget</a></li>
@@ -85,7 +86,7 @@ const Itinerary = React.createClass({
             <li><a onClick={this.handleBudgetForm}>Budget</a></li>
           </ul>
       </div>
-        )
+    )
     }
   } 
 })
