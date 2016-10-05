@@ -27,7 +27,7 @@ const CarRentalTile = React.createClass({
   render() {
     // console.log('>>>>> CAR RENTAL TILE <<<<<');
     // console.log('carData: ', this.props.carData.tripData[1].carData)
-    console.log('CAR TILE: ', this.props.carData);
+    // console.log('CAR TILE: ', this.props.carData);
 
     let cars = this.filterCars();
     // console.log('cars', cars);
