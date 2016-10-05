@@ -5,7 +5,6 @@ const reducerCarItin = (state = [], action) => {
     case 'POST_CAR_ITIN':
       return {
         carItinData: action.carItinData,
-        email: action.email
       }
     default:
       return state;

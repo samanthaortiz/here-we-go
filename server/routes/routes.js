@@ -74,16 +74,12 @@ router.post('/budgetData', function(req, res) {
 });
 
 router.post('/hotelItin', function(req, res) {
-  console.log('this is the req body',req.body)
   var firstEmail = req.body.email.split("=")[1];
-  console.log("this is the email", firstEmail)
   var email = firstEmail.split("#")[0]
-  console.log("this is the second email", email)
 
     db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
     .then(function(info) {
-      // info = data
-      console.log('GOT INFO', info)
+      // console.log('GOT INFO', info)
       res.send(info);
     })
     .catch(function(error) {
@@ -92,14 +88,14 @@ router.post('/hotelItin', function(req, res) {
 });
 
 router.post('/flightItin', function(req, res) {
-  // console.log('>>>>> SAVING FLIGHT ITIN TO DATABASE: ', req.body);
-  // RAW SQL: SELECT * FROM flightReservations VALUES WHERE hotel.user_email = email)
-  console.log('this is the req body',req.body)
-  var email = req.body.email;
-  // var info;
+  var firstEmail = req.body.email.split("=")[1];
+  var email = firstEmail.split("#")[0]
+
+  console.log('>>>>> GETTING FLIGHT ITIN FROM DATABASE: ', req.body);
+
     db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
     .then(function(info) {
-      console.log('GOT INFO', info)
+      console.log('GOT FLIGHT INFO', info)
       res.send(info);
     })
     .catch(function(error) {
@@ -108,11 +104,10 @@ router.post('/flightItin', function(req, res) {
 });
 
 router.post('/carItin', function(req, res) {
-  // console.log('>>>>> SAVING CARRENTALS ITIN TO DATABASE: ', req.body);
-  // RAW SQL: SELECT * FROM carRentals VALUES WHERE hotel.user_email = email), 100)
-  console.log('this is the req body',req.body)
-  var email = req.body.email;
-  // var info;
+  var firstEmail = req.body.email.split("=")[1];
+  var email = firstEmail.split("#")[0]
+  console.log('>>>>> GETTING CARRENTALS ITIN FROM DATABASE: ', req.body);
+
     db.knex('carRentals').where('carRentals.user_email', email).select("*")
     .then(function(info) {
       console.log('GOT INFO', info)

@@ -103,7 +103,6 @@ export function axiosHotelItin(email){
 }
 
 export function hydrateHotelItin(hotelItinData){
-  console.log();
   return {
     type: "POST_HOTEL_ITIN",
     hotelItinData,
@@ -111,6 +110,19 @@ export function hydrateHotelItin(hotelItinData){
 };
 
 //=============== FLIGHTS ITIN ===============
+
+export const postFlightItin = (email) => {
+  return function(dispatch){
+    return axiosFlightItin(email)
+    .then(res => {
+      console.log('getting into response obj, about to hydrate store', res.data)
+      dispatch(hydrateFlightItin(res.data))
+      browserHistory.push('/')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
 export function axiosFlightItin(email){
   console.log('posting email req', email)
   return axios.post('/api/flightItin', {
@@ -118,12 +130,10 @@ export function axiosFlightItin(email){
   })
 }
 
-export function hydrateFlightItin(hotelItinData, email){
-  console.log();
+export function hydrateFlightItin(flightItinData){
   return {
     type: "POST_FLIGHT_ITIN",
     flightItinData,
-    email
   };
 }
 
@@ -148,7 +158,6 @@ export function axiosCarItin(email){
 }
 
 export function hydrateCarItin(CarItinData, email){
-  console.log();
   return {
     type: "POST_CAR_ITIN",
     carItinData,

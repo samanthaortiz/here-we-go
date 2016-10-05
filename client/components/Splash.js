@@ -49,9 +49,7 @@ const Splash = React.createClass({
         email: this.state.email
       })
       this.props.postHotelItin(this.state.email)
-
-      // this.props.getStuff(this.state.email.split("#")[0])
-      // this.props.postHotelItin(this.state.email)
+      this.props.postFlightItin(this.state.email)
     }
   },
 
