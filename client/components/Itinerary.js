@@ -71,14 +71,13 @@ const Itinerary = React.createClass({
     //         <li>Cancelled</li>
     //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
     //       </ul>
-    //        <div id="light" className="lightbox-content">
-    //           <BudgetForm />
-    //        </div>
-    //        <div id="fade" className="black_overlay"></div>
+    //       <div id="light" className="lightbox-content">
+    //         <BudgetForm />
+    //       </div>
+    //       <div id="fade" className="black_overlay"></div>
     //   </div>
-    // )
+    //)
     //}
-  } 
+    }
 })
-
 export default Itinerary;
