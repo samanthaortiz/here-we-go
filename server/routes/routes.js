@@ -161,5 +161,4 @@ router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlight
   res.send(res.data);
 });
 
-
 module.exports = router;

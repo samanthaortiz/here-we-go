@@ -1,4 +1,4 @@
-import db from './db';
+import db from '../db';
 import Itinerary from './Itinerary';
 import Type from './Type';
 

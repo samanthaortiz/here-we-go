@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import BudgetForm from './BudgetForm';
-import HotelItin from './HotelItin'
+import HotelItin from './HotelItin';
+import FlightItin from './FlightItin';
 import CarRental from './CarRental';
 
 const Itinerary = React.createClass({
@@ -62,24 +63,25 @@ const Itinerary = React.createClass({
           <div id="fade" className="black_overlay"></div>
         </div>
       );
-    } else {
-      return (
-       <div className="tile-itinerary">
-        <h3>My Itinerary</h3>
-        <ul>
-            <li>Saved</li>
-            <li>Upcoming</li>
-            <li>Previous</li>
-            <li>Cancelled</li>
-            <li><a onClick={this.handleBudgetForm}>Budget</a></li>
-          </ul>
-          <div id="light" className="lightbox-content">
-            <BudgetForm />
-          </div>
-          <div id="fade" className="black_overlay"></div>
-      </div>
-        )
-    } 
+    // } else {
+    //   return (
+    //    <div className="tile-itinerary">
+    //     <h3>My Itinerary</h3>
+    //     <ul>
+    //         <li>Saved</li>
+    //         <li>Upcoming</li>
+    //         <li>Previous</li>
+    //         <li>Cancelled</li>
+    //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
+    //       </ul>
+    //       <div id="light" className="lightbox-content">
+    //         <BudgetForm />
+    //       </div>
+    //       <div id="fade" className="black_overlay"></div>
+    //   </div>
+    //)
+    //}
+    }
 })
 
 export default Itinerary;
