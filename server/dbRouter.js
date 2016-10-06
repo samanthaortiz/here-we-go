@@ -7,7 +7,6 @@ module.exports = {
 
     var subSQL;
     var data = req.body;
-
     for(var key in data) {
       if(data.hasOwnProperty(key)) {
         subSQL = db.knex('types').where('reservationType', key).select('id');
@@ -47,7 +46,6 @@ module.exports = {
       console.error(error)
     });
   },
-
 
   carItin: function(req, res, next){
     var firstEmail = req.body.email.split("=")[1];
