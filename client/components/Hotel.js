@@ -10,10 +10,10 @@ const Hotel = React.createClass({
       user_email: '',
       providerName: '',
       address: '',
-      telephone: '',
-      days: '',
+      // telephone: '',
       startDate: '',
       endDate: '',
+      days: '',
       organization: ''
     };
   },
@@ -33,13 +33,13 @@ const Hotel = React.createClass({
     let dataObj = {
       status_id: 2,      // Saved
       type_id: 2,        // hotel
-      user_email: `${this.props.email}`,
+      user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
       providerName: `${this.props.hotelInfo.localizedName}`,
       address: `${this.props.hotelInfo.address}, ${this.props.hotelInfo.city}`,
-      telephone: '',
-      days: '',
+      // telephone: '',
       startDate: `${this.props.startDate}`,
       endDate: `${this.props.endDate}`,
+      days: `${this.props.days}`,
       organization: 'Expedia'
     };
 

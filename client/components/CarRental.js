@@ -12,7 +12,6 @@ const CarRental = React.createClass({
       vehicleBrand: '',
       rentalCompany: '',
       pickUpAddress: '',
-      startDate: '',
       dropOffAddress: '',
       pickUpTime: '',
       dropOffTime: ''
@@ -27,12 +26,11 @@ const CarRental = React.createClass({
     let dataObj = {
       status_id: 2,
       type_id: 3,
-      user_email: `${this.props.userEmail}`,
+      user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
       vehicleType: `${this.props.carInfo.CarClass}`,
       vehicleBrand: `${this.props.carInfo.CarMakeModel}`,
       rentalCompany: `${this.props.carInfo.SupplierName}`,
       pickUpAddress: `${this.props.carInfo.PickupInfo.Location.Code}`,
-      startDate: `${this.props.startDate}`,
       dropOffAddress: `${this.props.carInfo.DropOffInfo.Location.Code}`,
       pickUpTime: `${this.props.carInfo.PickupInfo.DateTime}`,
       dropOffTime: `${this.props.carInfo.DropOffInfo.DateTime}`
@@ -54,8 +52,8 @@ const CarRental = React.createClass({
   },
 
   render() {
-    // console.log('>>>>> CAR RENTAL <<<<<');
-    // console.log('carData: ', this.props.carInfo);
+    console.log('>>>>> CAR RENTAL <<<<<');
+    console.log('PROPS: ', this.props.userEmail);
     // console.log(this.props.isLoggedIn);
 
     return (
