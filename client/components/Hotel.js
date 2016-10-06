@@ -66,6 +66,11 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
+<<<<<<< HEAD
+=======
+    // console.log('>>>>>> ', this.props);
+
+>>>>>>> codeCleanup
     if(this.props.hotelInfo !== undefined) {
       return (
         
