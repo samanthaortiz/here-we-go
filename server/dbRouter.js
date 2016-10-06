@@ -4,13 +4,8 @@ var db = require('./database/db.js');
 module.exports = {
   
   budgetData: function(req, res, next) {
-    // console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
-    // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-    //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
     var subSQL;
     var data = req.body;
-
     for(var key in data) {
       if(data.hasOwnProperty(key)) {
         subSQL = db.knex('types').where('reservationType', key).select('id');
@@ -50,7 +45,6 @@ module.exports = {
       console.error(error)
     });
   },
-
 
   carItin: function(req, res, next){
     var firstEmail = req.body.email.split("=")[1];
