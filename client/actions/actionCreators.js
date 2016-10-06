@@ -135,7 +135,7 @@ export function hydrateFlightItin(flightItinData){
     type: "POST_FLIGHT_ITIN",
     flightItinData
   };
-}
+  }
 
 //=============== CARS ITIN ===============
 export const postCarItin = (email) => {

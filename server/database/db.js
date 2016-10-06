@@ -196,6 +196,8 @@ knex.schema.hasTable('carRentals').then(exists => {
       activity.increments('id').primary();
       activity.integer('trip_id').unsigned();
       activity.foreign('trip_id').references('id').inTable('itineraries');
+      activity.integer('status_id').unsigned();
+      activity.foreign('status_id').references('id').inTable('statuses');
       activity.integer('type_id').unsigned();
       activity.foreign('type_id').references('id').inTable('types');
       activity.string('user_email')

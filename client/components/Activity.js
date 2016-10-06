@@ -1,15 +1,16 @@
 // DASHBOARD > PANEL > ACTIVITY TILE > ACTIVITY ===========================
 import React from 'react';
-import Hotel from './Hotel';
 
 const Activity = React.createClass({
   getInitialState() {
     return {
       status_id: '',
       type_id: '',
-      user_email: ''
+      user_email: '',
+      name: ''
     };
   },
+
   changeDate(date) {
     let newDate = date.split("-").join("/");
     let year = newDate.slice(0,4);
@@ -24,7 +25,8 @@ const Activity = React.createClass({
     let dataObj = {
       status_id: 2,
       type_id: 4,
-      user_email: `${this.props.userEmail}`
+      user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
+      name: `${this.props.activityInfo.title}`
     };
 
     $.ajax({

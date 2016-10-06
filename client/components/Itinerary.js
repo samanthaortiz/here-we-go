@@ -80,5 +80,4 @@ const Itinerary = React.createClass({
     //}
     }
 })
-
 export default Itinerary;
