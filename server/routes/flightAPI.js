@@ -15,8 +15,8 @@ getFlightData: function(req, res, next) {
   var urlAPI =  "http://terminal2.expedia.com:80/x/mflights/search?departureDate="+req.body.startDate+"&returnDate="+req.body.endDate+"&departureAirport="+req.body.departureAirport+"&arrivalAirport="+req.body.destinationAirport+"&prettyPrint=true&numberOfAdultTravelers="+req.body.adults+"&maxOfferCount=20&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767";
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      req.flightData = body;
-  next();
+      res.data = response.body
+      next();
     }
   }); 
 },
