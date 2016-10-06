@@ -43,6 +43,7 @@ body {
   margin: auto;
   padding: 10px 0;
   border: 1px solid red;
+  margin-top: 5%;
 }
 
 .splash-logo {
@@ -50,6 +51,15 @@ body {
   font-size: 60px;
   font-weight: 400;
   font-family: 'Pacifico', sans-serif;
+}
+
+h1.splash-logo {
+  margin: 20px 0;
+}
+
+.splash-form {
+  width: 300px;
+  margin: auto;
 }
 
 .splash-form input {
@@ -242,6 +252,12 @@ article {
   width: 30%;
   margin: 0 5px;
   border: 1px solid red;
+}
+
+.item-flight > div {
+  float: none;
+  display: block;
+  width: 100%;
 }
 
 div.tile-hotel,
