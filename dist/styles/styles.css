@@ -294,9 +294,15 @@ article {
   border-radius: 5px;
   padding: 10px;
   float: left;
+<<<<<<< 2227ecc49982fef588538b8ba268678e7e539c32
   width: 23%;
   margin-right: 1%;
   overflow-y: scroll;
+=======
+  width: 22%;
+  margin-right: 1%;
+  overflow-y: scroll
+>>>>>>> Styles edited
 }
 
 .tile-itinerary a {
