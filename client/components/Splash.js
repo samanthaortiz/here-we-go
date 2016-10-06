@@ -71,11 +71,51 @@ const Splash = React.createClass({
     //   console.log('in if statement in render', ;
     //   // this.props.postHotelItin(this.state.email)
     // }
+    var navLink = '';
+    if (!this.state.isUserLoggedIn) {
+      navLink = <a className="nav-login" href="/api/auth/google">Login</a>
+    } else {
+      navLink = <a className="nav-logout" href="/api/logout">Logout</a>
+    }
+
     return (
       <div>
-      {!this.state.isUserLoggedIn && <a className="loginOut" href='/api/auth/google'>Login</a>}
-      <br/>
-      <a className="loginOut" href='/api/logout'>Logout</a>
+        <div className="splash-nav">
+          {navLink}
+        </div>
+
+        <div className="splash-container">
+          <h1 className="splash-logo">Here We Go!</h1>
+          <form className="splash-form" onSubmit={this.onSubmit}>
+            <input
+              type="text"
+              placeholder="City and State"
+              value={this.state.value}
+              onChange={this.handleChangeValue}
+            />
+
+            <DatePicker
+              value={this.state.startValue}
+              startDate={this.state.startDate}
+              onChange={this.handleChangeStart}
+            />
+
+            <DatePicker
+              value={this.state.endValue}
+              endDate={this.state.endDate}
+              onChange={this.handleChangeEnd}
+            />
+
+            <button type="submit" className="btn btn-secondary">Let's Go!</button>
+
+            <div id='loading-icon'>Loading...</div>
+          </form>
+        </div>
+
+
+
+
+        {/*
         <div>
         <h1 id='logo'>
           Here We Go!
@@ -96,7 +136,7 @@ const Splash = React.createClass({
               <div id='loading-icon'>Loading...</div>
             </div>
           </form>
-        </div>
+        </div>*/}
       </div>
     );
   }
