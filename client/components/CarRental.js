@@ -21,7 +21,7 @@ const CarRental = React.createClass({
   // SAVE CAR RENTAL - STORE SELECTED CAR RENTAL TO DATABASE ==================
   handleSaveCarRental: function(event) {
     event.preventDefault();
-    console.log('SELECTED CAR: ', this.props);
+    // console.log('SELECTED CAR: ', this.props);
 
     let dataObj = {
       status_id: 2,
@@ -52,8 +52,8 @@ const CarRental = React.createClass({
   },
 
   render() {
-    console.log('>>>>> CAR RENTAL <<<<<');
-    console.log('PROPS: ', this.props.userEmail);
+    // console.log('>>>>> CAR RENTAL <<<<<');
+    // console.log('PROPS: ', this.props.userEmail);
     // console.log(this.props.isLoggedIn);
 
     return (
