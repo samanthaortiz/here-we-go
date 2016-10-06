@@ -48,6 +48,7 @@ module.exports = {
     });
   },
 
+
   carItin: function(req, res, next){
     var firstEmail = req.body.email.split("=")[1];
     var email = firstEmail.split("#")[0]
