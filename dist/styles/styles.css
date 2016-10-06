@@ -240,7 +240,7 @@ nav {
 /* DASHBOARD VIEW ========================================================== */
 article {
   margin: 0 auto;
-  width: 95%;
+  width: 98%;
 }
 
 .dashboard-container {
@@ -271,7 +271,7 @@ article {
   font-size: 20px;
 }
 
-[class^='item-'] {
+[class^='item-']:not(.item-hotel-itin, .item-car-itin) {
   border: 1px solid #999;
   /*margin-bottom: 10px;*/
   width: 300px;
@@ -331,7 +331,7 @@ div.tile-hotel:nth-child(odd) {
   list-style-position: inside;
 }
 
-[class^='tile-'] ul li {
+[class^='tile-']:not(.tile-itinerary) ul li {
   display: inline-block;
   height: 155px;
   margin-right: 10px;
@@ -369,13 +369,20 @@ div.tile-hotel:nth-child(odd) {
   border-radius: 5px;
   padding: 10px;
   float: left;
-  width: 22%;
-  margin-right: 1%
+  width: 23%;
+  margin-right: 1%;
+  overflow-y: scroll;
 }
 
 .tile-itinerary a {
   color: #000;
   cursor: pointer;
+}
+
+.item-hotel-itin,
+.item-car-itin {
+  border: 1px solid #999;
+  margin-bottom: 10px;
 }
 
 /* BUDGET FORM VIEW ======================================================== */
