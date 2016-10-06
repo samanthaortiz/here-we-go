@@ -4,6 +4,8 @@ import React from 'react';
 const Flight = React.createClass({
   getInitialState: function() {
     return {
+      setSingleFlight: '',
+      // ====================================
       status_id: '',
       type_id: '',
       user_email: '',
@@ -26,22 +28,6 @@ const Flight = React.createClass({
       arrivalTime: ''
     };
 
-
-    let legIdsArray = this.props.flightInfo.legIds;
-    let flightLegDetailsArray = this.props.flightLegs
-    let resultsArray = legIdsArray.map((leg) => {
-      // console.log('leg: ', leg)
-      let arr = [];
-      flightLegDetailsArray.map((flightLeg) => {
-        // console.log('flightLeg: ', flightLeg);
-        if(leg === flightLeg.legId) {
-          arr.push(flightLeg);
-        }
-      });
-      return arr;
-    });
-
-    
   },
 
   changeDate(date) {
@@ -117,6 +103,28 @@ const Flight = React.createClass({
     console.log('dataObj ====> ', dataObj);
   },
 
+  setSingleFlight: function() {
+    let legIdsArray = this.props.flightInfo.legIds;
+    let flightLegDetailsArray = this.props.flightLegs;
+    let segments = [];
+
+    let resultsArray = legIdsArray.map((leg) => {
+      // console.log('leg: ', leg)
+      let arr = [];
+      let segments = []
+      flightLegDetailsArray.map((flightLeg) => {
+        // console.log('flightLeg: ', flightLeg);
+        if(leg === flightLeg.legId) {
+          arr.push(flightLeg);
+          segments.push(flightLeg.segments)
+        }
+      });
+      return arr;
+    })
+    
+    return [resultsArray, segments];
+  },
+
   render() {
     // console.log('>>>>> FLIGHT <<<<<');
 
@@ -130,16 +138,21 @@ const Flight = React.createClass({
     // } else {
       let legs = this.getFlightLegs();
       // console.log(legs)
+      console.log('this.props: ', this.props)
+      let setSingleFlight = this.setSingleFlight();
       return (
         <div className="item-flight">
           <button type="button" className="btn" onClick={this.handleSaveFlight}>
             Save Flight
           </button>
 
-          {/*<p>
-            From: {this.props}<br />
-            To: {}
-          </p>*/}
+          
+          <div>
+            {console.log('setSingleFlight: ', setSingleFlight[0])}
+            {console.log('segments: ', setSingleFlight[1])}
+            {/*FROM: { setSingleFlight[0].segments[0].departureAirportCode }<br />
+            TO:   { setSingleFlight[0].segments[1].arrivalAirportCode }*/}
+          </div>
 
           <p>
             Rate: {this.props.flightInfo.totalFarePrice.formattedPrice}

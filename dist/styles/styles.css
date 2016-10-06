@@ -19,21 +19,77 @@ body {
 /* BOOTSTRAP STYLE FIXES */
 
 /* SPLASH PAGE =================================================== */
-
-.loginOut{
-  color:white;
-}
-
-a:visited{
-  color:white;
-}
 .splashClass { 
   background: url('https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb');
   background-size: cover;
   background-repeat: no-repeat;
  }
 
-#logo {
+.splash-nav {
+  text-align: right;  background: transparent;
+  line-height: 50px;
+}
+
+.splash-nav [class^='nav-'] {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.splash-container {
+  text-align: center;
+  border: 1px solid red;
+  width: 70%;
+  margin: auto;
+  padding: 10px 0;
+  border: 1px solid red;
+}
+
+.splash-logo {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+  font-family: 'Pacifico', sans-serif;
+}
+
+.splash-form input {
+  height: 40px;
+  width: 200px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/*span.input-group {
+  position: static !important;
+  display: inline !important; 
+  border-collapse: separate !important; 
+}*/
+
+.input-group .form-control:not(:first-child):not(:last-child),
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+}
+
+/*.input-group .form-control,
+.input-group-addon,
+.input-group-btn {
+  display: inline-block;
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: none;
+  width: 100%;
+  margin-bottom: initial;
+}*/
+
+
+/*#logo {
   color: white;
   font-size: 75px;
   text-align: center;
@@ -42,8 +98,8 @@ a:visited{
   position: relative;
   padding-top: 15%;
   /*top: 35%;*/
-  /*left: 39%;*/
-}
+  /*left: 39%;
+}*/
 
 .splashForm {
   /*margin: 0;*/
@@ -61,9 +117,9 @@ a:visited{
 }
 
 .input-group {
-  align-self: flex-end;
+  /*align-self: flex-end;
   align-items: center;
-  text-align: center;
+  text-align: center;*/
     /*align-items: center;*/
     /*align-self: flex-end;*/
     /*max-width: 50%*/
