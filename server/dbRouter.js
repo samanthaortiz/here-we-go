@@ -4,10 +4,6 @@ var db = require('./database/db.js');
 module.exports = {
 
   budgetData: function(req, res, next) {
-    // console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
-    // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-    //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
     var subSQL;
     var data = req.body;
 
@@ -37,6 +33,25 @@ module.exports = {
       console.error(error)
     });
   },
+
+  flightItin: function(req, res, next){
+    var firstEmail = req.body.email.split("=")[1];
+    var email = firstEmail.split("#")[0]
+    db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
+    .then(function(info) {
+      res.data = info;
+      next();
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
+  },
+
+  carItin: function(req, res, next){
+    var firstEmail = req.body.email.split("=")[1];
+    var email = firstEmail.split("#")[0]
+    db.knex('carRentals').where('carRentals.user_email', email).select("*")
+},
 
   flightItin: function(req, res, next){
     var firstEmail = req.body.email.split("=")[1];
