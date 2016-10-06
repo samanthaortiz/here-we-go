@@ -66,9 +66,30 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
+    console.log('>>>>>> ', this.props);
+
     if(this.props.hotelInfo !== undefined) {
       return (
-        <div className="item-hotel">
+        
+
+          <li className="item-hotel clearfix">
+            <div className="left-side">
+              <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
+            </div>
+            <div className="right-side">
+              <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">{ this.props.hotelInfo.localizedName }</a><br />
+
+              <span>{ this.props.hotelInfo.address }, {this.props.hotelInfo.city}</span><br />
+              
+              ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
+              
+              {saveButton}
+            </div>
+            
+            
+          
+          {/*<div className="item-hotel">*/}
+          {/*
           {saveButton}
           <p>
             <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
@@ -84,7 +105,8 @@ const Hotel = React.createClass({
           <p>
             { this.props.hotelInfo.shortDescription }
           </p>
-        </div>
+        </div>*/}
+        </li>
       );
     } else {
       return (
