@@ -74,7 +74,10 @@ router.post('/carItin', dbRouter.carItin, function(req, res, next) {
 // router.post('/activityItin', dbRouter.activityItin, function(req, res, next) {
 //   res.send(res.data);
 // });
+<<<<<<< b329853c89b636da77d0e035dc61ff55d94fb6d7
 
+=======
+>>>>>>> refactor(routes): refactored db routes out of routes.js
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
