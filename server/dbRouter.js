@@ -2,7 +2,6 @@ var router = require("express").Router();
 var db = require('./database/db.js');
 
 module.exports = {
-
   budgetData: function(req, res, next) {
 
     var subSQL;
