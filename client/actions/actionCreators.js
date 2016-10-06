@@ -133,9 +133,9 @@ export function axiosFlightItin(email){
 export function hydrateFlightItin(flightItinData){
   return {
     type: "POST_FLIGHT_ITIN",
-    flightItinData,
+    flightItinData
   };
-}
+  }
 
 //=============== CARS ITIN ===============
 export const postCarItin = (email) => {

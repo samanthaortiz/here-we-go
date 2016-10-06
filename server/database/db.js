@@ -190,6 +190,26 @@ knex.schema.hasTable('carRentals').then(exists => {
   }
 }),
 
+    knex.schema.hasTable('activities').then(exists => {
+  if (!exists) {
+     knex.schema.createTable('activities', activity => {
+      activity.increments('id').primary();
+      activity.integer('trip_id').unsigned();
+      activity.foreign('trip_id').references('id').inTable('itineraries');
+      activity.integer('status_id').unsigned();
+      activity.foreign('status_id').references('id').inTable('statuses');
+      activity.integer('type_id').unsigned();
+      activity.foreign('type_id').references('id').inTable('types');
+      activity.string('user_email')
+      activity.foreign('user_email').references('email').inTable('users');
+      activity.string('name');
+      activity.timestamps();
+    }).then(table => {
+      console.log('Created Table', table);
+    });
+  }
+}),
+
  knex.schema.hasTable('itineraries').then(exists => {
   if (!exists) {
      knex.schema.createTable('itineraries', itinerary => {

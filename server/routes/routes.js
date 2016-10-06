@@ -118,21 +118,29 @@ router.post('/carItin', function(req, res) {
 });
 
 
-// router.post('/activityItin', function(req, res) {
-//   // console.log('>>>>> SAVING ACTIVITIES ITIN TO DATABASE: ', req.body);
-//   // RAW SQL: SELECT * FROM activites VALUES WHERE hotel.user_email = email), 100)
-//   console.log('this is the req body',req.body)
-//   var email = req.body.email;
-//   // var info;
-//     db.knex('carRentals').where('activities.user_email', email).select("*")
-//     .then(function(info) {
-//       console.log('GOT INFO', info)
-//       res.send(info);
-//     })
-//     .catch(function(error) {
-//       console.error(error)
-//     });
-// });
+router.post('/activityData', function(req, res) {
+  console.log('>>>>> SAVING ACTIVITY TO DATABASE: ', req.body);
+  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
+  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
+
+  var subSQL;
+  var data = req.body;
+
+  for(var key in data) {
+    if(data.hasOwnProperty(key)) {
+      subSQL = db.knex('types').where('reservationType', key).select('id');
+      db.knex('activities').insert({budget: data[key], type_id: subSQL})
+      .then(function(user) {
+        // console.log('INSERTED')
+      })
+      .catch(function(error) {
+        console.error(error)
+      });
+    };
+  };
+
+  res.send();
+});
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
