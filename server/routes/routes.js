@@ -75,7 +75,6 @@ router.post('/carItin', dbRouter.carItin, function(req, res, next) {
 //   res.send(res.data);
 // });
 
-
 // TRIP/FLIGHT SEARCH API =====================================================================
 
 router.post("/FlightSearch", function(req, res) {
