@@ -115,6 +115,7 @@ export const postFlightItin = (email) => {
   return function(dispatch){
     return axiosFlightItin(email)
     .then(res => {
+      console.log('flight res', res)
       console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateFlightItin(res.data))
       browserHistory.push('/')
