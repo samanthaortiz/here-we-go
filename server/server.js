@@ -69,7 +69,7 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
   .fetch()
   .then(function(user) {
     if(!user) {
-      console.log("ADDING NEW USER");
+      // console.log("ADDING NEW USER");
       new User({
         'google_id': profile.id, // set the users google id                   
         'accessToken': accessToken, // we will save the token that google provides to the user                    
@@ -81,7 +81,7 @@ passport.use(new GoogleStrategy(googleConfig.google, function(accessToken, refre
     }
   })
     .then(function(){
-      console.log("USER IN DATABASE");
+      // console.log("USER IN DATABASE");
       email = profile.emails[0].value;
       google_id = profile.id;
       done(null, profile);
@@ -106,18 +106,18 @@ app.get('/siftAuth', function(req, res){
     siftapi.addUser(email)
     .then(body => {
       newUser = body.result;
-      console.log('new user response', body.result);
+      // console.log('new user response', body.result);
     })
   .then(function() {
     siftapi.getConnectToken(email)
     .then(function(body) {
-      console.log('user token from sift:', body.result.connect_token)
+      // console.log('user token from sift:', body.result.connect_token)
       connectToken = body.result.connect_token;
     })
     .then(function(){
       siftapi.getEmailConnections(email)
         .then(function(body) {
-          console.log('email connections:', body.result)
+          // console.log('email connections:', body.result)
           emailConnections = body.result;
           // res.end(emailConnections[0].email);
       }) 
@@ -126,7 +126,7 @@ app.get('/siftAuth', function(req, res){
         res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" 
           + siftConfig.sift.API_KEY + "&username="+ email 
           + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
-        console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
+        // console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
       } else{
 
         res.redirect('/?email='+email);
@@ -136,7 +136,7 @@ app.get('/siftAuth', function(req, res){
       .then(function(){
         siftapi.getSifts(email, {})
         .then(body => {
-          console.log('>>> ADDING PAYLOAD TO DB <<<')
+          // console.log('>>> ADDING PAYLOAD TO DB <<<')
           var counter = 0;
           body.result.forEach(function(item, i) {
             if(item.domain === "hotel"){

@@ -71,7 +71,7 @@ const Flight = React.createClass({
 
   // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
   handleSaveFlight: function(event) {
-    console.log('SELECTED FLIGHT: ', this.props);
+    // console.log('SELECTED FLIGHT: ', this.props);
 
     let legIdsArray = this.props.flightInfo.legIds;
     let flightLegDetailsArray = this.props.flightLegs
@@ -88,8 +88,8 @@ const Flight = React.createClass({
       return arr;
     });
 
-    console.log('ARRAY =====> ', resultsArray)
-    console.log('DEPART FROM: ', resultsArray[0][0])
+    // console.log('ARRAY =====> ', resultsArray)
+    // console.log('DEPART FROM: ', resultsArray[0][0])
 
     let dataObj = {
       status_id: 2,

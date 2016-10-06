@@ -16,7 +16,7 @@ const Itinerary = React.createClass({
 
   render() {
     console.log("PROPS ITIN", this.props.data)
-    console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
+    // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
       return (
         <div className="tile-itinerary">

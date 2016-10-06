@@ -27,8 +27,8 @@ const Hotel = React.createClass({
 
   handleSaveHotel: function(event) {
     event.preventDefault();
-    console.log('>>>>> ', this.props)
-    console.log('>>>>> ', this.props.hotelInfo)
+    // console.log('>>>>> ', this.props)
+    // console.log('>>>>> ', this.props.hotelInfo)
 
     let dataObj = {
       status_id: 2,      // Saved
