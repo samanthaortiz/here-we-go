@@ -2,11 +2,12 @@ var router = require("express").Router();
 var db = require('./database/db.js');
 
 module.exports = {
-  
+
   budgetData: function(req, res, next) {
 
     var subSQL;
     var data = req.body;
+
     for(var key in data) {
       if(data.hasOwnProperty(key)) {
         subSQL = db.knex('types').where('reservationType', key).select('id');
@@ -33,25 +34,6 @@ module.exports = {
       console.error(error)
     });
   },
-
-  flightItin: function(req, res, next){
-    var firstEmail = req.body.email.split("=")[1];
-    var email = firstEmail.split("#")[0]
-    db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
-    .then(function(info) {
-      res.data = info;
-      next();
-    })
-    .catch(function(error) {
-      console.error(error)
-    });
-  },
-
-  carItin: function(req, res, next){
-    var firstEmail = req.body.email.split("=")[1];
-    var email = firstEmail.split("#")[0]
-    db.knex('carRentals').where('carRentals.user_email', email).select("*")
-},
 
   flightItin: function(req, res, next){
     var firstEmail = req.body.email.split("=")[1];
