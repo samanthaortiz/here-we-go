@@ -11,6 +11,7 @@ let carRoute = require('./carApi')
 let activityRoute = require('./activityApi')
 var siftInfo = require('../server');
 var siftConfig = require('./config/siftConfig');
+var dbRouter = require('../dbRouter');
 
 
 
@@ -48,99 +49,31 @@ function ensureAuthenticated(req, res, next) {
   res.redirect('/auth/google/');
 }
 
+router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
+  res.send(res.data);
+});
+
 // DB ================================================================================ */
-router.post('/budgetData', function(req, res) {
+router.post('/budgetData', dbRouter.budgetData, function(req, res, next) {
   console.log('>>>>> SAVING BUDGET TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('budgets').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
   res.send();
 });
 
-router.post('/hotelItin', function(req, res) {
-  var firstEmail = req.body.email.split("=")[1];
-  var email = firstEmail.split("#")[0]
-    db.knex('hotelReservations').where('hotelReservations.user_email', email).select("*")
-    .then(function(info) {
-      // console.log('GOT INFO', info)
-      res.send(info);
-    })
-    .catch(function(error) {
-      console.error(error)
-    });
-  console.log('this is the req body: ', req.body);
+router.post('/hotelItin', dbRouter.hotelItin, function(req, res, next) {
+  res.send(res.data);
 });
 
-router.post('/flightItin', function(req, res) {
-  var firstEmail = req.body.email.split("=")[1];
-  var email = firstEmail.split("#")[0]
-
-  console.log('>>>>> GETTING FLIGHT ITIN FROM DATABASE: ', req.body);
-    db.knex('flightReservations').where('flightReservations.user_email', email).select("*")
-    .then(function(info) {
-      console.log('GOT FLIGHT INFO', info)
-      res.send(info);
-    })
-    .catch(function(error) {
-      console.error(error)
-    });
+router.post('/flightItin', dbRouter.flightItin, function(req, res, next) {
+  res.send(res.data);
 });
 
-router.post('/carItin', function(req, res) {
-  var firstEmail = req.body.email.split("=")[1];
-  var email = firstEmail.split("#")[0]
-  console.log('>>>>> GETTING CARRENTALS ITIN FROM DATABASE: ', req.body);
-
-    db.knex('carRentals').where('carRentals.user_email', email).select("*")
-    .then(function(info) {
-      console.log('GOT INFO', info)
-      res.send(info);
-    })
-    .catch(function(error) {
-      console.error(error)
-    });
+router.post('/carItin', dbRouter.carItin, function(req, res, next) {
+  res.send(res.data);
 });
 
-
-router.post('/activityData', function(req, res) {
-  console.log('>>>>> SAVING ACTIVITY TO DATABASE: ', req.body);
-  // RAW SQL: INSERT INTO budgets (budgets.type_id, budgets.budget) VALUES 
-  //((SELECT types.id FROM types WHERE types.reservationType = 'hotel'), 100)
-
-  var subSQL;
-  var data = req.body;
-
-  for(var key in data) {
-    if(data.hasOwnProperty(key)) {
-      subSQL = db.knex('types').where('reservationType', key).select('id');
-      db.knex('activities').insert({budget: data[key], type_id: subSQL})
-      .then(function(user) {
-        // console.log('INSERTED')
-      })
-      .catch(function(error) {
-        console.error(error)
-      });
-    };
-  };
-
-  res.send();
-});
+// router.post('/activityItin', dbRouter.activityItin, function(req, res, next) {
+//   res.send(res.data);
+// });
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
@@ -159,8 +92,5 @@ router.post("/FlightSearch", function(req, res) {
   });
 });
 
-router.post('/trips', hotelRoute, carRoute, activityRoute, flightRoute.getFlightCode, function(req, res, next) {
-  res.send(res.data);
-});
 
 module.exports = router;
