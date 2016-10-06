@@ -22,56 +22,56 @@ const FlightTile = React.createClass({
   },
 
   getAllAirports(ValidCodes) {
-    // if(this.props.flightData.data.expediaFlightInfo.expediaFlightInfo !== undefined) {
+    // if(this.props.flightData.expediaFlightInfo.expediaFlightInfo !== undefined) {
 
-    //   let codes = [];
+      let codes = [];
 
-    //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports_by_cities.forEach(function(airport){
-    //     if(ValidCodes.indexOf(airport.code) !== -1){
-    //       codes.push(airport);
-    //     }
-    //   });
+      this.props.flightData.reducerTripData.tripData[3].airports.forEach(function(airport){
+        if(ValidCodes.indexOf(airport.code) !== -1){
+          codes.push(airport);
+        }
+      });
 
-    //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports.forEach(function(airport){
-    //     if(ValidCodes.indexOf(airport.code) !== -1){
-    //       codes.push(airport);
-    //     }
-    //   });
+      this.props.flightData.reducerTripData.tripData[3].airports.forEach(function(airport){
+        if(ValidCodes.indexOf(airport.code) !== -1){
+          codes.push(airport);
+        }
+      });
 
-    //   return codes
+      return codes
     // }
-    let codes = {
-       "processingDurationMillis": 2,
-       "authorisedAPI": true,
-       "success": true,
-       "airline": null,
-       "errorMessage": null,
-       "airports": [
-         {
-           "code": "DAL",
-           "name": "Dallas Love Fld",
-           "city": "Dallas",
-           "country": "United States",
-           "timezone": "America/Chicago",
-           "lat": 32.847111,
-           "lng": -96.851778,
-           "terminal": null,
-           "gate": null
-         },
-         {
-           "code": "DFW",
-           "name": "Dallas Fort Worth Intl",
-           "city": "Dallas-Fort Worth",
-           "country": "United States",
-           "timezone": "America/Chicago",
-           "lat": 32.896828,
-           "lng": -97.037997,
-           "terminal": null,
-           "gate": null
-         }
-       ]
-     }
-     return codes.airports
+    // let codes = {
+    //    "processingDurationMillis": 2,
+    //    "authorisedAPI": true,
+    //    "success": true,
+    //    "airline": null,
+    //    "errorMessage": null,
+    //    "airports": [
+    //      {
+    //        "code": "DAL",
+    //        "name": "Dallas Love Fld",
+    //        "city": "Dallas",
+    //        "country": "United States",
+    //        "timezone": "America/Chicago",
+    //        "lat": 32.847111,
+    //        "lng": -96.851778,
+    //        "terminal": null,
+    //        "gate": null
+    //      },
+    //      {
+    //        "code": "DFW",
+    //        "name": "Dallas Fort Worth Intl",
+    //        "city": "Dallas-Fort Worth",
+    //        "country": "United States",
+    //        "timezone": "America/Chicago",
+    //        "lat": 32.896828,
+    //        "lng": -97.037997,
+    //        "terminal": null,
+    //        "gate": null
+    //      }
+    //    ]
+    //  }
+    //  return codes.airports
   },
 
   componentWillMount(){

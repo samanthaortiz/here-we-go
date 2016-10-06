@@ -66,8 +66,6 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
-    console.log('>>>>>> ', this.props);
-
     if(this.props.hotelInfo !== undefined) {
       return (
         
