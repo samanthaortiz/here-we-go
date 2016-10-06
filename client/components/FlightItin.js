@@ -3,7 +3,6 @@ import React from 'react';
 const FlightItin = React.createClass({
 
   render() {
-    console.log('rendering flight itin', this.props)
       return (
         <div className='item-flight-itin'>
           <h4>FLIGHT ITIN</h4>
