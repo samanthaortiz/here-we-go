@@ -37,7 +37,7 @@ const Splash = React.createClass({
     })
   },
   login(e){
-    console.log(e);
+    // console.log(e);
     this.props.login();
   },
 
