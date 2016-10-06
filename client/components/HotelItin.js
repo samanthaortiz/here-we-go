@@ -1,4 +1,5 @@
 import React from 'react';
+import DateTime from 'react-datetime'
 
 const HotelItin = React.createClass({
 
@@ -12,10 +13,9 @@ const HotelItin = React.createClass({
   },
 
   changeDate(date) {
-    let newDate = date.substring(0,10).split("-").join("/");
-    let year = newDate.slice(0,4);
-    let monthDay = newDate.slice(5);
-    return monthDay += '/' + year;
+    var string = new Date(date).toString()
+    var formattedDate = string.substring(4,10) + ", " + string.substring(11, 15);
+    return formattedDate
   },
 
   render() {
@@ -28,8 +28,9 @@ const HotelItin = React.createClass({
             <label>
               <input type="checkbox" value="" 
               onChange={this.onChange}/>
-              {this.props.hotelItinInfo.providerName}
-              <p>{this.changeDate(this.props.hotelItinInfo.startDate)} to {this.changeDate(this.props.hotelItinInfo.endDate)}</p>
+              {this.props.hotelItinInfo.providerName} 
+              <br/>
+              {this.changeDate(this.props.hotelItinInfo.startDate)} - {this.changeDate(this.props.hotelItinInfo.endDate)}
             </label>
           </div>
         </form>
