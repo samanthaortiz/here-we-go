@@ -42,31 +42,7 @@ const Flight = React.createClass({
 
   // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
   handleSaveFlight: function(event) {
-<<<<<<< HEAD
-    // console.log('SELECTED FLIGHT: ', this.props);
-
-    let legIdsArray = this.props.flightInfo.legIds;
-    let flightLegDetailsArray = this.props.flightLegs
-
-    let resultsArray = legIdsArray.map((leg) => {
-      // console.log('leg: ', leg)
-      let arr = [];
-      flightLegDetailsArray.map((flightLeg) => {
-        // console.log('flightLeg: ', flightLeg);
-        if(leg === flightLeg.legId) {
-          arr.push(flightLeg);
-        }
-      });
-      return arr;
-    });
-
-    // console.log('ARRAY =====> ', resultsArray)
-    // console.log('DEPART FROM: ', resultsArray[0][0])
-=======
     console.log('SELECTED FLIGHT: ', this.state.roundTrip);
-
-    
->>>>>>> codeCleanup
 
     let dataObj = {
       status_id: 2,
