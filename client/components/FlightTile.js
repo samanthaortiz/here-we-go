@@ -179,6 +179,7 @@ const FlightTile = React.createClass({
           key={flight.productKey}
           flightInfo={flight}
           flightLegs={legs}
+          userEmail={this.props.userEmail}
         />
       )}
       </div>
@@ -187,6 +188,7 @@ const FlightTile = React.createClass({
   },
 
     render() {
+      // console.log('FLIGHT TILE: ', this.props);
       // console.log('do we have flights?', this.props.flightOptions);
       if(this.state.availableAirportCodes.length === 0){
         return (
