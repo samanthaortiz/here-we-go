@@ -370,7 +370,8 @@ div.tile-hotel:nth-child(odd) {
   padding: 10px;
   float: left;
   width: 22%;
-  margin-right: 1%
+  margin-right: 1%;
+  overflow-y: scroll
 }
 
 .tile-itinerary a {
