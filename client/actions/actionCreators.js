@@ -87,7 +87,6 @@ export const postHotelItin = (email) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
-      console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateHotelItin(res.data))
       browserHistory.push('/')
     })
@@ -115,8 +114,6 @@ export const postFlightItin = (email) => {
   return function(dispatch){
     return axiosFlightItin(email)
     .then(res => {
-      console.log('flight res', res)
-      console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateFlightItin(res.data))
       browserHistory.push('/')
     })
@@ -143,7 +140,6 @@ export const postCarItin = (email) => {
   return function(dispatch){
     return axiosCarItin(email)
     .then(res => {
-      console.log('getting into response obj, about to hydrate store', res.data)
       dispatch(hydrateCarItin(res.data))
       browserHistory.push('/')
     })
@@ -152,7 +148,6 @@ export const postCarItin = (email) => {
 };
 
 export function axiosCarItin(email){
-  console.log('posting email req', email)
   return axios.post('/api/carItin', {
     email
   })
