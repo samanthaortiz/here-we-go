@@ -4,7 +4,7 @@ var db = require('./database/db.js');
 module.exports = {
 
   budgetData: function(req, res, next) {
-    
+
     var subSQL;
     var data = req.body;
 
