@@ -12,6 +12,13 @@ const HotelItin = React.createClass({
   },
 
   render() {
+      var days;
+      if(this.props.hotelItinInfo.days === 1) {
+        days = "day"
+      } else {
+        days = "days"
+      }
+
       return (
       	// <div>HELLO!</div>
         <div className='item-hotel-itin'>
@@ -19,9 +26,10 @@ const HotelItin = React.createClass({
           <form>
           <div className="checkbox">
             <label>
-              <input type="checkbox" value="" onChange={this.onChange}/>{this.props.hotelItinInfo.providerName}
+              <input type="checkbox" value="" 
+              onChange={this.onChange}/>
+              {this.props.hotelItinInfo.providerName} for {this.props.hotelItinInfo.days} {days}
             </label>
-            <p>{this.props.hotelItinInfo.days} Days</p>
           </div>
         </form>
       </div>
