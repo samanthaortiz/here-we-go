@@ -18,6 +18,48 @@ const Itinerary = React.createClass({
     console.log("PROPS ITIN", this.props.data)
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
+
+      var bookedHotelList = [];
+      var bookedCarList = [];
+      var bookedFlightList = [];
+
+      var savedHotelList = [];
+      var savedCarList = [];
+      var savedFlightList = [];
+
+      this.props.data.reducerHotelItin.hotelItinData.forEach(function(hotelItin){
+        if (hotelItin.status_id === 1){
+          bookedHotelList.push(hotelItin);
+        } else if (hotelItin.status_id === 2){
+          savedHotelList.push(hotelItin);
+        }
+      });
+
+      this.props.data.reducerFlightItin.flightItinData.forEach(function(flightItin){
+        if (flightItin.status_id === 1){
+          bookedFlightList.push(flightItin);
+        } else if(flightItin.status_id === 2){
+          savedFlightList.push(flightItin);
+        }
+      });
+
+      this.props.data.reducerCarItin.carItinData.forEach(function(carItin){
+        if (carItin.status_id === 1){
+          bookedCarList.push(carItin);
+        } else if(carItin.status_id === 2){
+          savedCarList.push(carItin);
+        }
+      });
+
+      // this.props.data.reducerActivityData.activityData.forEach(function(activity){
+      //   if (carItin.status_id === 1){
+      //     bookedCarList.push(carItin);
+      //   } else if(carItin.status_id === 2){
+      //     savedCarList.push(carItin);
+      //   }
+      // });
+
+
       return (
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
@@ -31,7 +73,7 @@ const Itinerary = React.createClass({
           <h3>Booked</h3>
 
           <h4>Hotels</h4>
-          {this.props.data.reducerHotelItin.hotelItinData.map((hotelItin, i) => 
+          {bookedHotelList.map((hotelItin, i) => 
             <HotelItin
               key={i}
               dashboardState={this.props.dashboardState}
@@ -41,7 +83,7 @@ const Itinerary = React.createClass({
             />
             )}
           <h4>Flights</h4>
-            {this.props.data.reducerFlightItin.flightItinData.map((flightItin, i) =>
+            {bookedFlightList.map((flightItin, i) =>
               <FlightItin
                 key={i}
                 dashboardState={this.props.dashboardState}
@@ -49,25 +91,49 @@ const Itinerary = React.createClass({
             />
             )}
           <h4>Car Rentals</h4>
-            {this.props.data.reducerCarItin.carItinData.map((carItin, i) => 
+            {bookedCarList.map((carItin, i) => 
               <CarItin
                 key={i}
                 dashboardState={this.props.dashboardState}
                 carItinInfo={carItin}
               />
             )}
-            </div>              
+            </div>  
+
+
+
           <div id="saved" className="tab-pane fade">
              <h3>Saved</h3>
                 <h4>Hotels</h4>
-                //map hotels
-                <h4>Flights</h4>
-                //map flights
-                <h4>Car Rentals</h4>
-                //map cars
-                <h4>Activities</h4>
-                //map activites
-            </div>
+               {savedHotelList.map((hotelItin, i) => 
+                <HotelItin
+                  key={i}
+                  dashboardState={this.props.dashboardState}
+                  hotelItinInfo={hotelItin}
+                  startDate={this.props.data.reducerTripData.startDate}
+                  endDate={this.props.data.reducerTripData.endDate}
+                />
+                )}
+              <h4>Flights</h4>
+                {savedFlightList.map((flightItin, i) =>
+                  <FlightItin
+                    key={i}
+                    dashboardState={this.props.dashboardState}
+                    flightItinInfo={flightItin}
+                />
+                )}
+              <h4>Car Rentals</h4>
+                {savedCarList.map((carItin, i) => 
+                  <CarItin
+                    key={i}
+                    dashboardState={this.props.dashboardState}
+                    carItinInfo={carItin}
+                  />
+                )}
+            </div>     
+                    {/*<h4>Activities</h4>
+                    {}
+                </div>
 
             <div id="budget" className="tab-pane fade">
              <h3>Budget</h3>
@@ -77,7 +143,6 @@ const Itinerary = React.createClass({
                 <div id="fade" className="black_overlay"></div>
                 <p><a onClick={this.handleBudgetForm}>Add New Budget!</a></p>
             </div>
-        </div>
               {/* map over activities
               <ActivityItin
                 key={hotel.sift_id}
@@ -88,29 +153,13 @@ const Itinerary = React.createClass({
             <p>Upcoming</p>
             <p>Previous</p>
             <p>Cancelled</p>
-            */}
+            
 
           
+        */}
+        </div>
         </div>
       );
-    // } else {
-    //   return (
-    //    <div className="tile-itinerary">
-    //     <h3>My Itinerary</h3>
-    //     <ul>
-    //         <li>Saved</li>
-    //         <li>Upcoming</li>
-    //         <li>Previous</li>
-    //         <li>Cancelled</li>
-    //         <li><a onClick={this.handleBudgetForm}>Budget</a></li>
-    //       </ul>
-    //       <div id="light" className="lightbox-content">
-    //         <BudgetForm />
-    //       </div>
-    //       <div id="fade" className="black_overlay"></div>
-    //   </div>
-    //)
-    //}
     }
 })
 export default Itinerary;
