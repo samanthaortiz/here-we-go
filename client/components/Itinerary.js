@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Accordion, Panel } from 'react-bootstrap';
+import { Accordion, Panel, Modal, Button } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
 import NewTripForm from './NewTripForm';
 import HotelItin from './HotelItin';
@@ -9,6 +9,13 @@ import CarItin from './CarItin';
 import ActivityItin from './ActivityItin';
 
 const Itinerary = React.createClass({
+ 
+
+  getInitialState() {
+    return { 
+      show: false 
+    };
+  },
 
   displayForm: function(event) {
     event.preventDefault();
@@ -70,41 +77,6 @@ const Itinerary = React.createClass({
           this.props.data.changeStatus(+item, 4, 2);     
         }
       }
-
-
-      //       console.log('changing flight to saved')
-      //     } else if (booked === "selectedBookedHotels"){
-      //       console.log('changing hotel to saved')
-      //       this.props.data.changeStatus(+item, 2, 1);
-      //     } else if (booked === "selectedBookedCars"){
-      //       console.log('changing car to saved')
-      //       this.props.data.changeStatus(+item, 3, 1);
-      //     } else if (booked === "selectedBookedActivities"){
-      //       console.log('changing activity to saved')
-      //       this.props.data.changeStatus(+item, 4, 1);
-      //     }
-      //   }
-      // }
-    // }
-    // for (var saved in this.props.dashboardState.itinItems[1]){
-      // for (var item in this.props.dashboardState.itinItems[1][saved]){
-      //   if(this.props.dashboardState.itinItems[1][saved][item] === true){
-      //     if(saved === "selectedSavedFlights"){
-      //       console.log('changing flight to booked')
-      //       this.props.data.changeStatus(+item, 1, 2);
-      //     } else if (saved === "selectedSavedHotels"){
-      //       console.log('changing hotel to booked')
-      //       this.props.data.changeStatus(+item, 2, 2);
-      //     } else if (saved === "selectedSavedCars"){
-      //       console.log('changing car to booked')
-      //       this.props.data.changeStatus(+item, 3, 2);
-      //     } else if (saved === "selectedSavedActivities"){
-      //       console.log('changing activity to booked')
-      //       this.props.data.changeStatus(+item, 4, 2);
-      //     }
-      //   }
-      // }
-    // }
   },
 
   render() {
@@ -153,6 +125,8 @@ const Itinerary = React.createClass({
         }
       });
 
+      let close = () => this.setState({ show: false});
+
 
       return (
         <div className="tile-itinerary">
@@ -164,17 +138,75 @@ const Itinerary = React.createClass({
         </ul>
 
 
+
         <div className="tab-content">
           <div id="booked" className="tab-pane fade in active">
+
+        <div className="modal-container" style={{height: 200}}>
+        <Button
+          bsStyle="primary"
+          bsSize="large"
+          onClick={() => this.setState({ show: true})}>
+          Add New Trip
+        </Button>
+
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">New Trip</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <input type="text" placeholder="Trip Name"/>
+          </Modal.Body>
+    
+          <Modal.Footer>
+            <Button onClick={close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+
+
+
+               <Button
+          bsStyle="primary"
+          bsSize="small"
+          onClick={() => this.setState({ show: true})}>
+          Existing Trip
+        </Button>
+
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">Existing Trip</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <input type="text" placeholder="Trip Name"/>
+          </Modal.Body>
+    
+          <Modal.Footer>
+            <Button onClick={close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      <Button className="move-btn"  bsStyle="primary" bsSize="small" onClick={this.changeStatusOfItem}>Move to Saved</Button>
+      </div>
+
+
               
-            <div id="light" className="lightbox-content">
+          {/*  <div id="light" className="lightbox-content">
             <NewTripForm data={this.props.data}/>
             </div>
             <div id="fade" className="black_overlay"></div>
             <p><button type="button" className="new-trip-btn" onClick={this.displayForm}>Add to New Trip</button></p>
           
             <button type="button" className="existing-trip-btn" onClick={this.addToExistingTrip}>Add to Existing Trip</button>
-            <button type="button" className="move-btn" onClick={this.changeStatusOfItem}>Move to Saved</button> 
+            <button type="button" className="move-btn" onClick={this.changeStatusOfItem}>Move to Saved</button> */}
 
           <Accordion>
           <Panel header="Hotels" eventKey="1">
@@ -226,15 +258,60 @@ const Itinerary = React.createClass({
 
           <div id="saved" className="tab-pane fade">
           
-            <div id="light" className="lightbox-content">
-              <NewTripForm data={this.props.data}/>
-            </div>
-            <div id="fade" className="black_overlay"></div>
-            <p><button type="button" className="new-trip-btn" onClick={this.displayForm}>Add to New Trip</button></p>
+               <div className="modal-container" style={{height: 200}}>
+        <Button
+          bsStyle="primary"
+          bsSize="large"
+          onClick={() => this.setState({ show: true})}>
+          Add New Trip
+        </Button>
 
-            <button type="button" className="existing-trip-btn" onClick={this.addToExistingTrip}>Add to Existing Trip</button>
-            <button type="button" className="move-btn" onClick={this.changeStatusOfItem}>Move to Booked</button> 
-          
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">New Trip</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <input type="text" placeholder="Trip Name"/>
+          </Modal.Body>
+    
+          <Modal.Footer>
+            <Button onClick={close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+
+
+
+               <Button
+          bsStyle="primary"
+          bsSize="small"
+          onClick={() => this.setState({ show: true})}>
+          Existing Trip
+        </Button>
+
+        <Modal
+          show={this.state.show}
+          onHide={close}
+          container={this}
+          aria-labelledby="contained-modal-title"
+        >
+          <Modal.Header closeButton>
+            <Modal.Title id="contained-modal-title">Existing Trip</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <input type="text" placeholder="Trip Name"/>
+          </Modal.Body>
+    
+          <Modal.Footer>
+            <Button onClick={close}>Close</Button>
+          </Modal.Footer>
+        </Modal>
+      <Button className="move-btn"  bsStyle="primary" bsSize="small" onClick={this.changeStatusOfItem}>Move to Booked</Button>
+      </div>
             <Accordion>
             
             <Panel header="Hotels" eventKey="1">
@@ -293,9 +370,6 @@ const Itinerary = React.createClass({
 
 
             <div id="trips" className="tab-pane fade">
-
-              {/*<button type="button" className="new-trip-btn" onClick={this.createNewTrip}>Create New Trip</button>
-              <button type="button" className="existing-trip-btn" onClick={this.editExistingTrip}>Edit Existing Trip</button>*/}
             </div>
         </div>
       </div>
