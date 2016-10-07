@@ -66,6 +66,11 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
+<<<<<<< 252e928e170f190e0e6b909f471c97b32f4861a4
+=======
+    // console.log('>>>>>> ', this.props);
+
+>>>>>>> fix(Activities): Activities routes edited to populate itineraries correctly
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
     let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");
 
