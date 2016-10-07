@@ -84,7 +84,7 @@ const Hotel = React.createClass({
 
             <span>{ this.props.hotelInfo.address }, {this.props.hotelInfo.city}</span><br />
             
-            <strong>${ this.props.hotelInfo.lowRateInfo.priceToShowUsers }</strong> per night
+            <strong>${ this.props.hotelInfo.lowRateInfo.priceToShowUsers }</strong> per night<br />
             
             {saveButton}
           </div>
