@@ -66,6 +66,11 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
+<<<<<<< c2898f8eee83564b25d84c4bb25652132a19bcf6
+=======
+    // console.log('>>>>>> ', this.props);
+
+>>>>>>> Bundle.js added
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
     let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");
 
