@@ -28,6 +28,11 @@ const Panel = React.createClass({
     )
   },
 
+  // **** TO DO **** ?
+  // componentDidMount() {
+  //   after hotel tile content loads, call filghts, cars, and activites
+  // },
+
   render() {
     // console.log('>>>>> PANEL <<<<<');
     // console.log('trip data in panel===> ', this.props)
