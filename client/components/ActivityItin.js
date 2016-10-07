@@ -10,15 +10,8 @@ const ActivityItin = React.createClass({
     // console.log('this is the dash state for booked activities itin: ', this.props.dashboardState.selectedSavedActivites)
   },
 
-   changeDate(date) {
-    let newDate = date.substring(0,10).split("-").join("/");
-    let year = newDate.slice(0,4);
-    let monthDay = newDate.slice(5);
-    return monthDay += '/' + year;
-  },
-
   render() {
-    // console.log("ACTIVITY PROPS", this.props)
+    console.log("ACTIVITYITIN PROPS", this.props)
       return (
     <div className='item-activity-itin'>
           {/*<h4>ACTIVITY ITIN</h4>*/}
