@@ -10,7 +10,7 @@ const HotelTile = React.createClass({
     
     for(var i = 0; i < ulNode.length; i++) {
       var liNodeList = ulNode[i].getElementsByTagName('li');
-      var myWidth = liNodeList.length * 310;
+      var myWidth = liNodeList.length * 350;
       ulNode[i].style.width = myWidth + 'px';
     }
   },
