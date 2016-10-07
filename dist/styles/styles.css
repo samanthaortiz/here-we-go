@@ -294,6 +294,7 @@ article {
   border-radius: 5px;
   padding: 10px;
   float: left;
+<<<<<<< ece25688ceb9dc02f3d67807fe5e893db6f0b66a
 <<<<<<< 2f1085e72f8f670204ea0d13a5894ab622371536
 <<<<<<< ade6cf0008f5baa94ff71c81e4cc4173e9f03e2b
 =======
@@ -303,10 +304,11 @@ article {
   margin-right: 1%;
   overflow-y: scroll;
 =======
+=======
+>>>>>>> Merge styles resolved
   width: 22%;
   margin-right: 1%;
   overflow-y: scroll
->>>>>>> Styles edited
 }
 
 .tile-itinerary a {
