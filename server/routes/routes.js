@@ -59,6 +59,11 @@ router.post('/budgetData', dbRouter.budgetData, function(req, res, next) {
   res.send();
 });
 
+router.post('/newTrip', dbRouter.newTrip, function(req, res, next) {
+  console.log('>>>>> SAVING ITIN TO DATABASE: ', req.body);
+  res.send();
+});
+
 router.post('/hotelItin', dbRouter.hotelItin, function(req, res, next) {
   res.send(res.data);
 });
@@ -74,6 +79,11 @@ router.post('/carItin', dbRouter.carItin, function(req, res, next) {
 router.post('/activityItin', dbRouter.activityItin, function(req, res, next) {
   res.send(res.data);
 });
+
+router.post('/changeStatus', dbRouter.changeStatus, function(req, res, next){
+  // console.log('response in change status:', res)
+  res.sendStatus(200);
+})
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 

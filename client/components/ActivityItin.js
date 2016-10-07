@@ -22,8 +22,7 @@ const ActivityItin = React.createClass({
   },
 
   render() {
-    console.log("ACTIVITYITIN PROPS", this.props)
-      return (
+    return (
     <div className='item-activity-itin'>
           {/*<h4>ACTIVITY ITIN</h4>*/}
           <form>

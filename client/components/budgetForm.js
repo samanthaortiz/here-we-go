@@ -40,7 +40,8 @@ const BudgetForm = React.createClass({
       hotel: this.state.hotelBudget,
       flight: this.state.flightBudget,
       car: this.state.carRentalBudget,
-      activity: this.state.activityBudget
+      activity: this.state.activityBudget,
+      userEmail: this.props.data.reducerTripData.email.split("=")[1].split("#")[0]
     };
 
     $.ajax({

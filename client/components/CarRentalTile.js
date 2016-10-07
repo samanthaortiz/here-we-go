@@ -18,8 +18,6 @@ const CarRentalTile = React.createClass({
   },
 
   render() {
-    console.log('CAR TILE: ', this.props.carData);
-
     let cars = this.filterCars();
 
     return (
