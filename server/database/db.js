@@ -1,6 +1,6 @@
 var knex = require('knex')({
- client: 'mysql',
- connection: {
+ 'client': 'mysql',
+ 'connection': {
    'host'     : process.env.ip,
    'user'     : process.env.username,
    'password' : process.env.password,
