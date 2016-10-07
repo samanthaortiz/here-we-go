@@ -1,14 +1,26 @@
 import React from 'react';
 
 const FlightItin = React.createClass({
+
   onChange(){
-    if (this.props.dashboardState.selectedBookedFlights[this.props.flightItinInfo.id] === undefined){
-      this.props.dashboardState.selectedBookedFlights[this.props.flightItinInfo.id] = true;
-    } else {
-      this.props.dashboardState.selectedBookedFlights[this.props.flightItinInfo.id] = !this.props.dashboardState.selectedBookedFlights[this.props.flightItinInfo.id]
-    } 
-    console.log('this is the dash state for booked flight itin: ', this.props.dashboardState.selectedBookedFlights)
+    if (this.props.flightItinInfo.status_id === 1){
+      if (this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] === undefined){
+        this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] = true;
+      } else {
+        this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] = !this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id]
+      } 
+      console.log('this is the dash state for booked flight itin: ', this.props.dashboardState.itinItems[0].selectedBookedFlights)   
+    } else if (this.props.flightItinInfo.status_id === 2){
+      if (this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] === undefined){
+        this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] = true;
+      } else {
+        this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] = !this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id]
+      } 
+      console.log('this is the dash state for saved flight itin: ', this.props.dashboardState.itinItems[1].selectedSavedFlights)   
+
+    }
   },
+
 
   changeDate(date) {
     var string = new Date(date).toString()

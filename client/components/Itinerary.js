@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import { Accordion, Panel } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
@@ -15,6 +16,10 @@ const Itinerary = React.createClass({
     document.getElementById('fade').style.display='block';
   },
 
+  addToNewTrip(){
+    //each hotel/flight/car
+  },
+
   render() {
     console.log("ACTIVITY PROPS ITIN", this.props.data)
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
@@ -23,6 +28,7 @@ const Itinerary = React.createClass({
       var bookedHotelList = [];
       var bookedCarList = [];
       var bookedFlightList = [];
+      var bookedActivityList = [];
 
       var savedHotelList = [];
       var savedCarList = [];
@@ -54,7 +60,9 @@ const Itinerary = React.createClass({
       });
 
       this.props.data.reducerActivityItin.activityItinData.forEach(function(activityItin){
-       if(activityItin.status_id === 2){
+        if (activityItin.status_id === 1){
+          bookedActivityList.push(activityItin);
+        } else if(activityItin.status_id === 2){
           savedActivityList.push(activityItin);
         }
       });
@@ -66,13 +74,19 @@ const Itinerary = React.createClass({
           <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
           <li><a data-toggle="tab" href="#budget">Budget</a></li>
-
+          <li><a data-toggle="tab" href="#trips">Trips</a></li>
         </ul>
+
+
         <div className="tab-content">
           <div id="booked" className="tab-pane fade in active">
-          <h3>Booked</h3>
+          <button type="button" className="new-trip-btn" onClick={this.addToNewTrip}>Add to New Trip</button>
+          <button type="button" className="existing-trip-btn" onClick={this.addToExistingTrip}>Add to Existing Trip</button>
+          <button type="button" className="move-btn"onClick={this.moveToSaved}>Move to Saved</button> 
 
-          <h4>Hotels</h4>
+          <Accordion>
+
+          <Panel header="Hotels" eventKey="1">
           {bookedHotelList.map((hotelItin, i) => 
             <HotelItin
               key={i}
@@ -82,7 +96,9 @@ const Itinerary = React.createClass({
               endDate={this.props.data.reducerTripData.endDate}
             />
             )}
-          <h4>Flights</h4>
+          </Panel>
+
+          <Panel header="Flights" eventKey="2">
             {bookedFlightList.map((flightItin, i) =>
               <FlightItin
                 key={i}
@@ -90,7 +106,9 @@ const Itinerary = React.createClass({
                 flightItinInfo={flightItin}
             />
             )}
-          <h4>Car Rentals</h4>
+          </Panel>
+
+          <Panel header="Car Rentals" eventKey="3">
             {bookedCarList.map((carItin, i) => 
               <CarItin
                 key={i}
@@ -98,14 +116,32 @@ const Itinerary = React.createClass({
                 carItinInfo={carItin}
               />
             )}
-            </div>  
+          </Panel>
 
+          <Panel header="Activities" eventKey="4">
+            {bookedActivityList.map((activityItin, i) => 
+              <ActivityItin
+                key={i}
+                dashboardState={this.props.dashboardState}
+                activityItinInfo={activityItin}
+              />
+            )}
+          </Panel>
+
+          </Accordion>
+
+          </div>  
 
 
           <div id="saved" className="tab-pane fade">
-             <h3>Saved</h3>
-                <h4>Hotels</h4>
-               {savedHotelList.map((hotelItin, i) => 
+          <button type="button" className="new-trip-btn" onClick={this.addToNewTrip}>Add to New Trip</button>
+          <button type="button" className="existing-trip-btn" onClick={this.addToExistingTrip}>Add to Existing Trip</button>
+          <button type="button" className="move-btn" onClick={this.moveToBooked}>Move to Booked</button> 
+          
+          <Accordion>
+            
+            <Panel header="Hotels" eventKey="1">
+              {savedHotelList.map((hotelItin, i) => 
                 <HotelItin
                   key={i}
                   dashboardState={this.props.dashboardState}
@@ -114,7 +150,9 @@ const Itinerary = React.createClass({
                   endDate={this.props.data.reducerTripData.endDate}
                 />
                 )}
-              <h4>Flights</h4>
+            </Panel>
+            
+            <Panel header="Flights" eventKey="2">
                 {savedFlightList.map((flightItin, i) =>
                   <FlightItin
                     key={i}
@@ -122,7 +160,9 @@ const Itinerary = React.createClass({
                     flightItinInfo={flightItin}
                 />
                 )}
-              <h4>Car Rentals</h4>
+            </Panel>
+            
+            <Panel header="Car Rentals" eventKey="3">
                 {savedCarList.map((carItin, i) => 
                   <CarItin
                     key={i}
@@ -130,7 +170,9 @@ const Itinerary = React.createClass({
                     carItinInfo={carItin}
                   />
                 )}
-                   <h4>Activities</h4>
+            </Panel>
+            
+            <Panel header="Activites" eventKey="4">
                 {savedActivityList.map((activityItin, i) => 
                   <ActivityItin
                     key={i}
@@ -138,9 +180,11 @@ const Itinerary = React.createClass({
                     activityItinInfo={activityItin}
                   />
                 )}
-             
+            </Panel>
+            
+            </Accordion>             
+            
             </div>     
-                    {/*
 
             <div id="budget" className="tab-pane fade">
              <h3>Budget</h3>
@@ -148,11 +192,15 @@ const Itinerary = React.createClass({
                   <BudgetForm />
                 </div>
                 <div id="fade" className="black_overlay"></div>
-                <p><a onClick={this.handleBudgetForm}>Add New Budget!</a></p>
+                <p><button onClick={this.handleBudgetForm}>Add New Budget!</button></p>
             </div>
-            <p>Upcoming</p>
-            <p>Previous</p>
-            <p>Cancelled</p>*/}
+
+
+            <div id="trips" className="tab-pane fade">
+              <button type="button" className="new-trip-btn" onClick={this.createNewTrip}>Create New Trip</button>
+              <button type="button" className="existing-trip-btn" onClick={this.editExistingTrip}>Edit Existing Trip</button>
+            </div>
+
         </div>
         </div>
       );
