@@ -68,6 +68,8 @@ const Hotel = React.createClass({
     
     // console.log('>>>>>> ', this.props);
 
+    // console.log('>>>>>> ', this.props);
+
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
     let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");
 
