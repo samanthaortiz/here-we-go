@@ -49,7 +49,7 @@ const Splash = React.createClass({
       this.props.postHotelItin(this.state.email)
       this.props.postFlightItin(this.state.email)
       this.props.postCarItin(this.state.email)
-
+      this.props.postActivityItin(this.state.email)
     }
   },
 

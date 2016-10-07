@@ -71,9 +71,9 @@ router.post('/carItin', dbRouter.carItin, function(req, res, next) {
   res.send(res.data);
 });
 
-// router.post('/activityItin', dbRouter.activityItin, function(req, res, next) {
-//   res.send(res.data);
-// });
+router.post('/activityItin', dbRouter.activityItin, function(req, res, next) {
+  res.send(res.data);
+});
 
 // TRIP/FLIGHT SEARCH API =====================================================================
 
