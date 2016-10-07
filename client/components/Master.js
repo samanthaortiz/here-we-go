@@ -11,7 +11,8 @@ function mapStateToProps(state){
     reducerHotelItin: state.reducerHotelItin,
     reducerFlightItin: state.reducerFlightItin,
     reducerCarItin: state.reducerCarItin,
-    reducerActivityItin: state.reducerActivityItin
+    reducerActivityItin: state.reducerActivityItin,
+    reducerChangeStatus: state.reducerChangeStatus
   }
 }
 
