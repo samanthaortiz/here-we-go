@@ -23,6 +23,9 @@ const Flight = React.createClass({
 
   // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
   handleSaveFlight: function(event) {
+
+    console.log('SAVE: ', this.state);
+
     let dataObj = {
       status_id: 2,
       type_id: 1,
@@ -46,19 +49,19 @@ const Flight = React.createClass({
       arrivalTime: this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalTime
     };
 
-    $.ajax({
-      url: '/flightReservation',
-      type: 'POST',
-      data: JSON.stringify(dataObj),
-      contentType: 'application/json',
-      success: function (data) {
-        // // Trigger a fetch to update the messages, pass true to animate
-        // app.fetch();
-      },
-      error: function (data) {
-        console.error('ERROR SENDING TO DATABASE: ', data);
-      }
-    });
+    // $.ajax({
+    //   url: '/flightReservation',
+    //   type: 'POST',
+    //   data: JSON.stringify(dataObj),
+    //   contentType: 'application/json',
+    //   success: function (data) {
+    //     // // Trigger a fetch to update the messages, pass true to animate
+    //     // app.fetch();
+    //   },
+    //   error: function (data) {
+    //     console.error('ERROR SENDING TO DATABASE: ', data);
+    //   }
+    // });
   },
 
   getRoundTrip: function() {
@@ -90,24 +93,29 @@ const Flight = React.createClass({
     //     </div>
     //   );
     // } else {
-      console.log('this.props: ', this.props);
+      console.log('FLIGHT this.props: ', this.props);
+
       return (
-        <div className="item-flight clearfix">
-          <div>
-            <h4>TO: { this.state.roundTrip[0].segments[0].flightNumber }</h4>
-            <p>DATE: { this.state.roundTrip[0].segments[0].departureTime }</p>
-            <p>FROM: { this.state.roundTrip[0].segments[0].departureAirportCode }, TO: { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</p>
-
-            <h4>RETURN: { this.state.roundTrip[1].segments[0].flightNumber }</h4>
-            <p>DATE: { this.state.roundTrip[1].segments[0].departureTime }</p>
-            <p>FROM: { this.state.roundTrip[1].segments[0].departureAirportCode }, TO: { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</p>
-
-            <p>PRICE: {this.props.flightInfo.totalFare} </p>
+        <li className="item-flight">
+          <div className="crop">
+            <div className="air-img"><img src="https://images.trvl-media.com/media/content/expus/graphics/static_content/fusion/v0.1b/images/airlines/s/UA_sq.jpg" /></div>
+            <div className="air-price">${this.props.flightInfo.totalFare}<br /><span>Round Trip</span></div>
           </div>
-          <button type="button" className="btn" onClick={this.handleSaveFlight}>
-            Save Flight
-          </button>
-        </div>
+          <div className="details clearfix">
+            <div className="air-depart">
+              { this.state.roundTrip[0].segments[0].flightNumber }<br />
+              <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span><br />
+              { this.state.roundTrip[0].segments[0].departureTime }
+            </div>
+            <div className="air-return">
+              { this.state.roundTrip[1].segments[0].flightNumber }<br />
+              <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span><br />
+              { this.state.roundTrip[1].segments[0].departureTime }
+            </div>
+            
+            <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+          </div>
+        </li>
       );
     // }
   } 

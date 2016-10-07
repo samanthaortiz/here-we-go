@@ -286,13 +286,44 @@ article {
   color: #999;
 }
 
-[class^='tile-']:not(.tile-itinerary) ul li button {
+.tile-flight ul li button {
   /*display: block !important;
   float: right;*/
   position: absolute;
   bottom: 5px;
   right: 5px;
 }
+
+/* FLIGHT TILE */
+.tile-flight ul li .details {
+  min-height: 225px;
+}
+
+.tile-flight ul li img {
+  width: initial;
+  width: 100%
+  border-radius: 0;
+}
+
+.item-flight .crop {
+  width: 302px;
+  height: 85px;
+}
+
+.item-flight .air-img {
+  float: left;
+}
+
+.item-flight .air-price {
+  line-height: 3;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
 
 /* ITINERARY VIEW ========================================================== */
 .tile-itinerary {

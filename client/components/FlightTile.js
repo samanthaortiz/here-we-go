@@ -171,20 +171,25 @@ const FlightTile = React.createClass({
   },
 
   renderFlights(offers, legs) {
-              // startDate={this.props.data.expediaFlightInfo.startDate}
-          // endDate={this.props.data.expediaFlightInfo.endDate}
-    return(<div className="tile-flight">
-          {offers.map((flight) =>
-        <Flight
-          key={flight.productKey}
-          flightInfo={flight}
-          flightLegs={legs}
-          userEmail={this.props.userEmail}
-        />
-      )}
+    console.log('***** FLIGHT OFFERS: ', offers);
+    
+    return (
+      <div className="tile-flight">
+        <h3>FLIGHTS</h3>
+        <ul className="row">
+          {
+            offers.map((flight) =>
+              <Flight
+                key={flight.productKey}
+                flightInfo={flight}
+                flightLegs={legs}
+                userEmail={this.props.userEmail}
+              />
+            )
+          }
+        </ul>
       </div>
     )
-
   },
 
     render() {

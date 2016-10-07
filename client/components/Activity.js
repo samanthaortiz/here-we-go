@@ -45,11 +45,7 @@ const Activity = React.createClass({
   },
 
   render() {
-
-    console.log('ACTIVITY ===> ', this.props);
-
     if(this.props.activityInfo !== undefined) {
-      
       return (
         <li className="item-hotel">
           <div className="crop">
@@ -66,7 +62,6 @@ const Activity = React.createClass({
           </div>
         </li>
       );
-
     }
   } 
 });
