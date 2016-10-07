@@ -4,41 +4,38 @@ import CarRental from './CarRental';
 
 const CarRentalTile = React.createClass({
 
-  filterCars(){
-
+  filterCars() {
     let carInfo = this.props.carData.tripData[1].carData.CarInfoList.CarInfo;
-
     let cars = [];
 
     carInfo.forEach(function(car){
-      if(car.CarClass !== "Special Special"){
+      if(car.CarClass !== "Special Special") {
         cars.push(car);
       }
-    })
-
-    // let legs = allLegs.map(function(leg){
-    //   return leg.legId === givenLegs[0] || leg.legId === givenLegs[1]
-    // })
+    });
 
     return cars;
   },
 
-
   render() {
-    // console.log('>>>>> CAR RENTAL TILE <<<<<');
-    // console.log('carData: ', this.props.carData.tripData[1].carData)
     let cars = this.filterCars();
-    // console.log('cars', cars);
+
     return (
       <div className="tile-car-rental">
-        {
-          cars.map((car) => 
-            <CarRental
-              key={car.PIID}
-              carInfo={car}
-            />
-          )
-        }
+        <h3>CAR RENTAL</h3>
+        <ul className="row">
+          {
+            cars.map((car) => 
+              <CarRental
+                key={car.PIID}
+                carInfo={car}
+                isLoggedIn={this.props.carData.loggedIn}
+                userEmail={this.props.carData.email}
+                startDate={this.props.carData.startDate}
+              />
+            )
+          }
+        </ul>
       </div>
     );
   }

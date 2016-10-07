@@ -4,14 +4,15 @@ import * as actionCreators from '../actions/actionCreators';
 import App from './App';
 
 function mapStateToProps(state){
-  // console.log('master.js: ', state)
   return {
     reducerTripData: state.reducerTripData,
-    reducerFlightData: state.reducerFlightData
-    // expediaHotelInfo: state.expediaHotelInfo,
-    // expediaFlightInfo: state.expediaFlightInfo,
-    // expediaCarRentalInfo: state.expediaCarRentalInfo,
-    // expediaActivityInfo: state.expediaActivityInfo
+    reducerFlightData: state.reducerFlightData,
+    reducerLoginData: state.reducerLoginData,
+    reducerHotelItin: state.reducerHotelItin,
+    reducerFlightItin: state.reducerFlightItin,
+    reducerCarItin: state.reducerCarItin,
+    reducerActivityItin: state.reducerActivityItin,
+    reducerChangeStatus: state.reducerChangeStatus
   }
 }
 

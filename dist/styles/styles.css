@@ -19,54 +19,75 @@ body {
 /* BOOTSTRAP STYLE FIXES */
 
 /* SPLASH PAGE =================================================== */
-
-.loginOut{
-  color:white;
-}
-
-a:visited{
-  color:white;
-}
 .splashClass { 
-  background: url('https://images.unsplash.com/photo-1431818563807-927945852ab6?dpr=2&auto=format&crop=entropy&fit=crop&w=1500&h=1125&q=80&cs=tinysrgb');
+  background: url('../assets/splash-img-01.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
  }
 
-#logo {
-  color: white;
-  font-size: 75px;
-  text-align: center;
-  font-weight: 400;
-  font-family: 'Pacifico', sans-serif;
-  position: relative;
-  padding-top: 15%;
-  /*top: 35%;*/
-  /*left: 39%;*/
+.splash-nav {
+  text-align: right;
+  background: transparent;
+  line-height: 50px;
 }
 
-.splashForm {
-  /*margin: 0;*/
-  padding-top: 3%;
-  /*left: 50%;*/
-  /*margin-right: -50%;*/
-  /*top: 35%;*/
-  /*left: 39%;*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.splash-nav [class^='nav-'] {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
 
-  /*top: 50%;*/
+.splash-container {
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+}
 
+.splash-logo {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+  font-family: 'Pacifico', sans-serif;
+}
+
+h1.splash-logo {
+  margin: 40px 0;
+}
+
+.splash-form {
+  width: 300px;
+  margin: auto;
+}
+
+.splash-form input {
+  height: 40px;
+  width: 200px;
+  border: 2px solid #999;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 6px 12px;
+}
+
+.input-group .form-control:not(:first-child):not(:last-child),
+.input-group-addon:not(:first-child):not(:last-child),
+.input-group-btn:not(:first-child):not(:last-child) {
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
 }
 
 .input-group {
-  align-self: flex-end;
-  align-items: center;
-  text-align: center;
-    /*align-items: center;*/
-    /*align-self: flex-end;*/
-    /*max-width: 50%*/
+  display: inline-block;
+  border-collapse: separate;
+}
+
+.input-group .form-control {
+  position: static;
+  z-index: 2;
+  float: none;
+  width: 100%;
+  margin: 5px 0;
 }
 
 .input-group-addon {
@@ -102,17 +123,17 @@ button {
 
 /* LOADING ICON */
 #loading-icon {
-  margin-top: 15px;
+  margin: auto;
+  margin-top: 10px;
   border-radius: 6px;
   opacity: 0.8;
-  padding: 20px 10px;
+  padding: 20px 30px;
   display: none;
-  width: 95%;
-  background: url('../assets/load.gif') no-repeat 90%;
-  background-size: 25%;
+  width: 200px;
+  background: url('../assets/load.gif') no-repeat 85%;
+  background-size: 15%;
   background-color: #999;
   text-align: left;
-  padding-left: 20px;
 }
 
 /* NAVIGATION BAR ================================================ */
@@ -154,7 +175,7 @@ nav {
 /* DASHBOARD VIEW ========================================================== */
 article {
   margin: 0 auto;
-  width: 95%;
+  width: 98%;
 }
 
 .dashboard-container {
@@ -167,44 +188,143 @@ article {
 }
 
 [class^='tile-'] {
-  width: 48%;
+  width: 100%;
   border: 1px solid #999;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   margin-bottom: 2%;
-  height: 300px;
-  overflow: scroll;
+  height: 100%;
+  overflow-y: hidden;
+  padding: 5px 5px 0 5px;
 }
 
-[class^='item-'] {
+[class^='tile-'] h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+[class^='item-']:not(.item-hotel-itin, .item-car-itin) {
   border: 1px solid #999;
-  margin-bottom: 10px;
+  width: 300px;
+  height: 100%;
 }
 
-[class^='item-'] > div {
+.item-flight > div {
+  float: none;
+  display: block;
+  width: 100%;
+}
+
+.tt-open {
+  background-color: #fff;
+  border: 1px solid #999;
+  margin-left: 2px;
+}
+
+.tt-open {
+  border: 1px solid #999;
+  background-color: #fff;
+  padding-left: 2px;
+}
+
+/* TILE CONTENT ============================================================ */
+[class^='tile-']:not(.tile-itinerary) ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+  min-height: 250px;
+  border-spacing: 5px;
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li {
+  border: 1px solid #999;
+  border-radius: 5px;
+  display: inline-block;
+  display: table-cell;
+  width: 302px;   /* fixed container width (300px) + 1px border = 302px */
+  min-height: 250px;
+  margin-right: 10px;
+  vertical-align: top;
+}
+
+.tile-car-rental ul li {
+  height: 260px !important;
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li img {
+  width: 300px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.tile-car-rental ul li img {
+  width: 165px !important;
+}
+
+.crop {
+  width: 300px;
+  height: 175px;
+  overflow: hidden;
+}
+
+.item-car-rental .crop {
+  width: 300px;
+  height: 95px;
+  /*overflow: hidden;*/
+  text-align: center
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li .details {
+  padding: 5px;
+  min-height: 160px;
+  position: relative;
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li span {
+  font-size: 10px;
+  color: #999;
+  display: block;
+  /*padding-top: 12px;*/
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li button {
+  /*display: block !important;
+  float: right;*/
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+/* FLIGHT TILE */
+.tile-flight ul li .details {
+  min-height: 225px;
+}
+
+.tile-flight ul li img {
+  width: initial !important;
+  border-radius: 0;
+}
+
+.item-flight .crop {
+  width: 302px;
+  height: 85px;
+}
+
+.item-flight .air-img {
   float: left;
-  width: 30%;
-  margin: 0 5px;
-  border: 1px solid red;
 }
 
-div.tile-hotel {
-  float: left;
-  margin-right: 2%;
+.item-flight .air-price {
+  line-height: 3;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
 }
 
-div.tile-flight {
-  float: right;
-}
 
-/*div.tile-hotel:nth-child(even) {
-  float: right;
-}
 
-div.tile-hotel:nth-child(odd) {
-  float: left;
-  margin-right: 5%;
-}*/
+
 
 /* ITINERARY VIEW ========================================================== */
 .tile-itinerary {
@@ -212,10 +332,97 @@ div.tile-hotel:nth-child(odd) {
   border-radius: 5px;
   padding: 10px;
   float: left;
-  width: 22%;
-  margin-right: 1%
+  width: 23%;
+  margin-right: 1%;
+  overflow-y: scroll;
 }
 
+.tile-itinerary a {
+  color: #000;
+  cursor: pointer;
+}
+
+.item-hotel-itin,
+.item-car-itin {
+  border: 1px solid #999;
+  margin-bottom: 10px;
+}
+
+.nav-tabs a {
+  padding: 5px !important;
+}
+
+/* BUDGET FORM VIEW ======================================================== */
+.container-form-budget {
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+.form-budget {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.form-budget ul {
+  margin:0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.form-budget li {
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 50%;
+}
+
+.form-budget li.field-full {
+  width: 100%;
+  text-align: center;
+}
+
+.form-budget label,
+.form-budget input {
+  display: block;
+  width: 100%;
+}
+
+.form-budget .form-body input {
+  width: 95%;
+}
+
+.form-budget button {
+  border-radius: 5px;
+}
+
+/* FORM LIGHTBOX =========================================================== */
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.8;
+       opacity: .80;
+        filter: alpha(opacity=80);
+}
+
+.lightbox-content {
+  display: none;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  background-color: white;
+  z-index: 1002;
+  overflow: auto;
+}
 
 /* MEDIA QUERIES =========================================================== */
 @media (max-width: 2000px) {

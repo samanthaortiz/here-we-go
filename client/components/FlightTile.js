@@ -22,56 +22,68 @@ const FlightTile = React.createClass({
   },
 
   getAllAirports(ValidCodes) {
-    // if(this.props.flightData.data.expediaFlightInfo.expediaFlightInfo !== undefined) {
+    // if(this.props.flightData.expediaFlightInfo.expediaFlightInfo !== undefined) {
 
-    //   let codes = [];
+      let codes = [];
 
-    //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports_by_cities.forEach(function(airport){
-    //     if(ValidCodes.indexOf(airport.code) !== -1){
-    //       codes.push(airport);
-    //     }
-    //   });
+      this.props.flightData.reducerTripData.tripData[3].airports.forEach(function(airport){
+        if(ValidCodes.indexOf(airport.code) !== -1){
+          codes.push(airport);
+        }
+      });
 
-    //   this.props.flightData.data.expediaFlightInfo.expediaFlightInfo.response.airports.forEach(function(airport){
-    //     if(ValidCodes.indexOf(airport.code) !== -1){
-    //       codes.push(airport);
-    //     }
-    //   });
+      this.props.flightData.reducerTripData.tripData[3].airports.forEach(function(airport){
+        if(ValidCodes.indexOf(airport.code) !== -1){
+          codes.push(airport);
+        }
+      });
 
-    //   return codes
+      return codes
     // }
-    let codes = {
-       "processingDurationMillis": 2,
-       "authorisedAPI": true,
-       "success": true,
-       "airline": null,
-       "errorMessage": null,
-       "airports": [
-         {
-           "code": "DAL",
-           "name": "Dallas Love Fld",
-           "city": "Dallas",
-           "country": "United States",
-           "timezone": "America/Chicago",
-           "lat": 32.847111,
-           "lng": -96.851778,
-           "terminal": null,
-           "gate": null
-         },
-         {
-           "code": "DFW",
-           "name": "Dallas Fort Worth Intl",
-           "city": "Dallas-Fort Worth",
-           "country": "United States",
-           "timezone": "America/Chicago",
-           "lat": 32.896828,
-           "lng": -97.037997,
-           "terminal": null,
-           "gate": null
-         }
-       ]
-     }
-     return codes.airports
+    // let codes = {
+    //    "processingDurationMillis": 2,
+    //    "authorisedAPI": true,
+    //    "success": true,
+    //    "airline": null,
+    //    "errorMessage": null,
+    //    "airports": [
+    //      {
+    //        "code": "DAL",
+    //        "name": "Dallas Love Fld",
+    //        "city": "Dallas",
+    //        "country": "United States",
+    //        "timezone": "America/Chicago",
+    //        "lat": 32.847111,
+    //        "lng": -96.851778,
+    //        "terminal": null,
+    //        "gate": null
+    //      },
+    //      {
+    //        "code": "DFW",
+    //        "name": "Dallas Fort Worth Intl",
+    //        "city": "Dallas-Fort Worth",
+    //        "country": "United States",
+    //        "timezone": "America/Chicago",
+    //        "lat": 32.896828,
+    //        "lng": -97.037997,
+    //        "terminal": null,
+    //        "gate": null
+    //      }
+    //    ]
+    //  }
+    //  return codes.airports
+  },
+
+  componentWillMount(){
+    // console.log('about to mount flight tile')
+    let codeArr = this.getAllAirports(ValidCodes) || [];
+    this.setState({
+      availableAirportCodes: codeArr,
+      // airportDepartureSelect: 'My Departure Airport',
+      airportDepartureCode: "",
+      // airportDestinationSelect: codeArr[0].name,
+      airportDestinationCode: codeArr[0].code
+    })
   },
 
   componentDidMount() {
@@ -89,18 +101,6 @@ const FlightTile = React.createClass({
       name: 'airports',
       source: airports
     }).on('typeahead:change', this.handleChangeDeparture)
-  },
-
-  componentWillMount(){
-    // console.log('about to mount flight tile')
-    let codeArr = this.getAllAirports(ValidCodes) || [];
-    this.setState({
-      availableAirportCodes: codeArr,
-      // airportDepartureSelect: 'My Departure Airport',
-      airportDepartureCode: "",
-      // airportDestinationSelect: codeArr[0].name,
-      airportDestinationCode: codeArr[0].code
-    })
   },
 
   handleChangeDestination(event) {
@@ -171,22 +171,29 @@ const FlightTile = React.createClass({
   },
 
   renderFlights(offers, legs) {
-              // startDate={this.props.data.expediaFlightInfo.startDate}
-          // endDate={this.props.data.expediaFlightInfo.endDate}
-    return(<div className="tile-flight">
-          {offers.map((flight) =>
-        <Flight
-          key={flight.productKey}
-          flightInfo={flight}
-          flightLegs={legs}
-        />
-      )}
+    console.log('***** FLIGHT OFFERS: ', offers);
+    
+    return (
+      <div className="tile-flight">
+        <h3>FLIGHTS</h3>
+        <ul className="row">
+          {
+            offers.map((flight) =>
+              <Flight
+                key={flight.productKey}
+                flightInfo={flight}
+                flightLegs={legs}
+                userEmail={this.props.userEmail}
+              />
+            )
+          }
+        </ul>
       </div>
     )
-
   },
 
     render() {
+      // console.log('FLIGHT TILE: ', this.props);
       // console.log('do we have flights?', this.props.flightOptions);
       if(this.state.availableAirportCodes.length === 0){
         return (

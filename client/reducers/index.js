@@ -1,23 +1,23 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-
-// import posts from'./posts';
 import reducerTripData from './reducerTripData';
 import reducerFlightData from './reducerFlightData'; 
-
-// import expediaHotelInfo from './expediaHotelInfo'; 
-// import expediaFlightInfo from './expediaFlightInfo';
-// import expediaCarRentalInfo from './expediaCarRentalInfo'; 
-// import expediaActivityInfo from './expediaActivityInfo'; 
-
+import reducerLoginData from './reducerLoginData';
+import reducerHotelItin from './reducerHotelItin';
+import reducerFlightItin from './reducerFlightItin';
+import reducerCarItin from './reducerCarItin';
+import reducerActivityItin from './reducerActivityItin';
+import reducerChangeStatus from './reducerChangeStatus';
 
 const rootReducer = combineReducers({
   reducerTripData,
   reducerFlightData,
-  // expediaHotelInfo,
-  // expediaFlightInfo,
-  // expediaCarRentalInfo,
-  // expediaActivityInfo,
+  reducerLoginData,
+  reducerHotelItin,
+  reducerFlightItin,
+  reducerCarItin,
+  reducerActivityItin,
+  reducerChangeStatus,
   routing: routerReducer
 });
 

@@ -6,9 +6,24 @@ import Itinerary from './Itinerary';
 import Panel from './Panel';
 
 const Dashboard = React.createClass({
-  // getInitialState() {
-
-  // },
+  getInitialState() {
+    return {
+      itinItems: [
+          {
+            selectedBookedHotels: {},
+            selectedBookedFlights: {},
+            selectedBookedCars: {},
+            selectedBookedActivities: {}
+          },
+          {
+            selectedSavedHotels: {},
+            selectedSavedFlights: {},
+            selectedSavedCars: {},
+            selectedSavedActivites: {}
+          }
+        ]
+    }
+  },
 
   render() {
     // console.log('>>>>> DASHBOARD <<<<<');
@@ -18,9 +33,9 @@ const Dashboard = React.createClass({
   
     return (
       <div className='outer-dashboard-container'>
-        <NavigationBar/>
+        <NavigationBar data={this.props}/>
         <article>
-          <Itinerary />
+          <Itinerary data={this.props} dashboardState={this.state}/>
           <Panel data={this.props}/>
         </article>
       </div> 

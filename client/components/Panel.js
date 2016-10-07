@@ -5,6 +5,7 @@ import FlightTile from './FlightTile';
 import Flight from './Flight'
 import CarRentalTile from './CarRentalTile';
 import ActivityTile from './ActivityTile';
+// import CampgroundTile from './CampgroundTile';
 const Panel = React.createClass({
 
   getInitialState() {
@@ -14,7 +15,7 @@ const Panel = React.createClass({
   },
  
   renderFlights(offers) {
-    console.log(offers);
+    // console.log(offers);
     return (
       offers.map((flight) =>
         <Flight
@@ -27,21 +28,24 @@ const Panel = React.createClass({
     )
   },
 
+  // **** TO DO **** ?
+  // componentDidMount() {
+  //   after hotel tile content loads, call filghts, cars, and activites
+  // },
+
   render() {
-    console.log('>>>>> PANEL <<<<<');
-    // console.log('*****Hotel: ', this.props.data.expediaHotelInfo);
-    // console.log('Flights: ', this.props.expediaFlightInfo);
-    console.log('trip data in panel===> ', this.props)
-    console.log('got flights before if statement', this.state.gotFlights)
+    // console.log('>>>>> PANEL <<<<<');
+    // console.log('trip data in panel===> ', this.props)
+    // console.log('got flights before if statement', this.state.gotFlights)
 
     var flightTile;
     if(this.state.gotFlights){
-      console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
+      // console.log("GOT FLIGHTS!!! props:", this.props, "state", this.state)
       
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
       var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs
 
-      flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state}/>
+      flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state} userEmail={this.props.data.reducerTripData.email}/>
     } else {
       flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state}/>
     }
@@ -52,6 +56,7 @@ const Panel = React.createClass({
         {flightTile}
         <CarRentalTile carData={this.props.data.reducerTripData}/>
         <ActivityTile activityData={this.props.data.reducerTripData}/>
+      {/*<CampgroundTile campgroundData={this.props.data.reducerTripData}/>*/}
       </div>
     );
   }

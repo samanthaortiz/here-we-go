@@ -1,6 +1,15 @@
 // NAVIGATION BAR COMPONENT ===================================================
 import React, { Component } from 'react';
-class NavigationBar extends Component {
+
+const NavigationBar = React.createClass({
+
+  getEmail(){
+    let initialEmail = this.props.data.reducerTripData.email
+    let secondEmail = initialEmail.split("=")[1];
+    let email = secondEmail.split("#")[0]
+    return email;
+  },
+
   render() {
     return (
       <nav className="clearfix">
@@ -13,12 +22,12 @@ class NavigationBar extends Component {
         </div>
         <div className="acct-menu">
           <ul>
-            <li>username</li>
+            <li>{this.getEmail()}</li>
           </ul>
         </div>
       </nav>
     );
   }
-}
+});
 
 export default NavigationBar;
