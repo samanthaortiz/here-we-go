@@ -4,12 +4,22 @@ import DateTime from 'react-datetime'
 const HotelItin = React.createClass({
 
   onChange(){
-    if (this.props.dashboardState.selectedBookedHotels[this.props.hotelItinInfo.id] === undefined){
-      this.props.dashboardState.selectedBookedHotels[this.props.hotelItinInfo.id] = true;
-    } else {
-      this.props.dashboardState.selectedBookedHotels[this.props.hotelItinInfo.id] = !this.props.dashboardState.selectedBookedHotels[this.props.hotelItinInfo.id]
-    } 
-    console.log('this is the dash state for booked hotel itin: ', this.props.dashboardState.selectedBookedHotels)
+    if (this.props.hotelItinInfo.status_id === 1){
+      if (this.props.dashboardState.itinItems[0].selectedBookedHotels[this.props.hotelItinInfo.id] === undefined){
+        this.props.dashboardState.itinItems[0].selectedBookedHotels[this.props.hotelItinInfo.id] = true;
+      } else {
+        this.props.dashboardState.itinItems[0].selectedBookedHotels[this.props.hotelItinInfo.id] = !this.props.dashboardState.itinItems[0].selectedBookedHotels[this.props.hotelItinInfo.id]
+      } 
+      console.log('this is the dash state for booked hotel itin: ', this.props.dashboardState.itinItems[0].selectedBookedHotels)   
+    } else if (this.props.hotelItinInfo.status_id === 2){
+      if (this.props.dashboardState.itinItems[1].selectedSavedHotels[this.props.hotelItinInfo.id] === undefined){
+        this.props.dashboardState.itinItems[1].selectedSavedHotels[this.props.hotelItinInfo.id] = true;
+      } else {
+        this.props.dashboardState.itinItems[1].selectedSavedHotels[this.props.hotelItinInfo.id] = !this.props.dashboardState.itinItems[1].selectedSavedHotels[this.props.hotelItinInfo.id]
+      } 
+      console.log('this is the dash state for saved hotel itin: ', this.props.dashboardState.itinItems[1].selectedSavedHotels)   
+
+    }
   },
 
   changeDate(date) {

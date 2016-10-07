@@ -310,6 +310,10 @@ article {
   margin-bottom: 10px;
 }
 
+.nav-tabs a {
+  padding: 5px !important;
+}
+
 /* BUDGET FORM VIEW ======================================================== */
 .container-form-budget {
   border: 1px solid #999;

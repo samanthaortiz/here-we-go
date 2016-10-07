@@ -8,13 +8,19 @@ import Panel from './Panel';
 const Dashboard = React.createClass({
   getInitialState() {
     return {
-      selectedBookedHotels: {},
-      selectedBookedFlights: {},
-      selectedBookedCars: {},
-      selectedSavedHotels: {},
-      selectedSavedFlights: {},
-      selectedSavedCars: {},
-      selectedSavedActivites: {}
+      itinItems: [
+          {
+            selectedBookedHotels: {},
+            selectedBookedFlights: {},
+            selectedBookedCars: {}
+          },
+          {
+            selectedSavedHotels: {},
+            selectedSavedFlights: {},
+            selectedSavedCars: {},
+            selectedSavedActivites: {}
+          }
+        ]
     }
   },
 
