@@ -59,21 +59,18 @@ module.exports = {
     .catch(function(error) {
       console.error(error)
     });
-  }
+  },
 
-  // activityItin: function(req, res, next){
-  //   console.log('>>>>> SAVING ACTIVITIES ITIN TO DATABASE: ', req.body);
-  //   // RAW SQL: SELECT * FROM activites VALUES WHERE hotel.user_email = email), 100)
-  //   console.log('this is the req body',req.body)
-  //   var email = req.body.email;
-  //   // var info;
-  //   db.knex('carRentals').where('activities.user_email', email).select("*")
-  //   .then(function(info) {
-  //     res.data = info;
-  //     next();
-  //   })
-  //   .catch(function(error) {
-  //     console.error(error)
-  //   });
-  // }
+  activityItin: function(req, res, next){
+    var firstEmail = req.body.email.split("=")[1];
+    var email = firstEmail.split("#")[0]
+    db.knex('activities').where('activities.user_email', email).select("*")
+    .then(function(info) {
+      res.data = info;
+      next();
+    })
+    .catch(function(error) {
+      console.error(error)
+    });
+  }
 }

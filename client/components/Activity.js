@@ -26,7 +26,8 @@ const Activity = React.createClass({
       status_id: 2,
       type_id: 4,
       user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
-      name: `${this.props.activityInfo.title}`
+      name: `${this.props.activityInfo.title}`,
+      date: `${this.props.activityInfo.date}`
     };
 
     $.ajax({

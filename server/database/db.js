@@ -203,6 +203,7 @@ knex.schema.hasTable('carRentals').then(exists => {
       activity.string('user_email')
       activity.foreign('user_email').references('email').inTable('users');
       activity.string('name');
+      activity.dateTime('date');
       activity.timestamps();
     }).then(table => {
       console.log('Created Table', table);

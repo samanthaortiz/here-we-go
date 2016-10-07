@@ -159,3 +159,29 @@ export function hydrateCarItin(carItinData){
     carItinData
   };
 }
+
+
+//=============== ACTIVITY ITIN ===============
+export const postActivityItin = (email) => {
+  return function(dispatch){
+    return axiosActivityItin(email)
+    .then(res => {
+      dispatch(hydrateActivityItin(res.data))
+      browserHistory.push('/')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosActivityItin(email){
+  return axios.post('/api/activityItin', {
+    email
+  })
+}
+
+export function hydrateActivityItin(activityItinData){
+  return {
+    type: "POST_ACTIVITY_ITIN",
+    activityItinData
+  };
+}

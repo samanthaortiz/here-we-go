@@ -81,7 +81,8 @@ db.knex('activities')
       status_id: req.body.status_id,
       type_id: req.body.type_id,
       user_email: req.body.user_email,
-      name: req.body.name
+      name: req.body.name,
+      date: req.body.date
     })
     .then(function(data) {
       console.log('ADDED ACTIVITY');
