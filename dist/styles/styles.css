@@ -188,17 +188,14 @@ article {
 }
 
 [class^='tile-'] {
-  width: 48%;
-  width: 100%;              /* NEW */
+  width: 100%;
   border: 1px solid #999;
   border-radius: 5px;
-  padding: 10px;
-  padding: 5px;             /* NEW */
+  padding: 5px;
   margin-bottom: 2%;
-  height: 300px;
-  height: 100%;            /* NEW */
-  overflow-y: scroll;
-  overflow-y: hidden;       /* NEW */
+  height: 100%;
+  overflow-y: hidden;
+  padding: 5px 5px 0 5px;
 }
 
 [class^='tile-'] h3 {
@@ -236,15 +233,19 @@ article {
   padding: 0;
   list-style-type: none;
   list-style-position: inside;
-  height: 300px;
+  min-height: 250px;
+  border-spacing: 5px;
 }
 
 [class^='tile-']:not(.tile-itinerary) ul li {
   border: 1px solid #999;
   border-radius: 5px;
   display: inline-block;
-  height: 300px;
+  display: table-cell;
+  width: 302px;   /* fixed container width (300px) + 1px border = 302px */
+  min-height: 250px;
   margin-right: 10px;
+  vertical-align: top;
 }
 
 .tile-car-rental ul li {
@@ -276,6 +277,8 @@ article {
 
 [class^='tile-']:not(.tile-itinerary) ul li .details {
   padding: 5px;
+  min-height: 160px;
+  position: relative;
 }
 
 [class^='tile-']:not(.tile-itinerary) ul li span {
@@ -284,8 +287,11 @@ article {
 }
 
 [class^='tile-']:not(.tile-itinerary) ul li button {
-  display: block !important;
-  float: right;
+  /*display: block !important;
+  float: right;*/
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
 }
 
 /* ITINERARY VIEW ========================================================== */
