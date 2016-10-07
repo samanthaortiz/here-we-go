@@ -20,10 +20,12 @@ import BudgetChart from './components/BudgetChart.js';
 import Itinerary from './components/Itinerary.js';
 //HOTEL ITIN
 import HotelItin from './components/HotelItin.js';
-//HOTEL ITIN
+//FLIGHT ITIN
 import FlightItin from './components/FlightItin.js';
-//HOTEL ITIN
+//CAR ITIN
 import CarItin from './components/CarItin.js';
+//ACTIVITY ITIN
+import ActivityItin from './components/ActivityItin.js';
 
 
 const router = (
@@ -40,6 +42,7 @@ const router = (
         <Route path="dashboard" component={HotelItin} />
         <Route path="dashboard" component={FlightItin} />
         <Route path="dashboard" component={CarItin} />
+        <Route path="dashboard" component={ActivityItin} />
         <Route path="*" component={Master} />
       </Route>
     </Router>

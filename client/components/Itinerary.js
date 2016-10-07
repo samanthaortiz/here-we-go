@@ -4,6 +4,7 @@ import BudgetForm from './BudgetForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
 import CarItin from './CarItin';
+import ActivityItin from './ActivityItin';
 
 const Itinerary = React.createClass({
 
@@ -15,7 +16,7 @@ const Itinerary = React.createClass({
   },
 
   render() {
-    console.log("PROPS ITIN", this.props.data)
+    console.log("ACTIVITY PROPS ITIN", this.props.data)
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
 
@@ -26,6 +27,7 @@ const Itinerary = React.createClass({
       var savedHotelList = [];
       var savedCarList = [];
       var savedFlightList = [];
+      var savedActivityList = [];
 
       this.props.data.reducerHotelItin.hotelItinData.forEach(function(hotelItin){
         if (hotelItin.status_id === 1){
@@ -51,13 +53,11 @@ const Itinerary = React.createClass({
         }
       });
 
-      // this.props.data.reducerActivityData.activityData.forEach(function(activity){
-      //   if (carItin.status_id === 1){
-      //     bookedCarList.push(carItin);
-      //   } else if(carItin.status_id === 2){
-      //     savedCarList.push(carItin);
-      //   }
-      // });
+      this.props.data.reducerActivityItin.activityItinData.forEach(function(activityItin){
+       if(activityItin.status_id === 2){
+          savedActivityList.push(activityItin);
+        }
+      });
 
 
       return (
@@ -130,10 +130,17 @@ const Itinerary = React.createClass({
                     carItinInfo={carItin}
                   />
                 )}
+                   <h4>Activities</h4>
+                {savedActivityList.map((activityItin, i) => 
+                  <ActivityItin
+                    key={i}
+                    dashboardState={this.props.dashboardState}
+                    activityItinInfo={activityItin}
+                  />
+                )}
+             
             </div>     
-                    {/*<h4>Activities</h4>
-                    {}
-                </div>
+                    {/*
 
             <div id="budget" className="tab-pane fade">
              <h3>Budget</h3>
@@ -143,20 +150,9 @@ const Itinerary = React.createClass({
                 <div id="fade" className="black_overlay"></div>
                 <p><a onClick={this.handleBudgetForm}>Add New Budget!</a></p>
             </div>
-              {/* map over activities
-              <ActivityItin
-                key={hotel.sift_id}
-                hotelInfo={hotel}
-                email={this.props.reducerHotelItin.email}
-              />
-              
             <p>Upcoming</p>
             <p>Previous</p>
-            <p>Cancelled</p>
-            
-
-          
-        */}
+            <p>Cancelled</p>*/}
         </div>
         </div>
       );

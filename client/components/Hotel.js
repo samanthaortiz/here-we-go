@@ -65,6 +65,10 @@ const Hotel = React.createClass({
     if (this.props.isLoggedIn) {
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
+    
+    // console.log('>>>>>> ', this.props);
+
+    // console.log('>>>>>> ', this.props);
 
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
     let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");

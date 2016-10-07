@@ -10,7 +10,8 @@ function mapStateToProps(state){
     reducerLoginData: state.reducerLoginData,
     reducerHotelItin: state.reducerHotelItin,
     reducerFlightItin: state.reducerFlightItin,
-    reducerCarItin: state.reducerCarItin
+    reducerCarItin: state.reducerCarItin,
+    reducerActivityItin: state.reducerActivityItin
   }
 }
 
