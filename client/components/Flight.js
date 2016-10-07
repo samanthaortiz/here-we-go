@@ -99,18 +99,18 @@ const Flight = React.createClass({
         <li className="item-flight">
           <div className="crop">
             <div className="air-img"><img src="https://images.trvl-media.com/media/content/expus/graphics/static_content/fusion/v0.1b/images/airlines/s/UA_sq.jpg" /></div>
-            <div className="air-price">${this.props.flightInfo.totalFare}<br /><span>Round Trip</span></div>
+            <div className="air-price">${this.props.flightInfo.totalFare}<span>Round Trip</span></div>
           </div>
           <div className="details clearfix">
             <div className="air-depart">
-              { this.state.roundTrip[0].segments[0].flightNumber }<br />
-              <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span><br />
-              { this.state.roundTrip[0].segments[0].departureTime }
+              <p>{ this.state.roundTrip[0].segments[0].flightNumber }</p>
+              <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span>
+              <p>{ this.state.roundTrip[0].segments[0].departureTime }</p>
             </div>
             <div className="air-return">
-              { this.state.roundTrip[1].segments[0].flightNumber }<br />
-              <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span><br />
-              { this.state.roundTrip[1].segments[0].departureTime }
+              <p>{ this.state.roundTrip[1].segments[0].flightNumber }</p>
+              <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span>
+              <p>{ this.state.roundTrip[1].segments[0].departureTime }</p>
             </div>
             
             <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>

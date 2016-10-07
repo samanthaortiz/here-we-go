@@ -284,9 +284,11 @@ article {
 [class^='tile-']:not(.tile-itinerary) ul li span {
   font-size: 10px;
   color: #999;
+  display: block;
+  /*padding-top: 12px;*/
 }
 
-.tile-flight ul li button {
+[class^='tile-']:not(.tile-itinerary) ul li button {
   /*display: block !important;
   float: right;*/
   position: absolute;
@@ -300,8 +302,7 @@ article {
 }
 
 .tile-flight ul li img {
-  width: initial;
-  width: 100%
+  width: initial !important;
   border-radius: 0;
 }
 
