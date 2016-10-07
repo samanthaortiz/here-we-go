@@ -72,5 +72,11 @@ module.exports = {
     .catch(function(error) {
       console.error(error)
     });
+  },
+
+  changeStatus: function(req, res, next){
+    //knex to change status
   }
+
+
 }

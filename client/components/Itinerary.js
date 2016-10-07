@@ -16,8 +16,18 @@ const Itinerary = React.createClass({
     document.getElementById('fade').style.display='block';
   },
 
-  addToNewTrip(){
+  moveToSaved(){
     //each hotel/flight/car
+    for (var booked in this.props.dashboardState.itinItems[0]){
+      for (var item in this.props.dashboardState.itinItems[0][booked]){
+        if(this.props.dashboardState.itinItems[0][booked][item] === true){
+          //if item is hotel/flight/car/activity
+          //move item out of booked and into saved by changing status from 1 to 2
+          //send req to backend w/ item id and type so it knows what it is
+          //call this.props.changeStatus(itemId, typeId, statusId);
+        }
+      }
+    }
   },
 
   render() {

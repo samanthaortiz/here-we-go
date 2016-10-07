@@ -7,6 +7,7 @@ import reducerHotelItin from './reducerHotelItin';
 import reducerFlightItin from './reducerFlightItin';
 import reducerCarItin from './reducerCarItin';
 import reducerActivityItin from './reducerActivityItin';
+import reducerChangeStatus from './reducerChangeStatus';
 
 const rootReducer = combineReducers({
   reducerTripData,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   reducerFlightItin,
   reducerCarItin,
   reducerActivityItin,
+  reducerChangeStatus,
   routing: routerReducer
 });
 
