@@ -217,6 +217,7 @@ knex.schema.hasTable('carRentals').then(exists => {
       itinerary.increments('id').primary();
       itinerary.string('user_email')
       itinerary.foreign('user_email').references('email').inTable('users');
+      itinerary.string('trip_name')
       itinerary.string('status');
       itinerary.integer('trip_id');
       itinerary.timestamps();

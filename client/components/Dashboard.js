@@ -12,7 +12,8 @@ const Dashboard = React.createClass({
           {
             selectedBookedHotels: {},
             selectedBookedFlights: {},
-            selectedBookedCars: {}
+            selectedBookedCars: {},
+            selectedBookedActivities: {}
           },
           {
             selectedSavedHotels: {},

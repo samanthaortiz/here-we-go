@@ -191,7 +191,7 @@ export const changeStatus = (itemId, typeId, statusId) => {
     return axiosChangeStatus(itemId, typeId, statusId)
     .then(res => {
       dispatch(hydrateItinStatus(res.data, itemId, typeId, statusId))
-      browserHistory.push('/itinerary')
+      browserHistory.push('/dashboard')
     })
     .catch(error => console.log(error));
   };
