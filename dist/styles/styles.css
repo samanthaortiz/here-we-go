@@ -283,15 +283,9 @@ article {
   border-radius: 5px;
   padding: 10px;
   float: left;
-<<<<<<< 672d01d01dee1c81c3db89fa3b3f67ffc47bec77
-  width: 23%;
-  margin-right: 1%;
-  overflow-y: scroll;
-=======
   width: 22%;
   margin-right: 1%;
   overflow-y: scroll
->>>>>>> Styles edited
 }
 
 .tile-itinerary a {
