@@ -41,7 +41,6 @@ body {
   text-align: center;
   width: 70%;
   margin: auto;
-  /*border: 1px solid red;*/
   margin-top: 5%;
 }
 
@@ -59,7 +58,6 @@ h1.splash-logo {
 .splash-form {
   width: 300px;
   margin: auto;
-  /*border: 1px solid red;*/
 }
 
 .splash-form input {
@@ -95,69 +93,6 @@ h1.splash-logo {
 .input-group-addon {
   display: none;
 }
-
-
-
-
-
-
-
-
-/*span.input-group {
-  position: static !important;
-  display: inline !important; 
-  border-collapse: separate !important; 
-}*/
-
-
-/*.input-group .form-control,
-.input-group-addon,
-.input-group-btn {
-  display: inline-block;
-}
-
-.input-group .form-control {
-  position: relative;
-  z-index: 2;
-  float: none;
-  width: 100%;
-  margin-bottom: initial;
-}*/
-
-/*#logo {
-  color: white;
-  font-size: 75px;
-  text-align: center;
-  font-weight: 400;
-  font-family: 'Pacifico', sans-serif;
-  position: relative;
-  padding-top: 15%;
-  /*top: 35%;*/
-  /*left: 39%;
-}*/
-
-.splashForm {
-  /*margin: 0;*/
-  padding-top: 3%;
-  /*left: 50%;*/
-  /*margin-right: -50%;*/
-  /*top: 35%;*/
-  /*left: 39%;*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*top: 50%;*/
-}
-
-.input-group {
-  /*align-self: flex-end;
-  align-items: center;
-  text-align: center;*/
-  /*align-items: center;*/
-  /*align-self: flex-end;*/
-  /*max-width: 50%*/
-}
-
 
 button {
   margin-top: 5px;
@@ -261,7 +196,7 @@ article {
   padding: 5px;             /* NEW */
   margin-bottom: 2%;
   height: 300px;
-  height: 200px;            /* NEW */
+  height: 100%;            /* NEW */
   overflow-y: scroll;
   overflow-y: hidden;       /* NEW */
 }
@@ -273,17 +208,9 @@ article {
 
 [class^='item-']:not(.item-hotel-itin, .item-car-itin) {
   border: 1px solid #999;
-  /*margin-bottom: 10px;*/
   width: 300px;
   height: 100%;
 }
-
-/*[class^='item-'] > div {
-  float: left;
-  width: 30%;
-  margin: 0 5px;
-  border: 1px solid red;
-}*/
 
 .item-flight > div {
   float: none;
@@ -291,31 +218,11 @@ article {
   width: 100%;
 }
 
-/*div.tile-hotel,
-div.tile-car-rental {
-  float: left;
-  margin-right: 2%;
-}
-
-div.tile-flight,
-div.tile-activity {
-  float: right;
-}*/
-
 .tt-open {
   background-color: #fff;
   border: 1px solid #999;
   margin-left: 2px;
 }
-
-/*div.tile-hotel:nth-child(even) {
-  float: right;
-}
-
-div.tile-hotel:nth-child(odd) {
-  float: left;
-  margin-right: 5%;
-}*/
 
 .tt-open {
   border: 1px solid #999;
@@ -323,44 +230,51 @@ div.tile-hotel:nth-child(odd) {
   padding-left: 2px;
 }
 
-/* TILE CONTENT ===================== */
+/* TILE CONTENT ============================================================ */
 [class^='tile-']:not(.tile-itinerary) ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
   list-style-position: inside;
+  height: 300px;
 }
 
 [class^='tile-']:not(.tile-itinerary) ul li {
+  border: 1px solid #999;
+  border-radius: 5px;
   display: inline-block;
-  height: 155px;
+  height: 300px;
   margin-right: 10px;
 }
 
-[class^='tile-'] ul li span {
+[class^='tile-']:not(.tile-itinerary) ul li img {
+  width: 300px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.crop {
+  width: 300px;
+  height: 175px;
+  overflow: hidden;
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li .details {
+  padding: 5px;
+}
+
+[class^='tile-']:not(.tile-itinerary) ul li span {
   font-size: 10px;
   color: #999;
 }
 
-[class^='tile-'] ul li button {
+[class^='tile-']:not(.tile-itinerary) ul li button {
   display: block !important;
+  float: right;
 }
 
-[class^='tile-'] img {
-  height: 100px;
-}
 
-[class^='tile-'] .left-side {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 10px;
-}
 
-[class^='tile-'] .right-side {
-  display: inline-block;
-  vertical-align: top;
-  width: 60%;
-}
 
 
 /* ITINERARY VIEW ========================================================== */

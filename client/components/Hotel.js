@@ -68,44 +68,24 @@ const Hotel = React.createClass({
 
     // console.log('>>>>>> ', this.props);
 
+    let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
+    let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");
+
     if(this.props.hotelInfo !== undefined) {
       return (
-        
+        <li className="item-hotel">
+          <div className="crop">
+            <img src={ `https://images.trvl-media.com${largeIMG}` }/>
+          </div>
+          <div className="details clearfix">
+            <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">{ this.props.hotelInfo.localizedName }</a><br />
 
-          <li className="item-hotel clearfix">
-            <div className="left-side">
-              <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
-            </div>
-            <div className="right-side">
-              <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">{ this.props.hotelInfo.localizedName }</a><br />
-
-              <span>{ this.props.hotelInfo.address }, {this.props.hotelInfo.city}</span><br />
-              
-              ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
-              
-              {saveButton}
-            </div>
+            <span>{ this.props.hotelInfo.address }, {this.props.hotelInfo.city}</span><br />
             
+            <strong>${ this.props.hotelInfo.lowRateInfo.priceToShowUsers }</strong> per night
             
-          
-          {/*<div className="item-hotel">*/}
-          {/*
-          {saveButton}
-          <p>
-            <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">
-            { this.props.hotelInfo.localizedName }
-            </a>
-          </p>
-          <p>
-            <img src={'https://images.trvl-media.com' + this.props.hotelInfo.largeThumbnailUrl }/>
-          </p>
-          <p>
-            ${ this.props.hotelInfo.lowRateInfo.priceToShowUsers } per night
-          </p>
-          <p>
-            { this.props.hotelInfo.shortDescription }
-          </p>
-        </div>*/}
+            {saveButton}
+          </div>
         </li>
       );
     } else {
