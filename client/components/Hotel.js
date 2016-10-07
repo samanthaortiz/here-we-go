@@ -66,17 +66,9 @@ const Hotel = React.createClass({
       saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
     }
 
-<<<<<<< HEAD
-=======
-    // console.log('>>>>>> ', this.props);
-
-<<<<<<< HEAD
->>>>>>> codeCleanup
-=======
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
     let largeIMG = thumbIMG.replace("d.jpg", "b.jpg");
 
->>>>>>> codeCleanup
     if(this.props.hotelInfo !== undefined) {
       return (
         <li className="item-hotel">

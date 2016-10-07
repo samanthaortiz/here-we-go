@@ -52,28 +52,28 @@ const CarRental = React.createClass({
   },
 
   render() {
-    // console.log('>>>>> CAR RENTAL <<<<<');
-    // console.log('PROPS: ', this.props.userEmail);
-    // console.log(this.props.isLoggedIn);
+
+    let thumbIMG = this.props.carInfo.ThumbnailUrl
+    let largeIMG = thumbIMG.replace("t.jpg", "s.jpg");
 
     return (
-      <div className="item-car-rental clearfix">
-        <button type="button" className="btn" onClick={this.handleSaveCarRental}>Save Car</button>
-        <div>
-          <img src={this.props.carInfo.ThumbnailUrl} /><br/>
-          {this.props.carInfo.SupplierName}
+
+      <li className="item-car-rental">
+        <div className="crop">
+          <img src={ largeIMG }/>
         </div>
-        <div>
+        <div className="details clearfix">
           {this.props.carInfo.CarMakeModel}<br/>
+
           {this.props.carInfo.CarClass}<br/>
-          D: {this.props.carInfo.CarDoorCount.Max} P: {this.props.carInfo.Capacity.AdultCount}
+
+          <span>{ this.props.carInfo.SupplierName }</span><br />
+          
+          <strong>${ this.props.carInfo.Price.TotalRate.Value }</strong> Total<br/>
+          
+          <button type="button" className="btn" onClick={this.handleSaveCarRental}>Save Car</button>
         </div>
-        <div>
-          $$ per day<br/>
-          ${this.props.carInfo.Price.TotalRate.Value}<br/>
-          RESERVE
-        </div>
-      </div>
+      </li>
     );
   } 
 });

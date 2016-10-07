@@ -247,16 +247,31 @@ article {
   margin-right: 10px;
 }
 
+.tile-car-rental ul li {
+  height: 260px !important;
+}
+
 [class^='tile-']:not(.tile-itinerary) ul li img {
   width: 300px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
 
+.tile-car-rental ul li img {
+  width: 165px !important;
+}
+
 .crop {
   width: 300px;
   height: 175px;
   overflow: hidden;
+}
+
+.item-car-rental .crop {
+  width: 300px;
+  height: 95px;
+  /*overflow: hidden;*/
+  text-align: center
 }
 
 [class^='tile-']:not(.tile-itinerary) ul li .details {
@@ -272,10 +287,6 @@ article {
   display: block !important;
   float: right;
 }
-
-
-
-
 
 /* ITINERARY VIEW ========================================================== */
 .tile-itinerary {
