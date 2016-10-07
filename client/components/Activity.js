@@ -45,20 +45,28 @@ const Activity = React.createClass({
   },
 
   render() {
+
+    console.log('ACTIVITY ===> ', this.props);
+
     if(this.props.activityInfo !== undefined) {
+      
       return (
-        <div>
-          <button type="button" className="btn" onClick={this.handleSaveActivity}>Save Activity</button>
-          <div>
-            <a href={'https://www.expedia.com/things-to-do/title.a'+ this.props.activityInfo.id + '.activity-details?srp=true&location=' +this.props.location + '&startDate=' + this.changeDate(this.props.startDate) + '&endDate=' + this.changeDate(this.props.endDate)} target="_blank">
-            {this.props.activityInfo.title}</a><br/>
-            <img src={this.props.activityInfo.imageUrl} /><br/>
+        <li className="item-hotel">
+          <div className="crop">
+            <img src={ this.props.activityInfo.imageUrl } /><br/>
           </div>
-          <div>
-            {this.props.activityInfo.fromPrice}<br/><br/>
+          <div className="details clearfix">
+            <a href={'https://www.expedia.com/things-to-do/title.a'+ this.props.activityInfo.id + '.activity-details?srp=true&location=' +this.props.location + '&startDate=' + this.changeDate(this.props.startDate) + '&endDate=' + this.changeDate(this.props.endDate)} target="_blank">{this.props.activityInfo.title}</a><br/>
+
+            <span>{ this.props.activityInfo.supplierName }</span><br />
+            
+            <strong>{ this.props.activityInfo.fromPrice }</strong><br/>
+            
+            <button type="button" className="btn" onClick={ this.handleSaveActivity }>Save Activity</button>
           </div>
-        </div>
+        </li>
       );
+
     }
   } 
 });

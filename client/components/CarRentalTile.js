@@ -24,7 +24,7 @@ const CarRentalTile = React.createClass({
 
     return (
       <div className="tile-car-rental">
-        <h3>HOTELS</h3>
+        <h3>CAR RENTAL</h3>
         <ul className="row">
           {
             cars.map((car) => 
