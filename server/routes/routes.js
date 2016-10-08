@@ -90,6 +90,11 @@ router.post('/newTrip', dbRouter.newTrip, function(req, res, next){
   res.send(res.data);
 })
 
+router.post('/getAllTrips', dbRouter.getAllTrips, function(req, res, next){
+  // console.log('response in get all trips:', res.data)
+  res.send(res.data);
+})
+
 router.post('/updateTripId', dbRouter.updateTripId, function(req, res, next){
   // console.log('response in change status:', res)
   res.sendStatus(200);

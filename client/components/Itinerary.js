@@ -137,8 +137,8 @@ const Itinerary = React.createClass({
 
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
-          <li><a data-toggle="tab" href="#trips">Trips</a></li>
-          <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
+          <li className="active"><a data-toggle="tab" href="#trips">Trips</a></li>
+          <li><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
           <li><a data-toggle="tab" href="#budget">Budget</a></li>
         </ul>
@@ -147,7 +147,7 @@ const Itinerary = React.createClass({
 {/* TRIPS MODAL */}
 
         <div className="tab-content">
-            <div id="trips" className="tab-pane fade">
+            <div id="trips" className="tab-pane fade in active">
         <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
           Add New Trip
         </Button>
@@ -157,19 +157,17 @@ const Itinerary = React.createClass({
             </div>
 
         
-          <div id="booked" className="tab-pane fade in active">
+          <div id="booked" className="tab-pane fade">
 
 {/* Booked Modals */}
 
            <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Trip
-        </Button>
+            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+             Add to Trip
+            </Button>
 
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
-      </ButtonToolbar>
-
-
+            <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+          </ButtonToolbar>
 
           <Accordion>
           <Panel header="Hotels" eventKey="1">

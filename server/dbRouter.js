@@ -37,6 +37,23 @@ module.exports = {
     }); 
   },
 
+  getAllTrips: function(req, res, next){
+    console.log("REQ.BODY IN GET ALL TRIPS:", req.body);
+    var firstEmail = req.body.email.split("=")[1];
+    var email = firstEmail.split("#")[0];
+
+    db.knex('itineraries').where('itineraries.user_email', email).select("*")
+    .then(function(allTripInfo){
+      console.log('this is all the trip info:', allTripInfo)
+      res.data = allTripInfo
+      console.log('this is all the user trip info:', res.data);
+      next();
+    })
+    .catch(function(error){
+      console.error(error)
+    })
+  },
+
   updateTripId: function(req, res, next){
     console.log("REQ BODY", req.body)
         if(req.body.typeId === 1){

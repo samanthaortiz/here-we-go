@@ -17,7 +17,7 @@ const NewTripModal = React.createClass({
   },
 
   handleSubmit(){
-    console.log("WE GOT SHIT", this.state.newTrip)
+    console.log("WE GOT THIS", this.state.newTrip)
     console.log("NEWTRIPMODAL PROPS", this.props.data)
 
     this.props.data.data.postNewTrip(this.state.newTrip, this.props.data.data.reducerTripData.email)
