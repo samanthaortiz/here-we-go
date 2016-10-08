@@ -4,7 +4,14 @@ import React from 'react';
 const Flight = React.createClass({
   getInitialState: function() {
     return {
-      roundTrip: []
+      roundTrip: [],
+      airlineLogos: {
+        'American Airlines': '../assets/airline-logos/AA_sq.jpg',
+        'Delta': '../assets/airline-logos/DL_sq.jpg',
+        'jetBlue': '../assets/airline-logos/b6_sq.jpg',
+        'United Airlines': '../assets/airline-logos/UA_sq.jpg',
+        'Unknown': '../assets/airline-logos/multiple_airlines_logo_sq.jpg'
+      }
     };
   },
 
@@ -95,25 +102,29 @@ const Flight = React.createClass({
     // } else {
       console.log('FLIGHT this.props: ', this.props);
 
+
+
+
       return (
         <li className="item-flight">
           <div className="crop">
-            <div className="air-img"><img src="https://images.trvl-media.com/media/content/expus/graphics/static_content/fusion/v0.1b/images/airlines/s/UA_sq.jpg" /></div>
+            <div className="air-img"><img src={this.state.airlineLogos.Delta} /></div>
             <div className="air-price">${this.props.flightInfo.totalFare}<span>Round Trip</span></div>
           </div>
           <div className="details clearfix">
             <div className="air-depart">
-              <p>{ this.state.roundTrip[0].segments[0].flightNumber }</p>
+              <p>Flight #{ this.state.roundTrip[0].segments[0].flightNumber }</p>
               <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span>
               <p>{ this.state.roundTrip[0].segments[0].departureTime }</p>
             </div>
             <div className="air-return">
-              <p>{ this.state.roundTrip[1].segments[0].flightNumber }</p>
+              <p>Flight #{ this.state.roundTrip[1].segments[0].flightNumber }</p>
               <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span>
               <p>{ this.state.roundTrip[1].segments[0].departureTime }</p>
             </div>
-            
-            <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+            <div className="clearfix">
+              <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+            </div>
           </div>
         </li>
       );
