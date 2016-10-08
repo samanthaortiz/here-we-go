@@ -92,4 +92,5 @@ db.knex('activities')
     });
 });
 
+
 module.exports = reservationRoutes;

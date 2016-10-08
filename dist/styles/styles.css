@@ -352,6 +352,13 @@ article {
   padding: 5px !important;
 }
 
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
 /* BUDGET FORM VIEW ======================================================== */
 .container-form-budget {
   border: 1px solid #999;

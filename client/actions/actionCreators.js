@@ -214,3 +214,66 @@ export function hydrateItinStatus(itinStatusInfo, itemId, typeId, statusId){
     statusId
   };
 }
+
+//==================== ADDING NEW TRIP =======================================
+
+export const postNewTrip = (tripName, email) => {
+  return function(dispatch){
+    return axiosNewTrip(tripName, email)
+    .then(res => {
+      console.log('response data in post new trip', res)
+      dispatch(hydrateNewTrip(res.data, tripName, email))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosNewTrip(tripName, email){
+  return axios.post('/api/newTrip', {
+    tripName,
+    email
+  })
+}
+
+export function hydrateNewTrip(newTripInfo, tripName, email){
+  return {
+   type: "POST_NEW_TRIP",
+   newTripInfo,
+   tripName,
+   email
+  };
+}
+
+//==================== UPDATING TRIP ID =======================================
+
+export const updateTripId = (tripId, itemId, typeId) => {
+  return function(dispatch){
+    return axiosUpdateTripId(tripId, itemId, typeId)
+    .then(res => {
+      dispatch(hydrateUpdateTripId(res.data, tripId, itemId, typeId))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosUpdateTripId(tripId, itemId, typeId){
+  return axios.post('/api/updateTripId', {
+    tripId, 
+    itemId, 
+    typeId
+  })
+}
+
+export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
+  return {
+   type: "UPDATE_TRIP_ID",
+   updatedInfo,
+   tripId, 
+   itemId, 
+   typeId
+  };
+}
+
+

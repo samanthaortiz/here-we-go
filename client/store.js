@@ -12,7 +12,9 @@ const defaultState = {
     reducerFlightItin: [],
     reducerCarItin: [],
     reducerActivityItin: [],
-    reducerChangeStatus: []
+    reducerChangeStatus: [],
+    reducerNewTrip: [],
+    reducerUpdateTripId: []
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
 const store = createStore(rootReducer, defaultState, compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f));
