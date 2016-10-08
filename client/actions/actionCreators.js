@@ -214,7 +214,6 @@ export function hydrateItinStatus(itinStatusInfo, itemId, typeId, statusId){
     statusId
   };
 }
-<<<<<<< HEAD
 
 //==================== ADDING NEW TRIP =======================================
 
@@ -276,7 +275,3 @@ export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
    typeId
   };
 }
-
-
-=======
->>>>>>> codeCleanup

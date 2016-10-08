@@ -6,7 +6,7 @@ var request = require('request');
 function getHotelData(req, res, next) {
   // console.log('>> ENTER HOTEL API ROUTER ', req.body);
 
-  var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.location+'&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
+  var urlAPI = 'http://terminal2.expedia.com:80/x/mhotels/search?city='+req.body.location+'&resultsPerPage=25&checkInDate='+req.body.startDate+'&checkOutDate='+req.body.endDate+'&room1=2&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767';
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
