@@ -4,22 +4,7 @@ import Hotel from './Hotel';
 
 const HotelTile = React.createClass({
 
-  componentDidMount() {
-    var ulNode = document.getElementsByClassName('row');
-    var liNodeList = '';
-    
-    for(var i = 0; i < ulNode.length; i++) {
-      var liNodeList = ulNode[i].getElementsByTagName('li');
-      var myWidth = liNodeList.length * 320;
-      ulNode[i].style.width = myWidth + 'px';
-    }
-  },
-
   render() {
-
-    // console.log('>>>>> HOTEL TILE <<<<<');
-    // console.log('Hotel tile this.props: ',  this.props.hotelData);
-
     if(this.props.hotelData.length !== 0) {
       return (
         <div className="tile-hotel">

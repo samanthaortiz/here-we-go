@@ -281,6 +281,10 @@ article {
   position: relative;
 }
 
+[class^='tile-']:not(.tile-itinerary) ul li .details p {
+  margin: 0;
+}
+
 [class^='tile-']:not(.tile-itinerary) ul li span {
   font-size: 10px;
   color: #999;
@@ -297,6 +301,67 @@ article {
 }
 
 /* FLIGHT TILE */
+
+
+
+
+
+
+
+.airportForm {
+  /*height: 250px;*/
+  width: 600px;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.tile-flight .airportForm ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  list-style-position: inside;
+  min-height: 100px;
+  border-spacing: 0;
+}
+
+.tile-flight .airportForm ul li {
+  border: 1px solid red;
+  padding: 10px 15px;
+  display: inline-block;
+  width: 90%;
+  min-height: 40px;
+  margin: 5px 10px;
+}
+
+.airportForm > div {
+  margin: 10px 15px;
+  display: inline-block;
+}
+
+.airportForm label {
+  margin: 0;
+  padding: 0;
+}
+
+.airportForm span {
+  font-size: 14px;
+  color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .tile-flight ul li .details {
   min-height: 225px;
 }
@@ -316,15 +381,24 @@ article {
 }
 
 .item-flight .air-price {
-  line-height: 3;
+  padding-top: 12px;
   font-size: 24px;
   font-weight: bold;
   text-align: center;
 }
 
+.item-flight .air-depart {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 5px;
+}
 
-
-
+.tile-flight ul li button {
+  position: relative !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  float: right;
+}
 
 /* ITINERARY VIEW ========================================================== */
 .tile-itinerary {
