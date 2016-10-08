@@ -178,6 +178,7 @@ const FlightTile = React.createClass({
           {
             offers.map((flight) =>
               <Flight
+                {...this.props}
                 key={flight.productKey}
                 flightInfo={flight}
                 flightLegs={legs}

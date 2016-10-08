@@ -46,11 +46,11 @@ const Splash = React.createClass({
       this.setState({
         email: this.state.email
       })
-      this.props.postHotelItin(this.state.email)
-      this.props.postFlightItin(this.state.email)
-      this.props.postCarItin(this.state.email)
-      this.props.postActivityItin(this.state.email)
-      this.props.getAllTrips(this.state.email);
+      this.props.postHotelItin(this.state.email, "/")
+      this.props.postFlightItin(this.state.email, "/")
+      this.props.postCarItin(this.state.email, "/")
+      this.props.postActivityItin(this.state.email, "/")
+      this.props.getAllTrips(this.state.email, "/");
     }
   },
 

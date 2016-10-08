@@ -14,14 +14,14 @@ const Trips = React.createClass({
             {
             this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
               <Panel key={i} header={trips.trip_name} eventKey={i + 1}>
-                <div>
+                {/*<div>
                 <BudgetChart 
                   key={i} 
-                  data={this.props}
+                  data={this.props.}
                   item={trips.trip_name}
                 >
                 </BudgetChart>
-                </div>
+                </div>*/}
 
                 <h4>Flights:</h4>
                   <p>flight1</p>

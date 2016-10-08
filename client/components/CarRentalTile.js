@@ -34,6 +34,7 @@ const CarRentalTile = React.createClass({
           {
             cars.map((car) => 
               <CarRental
+                {...this.props}
                 key={car.PIID}
                 carInfo={car}
                 isLoggedIn={this.props.carData.loggedIn}

@@ -83,12 +83,12 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
 
 //=============== HOTEL ITIN ===============
 
-export const postHotelItin = (email) => {
+export const postHotelItin = (email, location) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
       dispatch(hydrateHotelItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -110,12 +110,14 @@ export function hydrateHotelItin(hotelItinData){
 
 //=============== FLIGHTS ITIN ===============
 
-export const postFlightItin = (email) => {
+export const postFlightItin = (email, location) => {
+  console.log('getting all the flight itins')
   return function(dispatch){
     return axiosFlightItin(email)
     .then(res => {
+      console.log('now dispatching flight itins', res.data)
       dispatch(hydrateFlightItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -136,12 +138,12 @@ export function hydrateFlightItin(flightItinData){
   }
 
 //=============== CARS ITIN ===============
-export const postCarItin = (email) => {
+export const postCarItin = (email, location) => {
   return function(dispatch){
     return axiosCarItin(email)
     .then(res => {
       dispatch(hydrateCarItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -162,12 +164,15 @@ export function hydrateCarItin(carItinData){
 
 
 //=============== ACTIVITY ITIN ===============
-export const postActivityItin = (email) => {
+export const postActivityItin = (email, location) => {
+  console.log('in post activity itin')
   return function(dispatch){
+  console.log('now dispatching in activity itin')
     return axiosActivityItin(email)
     .then(res => {
+        console.log('got response:', res.data)
       dispatch(hydrateActivityItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -247,13 +252,13 @@ export function hydrateNewTrip(newTripInfo, tripName, email){
 
 
 //======================= GET ALL EXISTING TRIPS ==============================
-export const getAllTrips = (email) => {
+export const getAllTrips = (email, location) => {
   return function(dispatch){
     return axiosGetTrips(email)
     .then(res => {
       console.log('response data in get all trips', res.data)
       dispatch(hydrateAllTrips(res.data, email))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -301,5 +306,11 @@ export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
    tripId, 
    itemId, 
    typeId
+  };
+}
+
+export const nullUpdate = () => {
+  return {
+    type: "NULL_UPDATE"
   };
 }

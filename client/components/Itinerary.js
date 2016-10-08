@@ -28,6 +28,13 @@ const Itinerary = React.createClass({
     document.getElementById('fade').style.display='block';
   },
 
+  // componentWillReceiveProps() {
+  //   console.log('componentWillReceiveProps in itin', this.props.dashboardState.savedItemBoolean.savedActivity)
+  //   if(this.props.dashboardState.savedItemBoolean.savedActivity === true){
+  //     this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
+  //   }
+  // },
+
   changeStatusOfItem(){
     //BOOKED TO SAVED
       for (var item in this.props.dashboardState.itinItems[0].selectedBookedFlights){
@@ -88,6 +95,7 @@ const Itinerary = React.createClass({
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
 
+
       var bookedHotelList = [];
       var bookedCarList = [];
       var bookedFlightList = [];
@@ -144,7 +152,7 @@ const Itinerary = React.createClass({
         </ul>
 
 
-{/* TRIPS MODAL */}
+{/* TRIPS TAB */}
 
         <div className="tab-content">
             <div id="trips" className="tab-pane fade in active">
