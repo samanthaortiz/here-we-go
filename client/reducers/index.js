@@ -9,6 +9,7 @@ import reducerCarItin from './reducerCarItin';
 import reducerActivityItin from './reducerActivityItin';
 import reducerChangeStatus from './reducerChangeStatus';
 import reducerNewTrip from './reducerNewTrip';
+import reducerAllTrips from './reducerAllTrips'
 import reducerUpdateTripId from "./reducerUpdateTripId";
 
 const rootReducer = combineReducers({
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   reducerActivityItin,
   reducerChangeStatus,
   reducerNewTrip,
+  reducerAllTrips,
   reducerUpdateTripId,
   routing: routerReducer
 });
