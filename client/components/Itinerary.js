@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Accordion, Panel, Modal, Button } from 'react-bootstrap';
+import { Accordion, Panel, Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
 import NewTripForm from './NewTripForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
 import CarItin from './CarItin';
 import ActivityItin from './ActivityItin';
+import NewTripModal from "./NewTripModal";
+import ExistingTripModal from './ExistingTripModal'
 
 const Itinerary = React.createClass({
  
 
   getInitialState() {
     return { 
-      show: false 
+      existingModal: false, 
+      newModal: false
     };
   },
 
@@ -45,8 +48,8 @@ const Itinerary = React.createClass({
         }
       }
 
-      for (var item in this.props.dashboardState.itinItems[0].selectedBookedCars){
-        if(this.props.dashboardState.itinItems[0].selectedBookedCars[item] === true){
+      for (var item in this.props.dashboardState.itinItems[0].selectedBookedActivities){
+        if(this.props.dashboardState.itinItems[0].selectedBookedActivities[item] === true){
           this.props.data.changeStatus(+item, 4, 1);     
         }
       }
@@ -125,10 +128,11 @@ const Itinerary = React.createClass({
         }
       });
 
-      let close = () => this.setState({ show: false});
-
+    let existingClose = () => this.setState({ existingModal: false });
+    let newClose = () => this.setState({ newModal: false });
 
       return (
+
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
           <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
@@ -142,71 +146,21 @@ const Itinerary = React.createClass({
         <div className="tab-content">
           <div id="booked" className="tab-pane fade in active">
 
-        <div className="modal-container" style={{height: 200}}>
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          onClick={() => this.setState({ show: true})}>
-          Add New Trip
+{/* Booked Modals */}
+
+              <ButtonToolbar>
+        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+          Add to New Trip
+        </Button>
+        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+         Add to Existing Trip
         </Button>
 
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">New Trip</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <input type="text" placeholder="Trip Name"/>
-          </Modal.Body>
-    
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
+        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
+        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props}/>
+      </ButtonToolbar>
 
 
-
-               <Button
-          bsStyle="primary"
-          bsSize="small"
-          onClick={() => this.setState({ show: true})}>
-          Existing Trip
-        </Button>
-
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">Existing Trip</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <input type="text" placeholder="Trip Name"/>
-          </Modal.Body>
-    
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      <Button className="move-btn"  bsStyle="primary" bsSize="small" onClick={this.changeStatusOfItem}>Move to Saved</Button>
-      </div>
-
-
-              
-          {/*  <div id="light" className="lightbox-content">
-            <NewTripForm data={this.props.data}/>
-            </div>
-            <div id="fade" className="black_overlay"></div>
-            <p><button type="button" className="new-trip-btn" onClick={this.displayForm}>Add to New Trip</button></p>
-          
-            <button type="button" className="existing-trip-btn" onClick={this.addToExistingTrip}>Add to Existing Trip</button>
-            <button type="button" className="move-btn" onClick={this.changeStatusOfItem}>Move to Saved</button> */}
 
           <Accordion>
           <Panel header="Hotels" eventKey="1">
@@ -257,61 +211,22 @@ const Itinerary = React.createClass({
 
 
           <div id="saved" className="tab-pane fade">
+
+{/* Saved Modals */}
+          <ButtonToolbar>
+        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+          Add to New Trip
+        </Button>
+        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+         Add to Existing Trip
+        </Button>
+
+        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
+        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+      </ButtonToolbar>
+
           
-               <div className="modal-container" style={{height: 200}}>
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          onClick={() => this.setState({ show: true})}>
-          Add New Trip
-        </Button>
-
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">New Trip</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <input type="text" placeholder="Trip Name"/>
-          </Modal.Body>
-    
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-
-
-
-               <Button
-          bsStyle="primary"
-          bsSize="small"
-          onClick={() => this.setState({ show: true})}>
-          Existing Trip
-        </Button>
-
-        <Modal
-          show={this.state.show}
-          onHide={close}
-          container={this}
-          aria-labelledby="contained-modal-title"
-        >
-          <Modal.Header closeButton>
-            <Modal.Title id="contained-modal-title">Existing Trip</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <input type="text" placeholder="Trip Name"/>
-          </Modal.Body>
-    
-          <Modal.Footer>
-            <Button onClick={close}>Close</Button>
-          </Modal.Footer>
-        </Modal>
-      <Button className="move-btn"  bsStyle="primary" bsSize="small" onClick={this.changeStatusOfItem}>Move to Booked</Button>
-      </div>
+              
             <Accordion>
             
             <Panel header="Hotels" eventKey="1">
