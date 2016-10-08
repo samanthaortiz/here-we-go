@@ -4,68 +4,66 @@ import { Modal, Button, FormGroup, Radio} from 'react-bootstrap';
 const ExistingTripModal = React.createClass({
   getInitialState(){
     return({
-      selectedTrip: ""
+      selectedTrip: "",
     })
   },
   handleChangeValue(event) {
-    console.log('the selected trip is:', event.target.value)
+    console.log('the selected trip is: ', event.target.value)
+    console.log('and the event is:', event.target)
     this.setState({
-      selectedTrip: event.target.value
+      selectedTrip: event.target.value,
     });
   },
-  // componentWillMount(){
-    // this.props.data.data.getAllTrips(this.props.data.data.reducerTripData.email)
-    // console.log('this.props in existing trip modal:', this.props)
-  // },
+
   handleSubmit(){
     console.log("WE GOT EXISTING!!", this.state.existingTrip)
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedFlights){
         if(this.props.data.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
-          this.props.data.data.updateTripId(18, +item, 1);   
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 1);   
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedHotels){
         if(this.props.data.dashboardState.itinItems[0].selectedBookedHotels[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 2);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 2);         
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedCars){
         if(this.props.data.dashboardState.itinItems[0].selectedBookedCars[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 3);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 3);         
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedActivities){
         if(this.props.data.dashboardState.itinItems[0].selectedBookedActivities[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 4);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 4);         
         }
       }
 ///////////////////////////////////////////////////
 
         for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedFlights){
         if(this.props.data.dashboardState.itinItems[0].selectedSavedFlights[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 1);     
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 1);     
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedHotels){
         if(this.props.data.dashboardState.itinItems[0].selectedSavedHotels[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 2);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 2);         
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedCars){
         if(this.props.data.dashboardState.itinItems[0].selectedSavedCars[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 3);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 3);         
         }
       }
 
       for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedActivities){
         if(this.props.data.dashboardState.itinItems[0].selectedSavedActivities[item] === true){
-          this.props.data.data.updateTrip(tripId, +item, 4);         
+          this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 4);         
         }
       }
 
@@ -96,8 +94,8 @@ const ExistingTripModal = React.createClass({
         </Modal.Header>
         <Modal.Body>
           <FormGroup>
-            {this.props.data.data.reducerAllTrips.allTripInfo.map((trips) =>
-              <Radio name="selected" value={trips.trip_name} onChange={this.handleChangeValue}>
+            {this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
+              <Radio name="selected" key={i} value={trips.id} onChange={this.handleChangeValue}>
                 {trips.trip_name}
               </Radio>
             )}

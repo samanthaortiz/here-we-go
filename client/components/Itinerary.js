@@ -9,11 +9,11 @@ import FlightItin from './FlightItin';
 import CarItin from './CarItin';
 import ActivityItin from './ActivityItin';
 import NewTripModal from "./NewTripModal";
-import ExistingTripModal from './ExistingTripModal'
+import ExistingTripModal from './ExistingTripModal';
+import Trips from './Trips';
 
 const Itinerary = React.createClass({
- 
-
+  
   getInitialState() {
     return { 
       existingModal: false, 
@@ -148,21 +148,25 @@ const Itinerary = React.createClass({
 
         <div className="tab-content">
             <div id="trips" className="tab-pane fade in active">
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add New Trip
-        </Button>
-
-      <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
-
+              <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+                Add New Trip
+              </Button>
+              <NewTripModal 
+                show={this.state.newModal} 
+                onHide={newClose} 
+                data={this.props}
+              />
+              <Trips
+                data={this.props}
+              />
             </div>
 
         
+{/* Booked Items */}
           <div id="booked" className="tab-pane fade">
-
-{/* Booked Modals */}
-
            <ButtonToolbar>
-            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Saved</Button> 
+            <Button inline bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
              Add to Trip
             </Button>
 
@@ -221,11 +225,11 @@ const Itinerary = React.createClass({
 
 {/* Saved Modals */}
           <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Trip
-        </Button>
-
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Booked</Button> 
+            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+              Add to Trip
+            </Button>
+          <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
       </ButtonToolbar>
 
           
