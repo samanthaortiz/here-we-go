@@ -37,49 +37,61 @@ module.exports = {
     }); 
   },
 
+  getAllTrips: function(req, res, next){
+    console.log("REQ.BODY IN GET ALL TRIPS:", req.body);
+    var firstEmail = req.body.email.split("=")[1];
+    var email = firstEmail.split("#")[0];
+
+    db.knex('itineraries').where('itineraries.user_email', email).select("*")
+    .then(function(allTripInfo){
+      console.log('this is all the trip info:', allTripInfo)
+      res.data = allTripInfo
+      console.log('this is all the user trip info:', res.data);
+      next();
+    })
+    .catch(function(error){
+      console.error(error)
+    })
+  },
+
   updateTripId: function(req, res, next){
     console.log("REQ BODY", req.body)
         if(req.body.typeId === 1){
         //check for flight
         db.knex('flightReservations').where('flightReservations.id', req.body.itemId).update("flightReservations.trip_id", req.body.tripId)
         .then(function(){
-          // console.log('flight res info changing to saved... res:', res);
-          // res.data = info;
           next();
         })
-      //   .catch(function(error){
-      //     console.error(error)
-      //   });
-      // } else if(req.body.typeId === 2){
-      //   // check for hotels
-      //   db.knex('hotelReservations').where('hotelReservations.id', req.body.itemId).update("hotelReservations.status_id", 1)
-      //   .then(function(info){
-      //     res.data = info;
-      //     next();
-      //   })
-      //   .catch(function(error){
-      //     console.error(error)
-      //   });
-      // } else if(req.body.typeId === 3){
-      //   //check for car rentals
-      //   db.knex('carRentals').where('carRentals.id', req.body.itemId).update("carRentals.status_id", 1)
-      //   .then(function(info){
-      //     res.data = info;
-      //     next();
-      //   })
-      //   .catch(function(error){
-      //     console.error(error)
-      //   });
-      // } else if(req.body.typeId === 4){
-      //   //check for activities
-      //   db.knex('activities').where('activities.id', req.body.itemId).update("activities.status_id", 1)
-      //   .then(function(info){
-      //     res.data = info;
-      //     next();
-      //   })
-      //   .catch(function(error){
-      //     console.error(error)
-      //   });
+        .catch(function(error){
+          console.error(error)
+        });
+      } else if(req.body.typeId === 2){
+        // check for hotels
+        db.knex('hotelReservations').where('hotelReservations.id', req.body.itemId).update("hotelReservations.trip_id", req.body.tripId)
+        .then(function(){
+          next();
+        })
+        .catch(function(error){
+          console.error(error)
+        });
+      } else if(req.body.typeId === 3){
+        //check for car rentals
+        db.knex('carRentals').where('carRentals.id', req.body.itemId).update("carRentals.trip_id", req.body.tripId)
+        .then(function(){
+          next();
+        })
+        .catch(function(error){
+          console.error(error)
+        });
+      } else if(req.body.typeId === 4){
+        //check for activities
+        db.knex('activities').where('activities.id', req.body.itemId).update("activities.trip_id", req.body.tripId)
+        .then(function(){
+          next();
+        })
+        .catch(function(error){
+          console.error(error)
+        });
     }
   },
 

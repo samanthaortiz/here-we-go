@@ -50,6 +50,7 @@ const Splash = React.createClass({
       this.props.postFlightItin(this.state.email)
       this.props.postCarItin(this.state.email)
       this.props.postActivityItin(this.state.email)
+      this.props.getAllTrips(this.state.email);
     }
   },
 

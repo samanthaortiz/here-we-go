@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Accordion, Panel, Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
+import BudgetChart from './BudgetChart';
 import NewTripForm from './NewTripForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
 import CarItin from './CarItin';
 import ActivityItin from './ActivityItin';
 import NewTripModal from "./NewTripModal";
-import ExistingTripModal from './ExistingTripModal'
+import ExistingTripModal from './ExistingTripModal';
+import Trips from './Trips';
 
 const Itinerary = React.createClass({
- 
-
+  
   getInitialState() {
     return { 
       existingModal: false, 
@@ -136,8 +137,8 @@ const Itinerary = React.createClass({
 
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
-          <li><a data-toggle="tab" href="#trips">Trips</a></li>
-          <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
+          <li className="active"><a data-toggle="tab" href="#trips">Trips</a></li>
+          <li><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
           <li><a data-toggle="tab" href="#budget">Budget</a></li>
         </ul>
@@ -146,29 +147,31 @@ const Itinerary = React.createClass({
 {/* TRIPS MODAL */}
 
         <div className="tab-content">
-            <div id="trips" className="tab-pane fade">
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add New Trip
-        </Button>
-
-      <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
-
+            <div id="trips" className="tab-pane fade in active">
+              <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+                Add New Trip
+              </Button>
+              <NewTripModal 
+                show={this.state.newModal} 
+                onHide={newClose} 
+                data={this.props}
+              />
+              <Trips
+                data={this.props}
+              />
             </div>
 
         
-          <div id="booked" className="tab-pane fade in active">
-
-{/* Booked Modals */}
-
+{/* Booked Items */}
+          <div id="booked" className="tab-pane fade">
            <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Trip
-        </Button>
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Saved</Button> 
+            <Button inline bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+             Add to Trip
+            </Button>
 
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
-      </ButtonToolbar>
-
-
+            <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+          </ButtonToolbar>
 
           <Accordion>
           <Panel header="Hotels" eventKey="1">
@@ -222,11 +225,11 @@ const Itinerary = React.createClass({
 
 {/* Saved Modals */}
           <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Trip
-        </Button>
-
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Booked</Button> 
+            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+              Add to Trip
+            </Button>
+          <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
       </ButtonToolbar>
 
           
@@ -285,6 +288,7 @@ const Itinerary = React.createClass({
                 </div>
                 <div id="fade" className="black_overlay"></div>
                 <p><button onClick={this.displayForm}>Add New Budget!</button></p>
+                <BudgetChart/>
             </div>
 
 
