@@ -65,11 +65,6 @@ const Splash = React.createClass({
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate, this.state.email, this.state.isUserLoggedIn);
   },
 
-  handleLogin(event) {
-    console.log(event.target.value);
-
-  },
-
   render() {
     //     // console.log('this.state.email in render method', this.state.email)
     // if (this.state.isUserLoggedIn) {
