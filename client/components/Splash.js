@@ -64,6 +64,11 @@ const Splash = React.createClass({
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate, this.state.email, this.state.isUserLoggedIn);
   },
 
+  handleLogin(event) {
+    console.log(event.target.value);
+
+  },
+
   render() {
     //     // console.log('this.state.email in render method', this.state.email)
     // if (this.state.isUserLoggedIn) {
@@ -73,12 +78,14 @@ const Splash = React.createClass({
     var navLink = '';
     var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
-      navLink = <a className="nav-login" href="/api/auth/google">Login</a>
+      // navLink = <a className="nav-login" href="/api/auth/google">Login</a>
+      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Login</button></a>
     } else {
       let parseEmail = this.state.email.split("=")[1];
       let email = parseEmail.split("#")[0]
       welcomeMsg = `Welcome back, ${email}!`;
-      navLink = <a className="nav-logout" href="/api/logout">Logout</a>
+      // navLink = <a className="nav-logout" href="/api/logout">Logout</a>
+      navLink = <a href="/api/logout"><button type="submit" className="navbutton" value="Logout">Logout</button></a>
     }
 
     return (
