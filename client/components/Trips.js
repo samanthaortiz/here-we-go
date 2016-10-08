@@ -7,7 +7,40 @@ const Trips = React.createClass({
   render() {
     console.log('these are the trip props:', this.props)
     // if(this.props.data.data.reducerAllTrips !== undefined) {
-      
+    var trips = []
+    this.props.data.data.reducerAllTrips.allTripInfo.forEach(function(trip, i){
+      trips.push(this.props.data.getAllTripInfo(trip.id))
+    })
+    console.log('trips', trips)
+
+
+    // var flightTrips = []
+    // this.props.data.data.reducerFlightItin.flightItinData.forEach(function(flight, i) {
+    //   if(tripIds.indexOf(flight.trip_id) !== -1){
+    //     flightTrips.push(flight)
+    //   } 
+    // })
+
+    // var hotelTrips = []
+    // this.props.data.data.reducerHotelItin.hotelItinData.forEach(function(hotel, i){
+    //   if(tripIds.indexOf(hotel.trip_id) !== -1){
+    //     hotelTrips.push(hotel)
+    //   } 
+    // })
+
+    // var carTrips = []
+    // this.props.data.data.reducerCarItin.carItinData.forEach(function(car, i) {
+    //   if(tripIds.indexOf(car.trip_id) !== -1){
+    //     carTrips.push(car)
+    //   } 
+    // })
+
+    // var activityTrips = []
+    // this.props.data.data.reducerActivityItin.activityItinData.forEach(function(activity, i) {
+    //   if(tripIds.indexOf(activity.trip_id) !== -1){
+    //     activityTrips.push(activity)
+    //   } 
+    // })
       return (
         <div className="trips">
           <Accordion>
@@ -21,8 +54,17 @@ const Trips = React.createClass({
                   item={trips.trip_name}
                 >
                 </BudgetChart>
+              <div>
+              {flightTrips.map((flight, i) => 
+                <div>
+                <p>{flight.trip_id}</p>
+                <p>{flight.airline} Flight {flight.flightNumber}</p>
+                <p>{flight.departureAirportCode} to {flight.arrivalAirportCode}</p>
+                <p>{flight.deparureTime} to {flight.arrivalTime}</p>
+                </div>
+              )}
+              </div>
                 </div>*/}
-
                 <h4>Flights:</h4>
                   <p>flight1</p>
                   <p>flight2</p>

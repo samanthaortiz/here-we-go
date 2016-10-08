@@ -309,8 +309,29 @@ export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
   };
 }
 
-export const nullUpdate = () => {
-  return {
-    type: "NULL_UPDATE"
+//==================== GETTING TRIP INFO FROM ALL TABLES =======================================
+
+export const getAllTripInfo = (tripId) => {
+  return function(dispatch){
+    return axiosAllTripInfo(tripId)
+    .then(res => {
+      dispatch(hydrateAllTripInfo(res.data, tripId))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
   };
-}
+};
+
+export function axiosAllTripInfo(tripId){
+  return axios.post('/api/getAllTripInfo', {
+    tripId
+  })
+};
+
+export function hydrateAllTripInfo(allTripInfo, tripId, ){
+  return {
+   type: "GET_ALL_TRIP_INFO",
+   allTripInfo,
+   tripId
+  };
+};
