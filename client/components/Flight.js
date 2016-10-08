@@ -31,13 +31,14 @@ const Flight = React.createClass({
   // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
   handleSaveFlight: function(event) {
 
-    console.log('SAVE: ', this.state);
-
+    var userEmail = this.props.userEmail
+    var postFlightItin = this.props.postFlightItin
+  
     let dataObj = {
-      status_id: 2,
       type_id: 1,
       user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
       terminal: '',
+      status_id: 2,
       departureAirportName: '',
       departureAirportCode: this.state.roundTrip[0].segments[0].departureAirportCode,
       departureAirportCity: this.state.roundTrip[0].segments[0].departureAirportAddress.city,
@@ -56,19 +57,19 @@ const Flight = React.createClass({
       arrivalTime: this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalTime
     };
 
-    // $.ajax({
-    //   url: '/flightReservation',
-    //   type: 'POST',
-    //   data: JSON.stringify(dataObj),
-    //   contentType: 'application/json',
-    //   success: function (data) {
-    //     // // Trigger a fetch to update the messages, pass true to animate
-    //     // app.fetch();
-    //   },
-    //   error: function (data) {
-    //     console.error('ERROR SENDING TO DATABASE: ', data);
-    //   }
-    // });
+    $.ajax({
+      url: '/flightReservation',
+      type: 'POST',
+      data: JSON.stringify(dataObj),
+      contentType: 'application/json',
+      success: function (data) {
+        postFlightItin(userEmail, '/dashboard')
+
+      },
+      error: function (data) {
+        console.error('ERROR SENDING TO DATABASE: ', data);
+      }
+    });
   },
 
   getRoundTrip: function() {

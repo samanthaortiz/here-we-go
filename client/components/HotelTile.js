@@ -13,6 +13,7 @@ const HotelTile = React.createClass({
             {
               this.props.hotelData.tripData[0].hotelData.hotelList.map((hotel) =>
                 <Hotel
+                  {...this.props}
                   key={hotel.hotelId}
                   hotelInfo={hotel}
                   isLoggedIn={this.props.hotelData.loggedIn}

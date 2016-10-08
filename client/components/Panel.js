@@ -56,17 +56,17 @@ const Panel = React.createClass({
       var flightInfo = this.props.data.reducerFlightData.expediaFlightInfo.offers
       var flightLegs = this.props.data.reducerFlightData.expediaFlightInfo.legs
 
-      flightTile = <FlightTile flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state} userEmail={this.props.data.reducerTripData.email} />
+      flightTile = <FlightTile {...this.props} savedItemBoolean={this.props.dashboardState.savedItemBoolean} flightOffers={flightInfo} flightLegs={flightLegs} flightOptions={this.state} userEmail={this.props.data.reducerTripData.email} />
     } else {
-      flightTile = <FlightTile flightData={this.props.data} flightOptions={this.state} />
+      flightTile = <FlightTile {...this.props} flightData={this.props.data} flightOptions={this.state} />
     }
 
     return (
       <div className="dashboard-container clearfix">
-        <HotelTile hotelData={this.props.data.reducerTripData} />
+        <HotelTile {...this.props} savedItemBoolean={this.props.dashboardState.savedItemBoolean} hotelData={this.props.data.reducerTripData} />
         {flightTile}
-        <CarRentalTile carData={this.props.data.reducerTripData} />
-        <ActivityTile activityData={this.props.data.reducerTripData} />
+        <CarRentalTile {...this.props} savedItemBoolean={this.props.dashboardState.savedItemBoolean} carData={this.props.data.reducerTripData} />
+        <ActivityTile {...this.props} savedItemBoolean={this.props.dashboardState.savedItemBoolean} activityData={this.props.data.reducerTripData} />
       {/*<CampgroundTile campgroundData={this.props.data.reducerTripData}/>*/}
       </div>
     );

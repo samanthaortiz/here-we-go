@@ -1,5 +1,7 @@
 // DASHBOARD > PANEL > ACTIVITY TILE > ACTIVITY ===========================
 import React from 'react';
+// import { postActivityItin } from '../actions/actionCreators';
+
 
 const Activity = React.createClass({
   getInitialState() {
@@ -21,7 +23,8 @@ const Activity = React.createClass({
   handleSaveActivity: function(event) {
     event.preventDefault();
     console.log('SELECTED ACTIVITY: ', this.props);
-    
+    var userEmail = this.props.userEmail
+    var postActivityItin = this.props.postActivityItin
     let dataObj = {
       status_id: 2,
       type_id: 4,
@@ -35,13 +38,21 @@ const Activity = React.createClass({
       data: JSON.stringify(dataObj),
       contentType: 'application/json',
       success: function (data) {
+        postActivityItin(userEmail, '/dashboard')
+
         // // Trigger a fetch to update the messages, pass true to animate
         // app.fetch();
+
       },
       error: function (data) {
         console.error('ERROR SENDING TO DATABASE: ', data);
       }
-    });
+    })
+
+    // console.log(this.props.savedItemBoolean.savedActivity)
+    // this.props.savedItemBoolean.savedActivity = true;
+
+    // console.log('and after..', this.props.savedItemBoolean.savedActivity)
   },
 
   render() {

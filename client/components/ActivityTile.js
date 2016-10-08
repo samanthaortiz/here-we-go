@@ -28,12 +28,14 @@ const ActivityTile = React.createClass({
           <ul className="row">
               {activities.map((activity) =>
                 <Activity
+                  {...this.props}
                   isLoggedIn={this.props.activityData.loggedIn}
                   userEmail={this.props.activityData.email}
                   startDate={this.props.activityData.startDate}
                   endDate={this.props.activityData.endDate}
                   location={this.props.activityData.location}
                   key={activity.id}
+                  savedItemBoolean={this.props.savedItemBoolean}
                   activityInfo={activity}
                 />
               )

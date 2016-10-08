@@ -27,6 +27,8 @@ const Hotel = React.createClass({
 
   handleSaveHotel: function(event) {
     event.preventDefault();
+    var userEmail = this.props.userEmail
+    var postHotelItin = this.props.postHotelItin
     // console.log('>>>>> ', this.props)
     // console.log('>>>>> ', this.props.hotelInfo)
 
@@ -51,6 +53,8 @@ const Hotel = React.createClass({
       data: JSON.stringify(dataObj),
       contentType: 'application/json',
       success: function (data) {
+        postHotelItin(userEmail, '/dashboard')
+
         // // Trigger a fetch to update the messages, pass true to animate
         // app.fetch();
       },
