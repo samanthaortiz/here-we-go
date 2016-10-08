@@ -100,15 +100,21 @@ const Flight = React.createClass({
     //     </div>
     //   );
     // } else {
-      console.log('FLIGHT this.props: ', this.props);
+      // console.log('FLIGHT this.props: ', this.props);
+      let airlineImgLogo = this.state.airlineLogos.Unknown;
+      for (var key in this.state.airlineLogos) {
+        if(key === this.state.roundTrip[0].segments[0].airlineName) {
+          airlineImgLogo = this.state.airlineLogos[key];
+        }
+      }
 
-
+      console.log('airline: ', this.state.roundTrip[0].segments[0].airlineName)
 
 
       return (
         <li className="item-flight">
           <div className="crop">
-            <div className="air-img"><img src={this.state.airlineLogos.Delta} /></div>
+            <div className="air-img"><img src={ airlineImgLogo } /></div>
             <div className="air-price">${this.props.flightInfo.totalFare}<span>Round Trip</span></div>
           </div>
           <div className="details clearfix">
