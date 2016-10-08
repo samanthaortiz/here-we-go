@@ -8,6 +8,7 @@ import Panel from './Panel';
 const Dashboard = React.createClass({
   getInitialState() {
     return {
+      //set an inital state to listen for saves in each hotel/car/flight/activity and send it down to the itin props
       itinItems: [
           {
             selectedBookedHotels: {},

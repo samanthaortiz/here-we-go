@@ -50,6 +50,7 @@ const Splash = React.createClass({
       this.props.postFlightItin(this.state.email)
       this.props.postCarItin(this.state.email)
       this.props.postActivityItin(this.state.email)
+      this.props.getAllTrips(this.state.email);
     }
   },
 
@@ -71,16 +72,20 @@ const Splash = React.createClass({
     //   // this.props.postHotelItin(this.state.email)
     // }
     var navLink = '';
+    var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
       navLink = <a className="nav-login" href="/api/auth/google">Login</a>
     } else {
+      let parseEmail = this.state.email.split("=")[1];
+      let email = parseEmail.split("#")[0]
+      welcomeMsg = `Welcome back, ${email}!`;
       navLink = <a className="nav-logout" href="/api/logout">Logout</a>
     }
 
     return (
       <div>
         <div className="splash-nav">
-          {navLink}
+          {welcomeMsg} {navLink}
         </div>
 
         <div className="splash-container">

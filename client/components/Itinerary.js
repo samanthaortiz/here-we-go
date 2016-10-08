@@ -9,11 +9,11 @@ import FlightItin from './FlightItin';
 import CarItin from './CarItin';
 import ActivityItin from './ActivityItin';
 import NewTripModal from "./NewTripModal";
-import ExistingTripModal from './ExistingTripModal'
+import ExistingTripModal from './ExistingTripModal';
+import Trips from './Trips';
 
 const Itinerary = React.createClass({
- 
-
+  
   getInitialState() {
     return { 
       existingModal: false, 
@@ -84,6 +84,7 @@ const Itinerary = React.createClass({
   },
 
   render() {
+        console.log("THIS IS ITIN PROPS", this.props)
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
 
@@ -136,32 +137,41 @@ const Itinerary = React.createClass({
 
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
-          <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
+          <li className="active"><a data-toggle="tab" href="#trips">Trips</a></li>
+          <li><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
           <li><a data-toggle="tab" href="#budget">Budget</a></li>
-          <li><a data-toggle="tab" href="#trips">Trips</a></li>
         </ul>
 
 
+{/* TRIPS MODAL */}
 
         <div className="tab-content">
-          <div id="booked" className="tab-pane fade in active">
+            <div id="trips" className="tab-pane fade in active">
+              <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+                Add New Trip
+              </Button>
+              <NewTripModal 
+                show={this.state.newModal} 
+                onHide={newClose} 
+                data={this.props}
+              />
+              <Trips
+                data={this.props}
+              />
+            </div>
 
-{/* Booked Modals */}
+        
+{/* Booked Items */}
+          <div id="booked" className="tab-pane fade">
+           <ButtonToolbar>
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Saved</Button> 
+            <Button inline bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+             Add to Trip
+            </Button>
 
-              <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add to New Trip
-        </Button>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Existing Trip
-        </Button>
-
-        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props}/>
-      </ButtonToolbar>
-
-
+            <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+          </ButtonToolbar>
 
           <Accordion>
           <Panel header="Hotels" eventKey="1">
@@ -215,15 +225,11 @@ const Itinerary = React.createClass({
 
 {/* Saved Modals */}
           <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add to New Trip
-        </Button>
-        <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Existing Trip
-        </Button>
-
-        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
+            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Booked</Button> 
+            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
+              Add to Trip
+            </Button>
+          <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
       </ButtonToolbar>
 
           
@@ -286,8 +292,6 @@ const Itinerary = React.createClass({
             </div>
 
 
-            <div id="trips" className="tab-pane fade">
-            </div>
         </div>
       </div>
       );

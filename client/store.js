@@ -14,6 +14,7 @@ const defaultState = {
     reducerActivityItin: [],
     reducerChangeStatus: [],
     reducerNewTrip: [],
+    reducerAllTrips: [],
     reducerUpdateTripId: []
 }
 //   window.devToolsExtension ? window.devToolsExtension() : f => f));
