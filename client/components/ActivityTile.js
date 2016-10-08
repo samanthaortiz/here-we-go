@@ -5,17 +5,21 @@ import Activity from './Activity';
 const ActivityTile = React.createClass({
 
   filterActivities(){
-  var activities = []
+    let activityItems = this.props.activityData.tripData[2].activityData.activities;
+    var activities = []
+  if(activityItems.length > 25){ 
     for(var i = 0; i < 25; i++){
-      activities.push(this.props.activityData.tripData[2].activityData.activities[i])
+      activities.push(activityItems[i])
     }
     return activities;
+  }
+  return activityItems;
   },
 
   render() {
     // console.log('>>>>> Activity TILE <<<<<');
     let activities = this.filterActivities();
-    console.log("ACTIVITIES", activities)
+
     if(this.props.activityData.length !== 0) {
       
       return (
