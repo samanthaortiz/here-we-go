@@ -224,7 +224,7 @@ const FlightTile = React.createClass({
                     )}
                   </select>
                 </li>
-                <li>
+                <li className="form-options">
                   <div>
                     <label htmlFor="adults">Number of Adults: </label>
                     <input className="numAdults" value={this.state.adults} ref="adults" onChange={this.handleChangeAdults}/>

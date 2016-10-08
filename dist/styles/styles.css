@@ -29,10 +29,11 @@ body {
   text-align: right;
   background: transparent;
   line-height: 50px;
+  color: #fff;
 }
 
 .splash-nav [class^='nav-'] {
-  margin: 0 15px;
+  margin: 0 15px 0 30px;
   color: #fff;
   text-decoration: none;
 }
@@ -225,6 +226,8 @@ article {
   border: 1px solid #999;
   background-color: #fff;
   padding-left: 2px;
+  color: #000 !important;
+  font-size: 16px !important;
 }
 
 /* TILE CONTENT ============================================================ */
@@ -285,6 +288,10 @@ article {
   margin: 0;
 }
 
+[class^='tile-']:not(.tile-itinerary) ul li .details strong {
+  font-size: 24px;
+}
+
 [class^='tile-']:not(.tile-itinerary) ul li span {
   font-size: 10px;
   color: #999;
@@ -301,13 +308,6 @@ article {
 }
 
 /* FLIGHT TILE */
-
-
-
-
-
-
-
 .airportForm {
   /*height: 250px;*/
   width: 600px;
@@ -328,7 +328,7 @@ article {
 }
 
 .tile-flight .airportForm ul li {
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   padding: 10px 15px;
   display: inline-block;
   width: 90%;
@@ -342,8 +342,30 @@ article {
 }
 
 .airportForm label {
-  margin: 0;
+  margin: 0 10px 0 0;
   padding: 0;
+}
+
+.airportForm input {
+  width: 225px !important;
+  vertical-align: baseline !important;
+  height: 30px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+}
+
+.airportForm .numAdults {
+  width: 40px !important;
+}
+
+.airportForm .form-options > div {
+  margin-bottom: 10px !important;
+}
+
+.airportForm .form-options > div:last-child {
+  margin-bottom: 0 !important;
 }
 
 .airportForm span {
@@ -351,16 +373,10 @@ article {
   color: #000;
 }
 
-
-
-
-
-
-
-
-
-
-
+.airportForm button {
+  margin: 10px 0 0 10px !important;
+  border-radius: 5px !important;
+}
 
 .tile-flight ul li .details {
   min-height: 225px;
@@ -369,6 +385,7 @@ article {
 .tile-flight ul li img {
   width: initial !important;
   border-radius: 0;
+  padding: 5px;
 }
 
 .item-flight .crop {
