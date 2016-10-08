@@ -3,17 +3,26 @@ import React from 'react';
 import Activity from './Activity';
 
 const ActivityTile = React.createClass({
+
+  filterActivities(){
+  var activities = []
+    for(var i = 0; i < 25; i++){
+      activities.push(this.props.activityData.tripData[2].activityData.activities[i])
+    }
+    return activities;
+  },
+
   render() {
     // console.log('>>>>> Activity TILE <<<<<');
-    // console.log('Activity tile this.props: ',  this.props);
+    let activities = this.filterActivities();
+    console.log("ACTIVITIES", activities)
     if(this.props.activityData.length !== 0) {
       
       return (
         <div className="tile-activity">
           <h3>THINGS TO DO</h3>
           <ul className="row">
-            {
-              this.props.activityData.tripData[2].activityData.activities.map((activity) =>
+              {activities.map((activity) =>
                 <Activity
                   isLoggedIn={this.props.activityData.loggedIn}
                   userEmail={this.props.activityData.email}

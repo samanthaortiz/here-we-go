@@ -7,6 +7,7 @@ const CarRentalTile = React.createClass({
   filterCars() {
     let carInfo = this.props.carData.tripData[1].carData.CarInfoList.CarInfo;
     let cars = [];
+    let filterCars = [];
 
     carInfo.forEach(function(car){
       if(car.CarClass !== "Special Special") {
@@ -14,7 +15,13 @@ const CarRentalTile = React.createClass({
       }
     });
 
-    return cars;
+    if(cars.length > 25){
+      for(var i = 0; i < 25; i++){
+       filterCars.push(cars[i]);
+     }
+     return filterCars;
+   }
+   return cars;
   },
 
   render() {
