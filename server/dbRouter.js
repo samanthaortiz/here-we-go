@@ -38,21 +38,20 @@ module.exports = {
   },
 
   updateTripId: function(req, res, next){
-
-
-      //   if(req.body.typeId === 1){
-      //   //check for flight
-      //   db.knex('flightReservations').where('flightReservations.id', req.body.itemId).update("flightReservations.trip_id", info.id)
-      //   .then(function(){
-      //     // console.log('flight res info changing to saved... res:', res);
-      //     // res.data = info;
-      //     next();
-      //   })
+    console.log("REQ BODY", req.body)
+        if(req.body.typeId === 1){
+        //check for flight
+        db.knex('flightReservations').where('flightReservations.id', req.body.itemId).update("flightReservations.trip_id", req.body.tripId)
+        .then(function(){
+          // console.log('flight res info changing to saved... res:', res);
+          // res.data = info;
+          next();
+        })
       //   .catch(function(error){
       //     console.error(error)
       //   });
       // } else if(req.body.typeId === 2){
-      //   //check for hotels
+      //   // check for hotels
       //   db.knex('hotelReservations').where('hotelReservations.id', req.body.itemId).update("hotelReservations.status_id", 1)
       //   .then(function(info){
       //     res.data = info;
@@ -81,7 +80,7 @@ module.exports = {
       //   .catch(function(error){
       //     console.error(error)
       //   });
-      // }
+    }
   },
 
 

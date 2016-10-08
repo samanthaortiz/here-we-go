@@ -83,6 +83,7 @@ const Itinerary = React.createClass({
   },
 
   render() {
+        console.log("THIS IS ITIN PROPS", this.props)
     // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
     // if(this.props.data.reducerTripData.loggedIn){
 
@@ -135,29 +136,36 @@ const Itinerary = React.createClass({
 
         <div className="tile-itinerary">
         <ul className="nav nav-tabs">
+          <li><a data-toggle="tab" href="#trips">Trips</a></li>
           <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
           <li><a data-toggle="tab" href="#budget">Budget</a></li>
-          <li><a data-toggle="tab" href="#trips">Trips</a></li>
         </ul>
 
 
+{/* TRIPS MODAL */}
 
         <div className="tab-content">
+            <div id="trips" className="tab-pane fade">
+        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+          Add New Trip
+        </Button>
+
+      <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
+
+            </div>
+
+        
           <div id="booked" className="tab-pane fade in active">
 
 {/* Booked Modals */}
 
-              <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add to New Trip
-        </Button>
+           <ButtonToolbar>
         <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Existing Trip
+         Add to Trip
         </Button>
 
-        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
-        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props}/>
+        <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
       </ButtonToolbar>
 
 
@@ -214,14 +222,10 @@ const Itinerary = React.createClass({
 
 {/* Saved Modals */}
           <ButtonToolbar>
-        <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-          Add to New Trip
-        </Button>
         <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-         Add to Existing Trip
+         Add to Trip
         </Button>
 
-        <NewTripModal show={this.state.newModal} onHide={newClose} data={this.props}/>
         <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
       </ButtonToolbar>
 
@@ -284,8 +288,6 @@ const Itinerary = React.createClass({
             </div>
 
 
-            <div id="trips" className="tab-pane fade">
-            </div>
         </div>
       </div>
       );

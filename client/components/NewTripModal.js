@@ -18,16 +18,15 @@ const NewTripModal = React.createClass({
 
   handleSubmit(){
     console.log("WE GOT SHIT", this.state.newTrip)
+    console.log("NEWTRIPMODAL PROPS", this.props.data)
 
     this.props.data.data.postNewTrip(this.state.newTrip, this.props.data.data.reducerTripData.email)
-    .then(function(tripId){
-      console.log('FRONT END RECEIVED TRIP ID:', tripId)
-//       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedFlights){
-//         if(this.props.data.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
-          
-//           this.props.data.data.updateTrip(tripId, +item, 1);     
-//         }
-//       }
+      // console.log('FRONT END RECEIVED TRIP ID:', tripId)
+      for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedFlights){
+        if(this.props.data.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
+          this.props.data.data.updateTripId(18, +item, 1);   
+        }
+      }
 
 //       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedHotels){
 //         if(this.props.data.dashboardState.itinItems[0].selectedBookedHotels[item] === true){
@@ -71,7 +70,6 @@ const NewTripModal = React.createClass({
 //           this.props.data.data.updateTrip(tripId, +item, 4);         
 //         }
 //       }
-    })
 
     this.props.onHide();
   },
