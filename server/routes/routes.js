@@ -86,7 +86,7 @@ router.post('/changeStatus', dbRouter.changeStatus, function(req, res, next){
 })
 
 router.post('/newTrip', dbRouter.newTrip, function(req, res, next){
-  console.log('response in add trip:', res.data)
+  // console.log('response in add trip:', res.data)
   res.send(res.data);
 })
 
