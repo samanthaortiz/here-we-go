@@ -13,14 +13,15 @@ const Trips = React.createClass({
           <Accordion>
             {
             this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
-
               <Panel key={i} header={trips.trip_name} eventKey={i + 1}>
+                <div>
                 <BudgetChart 
                   key={i} 
                   data={this.props}
-                  item={trip}
+                  item={trips.trip_name}
                 >
                 </BudgetChart>
+                </div>
 
                 <h4>Flights:</h4>
                   <p>flight1</p>
