@@ -11,6 +11,7 @@ import reducerChangeStatus from './reducerChangeStatus';
 import reducerNewTrip from './reducerNewTrip';
 import reducerAllTrips from './reducerAllTrips'
 import reducerUpdateTripId from "./reducerUpdateTripId";
+import reducerAllTripInfo from "./reducerAllTripInfo";
 
 const rootReducer = combineReducers({
   reducerTripData,
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   reducerNewTrip,
   reducerAllTrips,
   reducerUpdateTripId,
+  reducerAllTripInfo,
   routing: routerReducer
 });
 
