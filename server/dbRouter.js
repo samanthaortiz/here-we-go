@@ -54,6 +54,8 @@ module.exports = {
     })
   },
 
+  //get all trip info
+
   updateTripId: function(req, res, next){
     console.log("REQ BODY", req.body)
         if(req.body.typeId === 1){

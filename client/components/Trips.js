@@ -5,13 +5,13 @@ import BudgetChart from './BudgetChart';
 
 const Trips = React.createClass({
   render() {
-    console.log('these are the trip props:', this.props)
+    // console.log('these are the trip props:', this.props)
     // if(this.props.data.data.reducerAllTrips !== undefined) {
-    var trips = []
-    this.props.data.data.reducerAllTrips.allTripInfo.forEach(function(trip, i){
-      trips.push(this.props.data.getAllTripInfo(trip.id))
-    })
-    console.log('trips', trips)
+    // var trips = []
+    // this.props.data.data.reducerAllTrips.allTripInfo.forEach(function(trip, i){
+    //   trips.push(this.props.data.getAllTripInfo(trip.id))
+    // })
+    // console.log('trips', trips)
 
 
     // var flightTrips = []
