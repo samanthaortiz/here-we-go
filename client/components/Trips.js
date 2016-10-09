@@ -1,17 +1,20 @@
 // DASHBOARD > PANEL > ACTIVITY TILE =============================================
 import React from 'react';
 import { Accordion, Panel } from 'react-bootstrap';
-import BudgetChart from './BudgetChart';
+//import BudgetChart from './BudgetChart';
 
 const Trips = React.createClass({
   render() {
-    // console.log('these are the trip props:', this.props)
-    // if(this.props.data.data.reducerAllTrips !== undefined) {
+    // // console.log('these are the trip props:', this.props.data.getAllTripInfo(1))
+    // if(this.props.data.reducerAllTrips !== undefined) {
     // var trips = []
-    // this.props.data.data.reducerAllTrips.allTripInfo.forEach(function(trip, i){
+    // this.props.data.reducerAllTrips.allTripInfo.forEach(function(trip, i){
+    //   // trips.push(this.props.data.data.getAllTripInfo(trip.id))
     //   trips.push(this.props.data.getAllTripInfo(trip.id))
     // })
-    // console.log('trips', trips)
+    // }
+  //   console.log('trips', trips)
+  // }
 
 
     // var flightTrips = []
@@ -42,11 +45,13 @@ const Trips = React.createClass({
     //   } 
     // })
       return (
+
         <div className="trips">
           <Accordion>
             {
             this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
               <Panel key={i} header={trips.trip_name} eventKey={i + 1}>
+              {console.log("TRIPSSSSSS", trips)}
                 {/*<div>
                 <BudgetChart 
                   key={i} 
@@ -65,18 +70,19 @@ const Trips = React.createClass({
               )}
               </div>
                 </div>*/}
+                 {
+                  this.props.data.data.reducerAllTripInfo.allTripInfo.map((trips, i) =>
+                    <Panel>
                 <h4>Flights:</h4>
-                  <p>flight1</p>
-                  <p>flight2</p>
+                  <p>{trips.arrivalAirportCity} - {trips.departureAirportCity}</p>
                 <h4>Hotels:</h4>
-                  <p>hotel1</p>
-                  <p>hotel2</p>
+                  <p>{trips.providerName}</p>
                 <h4>Cars:</h4>
-                  <p>car1</p>
-                  <p>car2</p>
                 <h4>Activites:</h4>
-                  <p>activity1</p>
-                  <p>activity2</p>
+                  <p>{trips.name}</p>
+                  </Panel>
+                )
+                }
               </Panel>
               )
             }

@@ -316,7 +316,8 @@ export const getAllTripInfo = (tripId) => {
     return axiosAllTripInfo(tripId)
     .then(res => {
       dispatch(hydrateAllTripInfo(res.data, tripId))
-      browserHistory.push('/dashboard')
+      console.log(">>>>TRIPDATA", res.data)
+      browserHistory.push('/')
     })
     .catch(error => console.log(error));
   };
@@ -328,7 +329,7 @@ export function axiosAllTripInfo(tripId){
   })
 };
 
-export function hydrateAllTripInfo(allTripInfo, tripId, ){
+export function hydrateAllTripInfo(allTripInfo, tripId){
   return {
    type: "GET_ALL_TRIP_INFO",
    allTripInfo,

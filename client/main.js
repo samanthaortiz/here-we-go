@@ -15,7 +15,7 @@ import NavBar from './components/NavigationBar.js';
 // LOGIN ACCOUNT
 import Account from './components/Account.js';
 // BUDGET CHART (D3)
-import BudgetChart from './components/BudgetChart.js';
+//import BudgetChart from './components/BudgetChart.js';
 //ITINERARY
 import Itinerary from './components/Itinerary.js';
 //HOTEL ITIN
@@ -37,7 +37,7 @@ const router = (
         <Route path="account" component={Dashboard} />
         <Route path="account" component={Splash} />
         <Route path="logout" component={Splash} />
-        <Route path="chart" component={BudgetChart} />
+        {/*<Route path="chart" component={BudgetChart} />*/}
         <Route path="dashboard" component={Itinerary} />
         <Route path="dashboard" component={HotelItin} />
         <Route path="dashboard" component={FlightItin} />

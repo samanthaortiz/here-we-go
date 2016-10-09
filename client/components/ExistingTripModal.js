@@ -43,29 +43,30 @@ const ExistingTripModal = React.createClass({
       }
 ///////////////////////////////////////////////////
 
-        for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedFlights){
-        if(this.props.data.dashboardState.itinItems[0].selectedSavedFlights[item] === true){
+        for (var item in this.props.data.dashboardState.itinItems[1].selectedSavedFlights){
+        if(this.props.data.dashboardState.itinItems[1].selectedSavedFlights[item] === true){
           this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 1);     
         }
       }
 
-      for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedHotels){
-        if(this.props.data.dashboardState.itinItems[0].selectedSavedHotels[item] === true){
+      for (var item in this.props.data.dashboardState.itinItems[1].selectedSavedHotels){
+        if(this.props.data.dashboardState.itinItems[1].selectedSavedHotels[item] === true){
           this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 2);         
         }
       }
 
-      for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedCars){
-        if(this.props.data.dashboardState.itinItems[0].selectedSavedCars[item] === true){
+      for (var item in this.props.data.dashboardState.itinItems[1].selectedSavedCars){
+        if(this.props.data.dashboardState.itinItems[1].selectedSavedCars[item] === true){
           this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 3);         
         }
       }
 
-      for (var item in this.props.data.dashboardState.itinItems[0].selectedSavedActivities){
-        if(this.props.data.dashboardState.itinItems[0].selectedSavedActivities[item] === true){
+        for (var item in this.props.data.dashboardState.itinItems[1].selectedSavedActivites){
+        if(this.props.data.dashboardState.itinItems[1].selectedSavedActivites[item] === true){
           this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 4);         
         }
       }
+      
 
     this.props.onHide();
   },

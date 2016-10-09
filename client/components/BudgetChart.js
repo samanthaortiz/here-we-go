@@ -1,7 +1,7 @@
 // DASHBOARD COMPONENT ========================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import {PieChart} from 'react-easy-chart';
+//import { PieChart } from 'react-easy-chart';
 
 const BudgetChart = React.createClass({
 
@@ -117,7 +117,8 @@ const BudgetChart = React.createClass({
   render() {
     console.log('this.props in budget', this.props)
     return (
-      <PieChart
+      <div>HI</div>
+      {/*<PieChart
         size={200}
         data={[
           { key: 'Flight', value: 100 },
@@ -126,6 +127,7 @@ const BudgetChart = React.createClass({
           { key: 'Activities', value: 50 }
         ]}
       />
+  }*/}
     );
   }
 }); 
