@@ -9,7 +9,7 @@ const Flight = React.createClass({
         'American Airlines': '../assets/airline-logos/AA_sq.jpg',
         'Delta': '../assets/airline-logos/DL_sq.jpg',
         'jetBlue': '../assets/airline-logos/b6_sq.jpg',
-        'United Airlines': '../assets/airline-logos/UA_sq.jpg',
+        'United': '../assets/airline-logos/UA_sq.jpg',
         'Unknown': '../assets/airline-logos/multiple_airlines_logo_sq.jpg'
       }
     };
@@ -109,8 +109,7 @@ const Flight = React.createClass({
         }
       }
 
-      console.log('airline: ', this.state.roundTrip[0].segments[0].airlineName)
-
+      // console.log('airline: ', this.state.roundTrip[0].segments[0].airlineName)
 
       return (
         <li className="item-flight">

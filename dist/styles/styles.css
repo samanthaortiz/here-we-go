@@ -38,6 +38,23 @@ body {
   text-decoration: none;
 }
 
+.navbutton {
+  border-radius: 5px;
+  color: white;
+  background-color: #999;
+  opacity: 0.7;
+  margin: 0 20px !important;
+  padding: 5px 10px !important;
+  line-height: 1;
+}
+
+.navbutton:hover {
+  color: #999;
+  border: 2px solid #999 !important;
+  background-color: #fff !important;
+  opacity: 0.8;
+}
+
 .splash-container {
   text-align: center;
   width: 70%;
@@ -126,7 +143,7 @@ button {
 #loading-icon {
   margin: auto;
   margin-top: 10px;
-  border-radius: 6px;
+  border-radius: 5px;
   opacity: 0.8;
   padding: 20px 30px;
   display: none;
@@ -376,6 +393,12 @@ article {
 .airportForm button {
   margin: 10px 0 0 10px !important;
   border-radius: 5px !important;
+}
+
+.airportForm #loading-icon {
+  padding: 10px 15px;
+  margin-left: 20px;
+  background-position: 92%;
 }
 
 .tile-flight ul li .details {

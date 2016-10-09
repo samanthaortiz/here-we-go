@@ -155,6 +155,7 @@ const FlightTile = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
+    document.getElementById('loading-icon').style.display = 'inline-block';
     // console.log('submitting flight data request');
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
     this.props.flightData.postFlightExpedia(
@@ -247,6 +248,7 @@ const FlightTile = React.createClass({
                 </li>
               </ul>
               <button type="submit">Let's Fly!</button>
+              <div id='loading-icon'>Getting Flights...</div>
             </form>
 
           </div>
