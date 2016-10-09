@@ -35,6 +35,8 @@ const Itinerary = React.createClass({
   //   }
   // },
 
+
+
   changeStatusOfItem(){
     //BOOKED TO SAVED
       for (var item in this.props.dashboardState.itinItems[0].selectedBookedFlights){
@@ -88,6 +90,13 @@ const Itinerary = React.createClass({
           this.props.data.changeStatus(+item, 4, 2);     
         }
       }
+
+      this.props.postHotelItin(this.props.reducerTripData.email, "/dashboard")
+      this.props.postFlightItin(this.props.reducerTripData.email, "/dashboard")
+      this.props.postCarItin(this.props.reducerTripData.email, "/dashboard")
+      this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
+      this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
+      //some sort of function that force refreshes each itinerary instance
   },
 
   render() {
