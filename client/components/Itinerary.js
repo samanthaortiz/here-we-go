@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Accordion, Panel, Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
-import BudgetChart from './BudgetChart';
+//import BudgetChart from './BudgetChart';
 import NewTripForm from './NewTripForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
@@ -309,7 +309,7 @@ const Itinerary = React.createClass({
                 </div>
                 <div id="fade" className="black_overlay"></div>
                 <p><button onClick={this.displayForm}>Add New Budget!</button></p>
-                <BudgetChart/>
+                {/*<BudgetChart/>*/}
             </div>
 
 

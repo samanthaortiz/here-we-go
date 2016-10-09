@@ -117,7 +117,8 @@ const BudgetChart = React.createClass({
   render() {
     console.log('this.props in budget', this.props)
     return (
-      <PieChart
+      <div>HI</div>
+      {/*<PieChart
         size={200}
         data={[
           { key: 'Flight', value: 100 },
@@ -126,6 +127,7 @@ const BudgetChart = React.createClass({
           { key: 'Activities', value: 50 }
         ]}
       />
+  }*/}
     );
   }
 }); 
