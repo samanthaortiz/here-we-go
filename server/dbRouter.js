@@ -237,5 +237,17 @@ module.exports = {
         });
       }
     }
+  },
+
+  // TRIP
+  getAllTripInfo: function(req, res) {
+    var SQL_RAW = `SELECT itineraries.*, hotelReservations.*, flightReservations.*, carRentals.*, activities.* FROM itineraries INNER JOIN hotelReservations ON hotelReservations.trip_id = itineraries.id INNER JOIN flightReservations ON flightReservations.trip_id = itineraries.id INNER JOIN carRentals ON carRentals.trip_id = itineraries.id INNER JOIN activities ON activities.trip_id = ${req.body.tripId}`;
+
+    db.knex.raw(sqlSyntax)
+      .then(function(rows) {
+        res.send(rows);
+    });
   }
+
+
 }
