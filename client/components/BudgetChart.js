@@ -1,7 +1,7 @@
 // DASHBOARD COMPONENT ========================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import {PieChart} from 'react-easy-chart';
+import { PieChart } from 'react-easy-chart';
 
 const BudgetChart = React.createClass({
 

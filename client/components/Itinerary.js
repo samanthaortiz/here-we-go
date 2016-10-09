@@ -21,12 +21,17 @@ const Itinerary = React.createClass({
     };
   },
 
-  displayForm: function(event) {
+  displayForm(event) {
     event.preventDefault();
     // DISPLAY BUDGET FOR LIGHTBOX
     document.getElementById('light').style.display='block';
     document.getElementById('fade').style.display='block';
   },
+
+  // componentDidMount(){
+  //   this.props.getAllTripInfo(1);
+
+  // },
 
   // componentWillReceiveProps() {
   //   console.log('componentWillReceiveProps in itin', this.props.dashboardState.savedItemBoolean.savedActivity)
@@ -79,14 +84,13 @@ const Itinerary = React.createClass({
         }
       }
 
-      for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
+       for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
         if(this.props.dashboardState.itinItems[1].selectedSavedCars[item] === true){
           this.props.data.changeStatus(+item, 3, 2);     
         }
       }
-
-      for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivities){
-        if(this.props.dashboardState.itinItems[1].selectedSavedActivities[item] === true){
+         for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivites){
+        if(this.props.dashboardState.itinItems[1].selectedSavedActivites[item] === true){
           this.props.data.changeStatus(+item, 4, 2);     
         }
       }
