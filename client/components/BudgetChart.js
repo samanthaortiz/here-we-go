@@ -117,6 +117,7 @@ const BudgetChart = React.createClass({
   render() {
     console.log('this.props in budget', this.props)
     return (
+      <div>HI</div>
       {/*<PieChart
         size={200}
         data={[
@@ -128,6 +129,7 @@ const BudgetChart = React.createClass({
       />
   }*/}
     );
+  }
 }); 
 
 export default BudgetChart;

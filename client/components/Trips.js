@@ -1,7 +1,7 @@
 // DASHBOARD > PANEL > ACTIVITY TILE =============================================
 import React from 'react';
 import { Accordion, Panel } from 'react-bootstrap';
-import BudgetChart from './BudgetChart';
+//import BudgetChart from './BudgetChart';
 
 const Trips = React.createClass({
   render() {
