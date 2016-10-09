@@ -55,6 +55,19 @@ module.exports = {
   },
 
   //get all trip info
+  getAllTripInfo: function(req, res, next){
+    // console.log("getAllTripInfo ID", req.body.tripId)
+    var SQL_RAW = `SELECT itineraries.* , hotelReservations.* , flightReservations.*, carRentals.*, activities.* FROM itineraries LEFT JOIN hotelReservations ON hotelReservations.trip_id = itineraries.id LEFT JOIN flightReservations ON flightReservations.trip_id = itineraries.id LEFT JOIN carRentals ON carRentals.trip_id = itineraries.id LEFT JOIN activities ON activities.trip_id = itineraries.id WHERE itineraries.id = ${req.body.tripId}`;
+
+    db.knex.raw(SQL_RAW)
+      .then(function(rows) {
+        res.data = rows[0];
+        next();
+    })
+      .catch(function(error){
+      console.error(error)
+    })
+  },
 
   updateTripId: function(req, res, next){
     console.log("REQ BODY", req.body)

@@ -91,6 +91,10 @@ router.post('/getAllTrips', dbRouter.getAllTrips, function(req, res, next){
 })
 
 //get all trip info api
+router.post('/getAllTripInfo', dbRouter.getAllTripInfo, function(req, res, next){
+  // console.log("RES DATS FROM ALL TRIP INFO", res.data)
+  res.send(res.data);
+})
 
 router.post('/updateTripId', dbRouter.updateTripId, function(req, res, next){
   // console.log('response in change status:', res)

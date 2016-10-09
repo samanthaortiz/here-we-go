@@ -1,4 +1,4 @@
-const reducerAllTripsInfo = (state = [], action) => {
+const reducerAllTripInfo = (state = [], action) => {
   switch (action.type){
     case 'GET_ALL_TRIP_INFO':
       return {
@@ -10,4 +10,4 @@ const reducerAllTripsInfo = (state = [], action) => {
   }
 };
 
-export default reducerAllTripsInfo;
+export default reducerAllTripInfo;
