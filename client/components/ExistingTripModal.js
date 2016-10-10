@@ -68,6 +68,8 @@ const ExistingTripModal = React.createClass({
       }
       
 
+    // this.props.getAllTripInfo(+this.state.selectedTrip)
+
     this.props.onHide();
   },
  
