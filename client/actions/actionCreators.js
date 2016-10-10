@@ -311,13 +311,13 @@ export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
 
 //==================== GETTING TRIP INFO FROM ALL TABLES =======================================
 
-export const getAllTripInfo = (tripId) => {
+export const getAllTripInfo = (tripId, location) => {
   return function(dispatch){
     return axiosAllTripInfo(tripId)
     .then(res => {
       dispatch(hydrateAllTripInfo(res.data, tripId))
       console.log(">>>>TRIPDATA", res.data)
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };

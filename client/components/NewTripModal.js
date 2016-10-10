@@ -20,6 +20,7 @@ const NewTripModal = React.createClass({
     console.log("NEWTRIPMODAL PROPS", this.props.data)
 
     this.props.data.data.postNewTrip(this.state.newTrip, this.props.data.data.reducerTripData.email)
+    this.props.data.getAllTrips(this.props.data.data.reducerTripData.email, "/dashboard");
     this.props.onHide();
   },
 
