@@ -470,7 +470,11 @@ article {
 }
 
 .nav-tabs a {
-  padding: 5px !important;
+  /*padding: 5px !important;*/
+}
+
+.panel-group {
+  margin-top: 10px !important;
 }
 
 .modal-container {
