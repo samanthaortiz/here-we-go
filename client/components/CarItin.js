@@ -44,7 +44,7 @@ const CarItin = React.createClass({
                 onChange={this.onChange}/>
                 {this.props.carItinInfo.rentalCompany}
                 <br/>{this.props.carItinInfo.vehicleBrand}
-                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} to {this.changeDate(this.props.carItinInfo.dropOffTime)}
+                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} -  {this.changeDate(this.props.carItinInfo.dropOffTime)}
               </label>
             </div>
           </form>
