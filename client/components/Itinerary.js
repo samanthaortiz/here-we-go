@@ -21,6 +21,15 @@ const Itinerary = React.createClass({
     };
   },
 
+  updateAllTrips(){
+  this.setState(
+    { 
+      newModal: true 
+    }
+  )
+  this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
+},
+
   displayForm(event) {
     event.preventDefault();
     // DISPLAY BUDGET FOR LIGHTBOX
@@ -82,13 +91,14 @@ const Itinerary = React.createClass({
           this.props.data.changeStatus(+item, 2, 2);     
         }
       }
-
-       for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
+      
+      for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
         if(this.props.dashboardState.itinItems[1].selectedSavedCars[item] === true){
           this.props.data.changeStatus(+item, 3, 2);     
         }
       }
-         for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivites){
+
+      for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivites){
         if(this.props.dashboardState.itinItems[1].selectedSavedActivites[item] === true){
           this.props.data.changeStatus(+item, 4, 2);     
         }
