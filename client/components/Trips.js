@@ -73,13 +73,14 @@ const Trips = React.createClass({
                 </div>*/}
                  {
                   this.props.data.data.reducerAllTripInfo.allTripInfo.map((trips, i) =>
-                    <div className="inner-trip">
-                <h4>Flights:</h4>
-                  <p>{trips.arrivalAirportCity} - {trips.departureAirportCity}</p>
-                <h4>Hotels:</h4>
+                <div className="inner-trip">
+                <h4 className="inner-trip-heading">Flights:</h4>
+                  <p>{trips.departureAirportCity} - {trips.arrivalAirportCity}</p>
+                <h4 className="inner-trip-heading">Hotels:</h4>
                   <p>{trips.providerName}</p>
-                <h4>Cars:</h4>
-                <h4>Activites:</h4>
+                <h4 className="inner-trip-heading">Cars:</h4>
+                  <p>{trips.rentalCompany}: {trips.vehicleBrand}</p>
+                <h4 className="inner-trip-heading">Activites:</h4>
                   <p>{trips.name}</p>
                   </div>
                 )

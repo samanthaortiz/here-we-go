@@ -32,7 +32,6 @@ const HotelItin = React.createClass({
 
       return (
         <div className='item-hotel-itin'>
-          <h4>HOTEL ITIN</h4>
           <form>
           <div className="checkbox">
             <label>

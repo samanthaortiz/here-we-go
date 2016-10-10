@@ -31,7 +31,6 @@ const FlightItin = React.createClass({
   render() {
       return (
         <div className='item-flight-itin'>
-        <h4>FLIGHT ITIN</h4>
           <form>
           <div className="checkbox">
             <label>

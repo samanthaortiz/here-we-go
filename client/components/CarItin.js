@@ -37,7 +37,6 @@ const CarItin = React.createClass({
   render() {
       return (
         <div className='item-car-itin'>
-          <h4>CAR RENTAL ITIN</h4>
           <form>
             <div className="checkbox">
               <label>
