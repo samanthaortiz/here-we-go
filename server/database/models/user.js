@@ -1,4 +1,4 @@
-import db from '../db';
+var db require('../db');
 
 let User = db.Model.extend({
 	tableName: 'users',

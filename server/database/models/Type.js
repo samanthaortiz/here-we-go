@@ -1,4 +1,4 @@
-import db from '../db';
+var db require('../db');
 
 let Type = db.Model.extend({
 	tableName: 'types',
