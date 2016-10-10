@@ -170,7 +170,7 @@ const Itinerary = React.createClass({
           <li className="active"><a data-toggle="tab" href="#trips">Trips</a></li>
           <li><a data-toggle="tab" href="#booked">Booked</a></li>
           <li><a data-toggle="tab" href="#saved">Saved</a></li>
-          <li><a data-toggle="tab" href="#budget">Budget</a></li>
+         {/* <li><a data-toggle="tab" href="#budget">Budget</a></li>*/}
         </ul>
 
 
@@ -315,15 +315,15 @@ const Itinerary = React.createClass({
             </Accordion>             
           </div>
 
-            <div id="budget" className="tab-pane fade">
+           {/* <div id="budget" className="tab-pane fade">
              <h3>Budget</h3>
                 <div id="light" className="lightbox-content">
                   <BudgetForm data={this.props.data}/>
                 </div>
                 <div id="fade" className="black_overlay"></div>
                 <p><button onClick={this.displayForm}>Add New Budget!</button></p>
-                {/*<BudgetChart/>*/}
-            </div>
+                <BudgetChart/>
+            </div>*/}
 
 
         </div>

@@ -22,16 +22,11 @@ const FlightItin = React.createClass({
   },
 
 
-  // changeDate(date) {
-  //   var 
-  //   //check for iso status here?
-  //   if(date === "0000-00-00 00:00:00"){
-  //     return 
-  //   }
-  //   var string = new Date(date).toString()
-  //   var formattedDate = string.substring(4,10) + ", " + string.substring(11, 15);
-  //   return formattedDate
-  // },
+  changeDate(date) {
+    var date1 = date.split("-").join("/")
+    return date1.substring(5,10) + "/" + date1.substring(0,4)
+
+  },
 
   render() {
       return (
@@ -43,7 +38,7 @@ const FlightItin = React.createClass({
               onChange={this.onChange}/>
               From {this.props.flightItinInfo.departureAirportCode} to {this.props.flightItinInfo.arrivalAirportCode}
               {/*<br/>{this.changeDate(this.props.flightItinInfo.departureTime)}*/}
-              <br/>{this.props.startDate}
+              <br/>{this.changeDate(this.props.startDate)} - {this.changeDate(this.props.endDate)}
               <br/>Flight Number: {this.props.flightItinInfo.flightNumber}
               <br/>Airline: {this.props.flightItinInfo.airline}
             </label>
