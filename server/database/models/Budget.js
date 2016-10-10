@@ -1,6 +1,6 @@
-import db from '../db';
-import Itinerary from './Itinerary';
-import Type from './Type';
+var db require('../db');
+var Itinerary require('./Itinerary');
+var Type require('./Type');
 
 let Budget = db.Model.extend({
 	tableName: 'budgets',

@@ -1,4 +1,4 @@
-import db from '../db';
+var db require('../db');
 
 let Status = db.Model.extend({
 	tableName: 'statuses',
