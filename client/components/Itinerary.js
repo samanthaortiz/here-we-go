@@ -86,7 +86,7 @@ const Itinerary = React.createClass({
           this.props.data.changeStatus(+item, 1, 2);     
         }
       }
-      
+
       for (var item in this.props.dashboardState.itinItems[1].selectedSavedHotels){
         if(this.props.dashboardState.itinItems[1].selectedSavedHotels[item] === true){
           this.props.data.changeStatus(+item, 2, 2);     
