@@ -53,63 +53,63 @@ const Itinerary = React.createClass({
 
   changeStatusOfItem(){
     //BOOKED TO SAVED
-      for (var item in this.props.dashboardState.itinItems[0].selectedBookedFlights){
-        if(this.props.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
-          console.log('taking flight from booked to saved');
-          this.props.data.changeStatus(+item, 1, 1);     
-        }
+    for (var item in this.props.dashboardState.itinItems[0].selectedBookedFlights){
+      if(this.props.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
+        console.log('taking flight from booked to saved');
+        this.props.data.changeStatus(+item, 1, 1);     
       }
+    }
 
-      for (var item in this.props.dashboardState.itinItems[0].selectedBookedHotels){
-        if(this.props.dashboardState.itinItems[0].selectedBookedHotels[item] === true){
-          this.props.data.changeStatus(+item, 2, 1);     
-        }
+    for (var item in this.props.dashboardState.itinItems[0].selectedBookedHotels){
+      if(this.props.dashboardState.itinItems[0].selectedBookedHotels[item] === true){
+        this.props.data.changeStatus(+item, 2, 1);     
       }
+    }
 
-      for (var item in this.props.dashboardState.itinItems[0].selectedBookedCars){
-        if(this.props.dashboardState.itinItems[0].selectedBookedCars[item] === true){
-          this.props.data.changeStatus(+item, 3, 1);     
-        }
+    for (var item in this.props.dashboardState.itinItems[0].selectedBookedCars){
+      if(this.props.dashboardState.itinItems[0].selectedBookedCars[item] === true){
+        this.props.data.changeStatus(+item, 3, 1);     
       }
+    }
 
-      for (var item in this.props.dashboardState.itinItems[0].selectedBookedActivities){
-        if(this.props.dashboardState.itinItems[0].selectedBookedActivities[item] === true){
-          this.props.data.changeStatus(+item, 4, 1);     
-        }
+    for (var item in this.props.dashboardState.itinItems[0].selectedBookedActivities){
+      if(this.props.dashboardState.itinItems[0].selectedBookedActivities[item] === true){
+        this.props.data.changeStatus(+item, 4, 1);     
       }
+    }
 
 //SAVED TO BOOKED
 
-     for (var item in this.props.dashboardState.itinItems[1].selectedSavedFlights){
-        if(this.props.dashboardState.itinItems[1].selectedSavedFlights[item] === true){
-          console.log('taking flight from saved to booked');
-          this.props.data.changeStatus(+item, 1, 2);     
-        }
+    for (var item in this.props.dashboardState.itinItems[1].selectedSavedFlights){
+      if(this.props.dashboardState.itinItems[1].selectedSavedFlights[item] === true){
+        console.log('taking flight from saved to booked');
+        this.props.data.changeStatus(+item, 1, 2);     
       }
-      for (var item in this.props.dashboardState.itinItems[1].selectedSavedHotels){
-        if(this.props.dashboardState.itinItems[1].selectedSavedHotels[item] === true){
-          this.props.data.changeStatus(+item, 2, 2);     
-        }
-      }
-      
-      for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
-        if(this.props.dashboardState.itinItems[1].selectedSavedCars[item] === true){
-          this.props.data.changeStatus(+item, 3, 2);     
-        }
-      }
+    }
 
-      for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivites){
-        if(this.props.dashboardState.itinItems[1].selectedSavedActivites[item] === true){
-          this.props.data.changeStatus(+item, 4, 2);     
-        }
+    for (var item in this.props.dashboardState.itinItems[1].selectedSavedHotels){
+      if(this.props.dashboardState.itinItems[1].selectedSavedHotels[item] === true){
+        this.props.data.changeStatus(+item, 2, 2);     
       }
+    }
 
-      this.props.postHotelItin(this.props.reducerTripData.email, "/dashboard")
-      this.props.postFlightItin(this.props.reducerTripData.email, "/dashboard")
-      this.props.postCarItin(this.props.reducerTripData.email, "/dashboard")
-      this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
-      this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
-      //some sort of function that force refreshes each itinerary instance
+     for (var item in this.props.dashboardState.itinItems[1].selectedSavedCars){
+      if(this.props.dashboardState.itinItems[1].selectedSavedCars[item] === true){
+        this.props.data.changeStatus(+item, 3, 2);     
+      }
+    }
+       for (var item in this.props.dashboardState.itinItems[1].selectedSavedActivites){
+      if(this.props.dashboardState.itinItems[1].selectedSavedActivites[item] === true){
+        this.props.data.changeStatus(+item, 4, 2);     
+      }
+    }
+
+    this.props.postHotelItin(this.props.reducerTripData.email, "/dashboard")
+    this.props.postFlightItin(this.props.reducerTripData.email, "/dashboard")
+    this.props.postCarItin(this.props.reducerTripData.email, "/dashboard")
+    this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
+    this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
+    //some sort of function that force refreshes each itinerary instance
   },
 
   render() {
@@ -221,6 +221,8 @@ const Itinerary = React.createClass({
             {bookedFlightList.map((flightItin, i) =>
               <FlightItin
                 key={i}
+                startDate={this.props.data.reducerTripData.startDate}
+                endDate={this.props.data.reducerTripData.endDate}
                 dashboardState={this.props.dashboardState}
                 flightItinInfo={flightItin}
             />
@@ -282,6 +284,8 @@ const Itinerary = React.createClass({
                 {savedFlightList.map((flightItin, i) =>
                   <FlightItin
                     key={i}
+                    startDate={this.props.data.reducerTripData.startDate}
+                    endDate={this.props.data.reducerTripData.endDate}
                     dashboardState={this.props.dashboardState}
                     flightItinInfo={flightItin}
                 />
