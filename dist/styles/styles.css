@@ -221,10 +221,15 @@ article {
   font-size: 20px;
 }
 
-[class^='item-']:not(.item-hotel-itin, .item-car-itin) {
+[class^='item-']:not(.item-hotel-itin, .item-car-itin .item-flight-itin, 
+.item-activity-itin) {
   border: 1px solid #999;
   width: 300px;
   height: 100%;
+}
+
+.inner-trip-heading {
+  font-weight: bold
 }
 
 .item-flight > div {
@@ -457,7 +462,9 @@ article {
 }
 
 .item-hotel-itin,
-.item-car-itin {
+.item-car-itin,
+.item-flight-itin, 
+.item-activity-itin {
   border: 1px solid #999;
   margin-bottom: 10px;
 }

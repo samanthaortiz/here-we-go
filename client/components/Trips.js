@@ -5,6 +5,7 @@ import { Accordion, Panel } from 'react-bootstrap';
 
 const Trips = React.createClass({
   render() {
+    console.log('all trip info in render method inside Trips:', this.props.data.data.reducerAllTripInfo.allTripInfo)
     // // console.log('these are the trip props:', this.props.data.getAllTripInfo(1))
     // if(this.props.data.reducerAllTrips !== undefined) {
     // var trips = []
@@ -50,7 +51,7 @@ const Trips = React.createClass({
           <Accordion>
             {
             this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
-              <Panel key={i} header={trips.trip_name} eventKey={i + 1}>
+              <Panel key={i} header={trips.trip_name} eventKey={i}>
               {console.log("TRIPSSSSSS", trips)}
                 {/*<div>
                 <BudgetChart 
@@ -72,15 +73,16 @@ const Trips = React.createClass({
                 </div>*/}
                  {
                   this.props.data.data.reducerAllTripInfo.allTripInfo.map((trips, i) =>
-                    <Panel>
-                <h4>Flights:</h4>
-                  <p>{trips.arrivalAirportCity} - {trips.departureAirportCity}</p>
-                <h4>Hotels:</h4>
+                <div className="inner-trip">
+                <h4 className="inner-trip-heading">Flights:</h4>
+                  <p>{trips.departureAirportCity} - {trips.arrivalAirportCity}</p>
+                <h4 className="inner-trip-heading">Hotels:</h4>
                   <p>{trips.providerName}</p>
-                <h4>Cars:</h4>
-                <h4>Activites:</h4>
+                <h4 className="inner-trip-heading">Cars:</h4>
+                  <p>{trips.rentalCompany}: {trips.vehicleBrand}</p>
+                <h4 className="inner-trip-heading">Activites:</h4>
                   <p>{trips.name}</p>
-                  </Panel>
+                  </div>
                 )
                 }
               </Panel>
