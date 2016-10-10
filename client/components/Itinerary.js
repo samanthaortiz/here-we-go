@@ -21,6 +21,15 @@ const Itinerary = React.createClass({
     };
   },
 
+  updateAllTrips(){
+  this.setState(
+    { 
+      newModal: true 
+    }
+  )
+  this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
+},
+
   displayForm(event) {
     event.preventDefault();
     // DISPLAY BUDGET FOR LIGHTBOX
