@@ -23,4 +23,4 @@ const allAirports =
 
 {"code":"SCN","name":"Saarbrucken","city":"Saarbruecken","country":"Germany","timezone":"Europe/Berlin","lat":49.214553,"lng":7.109508,"terminal":null,"gate":null}]
 
-export default allAirports;
+module.exports = allAirports;
