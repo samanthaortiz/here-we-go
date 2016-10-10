@@ -12,7 +12,11 @@ function mapStateToProps(state){
     reducerFlightItin: state.reducerFlightItin,
     reducerCarItin: state.reducerCarItin,
     reducerActivityItin: state.reducerActivityItin,
-    reducerChangeStatus: state.reducerChangeStatus
+    reducerChangeStatus: state.reducerChangeStatus,
+    reducerNewTrip: state.reducerNewTrip,
+    reducerAllTrips: state.reducerAllTrips,
+    reducerAllTripInfo: state.reducerAllTripInfo,
+    reducerUpdateTripId: state.reducerUpdateTripId
   }
 }
 

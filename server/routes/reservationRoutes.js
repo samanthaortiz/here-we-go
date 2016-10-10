@@ -30,6 +30,7 @@ reservationRoutes.post('/flightReservation', function(req, res) {
   db.knex('flightReservations')
   .insert({
     type_id: req.body.type_id,
+    status_id: req.body.status_id,
     user_email: req.body.user_email,
     departureAirportCode: req.body.departureAirportCode,
     departureAirportCity: req.body.departureAirportCity,
@@ -91,5 +92,6 @@ db.knex('activities')
       console.error(error);
     });
 });
+
 
 module.exports = reservationRoutes;

@@ -22,7 +22,8 @@ const CarRental = React.createClass({
   handleSaveCarRental: function(event) {
     event.preventDefault();
     // console.log('SELECTED CAR: ', this.props);
-
+    var userEmail = this.props.userEmail
+    var postCarItin = this.props.postCarItin
     let dataObj = {
       status_id: 2,
       type_id: 3,
@@ -42,6 +43,8 @@ const CarRental = React.createClass({
       data: JSON.stringify(dataObj),
       contentType: 'application/json',
       success: function (data) {
+        postCarItin(userEmail, '/dashboard')
+
         // // Trigger a fetch to update the messages, pass true to animate
         // app.fetch();
       },

@@ -4,7 +4,14 @@ import React from 'react';
 const Flight = React.createClass({
   getInitialState: function() {
     return {
-      roundTrip: []
+      roundTrip: [],
+      airlineLogos: {
+        'American Airlines': '../assets/airline-logos/AA_sq.jpg',
+        'Delta': '../assets/airline-logos/DL_sq.jpg',
+        'jetBlue': '../assets/airline-logos/b6_sq.jpg',
+        'United': '../assets/airline-logos/UA_sq.jpg',
+        'Unknown': '../assets/airline-logos/multiple_airlines_logo_sq.jpg'
+      }
     };
   },
 
@@ -24,13 +31,14 @@ const Flight = React.createClass({
   // SAVE FLIGHT EVENT - STORE SELECTED FLIGHT TO DATABASE ====================
   handleSaveFlight: function(event) {
 
-    console.log('SAVE: ', this.state);
-
+    var userEmail = this.props.userEmail
+    var postFlightItin = this.props.postFlightItin
+  
     let dataObj = {
-      status_id: 2,
       type_id: 1,
       user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
       terminal: '',
+      status_id: 2,
       departureAirportName: '',
       departureAirportCode: this.state.roundTrip[0].segments[0].departureAirportCode,
       departureAirportCity: this.state.roundTrip[0].segments[0].departureAirportAddress.city,
@@ -49,19 +57,19 @@ const Flight = React.createClass({
       arrivalTime: this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalTime
     };
 
-    // $.ajax({
-    //   url: '/flightReservation',
-    //   type: 'POST',
-    //   data: JSON.stringify(dataObj),
-    //   contentType: 'application/json',
-    //   success: function (data) {
-    //     // // Trigger a fetch to update the messages, pass true to animate
-    //     // app.fetch();
-    //   },
-    //   error: function (data) {
-    //     console.error('ERROR SENDING TO DATABASE: ', data);
-    //   }
-    // });
+    $.ajax({
+      url: '/flightReservation',
+      type: 'POST',
+      data: JSON.stringify(dataObj),
+      contentType: 'application/json',
+      success: function (data) {
+        postFlightItin(userEmail, '/dashboard')
+
+      },
+      error: function (data) {
+        console.error('ERROR SENDING TO DATABASE: ', data);
+      }
+    });
   },
 
   getRoundTrip: function() {
@@ -93,27 +101,36 @@ const Flight = React.createClass({
     //     </div>
     //   );
     // } else {
-      console.log('FLIGHT this.props: ', this.props);
+      // console.log('FLIGHT this.props: ', this.props);
+      let airlineImgLogo = this.state.airlineLogos.Unknown;
+      for (var key in this.state.airlineLogos) {
+        if(key === this.state.roundTrip[0].segments[0].airlineName) {
+          airlineImgLogo = this.state.airlineLogos[key];
+        }
+      }
+
+      // console.log('airline: ', this.state.roundTrip[0].segments[0].airlineName)
 
       return (
         <li className="item-flight">
           <div className="crop">
-            <div className="air-img"><img src="https://images.trvl-media.com/media/content/expus/graphics/static_content/fusion/v0.1b/images/airlines/s/UA_sq.jpg" /></div>
+            <div className="air-img"><img src={ airlineImgLogo } /></div>
             <div className="air-price">${this.props.flightInfo.totalFare}<span>Round Trip</span></div>
           </div>
           <div className="details clearfix">
             <div className="air-depart">
-              <p>{ this.state.roundTrip[0].segments[0].flightNumber }</p>
+              <p>Flight #{ this.state.roundTrip[0].segments[0].flightNumber }</p>
               <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span>
               <p>{ this.state.roundTrip[0].segments[0].departureTime }</p>
             </div>
             <div className="air-return">
-              <p>{ this.state.roundTrip[1].segments[0].flightNumber }</p>
+              <p>Flight #{ this.state.roundTrip[1].segments[0].flightNumber }</p>
               <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span>
               <p>{ this.state.roundTrip[1].segments[0].departureTime }</p>
             </div>
-            
-            <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+            <div className="clearfix">
+              <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
+            </div>
           </div>
         </li>
       );

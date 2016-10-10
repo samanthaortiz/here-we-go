@@ -46,10 +46,12 @@ const Splash = React.createClass({
       this.setState({
         email: this.state.email
       })
-      this.props.postHotelItin(this.state.email)
-      this.props.postFlightItin(this.state.email)
-      this.props.postCarItin(this.state.email)
-      this.props.postActivityItin(this.state.email)
+      this.props.postHotelItin(this.state.email, "/")
+      this.props.postFlightItin(this.state.email, "/")
+      this.props.postCarItin(this.state.email, "/")
+      this.props.postActivityItin(this.state.email, "/")
+      this.props.getAllTrips(this.state.email, "/");
+      this.props.getAllTripInfo(1, '/');
     }
   },
 
@@ -71,16 +73,22 @@ const Splash = React.createClass({
     //   // this.props.postHotelItin(this.state.email)
     // }
     var navLink = '';
+    var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
-      navLink = <a className="nav-login" href="/api/auth/google">Login</a>
+      // navLink = <a className="nav-login" href="/api/auth/google">Login</a>
+      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Login</button></a>
     } else {
-      navLink = <a className="nav-logout" href="/api/logout">Logout</a>
+      let parseEmail = this.state.email.split("=")[1];
+      let email = parseEmail.split("#")[0]
+      welcomeMsg = `Welcome back, ${email}!`;
+      // navLink = <a className="nav-logout" href="/api/logout">Logout</a>
+      navLink = <a href="/api/logout"><button type="submit" className="navbutton" value="Logout">Logout</button></a>
     }
 
     return (
       <div>
         <div className="splash-nav">
-          {navLink}
+          {welcomeMsg} {navLink}
         </div>
 
         <div className="splash-container">

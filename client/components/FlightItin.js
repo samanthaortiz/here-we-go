@@ -23,22 +23,22 @@ const FlightItin = React.createClass({
 
 
   changeDate(date) {
-    var string = new Date(date).toString()
-    var formattedDate = string.substring(4,10) + ", " + string.substring(11, 15);
-    return formattedDate
+    var date1 = date.split("-").join("/")
+    return date1.substring(5,10) + "/" + date1.substring(0,4)
+
   },
 
   render() {
       return (
         <div className='item-flight-itin'>
-        <h4>FLIGHT ITIN</h4>
           <form>
           <div className="checkbox">
             <label>
               <input type="checkbox" value="" 
               onChange={this.onChange}/>
               From {this.props.flightItinInfo.departureAirportCode} to {this.props.flightItinInfo.arrivalAirportCode}
-              <br/>{this.changeDate(this.props.flightItinInfo.departureTime)}
+              {/*<br/>{this.changeDate(this.props.flightItinInfo.departureTime)}*/}
+              <br/>{this.changeDate(this.props.startDate)} - {this.changeDate(this.props.endDate)}
               <br/>Flight Number: {this.props.flightItinInfo.flightNumber}
               <br/>Airline: {this.props.flightItinInfo.airline}
             </label>

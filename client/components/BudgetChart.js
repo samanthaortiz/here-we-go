@@ -1,25 +1,26 @@
 // DASHBOARD COMPONENT ========================================================
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+//import { PieChart } from 'react-easy-chart';
 
 const BudgetChart = React.createClass({
 
-  componentWillMount: function() {
-    this.renderChart();
-  },
+  // componentWillMount: function() {
+  //   this.renderChart();
+  // },
 
-  renderChart: function() {
-    console.log('START!');
-    // var pie = new d3pie("pieChart", { });
-    var pie = new d3pie("pieChart", {
-      "data": {
-        "content": [
-          { "label": "Master Course", "value": 2807 },
-          { "label": "Affiliates", "value": 1072 },
-          { "label": "Ebook", "value": 972 }
-        ]
-      }
-    });
+  // renderChart: function() {
+  //   console.log('START!');
+  //   // var pie = new d3pie("pieChart", { });
+  //   var pie = new d3pie("pieChart", {
+  //     "data": {
+  //       "content": [
+  //         { "label": "Master Course", "value": 2807 },
+  //         { "label": "Affiliates", "value": 1072 },
+  //         { "label": "Ebook", "value": 972 }
+  //       ]
+  //     }
+  //   });
 
 
     // var width = 320,
@@ -108,13 +109,25 @@ const BudgetChart = React.createClass({
 //     return data[i].label;}
 //     );
 
-  },
+  // },
+      // <div>
+        // <div id="pieChart"></div>
+      // </div>
   
   render() {
+    console.log('this.props in budget', this.props)
     return (
-      <div>
-        <div id="pieChart"></div>
-      </div>
+      <div>HI</div>
+      {/*<PieChart
+        size={200}
+        data={[
+          { key: 'Flight', value: 100 },
+          { key: 'Hotel', value: 200 },
+          { key: 'Car Rental', value: 50 },
+          { key: 'Activities', value: 50 }
+        ]}
+      />
+  }*/}
     );
   }
 }); 

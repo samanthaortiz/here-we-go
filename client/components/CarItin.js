@@ -2,6 +2,12 @@ import React from 'react';
 
 const CarItin = React.createClass({
 
+  getInitialState(){
+    return({
+      checked: false
+    })
+  },
+
   onChange(){
     if (this.props.carItinInfo.status_id === 1){
       if (this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id] === undefined){
@@ -31,7 +37,6 @@ const CarItin = React.createClass({
   render() {
       return (
         <div className='item-car-itin'>
-          <h4>CAR RENTAL ITIN</h4>
           <form>
             <div className="checkbox">
               <label>
@@ -39,7 +44,7 @@ const CarItin = React.createClass({
                 onChange={this.onChange}/>
                 {this.props.carItinInfo.rentalCompany}
                 <br/>{this.props.carItinInfo.vehicleBrand}
-                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} to {this.changeDate(this.props.carItinInfo.dropOffTime)}
+                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} -  {this.changeDate(this.props.carItinInfo.dropOffTime)}
               </label>
             </div>
           </form>

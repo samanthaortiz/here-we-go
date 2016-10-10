@@ -155,6 +155,7 @@ const FlightTile = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
+    document.getElementById('loading-icon').style.display = 'inline-block';
     // console.log('submitting flight data request');
     // console.log('departure code:',this.state.airportDepartureCode, '| destination code:', this.state.airportDestinationCode, '| startDate: ',this.props.flightData.data.expediaHotelInfo.startDate,'| endDate: ', this.props.flightData.data.expediaHotelInfo.startDate)
     this.props.flightData.postFlightExpedia(
@@ -171,8 +172,6 @@ const FlightTile = React.createClass({
   },
 
   renderFlights(offers, legs) {
-    console.log('***** FLIGHT OFFERS: ', offers);
-    
     return (
       <div className="tile-flight">
         <h3>FLIGHTS</h3>
@@ -180,6 +179,7 @@ const FlightTile = React.createClass({
           {
             offers.map((flight) =>
               <Flight
+                {...this.props}
                 key={flight.productKey}
                 flightInfo={flight}
                 flightLegs={legs}
@@ -203,54 +203,58 @@ const FlightTile = React.createClass({
         )
       }
 
-      if(this.props.flightOptions.gotFlights === false){
+      if(this.props.flightOptions.gotFlights === false) {
         return (
-            <div className="tile-flight">
-              <form className="airportForm" onSubmit={this.onSubmit}>
-              <h3>Choose your departure and destination airports</h3>
 
-              <div id="prefetch">
-                <label htmlFor="depart">Departure Airport: </label>
-                <input value={this.props.flightOptions.airportDepartureCode} className="typeahead" ref="depart"/>
-              </div>
+          <div className="tile-flight">
 
-              <div>
-                  <label htmlFor="destination">Destination Airport: </label>
+            <h3>FLIGHTS</h3>
+            <form className="airportForm clearfix" onSubmit={this.onSubmit}>
+              <h4>Select your Departure and Destination Airports</h4>
+              <ul className="flight-form-fields">
+                <li>
+                  <div id="prefetch">
+                    <label htmlFor="depart">Departure Airport:</label>
+                    <input value={this.props.flightOptions.airportDepartureCode} className="typeahead" ref="depart"/>
+                  </div>
+                </li>
+                <li>
+                  <label htmlFor="destination">Destination Airport:</label>
                   <select ref="destination" value={this.props.airportDestinationCode} onChange={this.handleChangeDestination}>
                     {this.state.availableAirportCodes.map((airport, i) => 
                       <option key={airport.code} value={airport.code}>{airport.name}: {airport.code}</option>
                     )}
                   </select>
-              </div>
+                </li>
+                <li className="form-options">
+                  <div>
+                    <label htmlFor="adults">Number of Adults: </label>
+                    <input className="numAdults" value={this.state.adults} ref="adults" onChange={this.handleChangeAdults}/>
+                  </div>
+                  <div>
+                    <label htmlFor="childUnder18">Child traveling? </label>
+                    <select ref="childUnder18" value={this.props.flightOptions.childUnder18} onChange={this.handleChangechildUnder18}>
+                      <option key="false" value="false">No</option>
+                      <option key="true" value="true">Yes</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="infants">Infant on Lap? </label>
+                    <select className="infants" ref="infants" value={this.props.flightOptions.infants} onChange={this.handleChangeInfants}>
+                        <option key="false" value="false">No</option>
+                        <option key="true" value="true">Yes</option>
+                    </select> 
+                  </div>
+                </li>
+              </ul>
+              <button type="submit">Let's Fly!</button>
+              <div id='loading-icon'>Getting Flights...</div>
+            </form>
 
-              <div>
-                <label htmlFor="adults">Number of Adults: </label>
-                <input value={this.state.adults} ref="adults" onChange={this.handleChangeAdults}/>
-              </div>
+          </div>
 
-              <div>
-                <label htmlFor="childUnder18">Child traveling? </label>
-                <select ref="childUnder18" value={this.props.flightOptions.childUnder18} onChange={this.handleChangechildUnder18}>
-                    <option key="false" value="false">No</option>
-                    <option key="true" value="true">Yes</option>
-                </select>            
-              </div>
-
-              <div>
-                <label htmlFor="infants">Infant on Lap? </label>
-                <select ref="infants" value={this.props.flightOptions.infants} onChange={this.handleChangeInfants}>
-                    <option key="false" value="false">No</option>
-                    <option key="true" value="true">Yes</option>
-                </select> 
-              </div>
-
-                <button type="submit">Let's Fly!</button>
-                </form>
-              </div>
-          );
-        } else return(
-          <div>{this.renderFlights(this.props.flightOffers, this.props.flightLegs)}</div>
-          ) 
-      }    
+        );
+      } else return(<div>{this.renderFlights(this.props.flightOffers, this.props.flightLegs)}</div>) 
+    }
 });
 export default FlightTile;

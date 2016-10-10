@@ -22,17 +22,22 @@ const HotelItin = React.createClass({
     }
   },
 
+  // changeDate(date) {
+  //   var string = new Date(date).toString()
+  //   var formattedDate = string.substring(4,10) + ", " + string.substring(11, 15);
+  //   return formattedDate
+  // },
+
   changeDate(date) {
-    var string = new Date(date).toString()
-    var formattedDate = string.substring(4,10) + ", " + string.substring(11, 15);
-    return formattedDate
+    var date1 = date.split("-").join("/")
+    return date1.substring(5,10) + "/" + date1.substring(0,4)
   },
+
 
   render() {
 
       return (
         <div className='item-hotel-itin'>
-          <h4>HOTEL ITIN</h4>
           <form>
           <div className="checkbox">
             <label>

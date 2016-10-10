@@ -7,7 +7,7 @@ var request = require('request');
 let getActivityData = function(req, res, next){
   // console.log('>> ENTER ACTIVITIES API ROUTER ', req.body);
 
-  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
+  var urlAPI = 'http://terminal2.expedia.com:80/x/activities/search?location='+req.body.location+'&resultsPerPage=25&startDate='+req.body.startDate+'&endDate='+req.body.endDate+'&apikey=OPwVzGiq1hnLYYTDwQI2Uqjt5OPrt767'
 
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {

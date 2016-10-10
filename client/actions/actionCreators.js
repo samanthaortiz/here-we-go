@@ -83,12 +83,12 @@ export function hydrateFlightStoreExpedia(expediaFlightInfo, departureAirport, d
 
 //=============== HOTEL ITIN ===============
 
-export const postHotelItin = (email) => {
+export const postHotelItin = (email, location) => {
   return function(dispatch){
     return axiosHotelItin(email)
     .then(res => {
       dispatch(hydrateHotelItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -110,12 +110,14 @@ export function hydrateHotelItin(hotelItinData){
 
 //=============== FLIGHTS ITIN ===============
 
-export const postFlightItin = (email) => {
+export const postFlightItin = (email, location) => {
+  console.log('getting all the flight itins')
   return function(dispatch){
     return axiosFlightItin(email)
     .then(res => {
+      console.log('now dispatching flight itins', res.data)
       dispatch(hydrateFlightItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -136,12 +138,12 @@ export function hydrateFlightItin(flightItinData){
   }
 
 //=============== CARS ITIN ===============
-export const postCarItin = (email) => {
+export const postCarItin = (email, location) => {
   return function(dispatch){
     return axiosCarItin(email)
     .then(res => {
       dispatch(hydrateCarItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -162,12 +164,15 @@ export function hydrateCarItin(carItinData){
 
 
 //=============== ACTIVITY ITIN ===============
-export const postActivityItin = (email) => {
+export const postActivityItin = (email, location) => {
+  console.log('in post activity itin')
   return function(dispatch){
+  console.log('now dispatching in activity itin')
     return axiosActivityItin(email)
     .then(res => {
+        console.log('got response:', res.data)
       dispatch(hydrateActivityItin(res.data))
-      browserHistory.push('/')
+      browserHistory.push(location)
     })
     .catch(error => console.log(error));
   };
@@ -214,3 +219,120 @@ export function hydrateItinStatus(itinStatusInfo, itemId, typeId, statusId){
     statusId
   };
 }
+
+//==================== ADDING NEW TRIP =======================================
+
+export const postNewTrip = (tripName, email) => {
+  return function(dispatch){
+    return axiosNewTrip(tripName, email)
+    .then(res => {
+      console.log('response data in post new trip', res)
+      dispatch(hydrateNewTrip(res.data, tripName, email))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosNewTrip(tripName, email){
+  return axios.post('/api/newTrip', {
+    tripName,
+    email
+  })
+}
+
+export function hydrateNewTrip(newTripInfo, tripName, email){
+  return {
+   type: "POST_NEW_TRIP",
+   newTripInfo,
+   tripName,
+   email
+  };
+}
+
+
+//======================= GET ALL EXISTING TRIPS ==============================
+export const getAllTrips = (email, location) => {
+  return function(dispatch){
+    return axiosGetTrips(email)
+    .then(res => {
+      console.log('response data in get all trips', res.data)
+      dispatch(hydrateAllTrips(res.data, email))
+      browserHistory.push(location)
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosGetTrips(email){
+  return axios.post('/api/getAllTrips', {
+    email
+  })
+}
+
+export function hydrateAllTrips(allTripInfo, email){
+  return {
+   type: "GET_ALL_TRIPS",
+   allTripInfo,
+   email
+  };
+}
+
+//==================== UPDATING TRIP ID =======================================
+
+export const updateTripId = (tripId, itemId, typeId) => {
+  return function(dispatch){
+    return axiosUpdateTripId(tripId, itemId, typeId)
+    .then(res => {
+      dispatch(hydrateUpdateTripId(res.data, tripId, itemId, typeId))
+      browserHistory.push('/dashboard')
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosUpdateTripId(tripId, itemId, typeId){
+  return axios.post('/api/updateTripId', {
+    tripId, 
+    itemId, 
+    typeId
+  })
+}
+
+export function hydrateUpdateTripId(updatedInfo, tripId, itemId, typeId){
+  return {
+   type: "UPDATE_TRIP_ID",
+   updatedInfo,
+   tripId, 
+   itemId, 
+   typeId
+  };
+}
+
+//==================== GETTING TRIP INFO FROM ALL TABLES =======================================
+
+export const getAllTripInfo = (tripId, location) => {
+  return function(dispatch){
+    return axiosAllTripInfo(tripId)
+    .then(res => {
+      dispatch(hydrateAllTripInfo(res.data, tripId))
+      console.log(">>>>TRIPDATA", res.data)
+      browserHistory.push(location)
+    })
+    .catch(error => console.log(error));
+  };
+};
+
+export function axiosAllTripInfo(tripId){
+  return axios.post('/api/getAllTripInfo', {
+    tripId
+  })
+};
+
+export function hydrateAllTripInfo(allTripInfo, tripId){
+  return {
+   type: "GET_ALL_TRIP_INFO",
+   allTripInfo,
+   tripId
+  };
+};
