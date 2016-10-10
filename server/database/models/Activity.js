@@ -1,7 +1,7 @@
-import db from '../db';
+var db require('../db');
 // import Itinerary from './Itinerary';
-import Status from './Status';
-import Type from './Type';
+var Status require('./Status');
+var Type require('./Type');
 
 let Activity = db.Model.extend({
 	tableName: 'activities',
