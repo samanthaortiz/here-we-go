@@ -1,7 +1,7 @@
-import db from './db';
-import Train from '../models/Train';
+var db = require('./db');
+var Train = require('../models/Train');
 
-let Trains = new db.Collection();
+var Trains = new db.Collection();
 Trains.model = Train;
 
 // export default Trains;

@@ -1,6 +1,6 @@
 var db = require('../db');
 
-let Status = db.Model.extend({
+var Status = db.Model.extend({
 	tableName: 'statuses',
 	hasTimestamps: true
 })

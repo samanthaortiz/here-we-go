@@ -1,7 +1,7 @@
-import db from './db';
-import Itinerary from '../models/Itinerary';
+var db = require('./db');
+var Itinerary = require('../models/Itinerary');
 
-let Itineraries = new db.Collection();
+var Itineraries = new db.Collection();
 Itineraries.model = Itinerary;
 
 // export default Itineraries;

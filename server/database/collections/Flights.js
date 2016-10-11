@@ -1,7 +1,7 @@
-import db from './db';
-import Flight from '../models/Flight';
+var db = require('./db');
+var Flight = require('../models/Flight');
 
-let Flights = new db.Collection();
+var Flights = new db.Collection();
 Flights.model = Flight;
 
 // export default Flights;
