@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // var config = require('./db.config.js') || {}
 
 var knex = require('knex')({
@@ -12,15 +11,6 @@ var knex = require('knex')({
     // || config.password,
    database : process.env.database 
     // || config.name
-=======
-var knex = require('knex')({
- 'client': 'mysql',
- 'connection': {
-   'host'     : process.env.ip,
-   'user'     : process.env.username,
-   'password' : process.env.password,
-   'database' : process.env.database
->>>>>>> master
  }
 });
 
