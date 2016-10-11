@@ -3,11 +3,11 @@
 var knex = require('knex')({
  client: 'mysql',
  connection: {
-   host     : process.env.ip 
+   host     : process.env.ip, 
     // || config.ip,
-   user     : process.env.username 
+   user     : process.env.username, 
     // || config.username,
-   password : process.env.password 
+   password : process.env.password, 
     // || config.password,
    database : process.env.database 
     // || config.name
