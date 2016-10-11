@@ -1,7 +1,7 @@
-import db from './db';
-import Car from '../models/Car';
+var db = require('./db');
+var Car = require('../models/Car');
 
-let Cars = new db.Collection();
+var Cars = new db.Collection();
 Cars.model = Car;
 
 // export default Cars;

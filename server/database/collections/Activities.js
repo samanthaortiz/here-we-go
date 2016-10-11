@@ -1,7 +1,7 @@
-import db from './db';
-import Activity from '../models/Activity';
+var db = require('./db');
+var Activity = require('../models/Activity');
 
-let Activities = new db.Collection();
+var Activities = new db.Collection();
 Activities.model = Activity;
 
 // export default Activities;

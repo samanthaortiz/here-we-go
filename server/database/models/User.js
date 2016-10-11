@@ -1,6 +1,6 @@
 var db = require('../db');
 
-let User = db.Model.extend({
+var User = db.Model.extend({
 	tableName: 'users',
 	hasTimestamps: true
 })

@@ -1,7 +1,7 @@
-import db from './db';
-import Status from '../models/Status';
+var db = require('./db');
+var Status = require('../models/Status')
 
-let Statuses = new db.Collection();
+var Statuses = new db.Collection();
 Statuses.model = Status;
 
 // export default Statuses;
