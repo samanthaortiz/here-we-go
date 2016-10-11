@@ -1,7 +1,7 @@
-var db require('../db');
+var db = require('../db');
 // import Itinerary from './Itinerary';
-var Status require('./Status');
-var Type require('./Type');
+var Status = require('./Status');
+var Type = require('./Type');
 
 let Flight = db.Model.extend({
 	tableName: 'flightReservations',
