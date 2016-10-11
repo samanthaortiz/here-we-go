@@ -7,20 +7,18 @@ const FlightItin = React.createClass({
       if (this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] === undefined){
         this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] = true;
       } else {
-        this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] = !this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id]
+        this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id] 
+        = !this.props.dashboardState.itinItems[0].selectedBookedFlights[this.props.flightItinInfo.id]
       } 
-      console.log('this is the dash state for booked flight itin: ', this.props.dashboardState.itinItems[0].selectedBookedFlights)   
     } else if (this.props.flightItinInfo.status_id === 2){
       if (this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] === undefined){
         this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] = true;
       } else {
-        this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] = !this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id]
+        this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id] 
+        = !this.props.dashboardState.itinItems[1].selectedSavedFlights[this.props.flightItinInfo.id]
       } 
-      console.log('this is the dash state for saved flight itin: ', this.props.dashboardState.itinItems[1].selectedSavedFlights)   
-
     }
   },
-
 
   changeDate(date) {
     var date1 = date.split("-").join("/")
@@ -36,8 +34,8 @@ const FlightItin = React.createClass({
             <label>
               <input type="checkbox" value="" 
               onChange={this.onChange}/>
-              From {this.props.flightItinInfo.departureAirportCode} to {this.props.flightItinInfo.arrivalAirportCode}
-              {/*<br/>{this.changeDate(this.props.flightItinInfo.departureTime)}*/}
+              From {this.props.flightItinInfo.departureAirportCode} 
+              to {this.props.flightItinInfo.arrivalAirportCode}
               <br/>{this.changeDate(this.props.startDate)} - {this.changeDate(this.props.endDate)}
               <br/>Flight Number: {this.props.flightItinInfo.flightNumber}
               <br/>Airline: {this.props.flightItinInfo.airline}

@@ -13,17 +13,16 @@ const CarItin = React.createClass({
       if (this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id] === undefined){
         this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id] = true;
       } else {
-        this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id] = !this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id]
+        this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id] 
+        = !this.props.dashboardState.itinItems[0].selectedBookedCars[this.props.carItinInfo.id]
       } 
-      console.log('this is the dash state for booked car itin: ', this.props.dashboardState.itinItems[0].selectedBookedCars)   
     } else if (this.props.carItinInfo.status_id === 2){
       if (this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id] === undefined){
         this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id] = true;
       } else {
-        this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id] = !this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id]
+        this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id] 
+        = !this.props.dashboardState.itinItems[1].selectedSavedCars[this.props.carItinInfo.id]
       } 
-      console.log('this is the dash state for saved car itin: ', this.props.dashboardState.itinItems[1].selectedSavedCars)   
-
     }
   },
 
@@ -44,7 +43,9 @@ const CarItin = React.createClass({
                 onChange={this.onChange}/>
                 {this.props.carItinInfo.rentalCompany}
                 <br/>{this.props.carItinInfo.vehicleBrand}
-                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} -  {this.changeDate(this.props.carItinInfo.dropOffTime)}
+                <br/>{this.changeDate(this.props.carItinInfo.pickUpTime)} 
+                -  
+                {this.changeDate(this.props.carItinInfo.dropOffTime)}
               </label>
             </div>
           </form>

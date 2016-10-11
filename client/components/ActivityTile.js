@@ -17,7 +17,7 @@ const ActivityTile = React.createClass({
   },
 
   render() {
-    // console.log('>>>>> Activity TILE <<<<<');
+
     let activities = this.filterActivities();
 
     if(this.props.activityData.length !== 0) {

@@ -1,6 +1,6 @@
 var db = require('../db');
 
-let Type = db.Model.extend({
+var Type = db.Model.extend({
 	tableName: 'types',
 	hasTimestamps: true
 })

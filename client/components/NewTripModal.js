@@ -9,7 +9,7 @@ const NewTripModal = React.createClass({
     })
   },
     
-    handleChangeValue(event) {
+  handleChangeValue(event) {
     this.setState({
       newTrip: event.target.value
     });
@@ -32,7 +32,12 @@ const NewTripModal = React.createClass({
           <Modal.Title id="contained-modal-title-sm">New Trip</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input type="text" value={this.state.newTrip} onChange={this.handleChangeValue} placeholder="New Trip Name"/>
+          <input 
+            type="text" 
+            value={this.state.newTrip} 
+            onChange={this.handleChangeValue} 
+            placeholder="New Trip Name"
+          />
         </Modal.Body>
         <Modal.Footer>
                   <Button onClick={this.handleSubmit}>Submit</Button>

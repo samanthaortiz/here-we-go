@@ -6,7 +6,6 @@ const App = React.createClass({
     return (
       <div className="container">
         { React.cloneElement(this.props.children, this.props) }
-
       </div>
     );
   } 

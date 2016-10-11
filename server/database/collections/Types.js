@@ -1,7 +1,7 @@
-import db from './db';
-import Type from '../models/Type';
+var db = require('./db');
+var Type = require('../models/Type');
 
-let Types = new db.Collection();
+var Types = new db.Collection();
 Types.model = Type;
 
 // export default Types;

@@ -39,20 +39,11 @@ const Activity = React.createClass({
       contentType: 'application/json',
       success: function (data) {
         postActivityItin(userEmail, '/dashboard')
-
-        // // Trigger a fetch to update the messages, pass true to animate
-        // app.fetch();
-
       },
       error: function (data) {
         console.error('ERROR SENDING TO DATABASE: ', data);
       }
     })
-
-    // console.log(this.props.savedItemBoolean.savedActivity)
-    // this.props.savedItemBoolean.savedActivity = true;
-
-    // console.log('and after..', this.props.savedItemBoolean.savedActivity)
   },
 
   render() {
@@ -63,13 +54,31 @@ const Activity = React.createClass({
             <img src={ this.props.activityInfo.imageUrl } /><br/>
           </div>
           <div className="details clearfix">
-            <a href={'https://www.expedia.com/things-to-do/title.a'+ this.props.activityInfo.id + '.activity-details?srp=true&location=' +this.props.location + '&startDate=' + this.changeDate(this.props.startDate) + '&endDate=' + this.changeDate(this.props.endDate)} target="_blank">{this.props.activityInfo.title}</a><br/>
+            <a 
+              href={
+                'https://www.expedia.com/things-to-do/title.a'+ 
+                this.props.activityInfo.id + 
+                '.activity-details?srp=true&location=' +
+                this.props.location + 
+                '&startDate=' + 
+                this.changeDate(this.props.startDate) + 
+                '&endDate=' + 
+                this.changeDate(this.props.endDate)
+              } 
+              target="_blank">
+              {this.props.activityInfo.title}
+            </a>
+            <br/>
 
             <span>{ this.props.activityInfo.supplierName }</span><br />
             
             <strong>{ this.props.activityInfo.fromPrice }</strong><br/>
             
-            <button type="button" className="btn" onClick={ this.handleSaveActivity }>Save Activity</button>
+            <button 
+              type="button" 
+              className="btn" 
+              onClick={ this.handleSaveActivity }>Save Activity
+            </button>
           </div>
         </li>
       );

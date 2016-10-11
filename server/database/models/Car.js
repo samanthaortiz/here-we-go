@@ -3,7 +3,7 @@ var db = require('../db');
 var Status = require('./Status');
 var Type = require('./Type');
 
-let Car = db.Model.extend({
+var Car = db.Model.extend({
 	tableName: 'carRentals',
 	// trip_id() {
 	// 	return this.belongsTo(Itinerary, 'trip_id');

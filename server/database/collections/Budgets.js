@@ -1,7 +1,7 @@
-import db from './db';
-import Budget from '../models/Budget';
+var db = require('./db');
+var Budget = require('../models/Budget');
 
-let Budgets = new db.Collection();
+var Budgets = new db.Collection();
 Budgets.model = Budget;
 
 // export default Budgets;

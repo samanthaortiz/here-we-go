@@ -30,7 +30,6 @@ router.get('/auth/google/callback',
 
 router.get('/account', ensureAuthenticated, function(req, res) {
   res.render('account', {
-    //add msql connection 
     user: req.user
   });
 }); 

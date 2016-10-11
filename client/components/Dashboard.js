@@ -23,13 +23,6 @@ const Dashboard = React.createClass({
           selectedSavedActivites: {}
         }
       ]
-      // savedItemBoolean:{
-      //   savedActivity: false,
-      //   savedFlight: false,
-      //   savedHotel: false,
-      //   savedCar: false
-      // },
-      // key: 0
     }
   },
 
