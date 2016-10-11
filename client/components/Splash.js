@@ -67,11 +67,6 @@ const Splash = React.createClass({
   },
 
   render() {
-    //     // console.log('this.state.email in render method', this.state.email)
-    // if (this.state.isUserLoggedIn) {
-    //   console.log('in if statement in render', ;
-    //   // this.props.postHotelItin(this.state.email)
-    // }
     var navLink = '';
     var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
@@ -118,32 +113,6 @@ const Splash = React.createClass({
             <div id='loading-icon'>Loading...</div>
           </form>
         </div>
-
-
-
-
-        {/*
-        <div>
-        <h1 id='logo'>
-          Here We Go!
-        </h1>
-        </div>
-        <div>
-          <form className="splashForm" onSubmit={this.onSubmit}>
-            <div className="input-group">
-              <input
-              type="text"
-              placeholder='City and State'
-              value={this.state.value}
-              onChange={this.handleChangeValue}
-              />
-              <DatePicker value={this.state.startValue} startDate={this.state.startDate} onChange={this.handleChangeStart}/>
-              <DatePicker value={this.state.endValue} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>          
-              <button type="submit" className="btn btn-secondary">Let's Go!</button>
-              <div id='loading-icon'>Loading...</div>
-            </div>
-          </form>
-        </div>*/}
       </div>
     );
   }

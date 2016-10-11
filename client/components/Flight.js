@@ -92,49 +92,48 @@ const Flight = React.createClass({
   },
 
   render() {
-    // console.log('>>>>> FLIGHT <<<<<');
-    // <h3>Select Your Flight</h3>
-    // if(this.props !== undefined) {
-    //   return (
-    //     <div className="item-flight">
-    //       { this.props }
-    //     </div>
-    //   );
-    // } else {
-      // console.log('FLIGHT this.props: ', this.props);
-      let airlineImgLogo = this.state.airlineLogos.Unknown;
-      for (var key in this.state.airlineLogos) {
-        if(key === this.state.roundTrip[0].segments[0].airlineName) {
-          airlineImgLogo = this.state.airlineLogos[key];
-        }
+    let airlineImgLogo = this.state.airlineLogos.Unknown;
+    for (var key in this.state.airlineLogos) {
+      if(key === this.state.roundTrip[0].segments[0].airlineName) {
+        airlineImgLogo = this.state.airlineLogos[key];
       }
+    }
 
-      // console.log('airline: ', this.state.roundTrip[0].segments[0].airlineName)
-
-      return (
-        <li className="item-flight">
-          <div className="crop">
-            <div className="air-img"><img src={ airlineImgLogo } /></div>
-            <div className="air-price">${this.props.flightInfo.totalFare}<span>Round Trip</span></div>
+    return (
+      <li className="item-flight">
+        <div className="crop">
+          <div className="air-img">
+            <img src={ airlineImgLogo } />
           </div>
-          <div className="details clearfix">
-            <div className="air-depart">
-              <p>Flight #{ this.state.roundTrip[0].segments[0].flightNumber }</p>
-              <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }</span>
-              <p>{ this.state.roundTrip[0].segments[0].departureTime }</p>
-            </div>
-            <div className="air-return">
-              <p>Flight #{ this.state.roundTrip[1].segments[0].flightNumber }</p>
-              <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }</span>
-              <p>{ this.state.roundTrip[1].segments[0].departureTime }</p>
-            </div>
-            <div className="clearfix">
-              <button type="button" className="btn" onClick={this.handleSaveFlight}>Save Flight</button>
-            </div>
+          <div className="air-price">
+            ${this.props.flightInfo.totalFare}<span>Round Trip</span>
           </div>
-        </li>
-      );
-    // }
+        </div>
+        <div className="details clearfix">
+          <div className="air-depart">
+            <p>Flight #{ this.state.roundTrip[0].segments[0].flightNumber }</p>
+            <span>{ this.state.roundTrip[0].segments[0].departureAirportCode } 
+              to { this.state.roundTrip[0].segments[this.state.roundTrip[0].segments.length - 1].arrivalAirportCode }
+            </span>
+            <p>{ this.state.roundTrip[0].segments[0].departureTime }</p>
+          </div>
+          <div className="air-return">
+            <p>Flight #{ this.state.roundTrip[1].segments[0].flightNumber }</p>
+            <span>{ this.state.roundTrip[1].segments[0].departureAirportCode } 
+              to { this.state.roundTrip[1].segments[this.state.roundTrip[1].segments.length - 1].arrivalAirportCode }
+            </span>
+            <p>{ this.state.roundTrip[1].segments[0].departureTime }</p>
+          </div>
+          <div className="clearfix">
+            <button 
+              type="button" 
+              className="btn" 
+              onClick={this.handleSaveFlight}>Save Flight
+            </button>
+          </div>
+        </div>
+      </li>
+    );
   } 
 });
 

@@ -74,7 +74,11 @@ const CarRental = React.createClass({
           
           <strong>${ this.props.carInfo.Price.TotalRate.Value }</strong> Total<br/>
           
-          <button type="button" className="btn" onClick={this.handleSaveCarRental}>Save Car</button>
+          <button 
+            type="button" 
+            className="btn" 
+            onClick={this.handleSaveCarRental}>Save Car
+          </button>
         </div>
       </li>
     );
