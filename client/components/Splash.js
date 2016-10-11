@@ -71,7 +71,7 @@ const Splash = React.createClass({
     var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
       // navLink = <a className="nav-login" href="/api/auth/google">Login</a>
-      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Login</button></a>
+      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Please Login</button></a>
     } else {
       let parseEmail = this.state.email.split("=")[1];
       let email = parseEmail.split("#")[0]
