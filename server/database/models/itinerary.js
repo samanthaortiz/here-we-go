@@ -1,5 +1,5 @@
-var db require('../db');
-var User require('./User');
+var db = require('../db');
+var User = require('./User');
 
 let Itinerary = db.Model.extend({
   tableName: 'itineraries',
