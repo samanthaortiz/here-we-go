@@ -10,7 +10,6 @@ const Hotel = React.createClass({
       user_email: '',
       providerName: '',
       address: '',
-      // telephone: '',
       startDate: '',
       endDate: '',
       days: '',
@@ -29,23 +28,19 @@ const Hotel = React.createClass({
     event.preventDefault();
     var userEmail = this.props.userEmail
     var postHotelItin = this.props.postHotelItin
-    // console.log('>>>>> ', this.props)
-    // console.log('>>>>> ', this.props.hotelInfo)
 
     let dataObj = {
-      status_id: 2,      // Saved
-      type_id: 2,        // hotel
+      status_id: 2,
+      type_id: 2,     
       user_email: `${this.props.userEmail.split("=")[1].split("#")[0]}`,
       providerName: `${this.props.hotelInfo.localizedName}`,
       address: `${this.props.hotelInfo.address}, ${this.props.hotelInfo.city}`,
-      // telephone: '',
       startDate: `${this.props.startDate}`,
       endDate: `${this.props.endDate}`,
       days: `${this.props.days}`,
       organization: 'Expedia'
     };
 
-    // console.log('>>>> ', dataObj);
 
     $.ajax({
       url: '/hotelReservations',
@@ -54,9 +49,6 @@ const Hotel = React.createClass({
       contentType: 'application/json',
       success: function (data) {
         postHotelItin(userEmail, '/dashboard')
-
-        // // Trigger a fetch to update the messages, pass true to animate
-        // app.fetch();
       },
       error: function (data) {
         console.error('ERROR SENDING TO DATABASE: ', data);
@@ -67,7 +59,12 @@ const Hotel = React.createClass({
   render() {
     let saveButton;
     if (this.props.isLoggedIn) {
-      saveButton = <button type="button" className="btn" onClick={this.handleSaveHotel}>Save Hotel</button>;
+      saveButton = <button 
+                      type="button" 
+                      className="btn" 
+                      onClick={this.handleSaveHotel}>
+                      Save Hotel
+                    </button>;
     }
 
     let thumbIMG = this.props.hotelInfo.largeThumbnailUrl
@@ -80,7 +77,19 @@ const Hotel = React.createClass({
             <img src={ `https://images.trvl-media.com${largeIMG}` }/>
           </div>
           <div className="details clearfix">
-            <a href={"https://www.expedia.com/New-York-Hotels.h"+this.props.hotelInfo.hotelId+".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+this.changeDate(this.props.startDate)+"&chkout="+this.changeDate(this.props.endDate)} target="_blank">{ this.props.hotelInfo.localizedName }</a><br />
+            <a 
+              href={
+                "https://www.expedia.com/New-York-Hotels.h"+
+                this.props.hotelInfo.hotelId+
+                ".Hotel-Information?rfrr=TG.LP.TopHotels#chkin="+
+                this.changeDate(this.props.startDate)+
+                "&chkout="+
+                this.changeDate(this.props.endDate)
+              } 
+              target="_blank">
+              { this.props.hotelInfo.localizedName }
+            </a>
+            <br/>
 
             <span>{ this.props.hotelInfo.address }, {this.props.hotelInfo.city}</span><br />
             

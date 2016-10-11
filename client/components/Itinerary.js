@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Accordion, Panel, Modal, Button, ButtonToolbar } from 'react-bootstrap';
 import BudgetForm from './BudgetForm';
-//import BudgetChart from './BudgetChart';
 import NewTripForm from './NewTripForm';
 import HotelItin from './HotelItin';
 import FlightItin from './FlightItin';
@@ -11,45 +10,24 @@ import ActivityItin from './ActivityItin';
 import NewTripModal from "./NewTripModal";
 import ExistingTripModal from './ExistingTripModal';
 import Trips from './Trips';
+//import BudgetChart from './BudgetChart';
 
 const Itinerary = React.createClass({
   
-  getInitialState() {
-    return { 
-      existingModal: false, 
-      newModal: false
-    };
-  },
-
-  updateAllTrips(){
-  this.setState(
-    { 
-      newModal: true 
-    }
-  )
-  this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
-},
-
-  displayForm(event) {
-    event.preventDefault();
-    // DISPLAY BUDGET FOR LIGHTBOX
-    document.getElementById('light').style.display='block';
-    document.getElementById('fade').style.display='block';
-  },
-
-  // componentDidMount(){
-  //   this.props.getAllTripInfo(1);
-
+  // getInitialState() {
+  //   return { 
+  //     // existingModal: false, 
+  //     // newModal: false
+  //   };
   // },
 
-  // componentWillReceiveProps() {
-  //   console.log('componentWillReceiveProps in itin', this.props.dashboardState.savedItemBoolean.savedActivity)
-  //   if(this.props.dashboardState.savedItemBoolean.savedActivity === true){
-  //     this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
-  //   }
+  // displayForm(event) {
+  //  NOT BEING USED UNTIL BUDGET COMPLETE
+  //   event.preventDefault();
+  //   // DISPLAY BUDGET FOR LIGHTBOX
+  //   document.getElementById('light').style.display='block';
+  //   document.getElementById('fade').style.display='block';
   // },
-
-
 
   changeStatusOfItem(){
     //BOOKED TO SAVED
@@ -108,16 +86,11 @@ const Itinerary = React.createClass({
     this.props.postFlightItin(this.props.reducerTripData.email, "/dashboard")
     this.props.postCarItin(this.props.reducerTripData.email, "/dashboard")
     this.props.postActivityItin(this.props.reducerTripData.email, "/dashboard")
-    this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
+    // this.props.getAllTrips(this.props.reducerTripData.email, "/dashboard");
     //some sort of function that force refreshes each itinerary instance
   },
 
   render() {
-        console.log("THIS IS ITIN PROPS", this.props)
-    // console.log('hotel itin data', this.props.data.reducerHotelItin.hotelItinData)
-    // if(this.props.data.reducerTripData.loggedIn){
-
-
       var bookedHotelList = [];
       var bookedCarList = [];
       var bookedFlightList = [];
@@ -160,175 +133,195 @@ const Itinerary = React.createClass({
         }
       });
 
-    let existingClose = () => this.setState({ existingModal: false });
-    let newClose = () => this.setState({ newModal: false });
+    // let existingClose = () => this.setState({ existingModal: false });
+    // let newClose = () => this.setState({ newModal: false });
 
-      return (
+  return (
 
-        <div className="tile-itinerary">
-        <ul className="nav nav-tabs">
-          <li className="active"><a data-toggle="tab" href="#trips">Trips</a></li>
-          <li><a data-toggle="tab" href="#booked">Booked</a></li>
-          <li><a data-toggle="tab" href="#saved">Saved</a></li>
-         {/* <li><a data-toggle="tab" href="#budget">Budget</a></li>*/}
-        </ul>
+    <div className="tile-itinerary">
+      <ul className="nav nav-tabs">
+        {/*<li><a data-toggle="tab" href="#trips">Trips</a></li>*/}
+        <li className="active"><a data-toggle="tab" href="#booked">Booked</a></li>
+        <li><a data-toggle="tab" href="#saved">Saved</a></li>
+       {/* <li><a data-toggle="tab" href="#budget">Budget</a></li>*/}
+      </ul>
 
 
-{/* TRIPS TAB */}
+    <div className="tab-content">
+  {/* TRIPS TAB 
 
-        <div className="tab-content">
-            <div id="trips" className="tab-pane fade in active">
-              <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
-                Add New Trip
-              </Button>
-              <NewTripModal 
-                show={this.state.newModal} 
-                onHide={newClose} 
-                data={this.props}
-              />
-              <Trips
-                data={this.props}
-              />
-            </div>
+        <div id="trips" className="tab-pane fade in active">
+          <Button bsStyle="primary" onClick={()=>this.setState({ newModal: true })}>
+            Add New Trip
+          </Button>
+          <NewTripModal 
+            show={this.state.newModal} 
+            onHide={newClose} 
+            data={this.props}
+          />
+          <Trips
+            data={this.props}
+          />
+        </div>
+  */}
+    
+    <div id="booked" className="tab-pane fade in active">
+    {/* Booked Items <ButtonToolbar> */ }
+    
+      <Button 
+        bsStyle="primary" 
+        onClick={this.changeStatusOfItem}>
+        Move to Saved
+      </Button> 
+      {/*<Button 
+        bsStyle="primary" 
+        onClick={()=>this.setState({ existingModal: true })}>
+        Add to Trip
+      </Button>
+      <ExistingTripModal 
+        show={this.state.existingModal} 
+        onHide={existingClose} 
+        data={this.props} 
+      />
+    </ButtonToolbar>
+      */}
+
+    <Accordion>
+
+      <Panel header="Hotels" eventKey="1">
+      {bookedHotelList.map((hotelItin, i) => 
+        <HotelItin
+          key={i}
+          dashboardState={this.props.dashboardState}
+          hotelItinInfo={hotelItin}
+          tableName=""
+          startDate={this.props.data.reducerTripData.startDate}
+          endDate={this.props.data.reducerTripData.endDate}
+        />
+        )}
+      </Panel>
+
+      <Panel header="Flights" eventKey="2">
+        {bookedFlightList.map((flightItin, i) =>
+          <FlightItin
+            key={i}
+            startDate={this.props.data.reducerTripData.startDate}
+            endDate={this.props.data.reducerTripData.endDate}
+            dashboardState={this.props.dashboardState}
+            flightItinInfo={flightItin}
+        />
+        )}
+      </Panel>
+
+      <Panel header="Car Rentals" eventKey="3">
+        {bookedCarList.map((carItin, i) => 
+          <CarItin
+            key={i}
+            dashboardState={this.props.dashboardState}
+            carItinInfo={carItin}
+          />
+        )}
+      </Panel>
+
+      <Panel header="Activities" eventKey="4">
+        {bookedActivityList.map((activityItin, i) => 
+          <ActivityItin
+            key={i}
+            dashboardState={this.props.dashboardState}
+            activityItinInfo={activityItin}
+          />
+        )}
+      </Panel>
+
+    </Accordion> 
+
+    </div>
+
+    <div id="saved" className="tab-pane fade">
+    {/* Saved Items     <ButtonToolbar> */}
+
+      <Button 
+        bsStyle="primary" 
+        onClick={this.changeStatusOfItem}>
+        Move to Booked
+      </Button> 
+      {/*<Button 
+        bsStyle="primary" 
+        onClick={()=>this.setState({ existingModal: true })}>
+        Add to Trip
+      </Button>
+      <ExistingTripModal 
+        show={this.state.existingModal} 
+        onHide={existingClose} 
+        data={this.props} 
+      />
+    </ButtonToolbar>
+      */}
 
         
-{/* Booked Items */}
-          <div id="booked" className="tab-pane fade">
-           <ButtonToolbar>
-            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Saved</Button> 
-            <Button inline bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-             Add to Trip
-            </Button>
-
-            <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
-          </ButtonToolbar>
-
-          <Accordion>
-          <Panel header="Hotels" eventKey="1">
-          {bookedHotelList.map((hotelItin, i) => 
-            <HotelItin
+    <Accordion>
+      
+      <Panel header="Hotels" eventKey="1">
+        {savedHotelList.map((hotelItin, i) => 
+          <HotelItin
+            key={i}
+            dashboardState={this.props.dashboardState}
+            hotelItinInfo={hotelItin}
+            startDate={this.props.data.reducerTripData.startDate}
+            endDate={this.props.data.reducerTripData.endDate}
+          />
+          )}
+      </Panel>
+      
+      <Panel header="Flights" eventKey="2">
+        {savedFlightList.map((flightItin, i) =>
+          <FlightItin
+            key={i}
+            startDate={this.props.data.reducerTripData.startDate}
+            endDate={this.props.data.reducerTripData.endDate}
+            dashboardState={this.props.dashboardState}
+            flightItinInfo={flightItin}
+          />
+        )}
+      </Panel>
+      
+      <Panel header="Car Rentals" eventKey="3">
+          {savedCarList.map((carItin, i) => 
+            <CarItin
               key={i}
               dashboardState={this.props.dashboardState}
-              hotelItinInfo={hotelItin}
-              tableName=""
-              startDate={this.props.data.reducerTripData.startDate}
-              endDate={this.props.data.reducerTripData.endDate}
+              carItinInfo={carItin}
             />
-            )}
-          </Panel>
-
-          <Panel header="Flights" eventKey="2">
-            {bookedFlightList.map((flightItin, i) =>
-              <FlightItin
-                key={i}
-                startDate={this.props.data.reducerTripData.startDate}
-                endDate={this.props.data.reducerTripData.endDate}
-                dashboardState={this.props.dashboardState}
-                flightItinInfo={flightItin}
+          )}
+      </Panel>
+      
+      <Panel header="Activites" eventKey="4">
+          {savedActivityList.map((activityItin, i) => 
+            <ActivityItin
+              key={i}
+              dashboardState={this.props.dashboardState}
+              activityItinInfo={activityItin}
             />
-            )}
-          </Panel>
+          )}
+      </Panel>
+      
+      </Accordion>   
 
-          <Panel header="Car Rentals" eventKey="3">
-            {bookedCarList.map((carItin, i) => 
-              <CarItin
-                key={i}
-                dashboardState={this.props.dashboardState}
-                carItinInfo={carItin}
-              />
-            )}
-          </Panel>
+    </div>
 
-          <Panel header="Activities" eventKey="4">
-            {bookedActivityList.map((activityItin, i) => 
-              <ActivityItin
-                key={i}
-                dashboardState={this.props.dashboardState}
-                activityItinInfo={activityItin}
-              />
-            )}
-          </Panel>
-
-          </Accordion> 
-          </div>
-
-
-          <div id="saved" className="tab-pane fade">
-
-{/* Saved Modals */}
-          <ButtonToolbar>
-            <Button inline bsStyle="primary" onClick={this.changeStatusOfItem}>Move to Booked</Button> 
-            <Button bsStyle="primary" onClick={()=>this.setState({ existingModal: true })}>
-              Add to Trip
-            </Button>
-          <ExistingTripModal show={this.state.existingModal} onHide={existingClose} data={this.props} />
-      </ButtonToolbar>
-
-          
-              
-            <Accordion>
-            
-            <Panel header="Hotels" eventKey="1">
-              {savedHotelList.map((hotelItin, i) => 
-                <HotelItin
-                  key={i}
-                  dashboardState={this.props.dashboardState}
-                  hotelItinInfo={hotelItin}
-                  startDate={this.props.data.reducerTripData.startDate}
-                  endDate={this.props.data.reducerTripData.endDate}
-                />
-                )}
-            </Panel>
-            
-            <Panel header="Flights" eventKey="2">
-                {savedFlightList.map((flightItin, i) =>
-                  <FlightItin
-                    key={i}
-                    startDate={this.props.data.reducerTripData.startDate}
-                    endDate={this.props.data.reducerTripData.endDate}
-                    dashboardState={this.props.dashboardState}
-                    flightItinInfo={flightItin}
-                />
-                )}
-            </Panel>
-            
-            <Panel header="Car Rentals" eventKey="3">
-                {savedCarList.map((carItin, i) => 
-                  <CarItin
-                    key={i}
-                    dashboardState={this.props.dashboardState}
-                    carItinInfo={carItin}
-                  />
-                )}
-            </Panel>
-            
-            <Panel header="Activites" eventKey="4">
-                {savedActivityList.map((activityItin, i) => 
-                  <ActivityItin
-                    key={i}
-                    dashboardState={this.props.dashboardState}
-                    activityItinInfo={activityItin}
-                  />
-                )}
-            </Panel>
-            
-            </Accordion>             
-          </div>
-
-           {/* <div id="budget" className="tab-pane fade">
-             <h3>Budget</h3>
-                <div id="light" className="lightbox-content">
-                  <BudgetForm data={this.props.data}/>
-                </div>
-                <div id="fade" className="black_overlay"></div>
-                <p><button onClick={this.displayForm}>Add New Budget!</button></p>
-                <BudgetChart/>
-            </div>*/}
-
-
-        </div>
-      </div>
-      );
-    }
+       {/* BUDGET TAB
+        <div id="budget" className="tab-pane fade">
+         <h3>Budget</h3>
+            <div id="light" className="lightbox-content">
+              <BudgetForm data={this.props.data}/>
+            </div>
+            <div id="fade" className="black_overlay"></div>
+            <p><button onClick={this.displayForm}>Add New Budget!</button></p>
+            <BudgetChart/>
+        </div>*/}
+    </div>
+  </div>
+  );
+  }
 })
 export default Itinerary;
