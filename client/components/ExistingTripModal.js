@@ -16,8 +16,6 @@ const ExistingTripModal = React.createClass({
   },
 
   handleSubmit(){
-    console.log("WE GOT EXISTING!!", this.state.existingTrip)
-
       for (var item in this.props.data.dashboardState.itinItems[0].selectedBookedFlights){
         if(this.props.data.dashboardState.itinItems[0].selectedBookedFlights[item] === true){
           this.props.data.data.updateTripId(+this.state.selectedTrip, +item, 1);   
@@ -77,7 +75,10 @@ const ExistingTripModal = React.createClass({
       return(
         <Modal {...this.props} bsSize="small" aria-labelledby="contained-modal-title-sm">
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-sm">No Trips Available</Modal.Title>
+          <Modal.Title 
+            id="contained-modal-title-sm">
+            No Trips Available
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
          <p>Head to the Trip tab to add a new trip!</p>
@@ -87,16 +88,28 @@ const ExistingTripModal = React.createClass({
         </Modal.Footer>
       </Modal>
         )
-    } else {  
+
+    } else { 
+
     return (
-      <Modal {...this.props} bsSize="small" aria-labelledby="contained-modal-title-sm">
+      <Modal 
+        {...this.props} 
+        bsSize="small" 
+        aria-labelledby="contained-modal-title-sm">
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-sm">Add to Trip</Modal.Title>
+          <Modal.Title 
+            id="contained-modal-title-sm">
+            Add to Trip
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <FormGroup>
             {this.props.data.data.reducerAllTrips.allTripInfo.map((trips, i) =>
-              <Radio name="selected" key={i} value={trips.id} onChange={this.handleChangeValue}>
+              <Radio 
+                name="selected" 
+                key={i} 
+                value={trips.id} 
+                onChange={this.handleChangeValue}>
                 {trips.trip_name}
               </Radio>
             )}
