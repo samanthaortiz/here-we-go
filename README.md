@@ -2,7 +2,7 @@
 <img src="https://travis-ci.org/Diamond-Supernovas/here-we-go.svg?branch=dev"/>
 
 ## What are We?
-Here We Go is your go-to online trip management application.  Book an amazing hotel, find the best deals in your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
+Here We Go is your go-to online trip management application.  Book an amazing hotel, find the best deals for your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
 
 ## Our Tech Stack
 !['React.js'](/dist/assets/README/Reactjs_logo_sm.png)
