@@ -69,6 +69,11 @@ body {
   font-family: 'Pacifico', sans-serif;
 }
 
+.please-login {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
+
 h1.splash-logo {
   margin: 40px 0;
 }
@@ -91,7 +96,7 @@ h1.splash-logo {
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child) {
   border-radius: 5px;
-  width: 200px;
+  width: 200px !important;
   height: 40px;
 }
 
