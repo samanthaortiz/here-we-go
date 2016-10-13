@@ -18,12 +18,18 @@ const Splash = React.createClass({
   },
 
   handleChangeValue(event) {
+    if(!this.state.isUserLoggedIn){
+       alert("PLEASE LOG IN")
+    }
     this.setState({
       city: event.target.value
     });
   },
 
   handleChangeStart(startDate) { 
+    if(!this.state.isUserLoggedIn){
+       alert("PLEASE LOG IN")
+     }
     this.setState({
       startDate: startDate.substring(0, 10),
       startValue: startDate
@@ -31,6 +37,9 @@ const Splash = React.createClass({
   },
 
   handleChangeEnd(endDate) {
+    if(!this.state.isUserLoggedIn){
+       alert("PLEASE LOG IN")
+     }
     this.setState({
       endDate: endDate.substring(0, 10),
       endValue: endDate
