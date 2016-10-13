@@ -79,15 +79,20 @@ const Splash = React.createClass({
     var navLink = '';
     var welcomeMsg = '';
     if (!this.state.isUserLoggedIn) {
-      // navLink = <a className="nav-login" href="/api/auth/google">Login</a>
-      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Please Login</button></a>
+      navLink = <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Login</button></a>
+      return(
+        <div className="splash-container">
+          <h1 className="splash-logo">Here We Go!</h1>
+          <h3 className="please-login">Ready to travel? Log in below.</h3>
+          <a href="/api/auth/google"><button type="submit" className="navbutton" value="Login">Login</button></a> 
+        </div>
+        )
+
     } else {
       let parseEmail = this.state.email.split("=")[1];
       let email = parseEmail.split("#")[0]
       welcomeMsg = `Welcome back, ${email}!`;
-      // navLink = <a className="nav-logout" href="/api/logout">Logout</a>
       navLink = <a href="/api/logout"><button type="submit" className="navbutton" value="Logout">Logout</button></a>
-    }
 
     return (
       <div>
@@ -124,6 +129,7 @@ const Splash = React.createClass({
         </div>
       </div>
     );
+    }
   }
 });
 
