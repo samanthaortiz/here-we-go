@@ -1,11 +1,5 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-//fire off actions 
-//actions are just objects
-
-//dispatch with info about the action that happened
-//BUT this does not update our state. 
-//The reducer will do that.
 
 //=============== TRIP DATA ===============
 export const postTripData = (location, startDate, endDate, email, loggedIn) => {
@@ -47,7 +41,6 @@ export const postFlightExpedia = (departureAirport, destinationAirport, startDat
   return function(dispatch){
     return axiosFlightCall(departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants)
     .then(res => {
-      // console.log('SUBMISSION TO EXPEDIA FLIGHTS', startDate, endDate, departureAirport, destinationAirport, res.data)
       dispatch(hydrateFlightStoreExpedia(res.data, departureAirport, destinationAirport, startDate, endDate, adults, childUnder18, infants))
       browserHistory.push('/dashboard')
     })
@@ -95,7 +88,6 @@ export const postHotelItin = (email, location) => {
 };
 
 export function axiosHotelItin(email){
-  console.log('posting email req', email)
   return axios.post('/api/hotelItin', {
     email
   })
@@ -111,11 +103,9 @@ export function hydrateHotelItin(hotelItinData){
 //=============== FLIGHTS ITIN ===============
 
 export const postFlightItin = (email, location) => {
-  console.log('getting all the flight itins')
   return function(dispatch){
     return axiosFlightItin(email)
     .then(res => {
-      console.log('now dispatching flight itins', res.data)
       dispatch(hydrateFlightItin(res.data))
       browserHistory.push(location)
     })
@@ -124,7 +114,6 @@ export const postFlightItin = (email, location) => {
 };
 
 export function axiosFlightItin(email){
-  console.log('posting email req', email)
   return axios.post('/api/flightItin', {
     email
   })
@@ -165,12 +154,9 @@ export function hydrateCarItin(carItinData){
 
 //=============== ACTIVITY ITIN ===============
 export const postActivityItin = (email, location) => {
-  console.log('in post activity itin')
   return function(dispatch){
-  console.log('now dispatching in activity itin')
     return axiosActivityItin(email)
     .then(res => {
-        console.log('got response:', res.data)
       dispatch(hydrateActivityItin(res.data))
       browserHistory.push(location)
     })
@@ -226,7 +212,6 @@ export const postNewTrip = (tripName, email) => {
   return function(dispatch){
     return axiosNewTrip(tripName, email)
     .then(res => {
-      console.log('response data in post new trip', res)
       dispatch(hydrateNewTrip(res.data, tripName, email))
       browserHistory.push('/dashboard')
     })
@@ -256,7 +241,6 @@ export const getAllTrips = (email, location) => {
   return function(dispatch){
     return axiosGetTrips(email)
     .then(res => {
-      console.log('response data in get all trips', res.data)
       dispatch(hydrateAllTrips(res.data, email))
       browserHistory.push(location)
     })
@@ -316,7 +300,6 @@ export const getAllTripInfo = (tripId, location) => {
     return axiosAllTripInfo(tripId)
     .then(res => {
       dispatch(hydrateAllTripInfo(res.data, tripId))
-      console.log(">>>>TRIPDATA", res.data)
       browserHistory.push(location)
     })
     .catch(error => console.log(error));
