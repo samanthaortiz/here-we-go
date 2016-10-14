@@ -16,6 +16,7 @@ getFlightData: function(req, res, next) {
   request({ url: urlAPI }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.data = response.body
+      console.log('flightData:', body)
       next();
     }
   }); 
@@ -35,7 +36,7 @@ getFlightCode: function(req, res, next) {
 
   var urlAPI = 'https://airport.api.aero/airport/match/' + req.body.location + '?user_key=' + api.flightCode;
   request({ url: urlAPI }, function(error, response, body) {
-    // console.log('flight code body', body)
+    console.log('flight code body', body)
     if (!error && response.statusCode == 200) {
       var parsedBody = JSON.parse((body).slice(9, -1));
       res.data.push(parsedBody);
