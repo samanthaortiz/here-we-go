@@ -125,7 +125,7 @@ app.get('/siftAuth', function(req, res){
       if(emailConnections.length === 0){
         res.redirect("https://api.easilydo.com/v1/connect_email?api_key=" 
           + siftConfig.sift.API_KEY + "&username="+ email 
-          + "&token="+ connectToken + '&redirect_url=http://localhost:4000/');
+          + "&token="+ connectToken + '&redirect_url=https://herewegoapp.herokuapp.com/');
         // console.log('>>>> REDIRECTED TO SIFT AUTH<<<<')
       } else{
 
