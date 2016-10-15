@@ -70,6 +70,7 @@ const Splash = React.createClass({
 
   onSubmit(e) {
     e.preventDefault();
+    console.log('city:', this.state.city, "start:", this.state.startDate, "end:", this.state.endDate, "email:", this.state.email, "loggedIn:", this.state.isUserLoggedIn)
     document.getElementById('loading-icon').style.display = 'block';
     // CALL ACTION CREATOR
     this.props.postTripData(this.state.city, this.state.startDate, this.state.endDate, this.state.email, this.state.isUserLoggedIn);
