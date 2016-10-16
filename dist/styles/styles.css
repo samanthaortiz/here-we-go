@@ -69,15 +69,9 @@ body {
   font-family: 'Pacifico', sans-serif;
 }
 
-<<<<<<< HEAD
 .please-login {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
-=======
-.please-login { 
-  font-family: 'Open Sans', sans-serif; 
-  color: white;
->>>>>>> dev
 }
 
 h1.splash-logo {
