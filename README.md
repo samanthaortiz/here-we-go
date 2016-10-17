@@ -5,6 +5,7 @@
 ## What Are We?
 Here We Go is your go-to online trip management application. Book an amazing hotel, find the best deals for your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
 
+<<<<<<< 6853a75e5ddee0b120c3aeff7c877f70b8071e94
 [Click here for a live demo!](https://herewegoapp.herokuapp.com "Here We Go!")
 
 You can login to the app using our test account:
@@ -12,6 +13,9 @@ You can login to the app using our test account:
 username: herewegoapp1@gmail.com
 password: herewego
 ```
+=======
+[Click here for a live demo!](herewegoapp.herokuapp.com "Here We Go!")
+>>>>>>> Updated heroku link
 
 
 ## Our Tech Stack
