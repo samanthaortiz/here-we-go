@@ -5,6 +5,9 @@
 ## What are We?
 Here We Go is your go-to online trip management application.  Book an amazing hotel, find the best deals for your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
 
+See a live demo here:
+herewegoapp.herokuapp.com
+
 ## Our Tech Stack
 !['React.js'](/dist/assets/README/Reactjs_logo_sm.png)
 !['Redux'](/dist/assets/README/Redux_logo_sm.png)
