@@ -1,4 +1,4 @@
-# ![Here We Go](/dist/asets/README/Here_We_GO_logo_sm.png)
+# ![Here We Go](/dist/assets/README/Here_We_Go_logo_sm.png)
 
 <img src="https://travis-ci.org/Diamond-Supernovas/here-we-go.svg?branch=dev"/>
 
