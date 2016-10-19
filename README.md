@@ -7,6 +7,12 @@ Here We Go is your go-to online trip management application. Book an amazing hot
 
 [Click here for a live demo!](https://herewegoapp.herokuapp.com "Here We Go!")
 
+You can login to the app using our test account:
+```
+username: herewegoapp1@gmail.com
+password: herewego
+```
+
 
 ## Our Tech Stack
 !['React.js'](/dist/assets/README/Reactjs_logo_sm.png)
