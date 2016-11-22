@@ -3,20 +3,10 @@
 <img src="https://travis-ci.org/Diamond-Supernovas/here-we-go.svg?branch=dev"/>
 
 ## What Are We?
-<<<<<<< HEAD
+
 Here We Go is your go-to online trip management application. Book an amazing hotel, find the best deals for your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
 
-[Click here for a live demo!](https://herewegoapp.herokuapp.com "Here We Go!")
-=======
-Here We Go is your go-to online trip management application.  Book an amazing hotel, find the best deals for your flight, rent a car, and find fun and exciting local attractions in the area, all in one tool.
-
 [Click here for a live demo!](https://herewegoapp.herokuapp.com/ "Here We Go!")
-You can login to the app using our test account:
-```
-username: herewegoapp1@gmail.com
-password: herewego
-```
->>>>>>> bb72d5acee71977e96ae1eaf2f801d2358e0f9c3
 
 You can login to the app using our test account:
 ```
