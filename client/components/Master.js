@@ -1,6 +1,18 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actionCreators from '../actions/actionCreators';
+import * as activityItinAction from '../actions/activityItinAction';
+import * as allTripInfoAction from '../actions/allTripInfoAction';
+import * as allTripsAction from '../actions/allTripsAction';
+import * as carItinAction from '../actions/carItinAction';
+import * as changeStatusAction from '../actions/changeStatusAction';
+import * as flightDataAction from '../actions/flightDataAction';
+import * as flightItinAction from '../actions/flightItinAction';
+import * as hotelItinAction from '../actions/hotelItinAction';
+import * as newTripAction from '../actions/newTripAction';
+import * as postTripDataAction from '../actions/postTripDataAction';
+import * as updateTripAction from '../actions/updateTripAction';
+
+
 import App from './App';
 
 function mapStateToProps(state){
@@ -22,7 +34,20 @@ function mapStateToProps(state){
 
 //dispatch triggers a state change
 function mapDispatchToProps(dispatch){
-  return bindActionCreators(actionCreators, dispatch);
+  return bindActionCreators(
+    {
+    ...activityItinAction,
+    ...allTripInfoAction,
+    ...allTripsAction,
+    ...carItinAction,
+    ...changeStatusAction,
+    ...flightDataAction,
+    ...flightItinAction,
+    ...hotelItinAction,
+    ...newTripAction,
+    ...postTripDataAction,
+    ...updateTripAction
+    }, dispatch);
 }
 
 const Master = connect(mapStateToProps, mapDispatchToProps)(App);
