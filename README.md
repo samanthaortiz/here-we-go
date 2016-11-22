@@ -14,8 +14,6 @@ username: herewegoapp1@gmail.com
 password: herewego
 ```
 
-[Click here for a live demo!](herewegoapp.herokuapp.com "Here We Go!")
-
 ## Our Tech Stack
 !['React.js'](/dist/assets/README/Reactjs_logo_sm.png)
 !['Redux'](/dist/assets/README/Redux_logo_sm.png)
